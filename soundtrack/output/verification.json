@@ -1,0 +1,189 @@
+{
+  "files": [
+    {
+      "file": "soundtrack_final.wav",
+      "duration_s": 60.0,
+      "sample_rate": 48000,
+      "channels": 2,
+      "subtype": "PCM_24",
+      "sample_peak_dbfs": -1.31,
+      "true_peak_dbtp": -1.3,
+      "integrated_lufs": -13.99,
+      "clipped_samples": 0
+    },
+    {
+      "file": "soundtrack_narration_bed.wav",
+      "duration_s": 60.0,
+      "sample_rate": 48000,
+      "channels": 2,
+      "subtype": "PCM_24",
+      "sample_peak_dbfs": -8.12,
+      "true_peak_dbtp": -8.04,
+      "integrated_lufs": -21.21,
+      "clipped_samples": 0
+    },
+    {
+      "file": "bass.wav",
+      "duration_s": 60.0,
+      "sample_rate": 48000,
+      "channels": 2,
+      "subtype": "PCM_24",
+      "sample_peak_dbfs": -12.68,
+      "true_peak_dbtp": -12.67,
+      "integrated_lufs": -26.7,
+      "clipped_samples": 0
+    },
+    {
+      "file": "drums.wav",
+      "duration_s": 60.0,
+      "sample_rate": 48000,
+      "channels": 2,
+      "subtype": "PCM_24",
+      "sample_peak_dbfs": -8.57,
+      "true_peak_dbtp": -8.26,
+      "integrated_lufs": -21.01,
+      "clipped_samples": 0
+    },
+    {
+      "file": "fx.wav",
+      "duration_s": 60.0,
+      "sample_rate": 48000,
+      "channels": 2,
+      "subtype": "PCM_24",
+      "sample_peak_dbfs": -9.34,
+      "true_peak_dbtp": -9.33,
+      "integrated_lufs": -27.05,
+      "clipped_samples": 0
+    },
+    {
+      "file": "lead.wav",
+      "duration_s": 60.0,
+      "sample_rate": 48000,
+      "channels": 2,
+      "subtype": "PCM_24",
+      "sample_peak_dbfs": -13.11,
+      "true_peak_dbtp": -13.07,
+      "integrated_lufs": -24.71,
+      "clipped_samples": 0
+    },
+    {
+      "file": "orchestra.wav",
+      "duration_s": 60.0,
+      "sample_rate": 48000,
+      "channels": 2,
+      "subtype": "PCM_24",
+      "sample_peak_dbfs": -10.82,
+      "true_peak_dbtp": -10.81,
+      "integrated_lufs": -25.79,
+      "clipped_samples": 0
+    },
+    {
+      "file": "synths.wav",
+      "duration_s": 60.0,
+      "sample_rate": 48000,
+      "channels": 2,
+      "subtype": "PCM_24",
+      "sample_peak_dbfs": -16.94,
+      "true_peak_dbtp": -16.94,
+      "integrated_lufs": -31.32,
+      "clipped_samples": 0
+    }
+  ],
+  "mp3": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "mp3",
+        "sample_rate": "48000",
+        "channels": 2
+      }
+    ],
+    "format": {
+      "duration": "60.024000",
+      "bit_rate": "320133"
+    }
+  },
+  "sections": [
+    [
+      "HOOK",
+      0.0,
+      -19.4,
+      -21.5
+    ],
+    [
+      "MOMENTUM",
+      6.67,
+      -15.1,
+      -16.8
+    ],
+    [
+      "BUILD",
+      13.33,
+      -14.1,
+      -15.9
+    ],
+    [
+      "BREAKDOWN",
+      26.67,
+      -16.2,
+      -18.1
+    ],
+    [
+      "CLIMAX",
+      33.33,
+      -12.6,
+      -14.6
+    ],
+    [
+      "FINALE",
+      50.0,
+      -12.7,
+      -14.5
+    ],
+    [
+      "ENDING",
+      56.67,
+      -14.0,
+      -16.5
+    ]
+  ],
+  "spectrum_rel_db": [
+    [
+      "20-60",
+      -0.2
+    ],
+    [
+      "60-120",
+      0.0
+    ],
+    [
+      "120-250",
+      -4.5
+    ],
+    [
+      "250-500",
+      -5.8
+    ],
+    [
+      "500-1000",
+      -4.3
+    ],
+    [
+      "1000-2000",
+      -6.7
+    ],
+    [
+      "2000-4000",
+      -9.9
+    ],
+    [
+      "4000-8000",
+      -11.9
+    ],
+    [
+      "8000-16000",
+      -12.4
+    ]
+  ],
+  "stem_sum_vs_master_lufs": -18.0
+}

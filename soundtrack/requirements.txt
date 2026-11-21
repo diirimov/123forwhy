@@ -1,0 +1,9 @@
+# system: apt-get install fluidsynth fluid-soundfont-gm ffmpeg
+numpy
+scipy
+numba
+soundfile
+pedalboard
+pyloudnorm
+mido
+matplotlib   # analyze.py only
