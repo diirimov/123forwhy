@@ -1,0 +1,5 @@
+# copyrighted recording and anything containing it stay local
+audio/
+output/FINAL_JACKSON5_ANIMATION.mp4
+build/
+__pycache__/
