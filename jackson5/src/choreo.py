@@ -258,7 +258,191 @@ def pose_hold(B, P, kind='final'):
     P['mopen'] = 0.25
 
 
-MOVES = dict(groove=groove, step_touch=step_touch, point_hit=point_hit, spin=spin, arm_roll=arm_roll, shimmy=shimmy,
+def stumble(B, P, start=0.0):
+    """misses a step: foot slides out, arms flail, catches balance"""
+    u = B - start
+    k = clamp(u / 0.35)
+    rec = clamp((u - 0.45) / 0.6)
+    slip = math.sin(PI * k) * (1 - rec)
+    P['rfx'] = 0.08 + 0.2 * k * (1 - 0.6 * rec)
+    P['rfy'] = -0.05 * math.sin(PI * k)
+    P['lfx'] = -0.07
+    P['lean'] = -0.26 * slip + 0.04 * rec
+    P['dip'] = 0.11 * k * (1 - 0.5 * rec)
+    P['lsh'], P['lel'] = 0.4 + 1.6 * slip, 0.5 + 0.6 * slip
+    P['rsh'], P['rel'] = 0.4 + 1.2 * slip, 0.9
+    P['lhand'] = P['rhand'] = 'open'
+    P['brow'] = 0.9
+    P['fear'] = 0.6 * k
+    P['smile'] = 0.0
+    P['mopen'] = 0.35 * slip
+    P['mshape'] = 'o'
+    P['htilt'] = 0.12 * slip
+
+
+def freeze_fear(B, P, look=0.8):
+    """frozen, shoulders up, eyes on the doorway; a small tremble"""
+    tr = 0.004 * math.sin(B * 40)
+    P['lsh'], P['lel'] = 0.08, -0.35
+    P['rsh'], P['rel'] = 0.08, -0.35
+    P['lhand'] = P['rhand'] = 'relaxed'
+    P['lean'] = -0.035 + tr
+    P['dip'] = 0.006
+    P['lfx'], P['rfx'] = -0.06, 0.06
+    P['fear'] = 1.0
+    P['brow'] = 1.0
+    P['smile'] = -0.1
+    P['mopen'] = 0.12
+    P['mshape'] = 'o'
+    P['ex'] = look
+    P['ey'] = -0.15
+    P['hyaw'] = 0.25 * look
+    P['blink'] = 0.0
+
+
+def walk(B, P, start=0.0, dirn=1, speed=0.16):
+    u = B - start
+    ph = PI * u
+    P['x'] = dirn * speed * u
+    s = math.sin(ph)
+    P['lfx'] = -0.05 + 0.06 * s * dirn
+    P['rfx'] = 0.05 - 0.06 * s * dirn
+    P['lfy'] = -0.035 * max(0, math.cos(ph))
+    P['rfy'] = -0.035 * max(0, -math.cos(ph))
+    P['dip'] = 0.012 * abs(math.cos(ph))
+    P['lsh'], P['lel'] = 0.12 + 0.08 * s, 0.25 + 0.35 * max(0, s)
+    P['rsh'], P['rel'] = 0.12 - 0.08 * s, 0.25 + 0.35 * max(0, -s)
+    P['hyaw'] = 0.3 * dirn
+    P['tw'] = 0.3 * dirn
+    P['hip'] = 0.008 * s
+
+
+def tired(B, P, depth=1.0):
+    """exhausted: hands on knees, heavy breathing, sweat"""
+    br = 0.5 + 0.5 * math.sin(B * PI * 0.9)
+    P['dip'] = 0.07 * depth
+    P['lean'] = 0.0
+    P['hnod'] = 0.03 * depth + 0.006 * br
+    P['lsh'], P['lel'] = 0.32, -0.55
+    P['rsh'], P['rel'] = 0.32, -0.55
+    P['lfx'], P['rfx'] = -0.1, 0.1
+    P['lhand'] = P['rhand'] = 'open'
+    P['brow'] = 0.55
+    P['smile'] = 0.0
+    P['mopen'] = 0.35 + 0.3 * br
+    P['mshape'] = 'o'
+    P['blink'] = 0.35
+    P['sweat'] = 1.0
+    P['ey'] = 0.3
+
+
+def arms_folded(B, P, stern=1.0, look=0.0):
+    br = math.sin(B * PI * 0.5)
+    P['lsh'], P['lel'] = 0.32, -2.45
+    P['rsh'], P['rel'] = 0.32, -2.45
+    P['lhand'] = P['rhand'] = 'fist'
+    P['lfx'], P['rfx'] = -0.07, 0.07
+    P['dip'] = 0.003 * br
+    P['brow'] = -0.9 * stern
+    P['smile'] = -0.45 * stern
+    P['blink'] = 0.28 * stern
+    P['ex'] = look
+
+
+def joe_point(B, P, start=0.0, side=-1):
+    u = clamp((B - start) / 0.25)
+    hit = back_out(u, 2.0)
+    hs, he = ('lsh', 'lel') if side < 0 else ('rsh', 'rel')
+    os_, oe = ('rsh', 'rel') if side < 0 else ('lsh', 'lel')
+    P[hs], P[he] = 0.3 + 1.32 * hit, 0.05 + 0.6 * (1 - hit)
+    P[os_], P[oe] = 0.35, -1.9
+    P['lhand' if side < 0 else 'rhand'] = 'point'
+    P['rhand' if side < 0 else 'lhand'] = 'fist'
+    P['lean'] = 0.05 * side * hit
+    P['brow'] = -1.0
+    P['smile'] = -0.5
+    P['blink'] = 0.2
+    P['ex'] = 0.6 * side
+    P['hyaw'] = 0.25 * side
+
+
+def joe_clap(B, P, start=0.0):
+    u = B - start
+    c_ = math.exp(-(u / 0.12) ** 2) if u > -0.3 else 0.0
+    open_ = clamp(-u / 0.3) if u < 0 else 0.0
+    P['lsh'] = P['rsh'] = 0.5 + 0.3 * open_ - 0.25 * c_
+    P['lel'] = P['rel'] = -1.2 - 1.3 * c_ + 0.8 * open_
+    P['lhand'] = P['rhand'] = 'open'
+    P['brow'] = -1.0
+    P['smile'] = -0.5
+    P['mopen'] = 0.4 * c_
+    P['mshape'] = 'ah'
+    P['dip'] = 0.01 * c_
+
+
+def determined(B, P, start=0.0):
+    """wipes his brow, sets his jaw, fists ready"""
+    u = B - start
+    w = clamp(u / 0.6)
+    wipe = math.sin(PI * w)
+    P['rsh'], P['rel'] = 0.4 + 0.9 * wipe, -2.2 * wipe + 0.4 * (1 - wipe)
+    P['lsh'], P['lel'] = 0.5, -1.6 * clamp((u - 0.5) / 0.3)
+    P['lhand'] = 'fist'
+    P['rhand'] = 'open' if wipe > 0.2 else 'fist'
+    P['brow'] = -0.65
+    P['smile'] = 0.05
+    P['sweat'] = 0.7
+    P['ey'] = -0.1
+    P['lfx'], P['rfx'] = -0.09, 0.09
+    P['dip'] = 0.02
+
+
+def jump_cheer(B, P, amp=1.0):
+    f = B % 1
+    P['y'] = -0.09 * amp * math.sin(PI * f) ** 1.5
+    P['squash'] = 0.05 * math.cos(2 * PI * f) * amp
+    P['lsh'] = P['rsh'] = 2.4 + 0.2 * math.sin(PI * B)
+    P['lel'] = P['rel'] = 0.25
+    P['lhand'] = P['rhand'] = 'open'
+    P['smile'] = 1.0
+    P['mopen'] = 0.8
+    P['mshape'] = 'ah'
+    P['brow'] = 0.6
+    P['ey'] = -0.3
+    P['lfx'], P['rfx'] = -0.06, 0.06
+
+
+def stare(B, P, sad=1.0):
+    br = math.sin(B * PI * 0.4)
+    P['lsh'] = P['rsh'] = 0.1
+    P['lel'] = P['rel'] = 0.15
+    P['brow'] = 0.45 * sad
+    P['smile'] = -0.15 * sad
+    P['blink'] = 0.3 * sad
+    P['ey'] = 0.1
+    P['dip'] = 0.004 * br
+    P['hnod'] = 0.005
+
+
+def look_out(B, P):
+    """back to camera, one hand on the window glass"""
+    P['spin'] = 0.5
+    P['rsh'], P['rel'] = 1.2, 1.4
+    P['lsh'], P['lel'] = 0.15, 0.2
+    P['rhand'] = 'open'
+    P['dip'] = 0.004 * math.sin(B * PI * 0.5)
+
+
+def wave(B, P):
+    P['rsh'], P['rel'] = 2.3, 0.4 + 0.35 * math.sin(B * PI * 2)
+    P['rhand'] = 'open'
+    P['smile'] = 0.9
+
+
+MOVES = dict(stumble=stumble, freeze_fear=freeze_fear, walk=walk, tired=tired, arms_folded=arms_folded,
+             joe_point=joe_point, joe_clap=joe_clap, determined=determined, jump_cheer=jump_cheer, stare=stare,
+             look_out=look_out, wave=wave,
+             groove=groove, step_touch=step_touch, point_hit=point_hit, spin=spin, arm_roll=arm_roll, shimmy=shimmy,
              slide=slide, kick=kick, knee_drop=knee_drop, play=play, mic_sing=mic_sing, shy=shy, cheer=cheer,
              pose_hold=pose_hold)
 

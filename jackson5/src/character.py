@@ -38,6 +38,9 @@ class Design:
     seed: int = 1
     sig: str = '#7b3fa0'   # signature colour
     smile_bias: float = 0.0
+    hair: str = 'afro'     # 'afro' | 'short'
+    hair_cy: float = 0.30  # hair mass centre above head centre (head radii)
+    bump: float = 1.0      # afro lobe amplitude
 
 
 BROTHERS = {
@@ -55,6 +58,19 @@ BROTHERS = {
 }
 ORDER = ['jackie', 'tito', 'michael', 'jermaine', 'marlon']   # classic stage line-up, Michael centre
 
+# Joe Jackson + non-family supporting characters (never drawn with an afro, so they can't read as a sixth brother)
+ADULTS = {
+    'joe': Design('Joe', 1.66, 0.074, '#664230', (1.04, 1.0), face_w=0.9, jaw=1.0, eye=0.78, eye_sp=0.33, brow_w=1.5,
+                  nose_w=1.15, lip='#55302a', shoulders=0.27, leg=0.5, mustache=0.9, seed=66, sig='#4e3b2e',
+                  hair='short', hair_cy=0.12, bump=0.15),
+    'dj': Design('DJ', 1.55, 0.078, '#7a5034', (1.08, 1.04), face_w=0.9, jaw=0.7, eye=0.9, eye_sp=0.35, brow_w=1.1,
+                 shoulders=0.26, leg=0.49, mustache=0.5, seed=77, sig='#d0622a', hair='short', hair_cy=0.14, bump=0.2,
+                 smile_bias=0.4),
+    'kid1': Design('Kid', 1.0, 0.11, '#7a5034', (1.04, 1.0), seed=81, hair='short', hair_cy=0.12, bump=0.2),
+    'kid2': Design('Kid', 0.9, 0.115, '#8a5a3a', (1.04, 1.0), seed=82, hair='short', hair_cy=0.12, bump=0.2),
+}
+DESIGNS = dict(BROTHERS, **ADULTS)
+
 
 @dataclass
 class Outfit:
@@ -70,6 +86,8 @@ class Outfit:
     stripes: str = None
     sparkle: bool = False
     hat: str = None
+    tie: str = None
+    flare: bool = True
 
 
 def outfits(era):
@@ -86,17 +104,22 @@ def outfits(era):
             o[k] = Outfit(shirt=mix(s, '#3a2a40', 0.2), pants=mix('#2a2230', s, 0.2), turtleneck=True)
         elif era == 'tv':
             o[k] = Outfit(shirt=mix(s, '#ffffff', 0.15), pants=shade(s, -0.25), vest=mix(s, '#f2c14e', 0.55),
-                          fringe=True, collar='#fff4dc', hat=('#6b2fa0' if k == 'michael' else None))
+                          fringe=True, collar='#fff4dc')
         elif era == 'arena':
             o[k] = Outfit(shirt='#f4efe6', pants='#f4efe6', jumpsuit=True, belt='#d9a92b', collar='#f4efe6',
                           vest=None, sparkle=True, stripes=s)
     return o
 
 
+JOE_OUTFIT = Outfit(shirt='#4e3b2e', pants='#26221f', collar='#ece6d8', tie='#6a1c1c', hat='#2a2623', shoes='#141010',
+                    flare=False)
+DJ_OUTFIT = Outfit(shirt='#d0622a', pants='#2a2430', collar='#f4d06a', stripes='#a8481a')
+
+
 # ----------------------------------------------------------------------------- pose
 POSE_KEYS = ['x', 'dip', 'lean', 'hip', 'tw', 'htilt', 'hyaw', 'hnod', 'lsh', 'lel', 'rsh', 'rel',
              'lfx', 'lfy', 'rfx', 'rfy', 'smile', 'mopen', 'brow', 'ex', 'ey', 'blink', 'spin', 'squash',
-             'hair_dx', 'hair_dy', 'fringe', 'y', 'strum']
+             'hair_dx', 'hair_dy', 'fringe', 'y', 'strum', 'fear', 'sweat']
 
 
 def base_pose(**kw):
@@ -104,7 +127,7 @@ def base_pose(**kw):
              lsh=0.18, lel=0.25, rsh=0.18, rel=0.25,
              lfx=-0.075, lfy=0.0, rfx=0.075, rfy=0.0,
              smile=0.6, mopen=0.0, brow=0.0, ex=0.0, ey=0.0, blink=0.0, spin=0.0, squash=0.0,
-             hair_dx=0.0, hair_dy=0.0, fringe=0.0, strum=0.0,
+             hair_dx=0.0, hair_dy=0.0, fringe=0.0, strum=0.0, fear=0.0, sweat=0.0, headphones=False,
              lhand='relaxed', rhand='relaxed', mshape='smile', instrument=None, mic=False)
     p.update(kw)
     return p
@@ -154,7 +177,7 @@ def arm_angles_from_target(side, shoulder, target, L1, L2):
 class Character:
     def __init__(self, key):
         self.key = key
-        self.d = BROTHERS[key]
+        self.d = DESIGNS[key]
         rng = np.random.default_rng(self.d.seed)
         n = 26
         self.afro_bumps = rng.uniform(0.0, 1.0, n)
@@ -217,7 +240,7 @@ class Character:
             canvas.drawOval(skia.Rect.MakeXYWH(gx + P['x'] * h - 0.17 * h, gy + P['y'] * h - 0.022 * h, 0.34 * h, 0.044 * h),
                             paint((0.05, 0.02, 0.05, L.get('floor_shadow', 0.35)), blur=0.02 * h))
         canvas.save()
-        sx = max(abs(sp), 0.12) * (1 if sp >= 0 else -1)
+        sx = max(abs(sp), 0.42) * (1 if sp >= 0 else -1)
         cx = gx + P['x'] * h
         canvas.translate(cx, gy)
         canvas.scale(sx, 1 + P['squash'])
@@ -258,6 +281,14 @@ class Character:
             self._arm(canvas, S, 1, P, outfit, col, L, line, lw)
         if outfit.hat:
             self._hat(canvas, S, P, outfit, col, L, line, lw)
+        if P.get('headphones'):
+            hx, hy = S['head']
+            r = S['hr']
+            canvas.drawArc(skia.Rect.MakeXYWH(hx - r * 1.08, hy - r * 1.25, r * 2.16, r * 1.9), 180, 180, False,
+                           paint('#1a1a1e', style='stroke', width=r * 0.14))
+            for side in (-1, 1):
+                canvas.drawRoundRect(skia.Rect.MakeXYWH(hx + side * r * 1.0 - r * 0.2, hy - r * 0.2, r * 0.4, r * 0.55),
+                                     r * 0.15, r * 0.15, paint('#26262c'))
         if smear:
             canvas.restore()
         canvas.restore()
@@ -270,14 +301,14 @@ class Character:
         r = S['hr']
         rx, ry = d.afro[0] * r, d.afro[1] * r
         cx = hx + P['hair_dx'] * S['h'] - P['hyaw'] * 0.08 * r
-        cy = hy - 0.30 * r + P['hair_dy'] * S['h']
+        cy = hy - d.hair_cy * r + P['hair_dy'] * S['h']
         pts = []
         ph = self.afro_bumps
         lobes = 15
         for i in range(120):
             th = i / 120 * 2 * math.pi
-            bump = (1 + 0.028 * math.sin(2 * th + ph[0] * 6) + 0.02 * math.sin(3 * th + ph[1] * 6)
-                    + 0.03 * abs(math.sin(lobes * th / 2 + ph[2] * 3)) * (0.7 + 0.6 * ph[int(i / 120 * len(ph))]))
+            bump = (1 + d.bump * (0.028 * math.sin(2 * th + ph[0] * 6) + 0.02 * math.sin(3 * th + ph[1] * 6)
+                    + 0.03 * abs(math.sin(lobes * th / 2 + ph[2] * 3)) * (0.7 + 0.6 * ph[int(i / 120 * len(ph))])))
             pts.append((cx + math.cos(th) * rx * bump, cy + math.sin(th) * ry * bump * (1 + 0.04 * P['dip'])))
         path = smooth_path(pts, True, 0.5)
         path.transform(skia.Matrix.RotateDeg(math.degrees(S['ht'] * 0.8), skia.Point(hx, hy)))
@@ -320,7 +351,7 @@ class Character:
             # shoe first (pants flare covers it)
             shoe = ellipse_path(foot[0] + side * 0.012 * h, foot[1] - 0.016 * h, 0.05 * h, 0.022 * h, side * 0.12)
             cel(canvas, shoe, col(o.shoes), kd, -0.4, outline=line, ow=lw, hi=0.6)
-            leg = limb_outline([hip2, knee, ank], [0.084 * h, 0.064 * h, 0.1 * h])
+            leg = limb_outline([hip2, knee, ank], [0.084 * h, 0.064 * h, 0.1 * h if o.flare else 0.066 * h])
             cel(canvas, leg, pc, kd, -0.3, outline=line, ow=lw)
             if o.jumpsuit and o.stripes:
                 st = limb_outline([(hip2[0] + side * 0.035 * h, hip2[1]), (knee[0] + side * 0.03 * h, knee[1]),
@@ -404,7 +435,14 @@ class Character:
                 vx = tw
                 skin = col(self.d.skin)
                 vneck = poly_path([R(-0.032 * h + vx, -0.036 * h), R(0.032 * h + vx, -0.036 * h), R(vx, 0.045 * h)])
-                canvas.drawPath(vneck, paint(shade(skin, -0.25)))
+                if o.tie:
+                    vneck = poly_path([R(-0.05 * h + vx, -0.04 * h), R(0.05 * h + vx, -0.04 * h), R(vx, 0.12 * h)])
+                    canvas.drawPath(vneck, paint(col(o.collar)))
+                    tie = poly_path([R(vx - 0.012 * h, -0.03 * h), R(vx + 0.012 * h, -0.03 * h), R(vx + 0.02 * h, 0.1 * h),
+                                     R(vx, 0.125 * h), R(vx - 0.02 * h, 0.1 * h)])
+                    cel(canvas, tie, col(o.tie), kd, -0.3, outline=line, ow=lw * 0.7)
+                else:
+                    canvas.drawPath(vneck, paint(shade(skin, -0.25)))
                 for side in (-1, 1):
                     wing = smooth_path([R(side * 0.012 * h + vx, -0.045 * h), R(side * 0.085 * h + vx, -0.03 * h),
                                         R(side * 0.115 * h + vx, 0.055 * h), R(side * 0.02 * h + vx, 0.03 * h)], True, 0.2)
@@ -469,6 +507,14 @@ class Character:
                            paint(shade(skin, -0.55), style='stroke', width=lw * 0.9))
         canvas.drawCircle(cx + nw * 0.15, ny - r * 0.06, r * 0.04, paint(alpha(shade(skin, 0.45), 0.7), blur=r * 0.02))
         self._mouth(canvas, P, cx, hy, r, skin, col, lw)
+        if P.get('sweat', 0) > 0.05:
+            a_ = P['sweat']
+            for k, (sx_, sy_) in enumerate(((0.62, -0.42), (-0.7, -0.1), (0.75, 0.12))):
+                yy = hy + sy_ * r + ((t * 0.35 + k * 0.37) % 1.0) * r * 0.25
+                xx = cx + sx_ * r
+                drop = smooth_path([(xx, yy - r * 0.09), (xx + r * 0.045, yy), (xx, yy + r * 0.04), (xx - r * 0.045, yy)], True, 0.5)
+                canvas.drawPath(drop, paint((0.85, 0.93, 1.0, 0.75 * a_)))
+                canvas.drawCircle(xx - r * 0.012, yy - r * 0.01, r * 0.012, paint((1, 1, 1, 0.9 * a_)))
         if d.mustache > 0:
             mp = smooth_path([(cx - r * 0.26, hy + r * 0.64), (cx, hy + r * 0.56), (cx + r * 0.26, hy + r * 0.64),
                               (cx, hy + r * 0.62)], True, 0.4)
@@ -490,8 +536,9 @@ class Character:
     def _eyes(self, canvas, S, P, cx, hx, hy, r, col, line, lw):
         d = self.d
         ey = hy + r * 0.04
-        er = r * 0.2 * d.eye
-        blink = P['blink']
+        fear = P.get('fear', 0.0)
+        er = r * 0.2 * d.eye * (1 + 0.16 * fear)
+        blink = P['blink'] * (1 - fear)
         yaw = P['hyaw']
         for side in (-1, 1):
             ex = cx + side * r * d.eye_sp * (1 - 0.22 * yaw * side)
@@ -507,7 +554,7 @@ class Character:
             canvas.drawPath(alm, paint('#f3ebe2'))
             canvas.save()
             canvas.clipPath(alm, doAntiAlias=True)
-            ir = er * 0.62
+            ir = er * 0.62 * (1 - 0.28 * fear)
             ix = ex + P['ex'] * sx * 0.38
             iy = ey + P['ey'] * sy * 0.3 + sy * 0.05
             canvas.drawCircle(ix, iy, ir, shader_paint(rad_grad((ix, iy + ir * 0.3), ir, ['#7a4a28', '#4a2a16', '#2a160c'],
@@ -690,7 +737,7 @@ class Character:
         r = S['hr']
         canvas.save()
         canvas.rotate(math.degrees(S['ht'] * 0.8 - 0.12), hx, hy)
-        top = hy - r * 1.35
+        top = hy - r * (1.35 if self.d.hair == 'afro' else 0.95)
         brim = ellipse_path(hx, top + r * 0.35, r * 1.55, r * 0.22)
         crown = smooth_path([(hx - r * 0.95, top + r * 0.35), (hx - r * 0.85, top - r * 0.45), (hx, top - r * 0.62),
                              (hx + r * 0.85, top - r * 0.45), (hx + r * 0.95, top + r * 0.35)], False, 0.4)

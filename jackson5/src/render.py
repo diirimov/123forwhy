@@ -19,7 +19,8 @@ import skia
 sys.path.insert(0, str(Path(__file__).parent))
 import timing as T  # noqa: E402
 from gfx import W, H, post  # noqa: E402
-import timeline  # noqa: E402
+import importlib  # noqa: E402
+timeline = importlib.import_module(os.environ.get('TIMELINE', 'timeline'))
 
 ROOT = Path(__file__).resolve().parents[1]
 BUILD = ROOT / 'build'
@@ -70,7 +71,13 @@ def encode(f0, f1, name, workers=4, audio=True, silent_name=None):
         dur = n / T.FPS
         fade_st = max(0.0, T.DURATION - T.FADE - f0 / T.FPS)
         af = f'afade=t=in:st=0:d=0.02,afade=t=out:st={fade_st:.3f}:d={T.FADE:.3f}'
-        out = str(OUT / f'{name}.mp4') if name.startswith('FINAL') else str(BUILD / f'{name}.mp4')
+        dips = getattr(timeline, 'AUDIO_DIPS', [])
+        if dips:
+            off = f0 / T.FPS
+            terms = ['(1-{:.3f}*clip((t+{o:.4f}-{a:.3f})/0.12\\,0\\,1)*(1-clip((t+{o:.4f}-{b:.3f})/0.12\\,0\\,1)))'
+                     .format(1 - g, o=off, a=a_, b=b_) for a_, b_, g in dips]
+            af = f"volume='{'*'.join(terms)}':eval=frame," + af
+        out = str(OUT / ('JACKSON5_STORY_V2_FINAL.mp4' if name == 'FINAL_JACKSON5_STORY_V2' else f'{name}.mp4')) if name.startswith('FINAL') else str(BUILD / f'{name}.mp4')
         subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', silent, '-ss', f'{a0:.4f}', '-t', f'{dur:.4f}',
                         '-i', str(ROOT / 'audio' / 'source.mp3'), '-map', '0:v', '-map', '1:a', '-c:v', 'copy',
                         '-af', af, '-c:a', 'aac', '-b:a', '320k', '-ar', '48000', '-shortest', '-movflags', '+faststart', out],
@@ -112,7 +119,10 @@ if __name__ == '__main__':
         single(float(sys.argv[2]), BUILD / (sys.argv[3] if len(sys.argv) > 3 else 'frame.png'))
     elif mode == 'test':
         a, b = float(sys.argv[2]), float(sys.argv[3])
-        encode(int(a * T.FPS), int(b * T.FPS), 'test')
+        encode(int(a * T.FPS), int(b * T.FPS), sys.argv[4] if len(sys.argv) > 4 else 'test')
     elif mode == 'final':
         OUT.mkdir(exist_ok=True)
         encode(0, T.NFRAMES, 'FINAL_JACKSON5_ANIMATION', silent_name='FINAL_JACKSON5_SILENT.mp4')
+    elif mode == 'final_v2':
+        OUT.mkdir(exist_ok=True)
+        encode(0, T.NFRAMES, 'FINAL_JACKSON5_STORY_V2', silent_name='JACKSON5_STORY_V2_SILENT.mp4')
