@@ -5,9 +5,9 @@ import numpy as np
 import skia
 from gfx import (W, H, paint, shader_paint, lin_grad, rad_grad, alpha, mix, shade, glow, smooth_path, ellipse_path,
                  clamp, ease_io, noise1, hexc, poly_path)
-from character import Character, BROTHERS, ORDER
+from character import Character, BROTHERS, ORDER, DESIGNS
 
-CHARS = {k: Character(k) for k in BROTHERS}
+CHARS = {k: Character(k) for k in DESIGNS}
 
 
 @dataclass

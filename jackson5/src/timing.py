@@ -89,7 +89,10 @@ def envelopes():
     return _env
 
 
+ENV_OFFSET = 0.0      # V3 remapped shots: audio-reactive details follow the real edit time
+
+
 def env_at(name, t):
     e = envelopes()[name]
-    i = int(t * FPS)
+    i = int((t + ENV_OFFSET) * FPS)
     return float(e[min(max(i, 0), len(e) - 1)])

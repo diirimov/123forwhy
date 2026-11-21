@@ -439,7 +439,137 @@ def wave(B, P):
     P['smile'] = 0.9
 
 
-MOVES = dict(stumble=stumble, freeze_fear=freeze_fear, walk=walk, tired=tired, arms_folded=arms_folded,
+def moonwalk(B, P, start=0.0, dirn=-1, speed=0.12):
+    """backward glide: one foot flat sliding back, the other on its toe; swap every beat"""
+    u = B - start
+    P['x'] = dirn * speed * u
+    f = B % 1
+    a = 1 if int(math.floor(B)) % 2 == 0 else -1
+    slide = ease_io(f)
+    P['lfx'] = -0.05 + 0.07 * a * (slide - 0.5) * -dirn
+    P['rfx'] = 0.05 - 0.07 * a * (slide - 0.5) * -dirn
+    P['lfy'] = -0.022 * (1 if a > 0 else 0)
+    P['rfy'] = -0.022 * (1 if a < 0 else 0)
+    P['dip'] = 0.02 + 0.006 * math.sin(PI * f)
+    P['lean'] = 0.03 * dirn
+    P['rsh'], P['rel'] = 0.35, -1.0
+    P['lsh'], P['lel'] = 0.25, 0.4
+    P['rhand'], P['lhand'] = 'fist', 'relaxed'
+    P['brow'] = -0.3
+    P['smile'] = 0.2
+    P['hyaw'] = -0.25 * dirn
+    P['tw'] = -0.2 * dirn
+
+
+def toe_stand(B, P, start=0.0):
+    u = back_out(clamp((B - start) / 0.3), 1.8)
+    P['y'] = -0.035 * u
+    P['lfx'], P['rfx'] = -0.025, 0.025
+    P['lfy'] = P['rfy'] = 0.0
+    P['lsh'], P['lel'] = 0.7 * u, -0.4
+    P['rsh'], P['rel'] = 0.7 * u, -0.4
+    P['lhand'] = P['rhand'] = 'fist'
+    P['lean'] = -0.02
+    P['htilt'] = -0.1 * u
+    P['brow'] = -0.4
+    P['smile'] = 0.1
+    P['blink'] = 0.3
+
+
+def hat_pose(B, P, start=0.0):
+    u = back_out(clamp((B - start) / 0.3), 1.6)
+    P['rsh'], P['rel'] = 0.4 + 2.3 * u, -0.2 - 2.0 * u
+    P['rhand'] = 'open'
+    P['lsh'], P['lel'] = 0.4 + 0.5 * u, 0.1
+    P['lhand'] = 'point'
+    P['lfx'], P['rfx'] = -0.1, 0.04
+    P['lean'] = 0.06 * u
+    P['htilt'] = 0.12 * u
+    P['hnod'] = 0.01 * u
+    P['blink'] = 0.4
+    P['smile'] = 0.15
+
+
+def mic_speak(B, P, talk=0.0, look=0.0):
+    P['rsh'], P['rel'] = 0.16, -2.3
+    P['rhand'] = 'mic'
+    P['mic'] = 1
+    P['lsh'], P['lel'] = 0.22, 0.25
+    P['lhand'] = 'relaxed'
+    P['lfx'], P['rfx'] = -0.06, 0.06
+    P['ex'] = look
+    P['hyaw'] = 0.35 * look
+    P['brow'] = 0.25
+    P['smile'] = 0.15
+    P['dip'] = 0.003 * math.sin(B * PI * 0.5)
+
+
+def lower_mic(B, P, start=0.0, look=-0.7):
+    u = ease_io(clamp((B - start) / 1.2))
+    P['rsh'], P['rel'] = 0.12 + 0.05 * u, -2.55 * (1 - u) + 0.2 * u
+    P['rhand'] = 'mic'
+    P['mic'] = 1
+    P['lsh'], P['lel'] = 0.2, 0.25
+    P['ex'] = look
+    P['hyaw'] = 0.4 * look
+    P['brow'] = 0.4
+    P['smile'] = 0.25
+    P['blink'] = 0.2
+
+
+def walk_away(B, P, start=0.0, speed=0.0):
+    walk(B, P, start=start, dirn=1, speed=speed)
+    P['spin'] = 0.5
+    P['hyaw'] = 0.0
+    P['tw'] = 0.0
+
+
+def look_down(B, P):
+    P['hnod'] = 0.028
+    P['ey'] = 0.85
+    P['brow'] = 0.5
+    P['smile'] = -0.1
+    P['blink'] = 0.35
+    P['lsh'] = P['rsh'] = 0.12
+    P['lel'] = P['rel'] = 0.2
+
+
+def nod_slow(B, P, look=0.0):
+    P['hnod'] = 0.012 * (0.5 - 0.5 * math.cos(B * PI))
+    P['smile'] = 0.35
+    P['brow'] = 0.35
+    P['ex'] = look
+    P['hyaw'] = 0.3 * look
+    P['lsh'] = P['rsh'] = 0.14
+    P['lel'] = P['rel'] = 0.25
+
+
+def hand_chest(B, P, look=0.0):
+    P['rsh'], P['rel'] = 0.38, -2.25
+    P['rhand'] = 'open'
+    P['lsh'], P['lel'] = 0.14, 0.2
+    P['ex'] = look
+    P['hyaw'] = 0.3 * look
+    P['brow'] = 0.6
+    P['smile'] = 0.2
+    P['blink'] = 0.15
+
+
+def beckon(B, P, side=-1):
+    hs, he = ('lsh', 'lel') if side < 0 else ('rsh', 'rel')
+    P[hs], P[he] = 1.05 + 0.12 * math.sin(B * PI * 2), -0.85 - 0.75 * abs(math.sin(B * PI * 2))
+    P['lhand' if side < 0 else 'rhand'] = 'open'
+    os_, oe = ('rsh', 'rel') if side < 0 else ('lsh', 'lel')
+    P[os_], P[oe] = 0.15, 0.2
+    P['brow'] = -0.9
+    P['smile'] = -0.45
+    P['blink'] = 0.2
+    P['ex'] = 0.6 * side
+
+
+MOVES = dict(moonwalk=moonwalk, toe_stand=toe_stand, hat_pose=hat_pose, mic_speak=mic_speak, lower_mic=lower_mic,
+             walk_away=walk_away, look_down=look_down, nod_slow=nod_slow, hand_chest=hand_chest, beckon=beckon,
+             stumble=stumble, freeze_fear=freeze_fear, walk=walk, tired=tired, arms_folded=arms_folded,
              joe_point=joe_point, joe_clap=joe_clap, determined=determined, jump_cheer=jump_cheer, stare=stare,
              look_out=look_out, wave=wave,
              groove=groove, step_touch=step_touch, point_hit=point_hit, spin=spin, arm_roll=arm_roll, shimmy=shimmy,

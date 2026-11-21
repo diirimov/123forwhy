@@ -18,11 +18,12 @@ KIDS = [Character('kid1'), Character('kid2')]
 
 # ----------------------------------------------------------------------------- captions
 IVORY = (0.98, 0.95, 0.88)
+CAPTIONS_OFF = False      # set by V3 when it reuses a V2 shot
 
 
 def caption(c, t, t0, t1, lines, y=330, size=80, gap=1.18):
     """premium documentary title: tracked ivory caps, soft shadow, eased fade + rise, max 2 lines, auto-fit width."""
-    if not (t0 - 0.01 <= t <= t1 + 0.01):
+    if CAPTIONS_OFF or not (t0 - 0.01 <= t <= t1 + 0.01):
         return
     a_in = smoothstep(t0, t0 + 0.42, t)
     a_out = 1 - smoothstep(t1 - 0.38, t1, t)

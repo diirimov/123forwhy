@@ -212,6 +212,7 @@ def font(name, size):
         'spartan_b': '/usr/share/fonts/opentype/league-spartan/LeagueSpartan-Bold.otf',
         'garamond_i': '/usr/share/fonts/opentype/ebgaramond/EBGaramond12-Italic.otf',
         'garamond': '/usr/share/fonts/opentype/ebgaramond/EBGaramond12-Regular.otf',
+        'garamond_b': '/usr/share/fonts/opentype/ebgaramond/EBGaramond12-Bold.otf',
         'bebas': '/usr/share/fonts/opentype/bebas-neue/BebasNeue-Bold.otf',
     }
     if name not in _FONTS:
