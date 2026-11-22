@@ -13,7 +13,7 @@ for name, t0 in (('bi_act1', 0.0), ('bi_act2', T.db(10)), ('bi_act3', T.db(17)),
         pass
 
 FADE_OUT = (59.32, 60.0)       # picture fade after the last downbeat (DB34 = 59.321)
-AUDIO_GAIN_DB = -3.0           # source peaks at +2.2 dBTP; trim level only (no EQ/tempo/pitch change) so AAC can't clip
+AUDIO_GAIN_DB = -3.5           # source peaks at +2.2 dBTP; trim level only (no EQ/tempo/pitch change) so AAC can't clip
 AUDIO_FADE = (59.0, 1.0)       # gentle tail fade so the edit ends on the last accent instead of a hard cut
 
 

@@ -347,6 +347,12 @@ def tv_set(c, x, y, w, h_, draw_screen, t, wood=True):
         c.drawCircle(x + w * 0.87, y + h_ * (0.25 + 0.2 * k), w * 0.035, paint('#a89880'))
 
 
+def screen_sched(t):
+    if (T.beat_at(t) // 2) % 2:
+        return [(0, 'point_hit', dict(start=math.floor(T.beat_at(t) - T.PHASE)))]
+    return [(0, 'step_touch', {})]
+
+
 def beatit_screen(c, scr, t, seed=0):
     """what the TVs show: the music-video dance - red jacket in a dark warehouse, crew silhouettes behind"""
     c.drawRect(scr, shader_paint(lin_grad((0, scr.top()), (0, scr.bottom()), ['#2a1a2a', '#140a14'])))
@@ -354,10 +360,10 @@ def beatit_screen(c, scr, t, seed=0):
     hh = scr.height() * 0.62
     gy = scr.bottom() - scr.height() * 0.08
     for i, dx in enumerate((-0.32, 0.32)):
-        P = pose(f'x{i + 4}', [(0, 'point_hit' if (T.beat_at(t) // 2) % 2 else 'step_touch', dict(start=math.floor(T.beat_at(t) - T.PHASE)))], t)
+        P = pose(f'x{i + 4}', screen_sched(t), t)
         silhouette(c, lambda: draw(c, f'x{i + 4}', scr.centerX() + dx * scr.width(), gy - 6, hh * 0.85, P, K.O_DANCERS[0], K.L_DARK, t, False),
                    color=(0.05, 0.03, 0.06, 1))
-    P = pose(K.MJ, [(0, 'point_hit' if (T.beat_at(t) // 2) % 2 else 'step_touch', dict(start=math.floor(T.beat_at(t) - T.PHASE)))], t + seed * 0.0)
+    P = pose(K.MJ, screen_sched(t), t)
     draw(c, K.MJ, scr.centerX(), gy, hh, P, K.O_BEATIT, K.L_DARK, t, shadow=False)
 
 
