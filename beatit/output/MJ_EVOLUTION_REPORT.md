@@ -19,7 +19,18 @@ Rebuild:
 
 ## Achieved specification (measured with ffprobe / ffmpeg)
 
-__SPECS__
+| Check | Result |
+|---|---|
+| Duration | **60.000 s** (video and audio streams both 60.000 s) |
+| Frames / rate | 3600 frames, **60 fps** native (every frame rendered, no interpolation) |
+| Resolution | **1080 x 1920**, 9:16, no bars, no watermark |
+| Video | H.264 High, yuv420p, CRF 14 |
+| Audio | AAC-LC 320 kb/s, 48 kHz stereo, complete track, A/V start 0.000 / 0.000 |
+| Loudness / true peak | -11.6 LUFS / -1.2 dBTP (no clipping) |
+| Black frames (>= 0.1 s) | none (the closing fade ends at 60.000) |
+| Frozen picture (> 0.6 s) | none |
+| Audio dropouts (< -50 dB for > 0.4 s) | none |
+| Render errors | none |
 
 ## Music drives the cuts (measured, then used)
 
