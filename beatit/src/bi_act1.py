@@ -20,7 +20,7 @@ L_STUDIO_DARK = dict(key=(0.05, -1.0), amb='#4a5a8a', amb_a=0.32, rim='#ffcf8a',
 
 
 # ----------------------------------------------------------------------------- the Jackson 5 stage (also the photograph)
-def j5_world(c, t, freeze=None):
+def j5_world(c, t, freeze=None, cast=True):
     """1970 TV-show stage in world coords (stage floor at y=0). freeze: draw everyone at that time (a photograph)."""
     tt = t if freeze is None else freeze
     beat = T.beat_at(tt)
@@ -37,7 +37,7 @@ def j5_world(c, t, freeze=None):
                         (DB(1) - 2.2 * BEAT, 'groove', dict(amp=0.8))] if k != 'michael' else
                        [(0, 'step_touch', dict(width=0.04)), (DB(0) + 2 * BEAT - 0.05, 'point_hit', dict(start='auto', side=-1)),
                         (DB(1) - 2.2 * BEAT, 'groove', dict(amp=0.6, arms=False))])
-    for k, x in zip(J5, J5_X):
+    for k, x in zip(J5 if cast else [], J5_X):
         P = pose(k, sched(k), tt, ripple=0.03 * abs(x) / 210, sing=1.0 if k == 'michael' else 0.3)
         if k == 'michael':
             P['ex'] *= 0.2

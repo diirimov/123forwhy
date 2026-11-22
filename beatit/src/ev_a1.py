@@ -101,12 +101,15 @@ def j5_spin(c, t):
     t_spin = DB(4) + 0.5 * BEAT              # anticipation on the vocal entry, the spin rides through the break
     from character import MICHAEL_OUTFITS
     stages = [('michael', E.O_KID_TV['michael'], 560), ('michael72', MICHAEL_OUTFITS['michael72'], 560), ('michael79', E.O_OTW, 560)]
-    s, (key, out, hh) = spin_morph(t, t_spin, OTW - t_spin - 0.05, [stages[0], stages[0], stages[1], stages[1], stages[2]], turns=2.5)
+    seq = [stages[0], stages[0], stages[1], stages[1], stages[2]]
+    us = clamp((t - t_spin) / (OTW - t_spin - 0.05))
+    s = 2.5 * (0.85 * us + 0.15 * ease_io(us))          # near-constant spin speed: back views flash past, never linger
+    key, out, hh = seq[min(len(seq) - 1, int(math.floor(s * 2 + 0.5)))]
     disco = smoothstep(t_spin + 0.3, OTW - 0.1, t)
     cam = Cam(0, -520 - 60 * disco, 1.75 - 0.45 * ease_io(u), 0)
     c.drawRect(skia.Rect.MakeWH(W, H), paint('#1a0a1a'))
     with Layer(c, cam, 1.0, t):
-        j5_world(c, t)
+        j5_world(c, t, cast=False)
         if disco > 0:
             c.save()
             lp = skia.Paint()
@@ -119,8 +122,13 @@ def j5_spin(c, t):
             if k == 'michael':
                 continue
             a = 1 - disco
+            clear = ease_io(smoothstep(t_spin - 0.6, t_spin, t))    # brothers step out of his way before the spin
+            x = x + (560 if x > 0 else -560) * clear
             if a > 0.02:
                 P = pose(k, [(0, 'groove', dict(amp=0.8))], t)
+                P.update(lsh=P['lsh'] * (1 - clear) + 0.2 * clear, lel=P['lel'] * (1 - clear) + 0.3 * clear,
+                         rsh=P['rsh'] * (1 - clear) + 0.2 * clear, rel=P['rel'] * (1 - clear) + 0.3 * clear,
+                         ex=-0.6 if x > 0 else 0.6, smile=0.8)
                 c.save()
                 lp = skia.Paint()
                 lp.setAlphaf(a)
@@ -133,8 +141,17 @@ def j5_spin(c, t):
         else:
             P = pose(key, [(0, 'spin', dict(start=B_of(t_spin), length=1.0))], t)
             P['spin'] = s
-            P.update(lsh=0.3 + 0.9 * min(1, s), lel=-1.4 + 1.3 * min(1, s), rsh=0.3 + 0.9 * min(1, s), rel=-1.4 + 1.3 * min(1, s))
+            k_ = ease_out(clamp((t - t_spin) / 0.15), 2)          # arms open out and stay out for the whole spin
+            P.update(lsh=0.3 + 0.95 * k_, lel=-0.6 + 0.75 * k_, rsh=0.3 + 0.95 * k_, rel=-0.6 + 0.75 * k_,
+                     lhand='open', rhand='open', smile=0.9)
+        blur = 0.0 if t < t_spin else 16.0 * math.sin(math.pi * clamp((t - t_spin) / (OTW - t_spin)))
+        if blur > 0.5:
+            lp = skia.Paint()
+            lp.setImageFilter(skia.ImageFilters.Blur(blur, 1.0))
+            c.saveLayer(None, lp)
         draw(c, key, 0, 0, hh * E.DESIGNS[key].height, P, out, E.L_TV, t)
+        if blur > 0.5:
+            c.restore()
     if t > t_spin:                             # spiral of light around the spinning figure, hiding the change of age
         a = math.sin(math.pi * clamp((t - t_spin) / (OTW - t_spin)))
         for j in range(24):

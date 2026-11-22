@@ -490,7 +490,16 @@ class Character:
             cel(canvas, vest, col(o.vest), kd, -0.35, outline=line, ow=lw * 0.9, hi=0.3)
         elif o.vest and back:
             canvas.drawRect(skia.Rect.MakeLTRB(ch[0] - shw * 1.3, ch[1] - 0.05 * h, ch[0] + shw * 1.3, ch[1] + 0.32 * h),
-                            paint(col(o.vest)))
+                            paint(col(shade(o.vest, -0.22))))
+        if back:      # garment detail on the back: shoulder yoke, centre seam, side shading (never reads as bare skin)
+            yc = col(shade(o.collar or o.shirt, -0.1))
+            yoke = smooth_path([R(-shw * 1.1, -0.03 * h), R(shw * 1.1, -0.03 * h), R(shw * 0.9, 0.05 * h), R(0, 0.075 * h),
+                                R(-shw * 0.9, 0.05 * h)], True, 0.3)
+            canvas.drawPath(yoke, paint(yc))
+            canvas.drawPath(yoke, paint(line, style='stroke', width=lw * 0.7))
+            canvas.drawLine(*R(0, 0.075 * h), *R(0, 0.28 * h), paint(alpha(line, 0.6), style='stroke', width=lw * 0.8))
+            for sd in (-1, 1):
+                canvas.drawLine(*R(sd * shw * 0.55, 0.1 * h), *R(sd * waist * 0.6, 0.27 * h), paint(alpha(line, 0.3), style='stroke', width=lw * 0.6))
         if not back and not o.turtleneck:
             for k in range(4):
                 bx, by = R(tw * 0.9, 0.04 * h + k * 0.055 * h)
