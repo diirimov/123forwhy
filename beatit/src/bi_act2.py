@@ -367,7 +367,7 @@ def listen(c, t):
     wow = smoothstep(E_LISTEN + 0.55, E_LISTEN + 0.85, t)
     P = pose(K.MJ, [(0, 'nod_slow', dict(look=-0.2))], t)
     P.update(blink=0.85 * (1 - wow), smile=0.35 + 0.65 * wow, mshape='grin' if wow > 0.5 else 'smile', mopen=0.45 * wow,
-             brow=0.2 + 0.6 * wow, ey=-0.1, lsh=0.2 + 1.0 * wow, lel=0.2 + 2.55 * wow, lhand='open', rsh=0.25, rel=-0.6)
+             brow=0.2 + 0.6 * wow, ey=-0.1, lsh=0.2 + 1.15 * wow, lel=0.2 + 2.05 * wow, lhand='open', rsh=0.25, rel=-0.6)
     if T.env_at('rms', t) > 0.5 and wow < 0.2:
         P['hnod'] += 0.008
     h = 2100
