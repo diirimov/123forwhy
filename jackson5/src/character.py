@@ -42,6 +42,8 @@ class Design:
     hair_cy: float = 0.30  # hair mass centre above head centre (head radii)
     bump: float = 1.0      # afro lobe amplitude
     hair_col: str = '#1d1410'
+    glasses: str = None    # frame colour (Beat It episode: Quincy Jones)
+    beard: float = 0.0
 
 
 BROTHERS = {
@@ -120,6 +122,8 @@ class Outfit:
     socks: str = None
     military: str = None     # gold/silver frogging + epaulettes colour
     bowtie: str = None
+    zips: bool = False       # zippered leather jacket (Beat It, 1983)
+    under: str = None        # undershirt colour showing in an open jacket front
 
 
 def outfits(era):
@@ -364,6 +368,18 @@ class Character:
             bump = (1 + d.bump * (0.028 * math.sin(2 * th + ph[0] * 6) + 0.02 * math.sin(3 * th + ph[1] * 6)
                     + 0.03 * abs(math.sin(lobes * th / 2 + ph[2] * 3)) * (0.7 + 0.6 * ph[int(i / 120 * len(ph))])))
             pts.append((cx + math.cos(th) * rx * bump, cy + math.sin(th) * ry * bump * (1 + 0.04 * P['dip'])))
+        if d.hair == 'shag':     # feathered shoulder-length rock hair
+            pts = []
+            for i in range(90):
+                th = i / 90 * 2 * math.pi
+                c_, s_ = math.cos(th), math.sin(th)
+                if s_ < 0:           # crown
+                    x_, y_ = c_ * rx, cy + s_ * ry
+                else:                # long sides falling past the jaw, ragged ends
+                    wob = 0.08 * math.sin(i * 2.7 + ph[i % len(ph)] * 5) * r
+                    x_ = c_ * (rx * (1.08 + 0.2 * s_)) + wob
+                    y_ = cy + s_ * ry * (2.9 - 0.35 * abs(c_)) + abs(wob) * 1.5
+                pts.append((cx + x_, y_))
         path = smooth_path(pts, True, 0.5)
         path.transform(skia.Matrix.RotateDeg(math.degrees(S['ht'] * 0.8), skia.Point(hx, hy)))
         kx, ky = L['key']
@@ -382,7 +398,15 @@ class Character:
                                paint((0.9, 0.85, 0.8, 0.28), style='stroke', width=max(1.0, r * 0.05)))
             canvas.drawArc(skia.Rect.MakeXYWH(cx - rx * 0.7, cy - ry * 0.85, rx * 1.1, ry * 0.9), 200, 70, False,
                            paint((1, 0.95, 0.9, 0.35), style='stroke', width=r * 0.09, blur=r * 0.03))
-        for (th, rr, rot, sz) in self.curls:
+        if d.hair == 'shag':
+            sp_ = paint(alpha(col(shade(d.hair_col, 0.35)), 0.45), style='stroke', width=max(1.0, r * 0.035))
+            for k in range(22):
+                x0_ = cx + (-1 + 2 * k / 21) * rx * 0.95
+                cp_ = skia.Path()
+                cp_.moveTo(cx + (x0_ - cx) * 0.3, cy - ry * 0.9)
+                cp_.quadTo(x0_ * 1.0 + (x0_ - cx) * 0.1, cy, x0_ + (x0_ - cx) * 0.15, cy + ry * 2.2)
+                canvas.drawPath(cp_, sp_)
+        for (th, rr, rot, sz) in (self.curls if d.hair != 'shag' else []):
             x = cx + math.cos(th) * rx * rr
             y = cy + math.sin(th) * ry * rr
             s = r * 0.07 * sz
@@ -483,6 +507,23 @@ class Character:
                 px, py = R(rng.uniform(-shw, shw), rng.uniform(-0.02, 0.27) * h)
                 tw_ = 0.5 + 0.5 * math.sin(t * 7 + k * 1.7)
                 canvas.drawCircle(px, py, 0.0045 * h * (0.5 + tw_), paint((1, 0.95, 0.75, 0.5 + 0.5 * tw_)))
+        if o.zips and not back:
+            zc = (0.86, 0.86, 0.9, 0.95)
+            front = poly_path([R(tw - 0.03 * h, -0.04 * h), R(tw + 0.03 * h, -0.04 * h), R(tw + 0.05 * h, 0.3 * h), R(tw - 0.05 * h, 0.3 * h)])
+            canvas.drawPath(front, paint(col(o.under or '#141218')))
+            for sd in (-1, 1):
+                a, b = R(tw + sd * 0.03 * h, -0.04 * h), R(tw + sd * 0.05 * h, 0.3 * h)
+                canvas.drawLine(*a, *b, paint(zc, style='stroke', width=0.006 * h))
+            for k in range(5):          # quilted horizontal ribs across the chest
+                y = 0.0 + k * 0.022 * h
+                for sd in (-1, 1):
+                    a, b = R(tw + sd * 0.06 * h, y), R(sd * shw * 1.1, y - 0.01 * h)
+                    canvas.drawLine(*a, *b, paint(alpha(shade(sc, -0.4), 0.7), style='stroke', width=0.004 * h))
+            for sd in (-1, 1):          # diagonal pocket zips
+                for k in range(2):
+                    a, b = R(sd * 0.07 * h, 0.13 * h + k * 0.07 * h), R(sd * 0.13 * h, 0.1 * h + k * 0.07 * h)
+                    canvas.drawLine(*a, *b, paint(zc, style='stroke', width=0.005 * h))
+                    canvas.drawCircle(*b, 0.006 * h, paint(zc))
         if o.military and not back:
             gc = col(o.military)
             for k in range(5):
@@ -531,7 +572,7 @@ class Character:
                                      R(vx, 0.125 * h), R(vx - 0.02 * h, 0.1 * h)])
                     cel(canvas, tie, col(o.tie), kd, -0.3, outline=line, ow=lw * 0.7)
                 else:
-                    canvas.drawPath(vneck, paint(shade(skin, -0.25)))
+                    canvas.drawPath(vneck, paint(col(o.under) if o.under else shade(skin, -0.25)))
                 for side in (-1, 1):
                     wing = smooth_path([R(side * 0.012 * h + vx, -0.045 * h), R(side * 0.085 * h + vx, -0.03 * h),
                                         R(side * 0.115 * h + vx, 0.055 * h), R(side * 0.02 * h + vx, 0.03 * h)], True, 0.2)
@@ -604,6 +645,22 @@ class Character:
                 drop = smooth_path([(xx, yy - r * 0.09), (xx + r * 0.045, yy), (xx, yy + r * 0.04), (xx - r * 0.045, yy)], True, 0.5)
                 canvas.drawPath(drop, paint((0.85, 0.93, 1.0, 0.75 * a_)))
                 canvas.drawCircle(xx - r * 0.012, yy - r * 0.01, r * 0.012, paint((1, 1, 1, 0.9 * a_)))
+        if d.beard > 0:
+            bp_ = smooth_path([(cx - r * 0.62, hy + r * 0.45), (cx - r * 0.45, hy + r * 0.95), (cx, hy + r * 1.1),
+                               (cx + r * 0.45, hy + r * 0.95), (cx + r * 0.62, hy + r * 0.45), (cx + r * 0.35, hy + r * 0.8),
+                               (cx, hy + r * 0.86), (cx - r * 0.35, hy + r * 0.8)], True, 0.4)
+            canvas.drawPath(bp_, paint(alpha(col(d.hair_col), 0.7 * d.beard)))
+        if d.glasses:
+            gyy = hy + r * 0.05
+            for side in (-1, 1):
+                gxx = cx + side * r * d.eye_sp * (1 - 0.22 * yaw * side)
+                gw, gh = r * 0.27 * (1 - 0.2 * max(0, yaw * side)), r * 0.24
+                rr_ = skia.Rect.MakeLTRB(gxx - gw, gyy - gh, gxx + gw, gyy + gh * 1.05)
+                canvas.drawRoundRect(rr_, gh * 0.55, gh * 0.55, paint((0.75, 0.6, 0.45, 0.16)))
+                canvas.drawRoundRect(rr_, gh * 0.55, gh * 0.55, paint(col(d.glasses), style='stroke', width=lw * 1.4))
+                canvas.drawLine(gxx - gw * 0.5, gyy - gh * 0.6, gxx - gw * 0.1, gyy - gh * 0.75, paint((1, 1, 1, 0.5), style='stroke', width=lw))
+            bx0 = cx - r * d.eye_sp + r * 0.27
+            canvas.drawLine(bx0, gyy - r * 0.05, cx + r * d.eye_sp - r * 0.27, gyy - r * 0.05, paint(col(d.glasses), style='stroke', width=lw * 1.2))
         if d.mustache > 0:
             mp = smooth_path([(cx - r * 0.26, hy + r * 0.64), (cx, hy + r * 0.56), (cx + r * 0.26, hy + r * 0.64),
                               (cx, hy + r * 0.62)], True, 0.4)
@@ -721,6 +778,13 @@ class Character:
         cel(canvas, sleeve, sc, kd, -0.33, outline=line, ow=lw)
         if o.jumpsuit and o.stripes:
             canvas.drawPath(limb_outline([sh, el, wr], [0.012 * h] * 3, False, False), paint(col(o.stripes)))
+        if o.zips:
+            for k in range(3):
+                u_ = 0.2 + k * 0.12
+                px_, py_ = sh[0] + (el[0] - sh[0]) * u_, sh[1] + (el[1] - sh[1]) * u_
+                canvas.drawLine(px_ - 0.03 * h, py_, px_ + 0.03 * h, py_ + 0.004 * h, paint(alpha(shade(col(o.shirt), -0.45), 0.8), style='stroke', width=0.004 * h))
+            canvas.drawLine(el[0], el[1], el[0] + (wr[0] - el[0]) * 0.7, el[1] + (wr[1] - el[1]) * 0.7,
+                            paint((0.86, 0.86, 0.9, 0.9), style='stroke', width=0.005 * h))
         # cuff
         dx, dy = wr[0] - el[0], wr[1] - el[1]
         Ln = math.hypot(dx, dy) + 1e-9
@@ -786,7 +850,7 @@ class Character:
         cx = ch[0] + (-0.04 * h) * ca - (0.215 * h) * sa
         cy = ch[1] + (-0.04 * h) * sa + (0.215 * h) * ca
         ang = -24 + math.degrees(lean) * 0.8
-        neck_len = 0.31 * h if P['instrument'] == 'guitar' else 0.40 * h
+        neck_len = {'guitar': 0.31 * h, 'strat': 0.30 * h}.get(P['instrument'], 0.40 * h)
         rad = math.radians(ang)
         ux, uy = math.cos(rad), math.sin(rad)
         S['inst'] = (cx, cy, ang, neck_len)
@@ -805,7 +869,25 @@ class Character:
         canvas.save()
         canvas.translate(cx, cy)
         canvas.rotate(ang)
-        if kind == 'guitar':
+        if kind == 'strat':        # red double-cutaway, white/black tape stripes (early-80s rock)
+            body = smooth_path([(0.06 * h, -0.07 * h), (0.0, -0.06 * h), (-0.05 * h, -0.085 * h), (-0.11 * h, -0.07 * h),
+                                (-0.12 * h, 0.0), (-0.13 * h, 0.07 * h), (-0.07 * h, 0.1 * h), (0.0, 0.07 * h), (0.07 * h, 0.075 * h),
+                                (0.03 * h, 0.03 * h), (0.03 * h, -0.03 * h)], True, 0.45)
+            canvas.drawPath(body, shader_paint(rad_grad((-0.05 * h, -0.01 * h), 0.14 * h, [col('#ff3a2a'), col('#c4141a'), col('#5a0608')], [0, 0.6, 1])))
+            canvas.save()
+            canvas.clipPath(body, doAntiAlias=True)
+            for k, (o_, a_, cc) in enumerate(((-0.1, 35, '#f4f0ea'), (-0.06, -30, '#141214'), (-0.02, 55, '#f4f0ea'),
+                                              (0.02, -50, '#141214'), (-0.08, 80, '#f4f0ea'), (0.03, 15, '#f4f0ea'))):
+                canvas.save()
+                canvas.translate(o_ * h, 0.0)
+                canvas.rotate(a_)
+                canvas.drawRect(skia.Rect.MakeXYWH(-0.3 * h, -0.006 * h, 0.6 * h, 0.012 * h), paint(col(cc)))
+                canvas.restore()
+            canvas.restore()
+            canvas.drawPath(body, paint(line, style='stroke', width=lw))
+            canvas.drawRect(skia.Rect.MakeXYWH(-0.075 * h, -0.025 * h, 0.014 * h, 0.05 * h), paint('#e8e4dc'))
+            canvas.drawCircle(-0.1 * h, 0.05 * h, 0.009 * h, paint('#e8e4dc'))
+        elif kind == 'guitar':
             body = smooth_path([(0.02 * h, -0.075 * h), (-0.06 * h, -0.095 * h), (-0.11 * h, -0.07 * h), (-0.105 * h, 0.0),
                                 (-0.13 * h, 0.075 * h), (-0.06 * h, 0.115 * h), (0.03 * h, 0.09 * h), (0.05 * h, 0.0)],
                                True, 0.5)

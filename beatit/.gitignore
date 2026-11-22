@@ -1,0 +1,6 @@
+# the supplied song and every render that contains it stay local (copyright)
+audio/
+build/
+__pycache__/
+output/MICHAEL_BEAT_IT_STORY_FINAL.mp4
+output/MICHAEL_BEAT_IT_PREVIEW.mp4
