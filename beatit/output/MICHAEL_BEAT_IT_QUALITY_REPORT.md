@@ -51,9 +51,9 @@ Rebuild: put the edit at `beatit/audio/source.m4a` (and `ffmpeg -i source.m4a so
 | Codec | H.264 High, yuv420p, CRF 14; AAC-LC 320 kb/s, 48 kHz stereo |
 | A/V start | 0.000 / 0.000 |
 | Black frames | Only the intended fade to black in the last 0.13 s |
-| Frozen picture over 0.6 s | __FREEZE__ |
+| Frozen picture over 0.6 s | None |
 | Audio dropouts (below -50 dB for over 0.4 s) | None |
-| Loudness / true peak | __LOUD__ |
+| Loudness / true peak | -11.6 LUFS integrated / -1.2 dBTP true peak (no clipping) |
 | Watermark | None |
 
 **Audio handling.** The song is unchanged in speed, pitch, EQ and arrangement. Two level changes were made:
