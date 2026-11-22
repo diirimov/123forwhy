@@ -74,7 +74,7 @@ def gary_room(c, t):
 def j5_tv(c, t):
     """on the beat the bare room becomes a TV studio: lights, cameras, an audience on its feet"""
     u = u_of(t, J5_TV, J5_SPIN)
-    cam = Cam(0, -380 + 60 * ease_io(u), 0.95 + 0.12 * ease_io(u), 0)
+    cam = Cam(-260 + 260 * ease_io(u), -330 - 100 * ease_io(u), 0.85 + 0.5 * ease_io(u), -2 + 2 * ease_io(u))
     c.drawRect(skia.Rect.MakeWH(W, H), paint('#1a0a1a'))
     with Layer(c, cam, 1.0, t):
         j5_world(c, t)
@@ -103,7 +103,7 @@ def j5_spin(c, t):
     stages = [('michael', E.O_KID_TV['michael'], 560), ('michael72', MICHAEL_OUTFITS['michael72'], 560), ('michael79', E.O_OTW, 560)]
     s, (key, out, hh) = spin_morph(t, t_spin, OTW - t_spin - 0.05, [stages[0], stages[0], stages[1], stages[1], stages[2]], turns=2.5)
     disco = smoothstep(t_spin + 0.3, OTW - 0.1, t)
-    cam = Cam(0, -420 - 120 * disco, 1.25 + 0.25 * ease_io(u), 0)
+    cam = Cam(0, -520 - 60 * disco, 1.75 - 0.45 * ease_io(u), 0)
     c.drawRect(skia.Rect.MakeWH(W, H), paint('#1a0a1a'))
     with Layer(c, cam, 1.0, t):
         j5_world(c, t)

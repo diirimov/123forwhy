@@ -57,8 +57,8 @@ def f_photo(c, t):
     S = draw(c, E.M92, W / 2, H * 0.9 + 200 * a, h, P, E.O_HISTORY, E.L_SPOT, t)
     sunglasses(c, S)
     e8 = (T.beat_at(t) * 2)
-    for i, (x, gy, hh, flip) in enumerate(((W * 0.08, H * 0.95, 1500, 1), (W * 0.92, H * 0.97, 1500, -1), (W * 0.22, H * 1.1, 1900, 1),
-                                         (W * 0.8, H * 1.12, 1900, -1), (W * 0.02, H * 1.25, 2300, 1), (W * 0.98, H * 1.25, 2300, -1))):
+    for i, (x, gy, hh, flip) in enumerate(((W * 0.02, H * 0.95, 1200, 1), (W * 0.98, H * 0.97, 1200, -1), (W * 0.12, H * 1.12, 1500, 1),
+                                         (W * 0.9, H * 1.14, 1500, -1), (W * -0.05, H * 1.3, 1900, 1), (W * 1.05, H * 1.3, 1900, -1))):
         fire = max(0.0, 1 - ((e8 + i * 0.37) % 1) / 0.25)
         photographer(c, x, gy, hh, flip, t, f'x{i + 2}', fire)
     c.drawRect(skia.Rect.MakeWH(W, H), paint((1, 1, 1, 0.12 * max(0.0, 1 - (e8 % 1) / 0.2)), blend=skia.BlendMode.kPlus))
@@ -270,17 +270,20 @@ def r_final(c, t):
     beat = T.beat_at(t)
     c.save()                                # ghost audiences: one vast silhouette crowd climbing up the dark
     lp = skia.Paint()
-    lp.setAlphaf(0.85 * rise)
+    lp.setAlphaf(1.0 * rise)
     c.saveLayer(None, lp)
     for j, (y0, sc, col) in enumerate(((0.42, 0.6, '#6a7ab8'), (0.5, 0.8, '#8a6ab8'), (0.6, 1.0, '#b88a5a'))):
         c.save()
         c.translate(W / 2, H * (y0 + 0.25 * (1 - rise)))
-        crowd(c, t, 3, 1.0, mix('#0a0a1e', col, 0.25), col, width=2600, seed=900 + j, y0=0, row_gap=90, scale0=sc, beat_phase=beat,
+        crowd(c, t, 3, 1.0, mix('#0a0a1e', col, 0.45), mix(col, '#ffffff', 0.4), width=2600, seed=900 + j, y0=0, row_gap=90, scale0=sc, beat_phase=beat,
               lighters=True)
         c.restore()
     c.restore()
     c.restore()
-    glow(c, W / 2, H * 0.45, 900, '#ffd8a0', 0.18 * rise)
+    glow(c, W / 2, H * 0.5, 1100, '#ffd8a0', 0.3 * rise)
+    for j in range(40):
+        a_ = j / 40 * math.pi
+        beam(c, W / 2, H * 0.62, W / 2 + math.cos(a_) * 1400, H * 0.62 - math.sin(a_) * 1400, 4, 60, '#ffe8c0', 0.05 * rise, blur=20)
     P = pose(E.M09, [(0, 'point_hit', dict(start=B_of(R_FINAL - 0.6), side=1)), (R_FINAL + 0.1, 'pose_hold', {})], t)
     P.update(smile=0.5, ey=-0.5)
     h = 900 * 1.62 * (1 - 0.18 * ease_io(u))
@@ -304,6 +307,6 @@ def draw_act(c, t):
 def captions(c, t):
     cap(c, t, F_SPOT + 0.25, F_ALONE - 0.12, ['THE WORLD LOVED HIM…'], y=300, size=86)
     cap(c, t, F_ALONE + 0.15, R_ARENA - 0.15, ['BUT FAME HAD A PRICE.'], y=300, size=86, col=(0.95, 0.85, 0.75))
-    stamp(c, t, R_ARENA + 0.3, R_FINAL - 0.2, '2009 · REHEARSALS', y=1480, size=38)
+    stamp(c, t, R_ARENA + 0.3, R_FINAL - 0.2, '2009 · REHEARSALS', y=440, size=34)
     cap(c, t, R_ARENA + 0.35, R_FINAL - 0.1, ['1958 — 2009'], y=300, size=92)
     cap(c, t, R_FINAL + 0.15, 59.9, ['THE KING OF POP.'], y=300, size=108, col=GOLD)

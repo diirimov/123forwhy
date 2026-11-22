@@ -50,6 +50,18 @@ def _chunk(args):
     return path
 
 
+def _chunk_lr(args):
+    idx, path = args
+    enc = subprocess.Popen(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}',
+                            '-r', str(T.FPS // 2), '-i', '-', '-vf', 'scale=540:960', '-c:v', 'libx264', '-preset', 'veryfast',
+                            '-crf', '22', '-pix_fmt', 'yuv420p', path], stdin=subprocess.PIPE)
+    for i in idx:
+        enc.stdin.write(render_frame(i).tobytes())
+    enc.stdin.close()
+    enc.wait()
+    return path
+
+
 def encode(f0, f1, name, workers=4, audio=True, silent_name=None):
     BUILD.mkdir(exist_ok=True)
     n = f1 - f0
@@ -72,7 +84,8 @@ def encode(f0, f1, name, workers=4, audio=True, silent_name=None):
         g = getattr(timeline, 'AUDIO_GAIN_DB', 0.0)
         fst, fd = getattr(timeline, 'AUDIO_FADE', (T.DURATION, 0.0))
         af = f'volume={g:.2f}dB,afade=t=out:st={max(0.0, fst - a0):.3f}:d={fd:.3f}'
-        out = str(OUT / 'MICHAEL_BEAT_IT_STORY_FINAL.mp4') if name.startswith('FINAL') else str(BUILD / f'{name}.mp4')
+        out = str(OUT / {'FINAL': 'MICHAEL_BEAT_IT_STORY_FINAL.mp4', 'FINAL_EV': 'MJ_EVOLUTION_OF_A_KING_FINAL.mp4'}[name]) \
+            if name.startswith('FINAL') else str(BUILD / f'{name}.mp4')
         subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', silent, '-ss', f'{a0:.4f}', '-t', f'{dur:.4f}',
                         '-i', str(ROOT / 'audio' / 'source.m4a'), '-map', '0:v', '-map', '1:a', '-c:v', 'copy',
                         '-af', af, '-c:a', 'aac', '-b:a', '320k', '-ar', '48000', '-movflags', '+faststart', out],
@@ -115,6 +128,29 @@ if __name__ == '__main__':
     elif mode == 'test':
         a, b = float(sys.argv[2]), float(sys.argv[3])
         encode(int(a * T.FPS), int(b * T.FPS), sys.argv[4] if len(sys.argv) > 4 else 'test')
+    elif mode == 'preview_lr':
+        # full-length low-res check: every 2nd frame (30 fps), 540x960, with the complete soundtrack
+        name = sys.argv[2]
+        BUILD.mkdir(exist_ok=True)
+        idx = list(range(0, T.NFRAMES, 2))
+        per = -(-len(idx) // 12)
+        jobs = [(idx[k:k + per], str(BUILD / f'lr_{k:05d}.mp4')) for k in range(0, len(idx), per)]
+        with Pool(4) as pool:
+            for p in pool.imap(_chunk_lr, jobs):
+                print('  lr chunk', p, flush=True)
+        (BUILD / 'lr.txt').write_text(''.join(f"file '{j[1]}'\n" for j in jobs))
+        g = getattr(timeline, 'AUDIO_GAIN_DB', 0.0)
+        fst, fd = getattr(timeline, 'AUDIO_FADE', (T.DURATION, 0.0))
+        subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', str(BUILD / 'lr.txt'),
+                        '-i', str(ROOT / 'audio' / 'source.m4a'), '-map', '0:v', '-map', '1:a', '-c:v', 'copy',
+                        '-af', f'volume={g:.2f}dB,afade=t=out:st={fst:.3f}:d={fd:.3f}', '-c:a', 'aac', '-b:a', '192k',
+                        '-t', f'{T.DURATION:.3f}', '-movflags', '+faststart', str(OUT / name)], check=True)
+        for j in jobs:
+            os.remove(j[1])
+        print('wrote', OUT / name)
+    elif mode == 'final_ev':
+        OUT.mkdir(exist_ok=True)
+        encode(0, T.NFRAMES, 'FINAL_EV', silent_name='MJ_EVOLUTION_OF_A_KING_SILENT.mp4')
     elif mode == 'final':
         OUT.mkdir(exist_ok=True)
         encode(0, T.NFRAMES, 'FINAL', silent_name='MICHAEL_BEAT_IT_STORY_SILENT.mp4')
