@@ -124,6 +124,8 @@ class Outfit:
     bowtie: str = None
     zips: bool = False       # zippered leather jacket (Beat It, 1983)
     under: str = None        # undershirt colour showing in an open jacket front
+    chevron: str = None      # Thriller-style V stripes on a leather jacket
+    buckles: str = None      # Bad-era straps and buckles
 
 
 def outfits(era):
@@ -368,7 +370,7 @@ class Character:
             bump = (1 + d.bump * (0.028 * math.sin(2 * th + ph[0] * 6) + 0.02 * math.sin(3 * th + ph[1] * 6)
                     + 0.03 * abs(math.sin(lobes * th / 2 + ph[2] * 3)) * (0.7 + 0.6 * ph[int(i / 120 * len(ph))])))
             pts.append((cx + math.cos(th) * rx * bump, cy + math.sin(th) * ry * bump * (1 + 0.04 * P['dip'])))
-        if d.hair == 'shag':     # feathered shoulder-length rock hair
+        if d.hair in ('shag', 'longcurl'):     # shoulder-length hair (feathered / long curls)
             pts = []
             for i in range(90):
                 th = i / 90 * 2 * math.pi
@@ -390,7 +392,7 @@ class Character:
         canvas.clipPath(path, doAntiAlias=True)
         cp = paint(alpha(col(mix(HAIR_HI, d.hair_col, 0.3) if d.hair_col != HAIR else HAIR_HI), 0.33), style='stroke',
                    width=max(1.0, r * 0.045))
-        if d.hair == 'curl':     # glossy jheri curls: tighter ringlets + specular sheen
+        if d.hair in ('curl', 'longcurl'):     # glossy curls: tighter ringlets + specular sheen
             for k in range(26):
                 a0 = k / 26 * 2 * math.pi
                 hx_, hy_ = cx + math.cos(a0) * rx * 0.82, cy + math.sin(a0) * ry * 0.85
@@ -406,7 +408,7 @@ class Character:
                 cp_.moveTo(cx + (x0_ - cx) * 0.3, cy - ry * 0.9)
                 cp_.quadTo(x0_ * 1.0 + (x0_ - cx) * 0.1, cy, x0_ + (x0_ - cx) * 0.15, cy + ry * 2.2)
                 canvas.drawPath(cp_, sp_)
-        for (th, rr, rot, sz) in (self.curls if d.hair != 'shag' else []):
+        for (th, rr, rot, sz) in (self.curls if d.hair not in ('shag',) else []):
             x = cx + math.cos(th) * rx * rr
             y = cy + math.sin(th) * ry * rr
             s = r * 0.07 * sz
@@ -524,6 +526,23 @@ class Character:
                     a, b = R(sd * 0.07 * h, 0.13 * h + k * 0.07 * h), R(sd * 0.13 * h, 0.1 * h + k * 0.07 * h)
                     canvas.drawLine(*a, *b, paint(zc, style='stroke', width=0.005 * h))
                     canvas.drawCircle(*b, 0.006 * h, paint(zc))
+        if o.chevron and not back:
+            cc_ = col(o.chevron)
+            for k in range(2):
+                for sd in (-1, 1):
+                    a = R(sd * shw * 1.1, 0.0 + k * 0.05 * h)
+                    b = R(tw + sd * 0.01 * h, 0.1 * h + k * 0.05 * h)
+                    canvas.drawLine(*a, *b, paint(cc_, style='stroke', width=0.016 * h))
+            canvas.drawLine(*R(tw, 0.0), *R(tw, 0.3 * h), paint((0.85, 0.85, 0.9, 0.9), style='stroke', width=0.005 * h))
+        if o.buckles and not back:
+            bc = col(o.buckles)
+            for k, (y0, y1) in enumerate(((0.02, 0.12), (0.08, 0.18), (0.14, 0.24))):
+                a, b = R(-shw * 1.1, y0 * h), R(shw * 1.1, y1 * h)
+                canvas.drawLine(*a, *b, paint(col('#0a0a0c'), style='stroke', width=0.02 * h))
+                mx_, my_ = (a[0] + b[0]) / 2 + (k - 1) * 0.04 * h, (a[1] + b[1]) / 2
+                canvas.drawRect(skia.Rect.MakeXYWH(mx_ - 0.016 * h, my_ - 0.013 * h, 0.032 * h, 0.026 * h), paint(bc, style='stroke', width=0.005 * h))
+            for sd in (-1, 1):
+                canvas.drawCircle(*R(sd * 0.03 * h, 0.27 * h), 0.006 * h, paint(bc))
         if o.military and not back:
             gc = col(o.military)
             for k in range(5):
@@ -778,6 +797,12 @@ class Character:
         cel(canvas, sleeve, sc, kd, -0.33, outline=line, ow=lw)
         if o.jumpsuit and o.stripes:
             canvas.drawPath(limb_outline([sh, el, wr], [0.012 * h] * 3, False, False), paint(col(o.stripes)))
+        if o.buckles:
+            for k in range(2):
+                u_ = 0.3 + k * 0.45
+                p0 = (sh[0] + (el[0] - sh[0]) * u_, sh[1] + (el[1] - sh[1]) * u_) if k == 0 else (el[0] + (wr[0] - el[0]) * 0.5, el[1] + (wr[1] - el[1]) * 0.5)
+                canvas.drawLine(p0[0] - 0.034 * h, p0[1], p0[0] + 0.034 * h, p0[1] + 0.006 * h, paint('#0a0a0c', style='stroke', width=0.014 * h))
+                canvas.drawRect(skia.Rect.MakeXYWH(p0[0] - 0.01 * h, p0[1] - 0.008 * h, 0.02 * h, 0.018 * h), paint(col(o.buckles), style='stroke', width=0.004 * h))
         if o.zips:
             for k in range(3):
                 u_ = 0.2 + k * 0.12

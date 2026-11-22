@@ -60,8 +60,13 @@ def cap(c, t, t0, t1, lines, y=300, size=80, accent=None, cx=W / 2 - 24, maxw=82
     f = font('garamond_b', size)
     track = size * 0.07
 
+    DASH = size * 0.62                      # the bold face has no dash glyphs: draw the rule ourselves
+
+    def cw_(ch):
+        return DASH if ch in '\u2014\u2013' else f.measureText(ch)
+
     def width(s):
-        return sum(f.measureText(ch) for ch in s) + track * (len(s) - 1)
+        return sum(cw_(ch) for ch in s) + track * (len(s) - 1)
     maxw_ = max(width(s) for s in lines)
     sc = min(1.0, maxw / maxw_)
     lh = size * 1.16 * sc
@@ -76,7 +81,13 @@ def cap(c, t, t0, t1, lines, y=300, size=80, accent=None, cx=W / 2 - 24, maxw=82
         x = -width(s) / 2
         cc = accent[1] if (accent and i == accent[0]) else col
         for ch in s:
-            cw = f.measureText(ch)
+            cw = cw_(ch)
+            if ch in '\u2014\u2013':
+                yy_ = -size * 0.3
+                c.drawLine(x + 2, yy_ + 4, x + cw + 2, yy_ + 4, paint((0, 0, 0, 0.8 * a), style='stroke', width=size * 0.08, blur=6))
+                c.drawLine(x, yy_, x + cw, yy_, paint((*cc[:3], a), style='stroke', width=size * 0.075, cap='butt'))
+                x += cw + track
+                continue
             c.drawString(ch, x + 2, 4, f, paint((0.0, 0.0, 0.0, 0.8 * a), blur=6))
             c.drawString(ch, x, 0, f, paint((0.03, 0.01, 0.0, 0.7 * a), style='stroke', width=4.0))
             c.drawString(ch, x, 0, f, paint((*cc[:3], a)))
