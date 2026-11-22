@@ -208,7 +208,7 @@ def kids(c, t):
     tv_set(c, -60, H * 0.44, 420, 380, lambda scr: beatit_screen(c, scr, t), t)
     c.drawRect(skia.Rect.MakeXYWH(-60, H * 0.44 + 380, 420, 220), paint('#3a2414'))
     glow(c, 150, H * 0.52, 500, '#9fb8ff', 0.25)
-    sched = routine(L_FRONT)
+    sched = routine(I_KIDS)
     for k, x, out in (('fan2', W * 0.45, K.O_FANS[2]), ('fan0', W * 0.75, K.O_FANS[0])):
         P = pose(k, sched, t + (0.06 if k == 'fan0' else 0))
         P.update(smile=1.0, mshape='grin', mopen=0.3)
