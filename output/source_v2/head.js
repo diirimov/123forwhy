@@ -20,12 +20,12 @@ function tab(T, key, y) { const Y = T.y, A = T[key]; if (y <= Y[0]) return A[0];
 // hairline (front hairline / hair bottom) as function of theta, plus hair thickness etc.
 const HAIR = {
   quiff: { // Morten 80s: tall swept-up volume, short sides, ears free
-    hl: th => { const a = Math.abs(th); return a < .55 ? 6.4 + a * .6 : a < 1.0 ? lerp(6.7, 5.0, (a - .55) / .45) : a < 1.45 ? lerp(5.0, 2.2, (a - 1) / .45) : a < 1.9 ? lerp(2.2, 1.2, (a - 1.45) / .45) : lerp(1.2, -5.5, (a - 1.9) / (PI - 1.9)); },
+    hl: th => { const a = Math.abs(th); return a < .55 ? 6.4 + a * .6 : a < 1.0 ? lerp(6.7, 5.0, (a - .55) / .45) : a < 1.45 ? lerp(5.0, 2.2, (a - 1) / .45) : a < 1.9 ? lerp(2.2, 1.2, (a - 1.45) / .45) : lerp(1.2, -8.5, (a - 1.9) / (PI - 1.9)); },
     thick: (y, th) => 0.55 + clamp((y - 6) / 6) * 3.2 * (Math.cos(th) * .35 + .65) + (Math.abs(th) > 1.7 ? .6 : 0),
     top: 18.2, dzTop: 1.7, flow: 'sweepUp', bump: { amp: .35, n: 9, top: true },
   },
   short: { // Morten later: shorter, swept back
-    hl: th => { const a = Math.abs(th); return a < .55 ? 7.2 + a * .3 : a < 1.0 ? lerp(7.4, 5.2, (a - .55) / .45) : a < 1.5 ? lerp(5.2, 2.0, (a - 1) / .5) : a < 1.9 ? lerp(2.0, 1.0, (a - 1.5) / .4) : lerp(1.0, -5.0, (a - 1.9) / (PI - 1.9)); },
+    hl: th => { const a = Math.abs(th); return a < .55 ? 7.2 + a * .3 : a < 1.0 ? lerp(7.4, 5.2, (a - .55) / .45) : a < 1.5 ? lerp(5.2, 2.0, (a - 1) / .5) : a < 1.9 ? lerp(2.0, 1.0, (a - 1.5) / .4) : lerp(1.0, -8.0, (a - 1.9) / (PI - 1.9)); },
     thick: (y, th) => 0.45 + clamp((y - 6) / 6) * 1.3, top: 13.8, dzTop: .6, flow: 'sweepBack', bump: { amp: .12, n: 12, top: true },
   },
   spiky: { // Magne 80s: feathered spiky top, fringe spikes, sides over upper ears
@@ -162,9 +162,13 @@ function drawHead(g, cam, c, fr, who, era, E = {}, opts = {}) {
   if (Hs.bump) hairSil = modulate(hairSil, Hs.bump.amp, Hs.bump.n, Hs.bump.top, Hs.bump.spike, seed);
   const hairScr = hairSil.map(T);
   const hairCol = D.hairC;
-  I.shape(g, hairScr, { fill: hairCol, lw: lwF * 1.25, seed: seed + 1, shade: sc * 1.6, hi: [D.hairHi, sc * .5] });
+  if (back) { // full skull + jaw in skin under the hair, so the head joins the neck
+    const skull = silhouette(F, Pf, yaw, pitch, -12.6, 12.2, 0, null, null).map(T);
+    I.shape(g, skull, { fill: D.skin, lw: lwF, seed: seed + 3, shade: sc * 1.8 });
+  }
+  I.shape(g, hairScr, { fill: hairCol, lw: lwF * (back ? .55 : 1.25), seed: seed + 1, shade: back ? 2 : sc * 1.6, shadowK: back ? .4 : 1, hi: [D.hairHi, sc * .5] });
   if (back) {
-    for (const s of [-1, 1]) { const th = s * PI / 2; const p = surf(F, Pf, th, -0.6, 0, yaw, pitch); if (Math.cos(th + yaw) > -0.55 && Hs.hl(th) > -1) { const pts = I.ellipsePts(0, 0, 1.3, 2.7, 0, 16).map(([x, y]) => X(p[0] + x * .6 + Math.sign(p[0]) * .5, p[1] + y)); I.shape(g, pts, { fill: D.skin, lw: lwF * .8, seed: seed + 5 + s }); } }
+    for (const s of [-1, 1]) { const th = s * PI / 2; const p = surf(F, Pf, th, -0.6, 0, yaw, pitch); if (Math.cos(th + yaw) > -0.75 && Hs.hl(th) > -1) { const pts = I.ellipsePts(0, 0, 1.3, 2.7, 0, 16).map(([x, y]) => X(p[0] + x * .6 + Math.sign(p[0]) * .5, p[1] + y)); I.shape(g, pts, { fill: D.skin, lw: lwF * .8, seed: seed + 5 + s }); } }
     const r = C.rng(seed + 3); const col = I.ST.mode === 'color' ? I.mix(D.hairC, '#000000', .45) : null;
     for (let i = 0; i < 9; i++) { const th = PI + (-0.9 + i * .22) * (yaw > 0 ? 1 : 1); const pts = []; for (let k = 0; k < 5; k++) { const y = Hs.top - 2 - k * (Hs.top + 3) / 5; if (y < Hs.hl(th)) break; pts.push(hairSurf(F, Hs, th + (r() - .5) * .05, y, yaw, pitch, .95)); } const vis = pts.filter(p => p[2] > 0); if (vis.length > 1) I.brush(g, vis.map(p => X(p[0], p[1])), Math.max(1, sc * .22), { color: i % 3 ? col : D.hairHi, seed: seed + i }); }
     return o;
