@@ -1,0 +1,13 @@
+const C=require('./core'), I=require('./ink'), Pr=require('./props'); const fs=require('fs');
+const c=C.createCanvas(1080,1920); const g=c.getContext('2d');
+g.fillStyle='#55607a'; g.fillRect(0,0,1080,1920);
+const cam=new C.Cam({pos:[0,140,260],look:[0,10,0],fov:50});
+const S=Pr.synth(C.frame([-30,60,40],0),2,{press:{64:1,67:.5}}); Pr.drawFaces(g,cam,S.faces);
+const K=Pr.keyCase(C.frame([40,0,60],-.3),70,.6); Pr.drawFaces(g,cam,K.faces);
+const cr=Pr.crate(C.frame([-60,0,-40],.2),36,40,30,.3); Pr.drawFaces(g,cam,cr.faces);
+const TM=Pr.tapeMachine(C.frame([60,40,-60],-.4)); Pr.drawFaces(g,cam,TM.faces);
+Pr.reelDraw(g,cam,{...C.frame(TM.sp[0],-.4),o:C.add(TM.sp[0],[0,0,0])},16,.3,.7);
+const gf=C.frot(C.frame([-70,40,90],.3),[0,0,1],.6); Pr.drawFaces(g,cam,Pr.guitarFaces(gf)); Pr.guitarStrings(g,cam,gf);
+const M=Pr.micFaces(C.frame([0,0,-30],0),140); Pr.drawFaces(g,cam,M.faces);
+const sl=Pr.sleeveTex(); const q=[[-20,100,-90],[20,100,-90],[20,60,-90],[-20,60,-90]].map(p=>{const r=cam.p(p);return [r.x,r.y]}); Pr.texPoly(g,sl,q);
+fs.writeFileSync('../t_props.png',c.toBuffer('image/png'));
