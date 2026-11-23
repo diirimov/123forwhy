@@ -1,0 +1,1559 @@
+{
+ "title": "The Craziest Medieval Diseases (instrumental)",
+ "bpm": 128,
+ "time_signature": "4/4",
+ "bars": 48,
+ "duration_s": 90.0,
+ "sample_rate": 48000,
+ "bit_depth": 24,
+ "beat_s": 0.46875,
+ "bar_s": 1.875,
+ "sixteenth_s": 0.1171875,
+ "key": "D minor (Phrygian twist bars 33-40) -> E minor from bar 41",
+ "sections": [
+  {
+   "name": "INTRO HOOK",
+   "bars": [
+    1,
+    8
+   ],
+   "start_s": 0.0,
+   "end_s": 15.0,
+   "description": "Hook + groove from frame 0; fiddle, bass & hand drums join at bar 5"
+  },
+  {
+   "name": "DROP 1",
+   "bars": [
+    9,
+    16
+   ],
+   "start_s": 15.0,
+   "end_s": 30.0,
+   "description": "Full drop: kick + sub bass + fiddle/lute hook, bass answers in bars 10 & 14"
+  },
+  {
+   "name": "VARIATION",
+   "bars": [
+    17,
+    24
+   ],
+   "start_s": 30.0,
+   "end_s": 45.0,
+   "description": "Call & response: fiddle calls (17/19/21), lute+bass answer (18/20/22); percussive fill bar 24"
+  },
+  {
+   "name": "DROP 2",
+   "bars": [
+    25,
+    32
+   ],
+   "start_s": 45.0,
+   "end_s": 60.0,
+   "description": "Bigger drop: fiddle harmony, lute 16th drive, recorder counter-line, hurdy-gurdy drone+buzz, offbeat synth stabs, rolling bass"
+  },
+  {
+   "name": "TWIST",
+   "bars": [
+    33,
+    40
+   ],
+   "start_s": 60.0,
+   "end_s": 75.0,
+   "description": "Mysterious Phrygian turn (Dm-Eb), hurdy-gurdy lead, 2-beat break bar 36, build 37-40"
+  },
+  {
+   "name": "FINAL",
+   "bars": [
+    41,
+    48
+   ],
+   "start_s": 75.0,
+   "end_s": 90.0,
+   "description": "Key lift to E minor, everything in; stop-time ending bar 48, final hit at 89.531 s"
+  }
+ ],
+ "events": [
+  {
+   "bar": 1,
+   "step_16th": 0,
+   "time_s": 0.0,
+   "sample_48k": 0,
+   "timecode_30fps": "00:00:00:00",
+   "type": "START",
+   "description": "Hook + kick + stomp/clap groove start on frame 0",
+   "frame_24fps": 0,
+   "frame_25fps": 0,
+   "frame_30fps": 0,
+   "frame_60fps": 0
+  },
+  {
+   "bar": 5,
+   "step_16th": 0,
+   "time_s": 7.5,
+   "sample_48k": 360000,
+   "timecode_30fps": "00:00:07:15",
+   "type": "DEVELOPMENT",
+   "description": "Fiddle doubles hook, bass & darbuka enter, light cymbal",
+   "frame_24fps": 180,
+   "frame_25fps": 188,
+   "frame_30fps": 225,
+   "frame_60fps": 450
+  },
+  {
+   "bar": 8,
+   "step_16th": 8,
+   "time_s": 14.0625,
+   "sample_48k": 675000,
+   "timecode_30fps": "00:00:14:02",
+   "type": "FILL",
+   "description": "Darbuka roll + riser into drop",
+   "frame_24fps": 338,
+   "frame_25fps": 352,
+   "frame_30fps": 422,
+   "frame_60fps": 844
+  },
+  {
+   "bar": 8,
+   "step_16th": 14,
+   "time_s": 14.765625,
+   "sample_48k": 708750,
+   "timecode_30fps": "00:00:14:23",
+   "type": "GAP",
+   "description": "Half-beat silence (pre-drop breath) - ideal hard cut",
+   "frame_24fps": 354,
+   "frame_25fps": 369,
+   "frame_30fps": 443,
+   "frame_60fps": 886
+  },
+  {
+   "bar": 9,
+   "step_16th": 0,
+   "time_s": 15.0,
+   "sample_48k": 720000,
+   "timecode_30fps": "00:00:15:00",
+   "type": "DROP",
+   "description": "DROP 1 impact (sub boom + crash) - camera punch",
+   "frame_24fps": 360,
+   "frame_25fps": 375,
+   "frame_30fps": 450,
+   "frame_60fps": 900
+  },
+  {
+   "bar": 10,
+   "step_16th": 12,
+   "time_s": 18.28125,
+   "sample_48k": 877500,
+   "timecode_30fps": "00:00:18:08",
+   "type": "ANSWER",
+   "description": "Bass answer lick (call-and-response)",
+   "frame_24fps": 439,
+   "frame_25fps": 457,
+   "frame_30fps": 548,
+   "frame_60fps": 1097
+  },
+  {
+   "bar": 13,
+   "step_16th": 0,
+   "time_s": 22.5,
+   "sample_48k": 1080000,
+   "timecode_30fps": "00:00:22:15",
+   "type": "DEVELOPMENT",
+   "description": "Cymbal accent, hook variation",
+   "frame_24fps": 540,
+   "frame_25fps": 562,
+   "frame_30fps": 675,
+   "frame_60fps": 1350
+  },
+  {
+   "bar": 14,
+   "step_16th": 12,
+   "time_s": 25.78125,
+   "sample_48k": 1237500,
+   "timecode_30fps": "00:00:25:23",
+   "type": "ANSWER",
+   "description": "Bass answer lick",
+   "frame_24fps": 619,
+   "frame_25fps": 645,
+   "frame_30fps": 773,
+   "frame_60fps": 1547
+  },
+  {
+   "bar": 16,
+   "step_16th": 12,
+   "time_s": 29.53125,
+   "sample_48k": 1417500,
+   "timecode_30fps": "00:00:29:16",
+   "type": "FILL",
+   "description": "Kick/clap pickup into variation",
+   "frame_24fps": 709,
+   "frame_25fps": 738,
+   "frame_30fps": 886,
+   "frame_60fps": 1772
+  },
+  {
+   "bar": 17,
+   "step_16th": 0,
+   "time_s": 30.0,
+   "sample_48k": 1440000,
+   "timecode_30fps": "00:00:30:00",
+   "type": "SECTION",
+   "description": "Variation: fiddle CALL",
+   "frame_24fps": 720,
+   "frame_25fps": 750,
+   "frame_30fps": 900,
+   "frame_60fps": 1800
+  },
+  {
+   "bar": 18,
+   "step_16th": 0,
+   "time_s": 31.875,
+   "sample_48k": 1530000,
+   "timecode_30fps": "00:00:31:26",
+   "type": "ANSWER",
+   "description": "Lute + bass ANSWER",
+   "frame_24fps": 765,
+   "frame_25fps": 797,
+   "frame_30fps": 956,
+   "frame_60fps": 1912
+  },
+  {
+   "bar": 19,
+   "step_16th": 0,
+   "time_s": 33.75,
+   "sample_48k": 1620000,
+   "timecode_30fps": "00:00:33:22",
+   "type": "CALL",
+   "description": "Fiddle CALL (higher)",
+   "frame_24fps": 810,
+   "frame_25fps": 844,
+   "frame_30fps": 1012,
+   "frame_60fps": 2025
+  },
+  {
+   "bar": 20,
+   "step_16th": 0,
+   "time_s": 35.625,
+   "sample_48k": 1710000,
+   "timecode_30fps": "00:00:35:19",
+   "type": "ANSWER",
+   "description": "Lute + bass ANSWER",
+   "frame_24fps": 855,
+   "frame_25fps": 891,
+   "frame_30fps": 1069,
+   "frame_60fps": 2138
+  },
+  {
+   "bar": 21,
+   "step_16th": 0,
+   "time_s": 37.5,
+   "sample_48k": 1800000,
+   "timecode_30fps": "00:00:37:15",
+   "type": "CALL",
+   "description": "Fiddle CALL + claps return, cymbal",
+   "frame_24fps": 900,
+   "frame_25fps": 938,
+   "frame_30fps": 1125,
+   "frame_60fps": 2250
+  },
+  {
+   "bar": 22,
+   "step_16th": 0,
+   "time_s": 39.375,
+   "sample_48k": 1890000,
+   "timecode_30fps": "00:00:39:11",
+   "type": "ANSWER",
+   "description": "Lute + bass ANSWER",
+   "frame_24fps": 945,
+   "frame_25fps": 984,
+   "frame_30fps": 1181,
+   "frame_60fps": 2362
+  },
+  {
+   "bar": 23,
+   "step_16th": 0,
+   "time_s": 41.25,
+   "sample_48k": 1980000,
+   "timecode_30fps": "00:00:41:08",
+   "type": "ACCENT",
+   "description": "Stomp hits on 3-3-2 rhythm (steps 0/3/6/8/11) - object transformations",
+   "frame_24fps": 990,
+   "frame_25fps": 1031,
+   "frame_30fps": 1238,
+   "frame_60fps": 2475
+  },
+  {
+   "bar": 24,
+   "step_16th": 0,
+   "time_s": 43.125,
+   "sample_48k": 2070000,
+   "timecode_30fps": "00:00:43:04",
+   "type": "FILL",
+   "description": "Percussive fill: unison hits + clap/frame-drum roll",
+   "frame_24fps": 1035,
+   "frame_25fps": 1078,
+   "frame_30fps": 1294,
+   "frame_60fps": 2588
+  },
+  {
+   "bar": 24,
+   "step_16th": 14,
+   "time_s": 44.765625,
+   "sample_48k": 2148750,
+   "timecode_30fps": "00:00:44:23",
+   "type": "GAP",
+   "description": "Half-beat silence - hard cut",
+   "frame_24fps": 1074,
+   "frame_25fps": 1119,
+   "frame_30fps": 1343,
+   "frame_60fps": 2686
+  },
+  {
+   "bar": 25,
+   "step_16th": 0,
+   "time_s": 45.0,
+   "sample_48k": 2160000,
+   "timecode_30fps": "00:00:45:00",
+   "type": "DROP",
+   "description": "DROP 2 impact - biggest camera punch so far",
+   "frame_24fps": 1080,
+   "frame_25fps": 1125,
+   "frame_30fps": 1350,
+   "frame_60fps": 2700
+  },
+  {
+   "bar": 26,
+   "step_16th": 12,
+   "time_s": 48.28125,
+   "sample_48k": 2317500,
+   "timecode_30fps": "00:00:48:08",
+   "type": "ANSWER",
+   "description": "Bass answer lick",
+   "frame_24fps": 1159,
+   "frame_25fps": 1207,
+   "frame_30fps": 1448,
+   "frame_60fps": 2897
+  },
+  {
+   "bar": 29,
+   "step_16th": 0,
+   "time_s": 52.5,
+   "sample_48k": 2520000,
+   "timecode_30fps": "00:00:52:15",
+   "type": "DEVELOPMENT",
+   "description": "Cymbal accent, hook variation",
+   "frame_24fps": 1260,
+   "frame_25fps": 1312,
+   "frame_30fps": 1575,
+   "frame_60fps": 3150
+  },
+  {
+   "bar": 30,
+   "step_16th": 12,
+   "time_s": 55.78125,
+   "sample_48k": 2677500,
+   "timecode_30fps": "00:00:55:23",
+   "type": "ANSWER",
+   "description": "Bass answer lick",
+   "frame_24fps": 1339,
+   "frame_25fps": 1395,
+   "frame_30fps": 1673,
+   "frame_60fps": 3347
+  },
+  {
+   "bar": 31,
+   "step_16th": 0,
+   "time_s": 56.25,
+   "sample_48k": 2700000,
+   "timecode_30fps": "00:00:56:08",
+   "type": "ACCENT",
+   "description": "Stomp hits on 3-3-2",
+   "frame_24fps": 1350,
+   "frame_25fps": 1406,
+   "frame_30fps": 1688,
+   "frame_60fps": 3375
+  },
+  {
+   "bar": 33,
+   "step_16th": 0,
+   "time_s": 60.0,
+   "sample_48k": 2880000,
+   "timecode_30fps": "00:01:00:00",
+   "type": "SECTION",
+   "description": "TWIST: downlifter + impact, dark Phrygian harmony",
+   "frame_24fps": 1440,
+   "frame_25fps": 1500,
+   "frame_30fps": 1800,
+   "frame_60fps": 3600
+  },
+  {
+   "bar": 36,
+   "step_16th": 0,
+   "time_s": 65.625,
+   "sample_48k": 3150000,
+   "timecode_30fps": "00:01:05:19",
+   "type": "BREAK",
+   "description": "A-chord hit then 2-beat break with woodblock ticks (beats 2-3)",
+   "frame_24fps": 1575,
+   "frame_25fps": 1641,
+   "frame_30fps": 1969,
+   "frame_60fps": 3938
+  },
+  {
+   "bar": 36,
+   "step_16th": 12,
+   "time_s": 67.03125,
+   "sample_48k": 3217500,
+   "timecode_30fps": "00:01:07:01",
+   "type": "PICKUP",
+   "description": "Lute pickup run back into the groove",
+   "frame_24fps": 1609,
+   "frame_25fps": 1676,
+   "frame_30fps": 2011,
+   "frame_60fps": 4022
+  },
+  {
+   "bar": 37,
+   "step_16th": 0,
+   "time_s": 67.5,
+   "sample_48k": 3240000,
+   "timecode_30fps": "00:01:07:15",
+   "type": "BUILD",
+   "description": "Build starts: claps + hats return, bass filter opens",
+   "frame_24fps": 1620,
+   "frame_25fps": 1688,
+   "frame_30fps": 2025,
+   "frame_60fps": 4050
+  },
+  {
+   "bar": 39,
+   "step_16th": 0,
+   "time_s": 71.25,
+   "sample_48k": 3420000,
+   "timecode_30fps": "00:01:11:08",
+   "type": "BUILD",
+   "description": "Clap 8th-note roll",
+   "frame_24fps": 1710,
+   "frame_25fps": 1781,
+   "frame_30fps": 2138,
+   "frame_60fps": 4275
+  },
+  {
+   "bar": 40,
+   "step_16th": 0,
+   "time_s": 73.125,
+   "sample_48k": 3510000,
+   "timecode_30fps": "00:01:13:04",
+   "type": "BUILD",
+   "description": "Clap 16th roll + rising pivot melody to B major",
+   "frame_24fps": 1755,
+   "frame_25fps": 1828,
+   "frame_30fps": 2194,
+   "frame_60fps": 4388
+  },
+  {
+   "bar": 40,
+   "step_16th": 12,
+   "time_s": 74.53125,
+   "sample_48k": 3577500,
+   "timecode_30fps": "00:01:14:16",
+   "type": "GAP",
+   "description": "One-beat silence - hard cut",
+   "frame_24fps": 1789,
+   "frame_25fps": 1863,
+   "frame_30fps": 2236,
+   "frame_60fps": 4472
+  },
+  {
+   "bar": 41,
+   "step_16th": 0,
+   "time_s": 75.0,
+   "sample_48k": 3600000,
+   "timecode_30fps": "00:01:15:00",
+   "type": "DROP",
+   "description": "FINAL drop, key change up to E minor - biggest hit",
+   "frame_24fps": 1800,
+   "frame_25fps": 1875,
+   "frame_30fps": 2250,
+   "frame_60fps": 4500
+  },
+  {
+   "bar": 42,
+   "step_16th": 12,
+   "time_s": 78.28125,
+   "sample_48k": 3757500,
+   "timecode_30fps": "00:01:18:08",
+   "type": "ANSWER",
+   "description": "Bass answer lick",
+   "frame_24fps": 1879,
+   "frame_25fps": 1957,
+   "frame_30fps": 2348,
+   "frame_60fps": 4697
+  },
+  {
+   "bar": 45,
+   "step_16th": 0,
+   "time_s": 82.5,
+   "sample_48k": 3960000,
+   "timecode_30fps": "00:01:22:15",
+   "type": "DEVELOPMENT",
+   "description": "Cymbal accent",
+   "frame_24fps": 1980,
+   "frame_25fps": 2062,
+   "frame_30fps": 2475,
+   "frame_60fps": 4950
+  },
+  {
+   "bar": 46,
+   "step_16th": 12,
+   "time_s": 85.78125,
+   "sample_48k": 4117500,
+   "timecode_30fps": "00:01:25:23",
+   "type": "ANSWER",
+   "description": "Bass answer lick",
+   "frame_24fps": 2059,
+   "frame_25fps": 2145,
+   "frame_30fps": 2573,
+   "frame_60fps": 5147
+  },
+  {
+   "bar": 47,
+   "step_16th": 0,
+   "time_s": 86.25,
+   "sample_48k": 4140000,
+   "timecode_30fps": "00:01:26:08",
+   "type": "ACCENT",
+   "description": "Stomp hits on 3-3-2",
+   "frame_24fps": 2070,
+   "frame_25fps": 2156,
+   "frame_30fps": 2588,
+   "frame_60fps": 5175
+  },
+  {
+   "bar": 48,
+   "step_16th": 0,
+   "time_s": 88.125,
+   "sample_48k": 4230000,
+   "timecode_30fps": "00:01:28:04",
+   "type": "STOP-TIME",
+   "description": "Ending hit 1 (C chord)",
+   "frame_24fps": 2115,
+   "frame_25fps": 2203,
+   "frame_30fps": 2644,
+   "frame_60fps": 5288
+  },
+  {
+   "bar": 48,
+   "step_16th": 3,
+   "time_s": 88.476562,
+   "sample_48k": 4246875,
+   "timecode_30fps": "00:01:28:14",
+   "type": "STOP-TIME",
+   "description": "Ending hit 2 (C chord)",
+   "frame_24fps": 2123,
+   "frame_25fps": 2212,
+   "frame_30fps": 2654,
+   "frame_60fps": 5309
+  },
+  {
+   "bar": 48,
+   "step_16th": 6,
+   "time_s": 88.828125,
+   "sample_48k": 4263750,
+   "timecode_30fps": "00:01:28:25",
+   "type": "STOP-TIME",
+   "description": "Ending hit 3 (B chord, tense hold)",
+   "frame_24fps": 2132,
+   "frame_25fps": 2221,
+   "frame_30fps": 2665,
+   "frame_60fps": 5330
+  },
+  {
+   "bar": 48,
+   "step_16th": 8,
+   "time_s": 89.0625,
+   "sample_48k": 4275000,
+   "timecode_30fps": "00:01:29:02",
+   "type": "FILL",
+   "description": "Darbuka crescendo roll",
+   "frame_24fps": 2138,
+   "frame_25fps": 2227,
+   "frame_30fps": 2672,
+   "frame_60fps": 5344
+  },
+  {
+   "bar": 48,
+   "step_16th": 12,
+   "time_s": 89.53125,
+   "sample_48k": 4297500,
+   "timecode_30fps": "00:01:29:16",
+   "type": "FINAL HIT",
+   "description": "Final E open-fifth hit, rings to the last frame",
+   "frame_24fps": 2149,
+   "frame_25fps": 2238,
+   "frame_30fps": 2686,
+   "frame_60fps": 5372
+  }
+ ],
+ "beats": [
+  {
+   "bar": 1,
+   "beat": 1,
+   "time_s": 0.0
+  },
+  {
+   "bar": 1,
+   "beat": 2,
+   "time_s": 0.46875
+  },
+  {
+   "bar": 1,
+   "beat": 3,
+   "time_s": 0.9375
+  },
+  {
+   "bar": 1,
+   "beat": 4,
+   "time_s": 1.40625
+  },
+  {
+   "bar": 2,
+   "beat": 1,
+   "time_s": 1.875
+  },
+  {
+   "bar": 2,
+   "beat": 2,
+   "time_s": 2.34375
+  },
+  {
+   "bar": 2,
+   "beat": 3,
+   "time_s": 2.8125
+  },
+  {
+   "bar": 2,
+   "beat": 4,
+   "time_s": 3.28125
+  },
+  {
+   "bar": 3,
+   "beat": 1,
+   "time_s": 3.75
+  },
+  {
+   "bar": 3,
+   "beat": 2,
+   "time_s": 4.21875
+  },
+  {
+   "bar": 3,
+   "beat": 3,
+   "time_s": 4.6875
+  },
+  {
+   "bar": 3,
+   "beat": 4,
+   "time_s": 5.15625
+  },
+  {
+   "bar": 4,
+   "beat": 1,
+   "time_s": 5.625
+  },
+  {
+   "bar": 4,
+   "beat": 2,
+   "time_s": 6.09375
+  },
+  {
+   "bar": 4,
+   "beat": 3,
+   "time_s": 6.5625
+  },
+  {
+   "bar": 4,
+   "beat": 4,
+   "time_s": 7.03125
+  },
+  {
+   "bar": 5,
+   "beat": 1,
+   "time_s": 7.5
+  },
+  {
+   "bar": 5,
+   "beat": 2,
+   "time_s": 7.96875
+  },
+  {
+   "bar": 5,
+   "beat": 3,
+   "time_s": 8.4375
+  },
+  {
+   "bar": 5,
+   "beat": 4,
+   "time_s": 8.90625
+  },
+  {
+   "bar": 6,
+   "beat": 1,
+   "time_s": 9.375
+  },
+  {
+   "bar": 6,
+   "beat": 2,
+   "time_s": 9.84375
+  },
+  {
+   "bar": 6,
+   "beat": 3,
+   "time_s": 10.3125
+  },
+  {
+   "bar": 6,
+   "beat": 4,
+   "time_s": 10.78125
+  },
+  {
+   "bar": 7,
+   "beat": 1,
+   "time_s": 11.25
+  },
+  {
+   "bar": 7,
+   "beat": 2,
+   "time_s": 11.71875
+  },
+  {
+   "bar": 7,
+   "beat": 3,
+   "time_s": 12.1875
+  },
+  {
+   "bar": 7,
+   "beat": 4,
+   "time_s": 12.65625
+  },
+  {
+   "bar": 8,
+   "beat": 1,
+   "time_s": 13.125
+  },
+  {
+   "bar": 8,
+   "beat": 2,
+   "time_s": 13.59375
+  },
+  {
+   "bar": 8,
+   "beat": 3,
+   "time_s": 14.0625
+  },
+  {
+   "bar": 8,
+   "beat": 4,
+   "time_s": 14.53125
+  },
+  {
+   "bar": 9,
+   "beat": 1,
+   "time_s": 15.0
+  },
+  {
+   "bar": 9,
+   "beat": 2,
+   "time_s": 15.46875
+  },
+  {
+   "bar": 9,
+   "beat": 3,
+   "time_s": 15.9375
+  },
+  {
+   "bar": 9,
+   "beat": 4,
+   "time_s": 16.40625
+  },
+  {
+   "bar": 10,
+   "beat": 1,
+   "time_s": 16.875
+  },
+  {
+   "bar": 10,
+   "beat": 2,
+   "time_s": 17.34375
+  },
+  {
+   "bar": 10,
+   "beat": 3,
+   "time_s": 17.8125
+  },
+  {
+   "bar": 10,
+   "beat": 4,
+   "time_s": 18.28125
+  },
+  {
+   "bar": 11,
+   "beat": 1,
+   "time_s": 18.75
+  },
+  {
+   "bar": 11,
+   "beat": 2,
+   "time_s": 19.21875
+  },
+  {
+   "bar": 11,
+   "beat": 3,
+   "time_s": 19.6875
+  },
+  {
+   "bar": 11,
+   "beat": 4,
+   "time_s": 20.15625
+  },
+  {
+   "bar": 12,
+   "beat": 1,
+   "time_s": 20.625
+  },
+  {
+   "bar": 12,
+   "beat": 2,
+   "time_s": 21.09375
+  },
+  {
+   "bar": 12,
+   "beat": 3,
+   "time_s": 21.5625
+  },
+  {
+   "bar": 12,
+   "beat": 4,
+   "time_s": 22.03125
+  },
+  {
+   "bar": 13,
+   "beat": 1,
+   "time_s": 22.5
+  },
+  {
+   "bar": 13,
+   "beat": 2,
+   "time_s": 22.96875
+  },
+  {
+   "bar": 13,
+   "beat": 3,
+   "time_s": 23.4375
+  },
+  {
+   "bar": 13,
+   "beat": 4,
+   "time_s": 23.90625
+  },
+  {
+   "bar": 14,
+   "beat": 1,
+   "time_s": 24.375
+  },
+  {
+   "bar": 14,
+   "beat": 2,
+   "time_s": 24.84375
+  },
+  {
+   "bar": 14,
+   "beat": 3,
+   "time_s": 25.3125
+  },
+  {
+   "bar": 14,
+   "beat": 4,
+   "time_s": 25.78125
+  },
+  {
+   "bar": 15,
+   "beat": 1,
+   "time_s": 26.25
+  },
+  {
+   "bar": 15,
+   "beat": 2,
+   "time_s": 26.71875
+  },
+  {
+   "bar": 15,
+   "beat": 3,
+   "time_s": 27.1875
+  },
+  {
+   "bar": 15,
+   "beat": 4,
+   "time_s": 27.65625
+  },
+  {
+   "bar": 16,
+   "beat": 1,
+   "time_s": 28.125
+  },
+  {
+   "bar": 16,
+   "beat": 2,
+   "time_s": 28.59375
+  },
+  {
+   "bar": 16,
+   "beat": 3,
+   "time_s": 29.0625
+  },
+  {
+   "bar": 16,
+   "beat": 4,
+   "time_s": 29.53125
+  },
+  {
+   "bar": 17,
+   "beat": 1,
+   "time_s": 30.0
+  },
+  {
+   "bar": 17,
+   "beat": 2,
+   "time_s": 30.46875
+  },
+  {
+   "bar": 17,
+   "beat": 3,
+   "time_s": 30.9375
+  },
+  {
+   "bar": 17,
+   "beat": 4,
+   "time_s": 31.40625
+  },
+  {
+   "bar": 18,
+   "beat": 1,
+   "time_s": 31.875
+  },
+  {
+   "bar": 18,
+   "beat": 2,
+   "time_s": 32.34375
+  },
+  {
+   "bar": 18,
+   "beat": 3,
+   "time_s": 32.8125
+  },
+  {
+   "bar": 18,
+   "beat": 4,
+   "time_s": 33.28125
+  },
+  {
+   "bar": 19,
+   "beat": 1,
+   "time_s": 33.75
+  },
+  {
+   "bar": 19,
+   "beat": 2,
+   "time_s": 34.21875
+  },
+  {
+   "bar": 19,
+   "beat": 3,
+   "time_s": 34.6875
+  },
+  {
+   "bar": 19,
+   "beat": 4,
+   "time_s": 35.15625
+  },
+  {
+   "bar": 20,
+   "beat": 1,
+   "time_s": 35.625
+  },
+  {
+   "bar": 20,
+   "beat": 2,
+   "time_s": 36.09375
+  },
+  {
+   "bar": 20,
+   "beat": 3,
+   "time_s": 36.5625
+  },
+  {
+   "bar": 20,
+   "beat": 4,
+   "time_s": 37.03125
+  },
+  {
+   "bar": 21,
+   "beat": 1,
+   "time_s": 37.5
+  },
+  {
+   "bar": 21,
+   "beat": 2,
+   "time_s": 37.96875
+  },
+  {
+   "bar": 21,
+   "beat": 3,
+   "time_s": 38.4375
+  },
+  {
+   "bar": 21,
+   "beat": 4,
+   "time_s": 38.90625
+  },
+  {
+   "bar": 22,
+   "beat": 1,
+   "time_s": 39.375
+  },
+  {
+   "bar": 22,
+   "beat": 2,
+   "time_s": 39.84375
+  },
+  {
+   "bar": 22,
+   "beat": 3,
+   "time_s": 40.3125
+  },
+  {
+   "bar": 22,
+   "beat": 4,
+   "time_s": 40.78125
+  },
+  {
+   "bar": 23,
+   "beat": 1,
+   "time_s": 41.25
+  },
+  {
+   "bar": 23,
+   "beat": 2,
+   "time_s": 41.71875
+  },
+  {
+   "bar": 23,
+   "beat": 3,
+   "time_s": 42.1875
+  },
+  {
+   "bar": 23,
+   "beat": 4,
+   "time_s": 42.65625
+  },
+  {
+   "bar": 24,
+   "beat": 1,
+   "time_s": 43.125
+  },
+  {
+   "bar": 24,
+   "beat": 2,
+   "time_s": 43.59375
+  },
+  {
+   "bar": 24,
+   "beat": 3,
+   "time_s": 44.0625
+  },
+  {
+   "bar": 24,
+   "beat": 4,
+   "time_s": 44.53125
+  },
+  {
+   "bar": 25,
+   "beat": 1,
+   "time_s": 45.0
+  },
+  {
+   "bar": 25,
+   "beat": 2,
+   "time_s": 45.46875
+  },
+  {
+   "bar": 25,
+   "beat": 3,
+   "time_s": 45.9375
+  },
+  {
+   "bar": 25,
+   "beat": 4,
+   "time_s": 46.40625
+  },
+  {
+   "bar": 26,
+   "beat": 1,
+   "time_s": 46.875
+  },
+  {
+   "bar": 26,
+   "beat": 2,
+   "time_s": 47.34375
+  },
+  {
+   "bar": 26,
+   "beat": 3,
+   "time_s": 47.8125
+  },
+  {
+   "bar": 26,
+   "beat": 4,
+   "time_s": 48.28125
+  },
+  {
+   "bar": 27,
+   "beat": 1,
+   "time_s": 48.75
+  },
+  {
+   "bar": 27,
+   "beat": 2,
+   "time_s": 49.21875
+  },
+  {
+   "bar": 27,
+   "beat": 3,
+   "time_s": 49.6875
+  },
+  {
+   "bar": 27,
+   "beat": 4,
+   "time_s": 50.15625
+  },
+  {
+   "bar": 28,
+   "beat": 1,
+   "time_s": 50.625
+  },
+  {
+   "bar": 28,
+   "beat": 2,
+   "time_s": 51.09375
+  },
+  {
+   "bar": 28,
+   "beat": 3,
+   "time_s": 51.5625
+  },
+  {
+   "bar": 28,
+   "beat": 4,
+   "time_s": 52.03125
+  },
+  {
+   "bar": 29,
+   "beat": 1,
+   "time_s": 52.5
+  },
+  {
+   "bar": 29,
+   "beat": 2,
+   "time_s": 52.96875
+  },
+  {
+   "bar": 29,
+   "beat": 3,
+   "time_s": 53.4375
+  },
+  {
+   "bar": 29,
+   "beat": 4,
+   "time_s": 53.90625
+  },
+  {
+   "bar": 30,
+   "beat": 1,
+   "time_s": 54.375
+  },
+  {
+   "bar": 30,
+   "beat": 2,
+   "time_s": 54.84375
+  },
+  {
+   "bar": 30,
+   "beat": 3,
+   "time_s": 55.3125
+  },
+  {
+   "bar": 30,
+   "beat": 4,
+   "time_s": 55.78125
+  },
+  {
+   "bar": 31,
+   "beat": 1,
+   "time_s": 56.25
+  },
+  {
+   "bar": 31,
+   "beat": 2,
+   "time_s": 56.71875
+  },
+  {
+   "bar": 31,
+   "beat": 3,
+   "time_s": 57.1875
+  },
+  {
+   "bar": 31,
+   "beat": 4,
+   "time_s": 57.65625
+  },
+  {
+   "bar": 32,
+   "beat": 1,
+   "time_s": 58.125
+  },
+  {
+   "bar": 32,
+   "beat": 2,
+   "time_s": 58.59375
+  },
+  {
+   "bar": 32,
+   "beat": 3,
+   "time_s": 59.0625
+  },
+  {
+   "bar": 32,
+   "beat": 4,
+   "time_s": 59.53125
+  },
+  {
+   "bar": 33,
+   "beat": 1,
+   "time_s": 60.0
+  },
+  {
+   "bar": 33,
+   "beat": 2,
+   "time_s": 60.46875
+  },
+  {
+   "bar": 33,
+   "beat": 3,
+   "time_s": 60.9375
+  },
+  {
+   "bar": 33,
+   "beat": 4,
+   "time_s": 61.40625
+  },
+  {
+   "bar": 34,
+   "beat": 1,
+   "time_s": 61.875
+  },
+  {
+   "bar": 34,
+   "beat": 2,
+   "time_s": 62.34375
+  },
+  {
+   "bar": 34,
+   "beat": 3,
+   "time_s": 62.8125
+  },
+  {
+   "bar": 34,
+   "beat": 4,
+   "time_s": 63.28125
+  },
+  {
+   "bar": 35,
+   "beat": 1,
+   "time_s": 63.75
+  },
+  {
+   "bar": 35,
+   "beat": 2,
+   "time_s": 64.21875
+  },
+  {
+   "bar": 35,
+   "beat": 3,
+   "time_s": 64.6875
+  },
+  {
+   "bar": 35,
+   "beat": 4,
+   "time_s": 65.15625
+  },
+  {
+   "bar": 36,
+   "beat": 1,
+   "time_s": 65.625
+  },
+  {
+   "bar": 36,
+   "beat": 2,
+   "time_s": 66.09375
+  },
+  {
+   "bar": 36,
+   "beat": 3,
+   "time_s": 66.5625
+  },
+  {
+   "bar": 36,
+   "beat": 4,
+   "time_s": 67.03125
+  },
+  {
+   "bar": 37,
+   "beat": 1,
+   "time_s": 67.5
+  },
+  {
+   "bar": 37,
+   "beat": 2,
+   "time_s": 67.96875
+  },
+  {
+   "bar": 37,
+   "beat": 3,
+   "time_s": 68.4375
+  },
+  {
+   "bar": 37,
+   "beat": 4,
+   "time_s": 68.90625
+  },
+  {
+   "bar": 38,
+   "beat": 1,
+   "time_s": 69.375
+  },
+  {
+   "bar": 38,
+   "beat": 2,
+   "time_s": 69.84375
+  },
+  {
+   "bar": 38,
+   "beat": 3,
+   "time_s": 70.3125
+  },
+  {
+   "bar": 38,
+   "beat": 4,
+   "time_s": 70.78125
+  },
+  {
+   "bar": 39,
+   "beat": 1,
+   "time_s": 71.25
+  },
+  {
+   "bar": 39,
+   "beat": 2,
+   "time_s": 71.71875
+  },
+  {
+   "bar": 39,
+   "beat": 3,
+   "time_s": 72.1875
+  },
+  {
+   "bar": 39,
+   "beat": 4,
+   "time_s": 72.65625
+  },
+  {
+   "bar": 40,
+   "beat": 1,
+   "time_s": 73.125
+  },
+  {
+   "bar": 40,
+   "beat": 2,
+   "time_s": 73.59375
+  },
+  {
+   "bar": 40,
+   "beat": 3,
+   "time_s": 74.0625
+  },
+  {
+   "bar": 40,
+   "beat": 4,
+   "time_s": 74.53125
+  },
+  {
+   "bar": 41,
+   "beat": 1,
+   "time_s": 75.0
+  },
+  {
+   "bar": 41,
+   "beat": 2,
+   "time_s": 75.46875
+  },
+  {
+   "bar": 41,
+   "beat": 3,
+   "time_s": 75.9375
+  },
+  {
+   "bar": 41,
+   "beat": 4,
+   "time_s": 76.40625
+  },
+  {
+   "bar": 42,
+   "beat": 1,
+   "time_s": 76.875
+  },
+  {
+   "bar": 42,
+   "beat": 2,
+   "time_s": 77.34375
+  },
+  {
+   "bar": 42,
+   "beat": 3,
+   "time_s": 77.8125
+  },
+  {
+   "bar": 42,
+   "beat": 4,
+   "time_s": 78.28125
+  },
+  {
+   "bar": 43,
+   "beat": 1,
+   "time_s": 78.75
+  },
+  {
+   "bar": 43,
+   "beat": 2,
+   "time_s": 79.21875
+  },
+  {
+   "bar": 43,
+   "beat": 3,
+   "time_s": 79.6875
+  },
+  {
+   "bar": 43,
+   "beat": 4,
+   "time_s": 80.15625
+  },
+  {
+   "bar": 44,
+   "beat": 1,
+   "time_s": 80.625
+  },
+  {
+   "bar": 44,
+   "beat": 2,
+   "time_s": 81.09375
+  },
+  {
+   "bar": 44,
+   "beat": 3,
+   "time_s": 81.5625
+  },
+  {
+   "bar": 44,
+   "beat": 4,
+   "time_s": 82.03125
+  },
+  {
+   "bar": 45,
+   "beat": 1,
+   "time_s": 82.5
+  },
+  {
+   "bar": 45,
+   "beat": 2,
+   "time_s": 82.96875
+  },
+  {
+   "bar": 45,
+   "beat": 3,
+   "time_s": 83.4375
+  },
+  {
+   "bar": 45,
+   "beat": 4,
+   "time_s": 83.90625
+  },
+  {
+   "bar": 46,
+   "beat": 1,
+   "time_s": 84.375
+  },
+  {
+   "bar": 46,
+   "beat": 2,
+   "time_s": 84.84375
+  },
+  {
+   "bar": 46,
+   "beat": 3,
+   "time_s": 85.3125
+  },
+  {
+   "bar": 46,
+   "beat": 4,
+   "time_s": 85.78125
+  },
+  {
+   "bar": 47,
+   "beat": 1,
+   "time_s": 86.25
+  },
+  {
+   "bar": 47,
+   "beat": 2,
+   "time_s": 86.71875
+  },
+  {
+   "bar": 47,
+   "beat": 3,
+   "time_s": 87.1875
+  },
+  {
+   "bar": 47,
+   "beat": 4,
+   "time_s": 87.65625
+  },
+  {
+   "bar": 48,
+   "beat": 1,
+   "time_s": 88.125
+  },
+  {
+   "bar": 48,
+   "beat": 2,
+   "time_s": 88.59375
+  },
+  {
+   "bar": 48,
+   "beat": 3,
+   "time_s": 89.0625
+  },
+  {
+   "bar": 48,
+   "beat": 4,
+   "time_s": 89.53125
+  }
+ ]
+}
