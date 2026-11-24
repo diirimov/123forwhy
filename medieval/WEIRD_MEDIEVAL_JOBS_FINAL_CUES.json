@@ -1,0 +1,469 @@
+{
+ "title": "Weird Medieval Jobs",
+ "bpm": 132.923,
+ "duration": 65.0,
+ "beat_seconds": 0.45139,
+ "every_beat": "t = n * beat_seconds, n = 0..143",
+ "bar_downbeats": [
+  0.0,
+  1.806,
+  2.708,
+  4.514,
+  6.319,
+  8.125,
+  9.931,
+  11.736,
+  13.542,
+  15.347,
+  17.153,
+  18.958,
+  19.861,
+  21.667,
+  23.472,
+  25.278,
+  27.083,
+  28.889,
+  30.694,
+  32.5,
+  34.306,
+  36.111,
+  37.014,
+  38.819,
+  40.625,
+  42.431,
+  44.236,
+  46.042,
+  47.847,
+  49.653,
+  51.458,
+  53.264,
+  55.069,
+  56.875,
+  58.681,
+  60.486,
+  62.292,
+  64.097
+ ],
+ "cues": [
+  {
+   "beat": 0,
+   "time": 0.0,
+   "label": "INTRO: flute hook from frame 0, stomp-clap",
+   "kind": "section"
+  },
+  {
+   "beat": 0,
+   "time": 0.0,
+   "label": "flute hook (call)",
+   "kind": "accent"
+  },
+  {
+   "beat": 4,
+   "time": 1.806,
+   "label": "pickup: hurdy-gurdy answer + davul 3-3-2 + HEY",
+   "kind": "section"
+  },
+  {
+   "beat": 4,
+   "time": 1.806,
+   "label": "hurdy-gurdy answer",
+   "kind": "accent"
+  },
+  {
+   "beat": 4,
+   "time": 1.806,
+   "label": "davul hit",
+   "kind": "accent"
+  },
+  {
+   "beat": 4.75,
+   "time": 2.144,
+   "label": "davul hit",
+   "kind": "accent"
+  },
+  {
+   "beat": 5.5,
+   "time": 2.483,
+   "label": "davul hit",
+   "kind": "accent"
+  },
+  {
+   "beat": 5.5,
+   "time": 2.483,
+   "label": "group shout \"EI\"",
+   "kind": "accent"
+  },
+  {
+   "beat": 6,
+   "time": 2.708,
+   "label": "DROP 1: kick + bouncy bass + full dance",
+   "kind": "section"
+  },
+  {
+   "beat": 6,
+   "time": 2.708,
+   "label": "flute CALL",
+   "kind": "accent"
+  },
+  {
+   "beat": 10,
+   "time": 4.514,
+   "label": "hurdy-gurdy ANSWER",
+   "kind": "accent"
+  },
+  {
+   "beat": 14,
+   "time": 6.319,
+   "label": "flute CALL (higher)",
+   "kind": "accent"
+  },
+  {
+   "beat": 18,
+   "time": 8.125,
+   "label": "hurdy-gurdy ANSWER (cadence)",
+   "kind": "accent"
+  },
+  {
+   "beat": 22,
+   "time": 9.931,
+   "label": "flute CALL with ornaments + lute enters",
+   "kind": "accent"
+  },
+  {
+   "beat": 26,
+   "time": 11.736,
+   "label": "hurdy ANSWER",
+   "kind": "accent"
+  },
+  {
+   "beat": 29.5,
+   "time": 13.316,
+   "label": "group shout \"O\"",
+   "kind": "accent"
+  },
+  {
+   "beat": 30,
+   "time": 13.542,
+   "label": "flute CALL ornamented",
+   "kind": "accent"
+  },
+  {
+   "beat": 34,
+   "time": 15.347,
+   "label": "flute + hurdy unison run",
+   "kind": "accent"
+  },
+  {
+   "beat": 38,
+   "time": 17.153,
+   "label": "turnaround fanfare",
+   "kind": "accent"
+  },
+  {
+   "beat": 41.0,
+   "time": 18.507,
+   "label": "group shout \"EI\"",
+   "kind": "accent"
+  },
+  {
+   "beat": 42,
+   "time": 18.958,
+   "label": "BREAK: bagpipe groan + HEY! (stop-time)",
+   "kind": "section"
+  },
+  {
+   "beat": 42,
+   "time": 18.958,
+   "label": "bagpipe GROAN (bag inflates)",
+   "kind": "accent"
+  },
+  {
+   "beat": 43,
+   "time": 19.41,
+   "label": "bagpipe squawk",
+   "kind": "accent"
+  },
+  {
+   "beat": 43.25,
+   "time": 19.532,
+   "label": "group shout \"EI\"",
+   "kind": "accent"
+  },
+  {
+   "beat": 44,
+   "time": 19.861,
+   "label": "SECTION 2: royal - bagpipes, lute, processional drums",
+   "kind": "section"
+  },
+  {
+   "beat": 44,
+   "time": 19.861,
+   "label": "BAGPIPES take the hook (royal)",
+   "kind": "accent"
+  },
+  {
+   "beat": 48,
+   "time": 21.667,
+   "label": "flute ANSWER",
+   "kind": "accent"
+  },
+  {
+   "beat": 52,
+   "time": 23.472,
+   "label": "bagpipe CALL",
+   "kind": "accent"
+  },
+  {
+   "beat": 56,
+   "time": 25.278,
+   "label": "hurdy-gurdy ANSWER",
+   "kind": "accent"
+  },
+  {
+   "beat": 60,
+   "time": 27.083,
+   "label": "bagpipe CALL + flute harmony",
+   "kind": "accent"
+  },
+  {
+   "beat": 64,
+   "time": 28.889,
+   "label": "flute + hurdy ANSWER (high)",
+   "kind": "accent"
+  },
+  {
+   "beat": 68,
+   "time": 30.694,
+   "label": "bagpipe CALL",
+   "kind": "accent"
+  },
+  {
+   "beat": 72,
+   "time": 32.5,
+   "label": "TUTTI royal cadence",
+   "kind": "accent"
+  },
+  {
+   "beat": 74.0,
+   "time": 33.403,
+   "label": "group shout \"EI\"",
+   "kind": "accent"
+  },
+  {
+   "beat": 76,
+   "time": 34.306,
+   "label": "turnaround run",
+   "kind": "accent"
+  },
+  {
+   "beat": 80,
+   "time": 36.111,
+   "label": "FAKE-OUT: band winds down, ghost chant",
+   "kind": "section"
+  },
+  {
+   "beat": 80,
+   "time": 36.111,
+   "label": "everything winds down (mystery)",
+   "kind": "accent"
+  },
+  {
+   "beat": 82,
+   "time": 37.014,
+   "label": "IMPACT -> SECTION 3: dark hypnotic hurdy-gurdy",
+   "kind": "section"
+  },
+  {
+   "beat": 82,
+   "time": 37.014,
+   "label": "IMPACT (boom + zill + davul)",
+   "kind": "accent"
+  },
+  {
+   "beat": 82,
+   "time": 37.014,
+   "label": "hurdy-gurdy hypnotic ostinato + buzzing chien",
+   "kind": "accent"
+  },
+  {
+   "beat": 90,
+   "time": 40.625,
+   "label": "flute: dark version of the hook (low)",
+   "kind": "accent"
+  },
+  {
+   "beat": 97.0,
+   "time": 43.785,
+   "label": "group shout \"A\"",
+   "kind": "accent"
+  },
+  {
+   "beat": 98,
+   "time": 44.236,
+   "label": "flute dark hook (high)",
+   "kind": "accent"
+  },
+  {
+   "beat": 106,
+   "time": 47.847,
+   "label": "flute + hurdy dark call",
+   "kind": "accent"
+  },
+  {
+   "beat": 110,
+   "time": 49.653,
+   "label": "bagpipe drone accent",
+   "kind": "accent"
+  },
+  {
+   "beat": 113.0,
+   "time": 51.007,
+   "label": "group shout \"A\"",
+   "kind": "accent"
+  },
+  {
+   "beat": 113.5,
+   "time": 51.233,
+   "label": "group shout \"A\"",
+   "kind": "accent"
+  },
+  {
+   "beat": 114,
+   "time": 51.458,
+   "label": "build: chant HEY x4 + flute run",
+   "kind": "section"
+  },
+  {
+   "beat": 114,
+   "time": 51.458,
+   "label": "flute run up",
+   "kind": "accent"
+  },
+  {
+   "beat": 116.0,
+   "time": 52.361,
+   "label": "group shout \"EI\"",
+   "kind": "accent"
+  },
+  {
+   "beat": 116.5,
+   "time": 52.587,
+   "label": "group shout \"EI\"",
+   "kind": "accent"
+  },
+  {
+   "beat": 117.0,
+   "time": 52.812,
+   "label": "group shout \"EI\"",
+   "kind": "accent"
+  },
+  {
+   "beat": 117.5,
+   "time": 53.038,
+   "label": "group shout \"EI\"",
+   "kind": "accent"
+  },
+  {
+   "beat": 118,
+   "time": 53.264,
+   "label": "FINAL DROP: everything",
+   "kind": "section"
+  },
+  {
+   "beat": 118,
+   "time": 53.264,
+   "label": "FINAL: flute + bagpipes hook in unison, hurdy harmony",
+   "kind": "accent"
+  },
+  {
+   "beat": 122,
+   "time": 55.069,
+   "label": "bagpipe + hurdy ANSWER + HEY!",
+   "kind": "accent"
+  },
+  {
+   "beat": 122.0,
+   "time": 55.069,
+   "label": "group shout \"EI\"",
+   "kind": "accent"
+  },
+  {
+   "beat": 123.5,
+   "time": 55.747,
+   "label": "group shout \"EI\"",
+   "kind": "accent"
+  },
+  {
+   "beat": 126,
+   "time": 56.875,
+   "label": "flute + bagpipes CALL",
+   "kind": "accent"
+  },
+  {
+   "beat": 130,
+   "time": 58.681,
+   "label": "everyone: run up",
+   "kind": "accent"
+  },
+  {
+   "beat": 134,
+   "time": 60.486,
+   "label": "hook with whirlwind tail",
+   "kind": "accent"
+  },
+  {
+   "beat": 137.0,
+   "time": 61.84,
+   "label": "group shout \"EI\"",
+   "kind": "accent"
+  },
+  {
+   "beat": 137.5,
+   "time": 62.066,
+   "label": "group shout \"EI\"",
+   "kind": "accent"
+  },
+  {
+   "beat": 138,
+   "time": 62.292,
+   "label": "stop-time 3-3-2 ending hits",
+   "kind": "section"
+  },
+  {
+   "beat": 138,
+   "time": 62.292,
+   "label": "3-3-2 STOP HITS",
+   "kind": "accent"
+  },
+  {
+   "beat": 138.0,
+   "time": 62.292,
+   "label": "tutti hit",
+   "kind": "accent"
+  },
+  {
+   "beat": 138.75,
+   "time": 62.63,
+   "label": "tutti hit",
+   "kind": "accent"
+  },
+  {
+   "beat": 139.5,
+   "time": 62.969,
+   "label": "tutti hit",
+   "kind": "accent"
+  },
+  {
+   "beat": 142,
+   "time": 64.097,
+   "label": "loop pickup -> 0:00",
+   "kind": "section"
+  },
+  {
+   "beat": 142.0,
+   "time": 64.097,
+   "label": "group shout \"EI\"",
+   "kind": "accent"
+  }
+ ]
+}
