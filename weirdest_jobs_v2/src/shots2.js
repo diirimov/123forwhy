@@ -15,6 +15,7 @@ const holdBread2 = (s = .55, bite = 0, dx = 30, dy = -10) => ({ R: (c, J) => bre
 // ---- backgrounds
 function townBG(c, t, camX, o = {}) {
   const S = SETS.town, g = S.ground;
+  camX = Math.min(camX, S.w - W - 20);
   c.drawImage(S.sky, 0, 0);
   c.save(); c.globalAlpha = clamp((t - 3.2) / 16) * .3; c.fillStyle = lg(c, 0, 0, 0, H, [[0, '#ffb070'], [1, '#ffe0b0']]); c.fillRect(0, 0, W, H); c.restore();
   c.drawImage(S.far, -camX * .35 - 100, 0);

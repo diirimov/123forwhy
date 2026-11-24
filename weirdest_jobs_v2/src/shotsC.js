@@ -25,8 +25,10 @@ shot(38.4, 41.6, 'S1 the village at dusk, a funeral procession', 'flash', (c, t)
   crows2(c, t, 38.6, 8, 3);
   const s = .95, x = 840 - lt * 40, y = 1730;
   const wA = walk2(t, { step: SPB * 2, amp: .5 }), wB = walk2(t, { step: SPB * 2, amp: .5, ph: 1 });
-  coffinCarried(c, x, y - 380 * s, s);
-  [0, 1, 2, 3].forEach(i => drawChar2(c, VIL2[i], mergeP({ x: x + i * 125 * s, y, s: s * .92, f: -1, view: 'p' }, i % 2 ? wA : wB, { shR: 2.75, elR: .5, shL: 2.75, elL: .5, handR: 'grip', handL: 'grip', expr: X('sad', { lookX: .6 }) }), t));
+  // the coffin rests on the bearers' shoulders; heads are in front of it, near hands steady its side
+  const sh = 1730 - (BODY2.slim.thigh + BODY2.slim.shin + BODY2.slim.torso * .9) * s * .92;
+  coffinCarried(c, x - 40 * s, sh + 30 * s, s * 1.05);
+  [0, 1, 2, 3].forEach(i => drawChar2(c, VIL2[i], mergeP({ x: x + i * 125 * s, y, s: s * .92, f: -1, view: 'p' }, i % 2 ? wA : wB, { shR: .1, elR: .3, shL: -2.05, elL: -.35, handR: 'relaxed', handL: 'open', lean: .04, expr: X('sad', { lookX: .6 }) }), t));
   [WID, BOY, ELDER].forEach((ch, i) => drawChar2(c, ch, mergeP({ x: x + 560 * s + i * 135 * s, y: y + 10, s: s * (ch === BOY ? 1.05 : .95), f: -1, view: 'p' }, walk2(t + i * .3, { step: SPB * 2, amp: .4 }),
     { shR: 1.4, elR: 1.4, handR: 'grip', expr: X('sad', { lookY: .5 }), hold: { R: (cc, J) => candle(cc, J.handN[0], J.handN[1] + 6, 70, t, i, .8) } }), t));
   fogBand(c, 1750, 200, t, '#c8b8e8', .22, 30, 14);

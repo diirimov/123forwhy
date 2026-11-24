@@ -216,12 +216,19 @@ shot(11.2, 12.8, 'K5 five windows, five reactions', 'cut', (c, t) => {
 }, 'knocker');
 shot(12.8, 13.6, 'K6a the furious neighbour', 'cut', (c, t) => {
   c.drawImage(SETS.wallwin.bg, 0, 0);
-  rrect(c, 170, 420, 740, 1000, 10, '#ffcf7a'); glow(c, 540, 900, 600, 'rgba(255,190,90,0.4)');
-  c.save(); c.beginPath(); c.rect(170, 420, 740, 1000); c.clip();
+  // one big sash window: the lower half is raised open, the neighbour leans out of it
+  const WX = 170, WY = 420, WW = 740, WH = 1000;
+  rrect(c, WX, WY, WW, WH, 6, '#ffcf7a'); glow(c, 540, 1100, 600, 'rgba(255,190,90,0.4)');
+  c.save(); c.beginPath(); c.rect(WX, WY, WW, WH); c.clip();
   drawChar2(c, WINF[1], { x: 540, y: 2300, s: 2.3, f: -1, view: 'q', shR: 2.4 + Math.sin(t * 28) * .25, elR: 1.5, handR: 'fist', shL: .5, elL: 1.6, handL: 'fist', head: Math.sin(t * 14) * .06, lean: .1,
     expr: X('anger', { lookX: -.3, lookY: .4, open: .3 + .2 * Math.sin(t * 20), mouth: 'teeth' }) }, t);
   c.restore();
-  windowFrame2(c, 170, 420, 1);
+  // frame + raised lower sash (overlapping the fixed upper sash) + sill
+  rrect(c, WX - 26, WY - 26, WW + 52, WH + 52, 8, null, 26, '#ece4d0'); rrect(c, WX - 40, WY - 40, WW + 80, WH + 80, 10, null, 5, OL);
+  const sashH = WH * .42;
+  for (const [sy, k] of [[WY, 1], [WY + 40, .9]]) { rrect(c, WX, sy, WW, sashH, 4, `rgba(150,180,235,${.22 * k})`, 18, '#ece4d0'); line(c, [[WX + WW / 2, sy], [WX + WW / 2, sy + sashH]], 12, '#ece4d0'); line(c, [[WX, sy + sashH / 2], [WX + WW, sy + sashH / 2]], 10, '#ece4d0');
+    c.fillStyle = 'rgba(255,255,255,0.18)'; c.beginPath(); c.moveTo(WX + 40, sy + sashH - 10); c.lineTo(WX + 200, sy + 10); c.lineTo(WX + 260, sy + 10); c.lineTo(WX + 100, sy + sashH - 10); c.fill(); }
+  rrect(c, WX - 60, WY + WH, WW + 120, 44, 6, '#d8cfb8', 6);
   popWord(c, t, 'GRRR!', 12.9, 760, 1300, 110, '#ff7a5a');
   caption(c, t, 'They tapped on *bedroom windows*\nevery morning.', 11.2, 14.2, { size: 56, y: 330 });
 }, 'knocker');

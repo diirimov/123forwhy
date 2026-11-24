@@ -100,13 +100,23 @@ function closeStool(c, x, y, s, lid = 0, shine = 0) {   // ornate Tudor close st
   rrect(c, -150, -190, 300, 150, 12, null, 4, '#f0c040');
   // crest
   ell(c, 0, -115, 40, 44, '#f0c040', 4); poly(c, [[-14, -132], [0, -150], [14, -132], [0, -96]], '#8a1424');
-  // lid (hinged at back)
-  c.save(); c.translate(0, -236); c.rotate(-lid * 1.2);
-  rrect(c, -200, -40, 400, 46, 16, '#8a1a2c', 6);
-  c.fillStyle = lg(c, 0, -40, 0, 6, [[0, 'rgba(255,220,220,0.3)'], [1, 'rgba(0,0,0,0.25)']]); c.fillRect(-196, -36, 392, 38);
-  for (let i = 0; i < 8; i++) ell(c, -168 + i * 48, -18, 6, 6, '#f0c040', 2);
-  c.restore();
-  if (lid > .2) { ell(c, 0, -236, 130 * lid, 30 * lid, '#2a1010', 4); ell(c, 0, -240, 100 * lid, 18 * lid, '#d8d0c8', 3); }
+  // lid: hinged at the back. Closed = padded cushion on top; open = upright padded panel behind the seat
+  const lk = clamp(lid);
+  const seatTop = -236;
+  if (lk > .05) {
+    const ph = 250 * Math.sin(lk * PI / 2);          // panel rises behind the seat
+    rrect(c, -185, seatTop - ph, 370, ph + 20, 40, '#7a1628', 6);
+    c.save(); c.beginPath(); c.roundRect(-185, seatTop - ph, 370, ph + 20, 40); c.clip();
+    c.fillStyle = lg(c, -185, 0, 185, 0, [[0, 'rgba(0,0,0,0.3)'], [.5, 'rgba(255,210,210,0.18)'], [1, 'rgba(0,0,0,0.3)']]); c.fillRect(-185, seatTop - ph, 370, ph + 20);
+    for (let i = 0; i < 3; i++) for (let j = 0; j < 4; j++) ell(c, -110 + j * 73, seatTop - ph + 50 + i * 70, 5, 5, '#f0c040', 1.5);
+    c.restore();
+    rrect(c, -185, seatTop - ph, 370, ph + 20, 40, null, 6);
+  }
+  // seat board with the opening (porcelain pot inside) when the lid is up
+  rrect(c, -205, seatTop - 18, 410, 40, 18, '#8a1a2c', 6);
+  if (lk > .05) { ell(c, 0, seatTop + 2, 120, 22, '#3a1012', 4); ell(c, 0, seatTop - 1, 96, 14, '#f2ece2', 3); ell(c, 0, seatTop - 3, 70, 8, '#d8d0c6'); }
+  else { ell(c, 0, seatTop - 2, 150, 20, '#a8243a', 4); ell(c, 0, seatTop - 6, 110, 10, 'rgba(255,220,220,0.25)'); }
+  for (let i = 0; i < 9; i++) ell(c, -180 + i * 45, seatTop + 12, 5, 5, '#f0c040', 1.5);
   // tassels
   for (const sx of [-1, 1]) { line(c, [[sx * 190, -200], [sx * 205, -150]], 4, '#f0c040'); ell(c, sx * 205, -140, 10, 16, '#f0c040', 3); }
   c.restore();
