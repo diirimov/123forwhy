@@ -1,0 +1,6 @@
+out/
+review/t*/
+review/v1/
+review/final/
+review/dbg*
+review/shots.json
