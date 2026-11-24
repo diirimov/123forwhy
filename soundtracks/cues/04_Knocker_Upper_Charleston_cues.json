@@ -1,0 +1,464 @@
+{
+ "title": "Knocker-Upper",
+ "bpm": 132.923,
+ "duration": 65.0,
+ "beats": 144,
+ "beat_seconds": 0.45139,
+ "every_beat": "t = n * beat_seconds (n = 0..143); swing does not move beats",
+ "bar_downbeats": [
+  0.0,
+  1.806,
+  2.708,
+  4.514,
+  6.319,
+  8.125,
+  9.931,
+  11.736,
+  13.542,
+  15.347,
+  17.153,
+  18.958,
+  19.861,
+  21.667,
+  23.472,
+  25.278,
+  27.083,
+  28.889,
+  30.694,
+  32.5,
+  34.306,
+  36.111,
+  37.014,
+  38.819,
+  40.625,
+  42.431,
+  44.236,
+  46.042,
+  47.847,
+  49.653,
+  51.458,
+  53.264,
+  55.069,
+  56.875,
+  58.681,
+  60.486,
+  62.292,
+  64.097
+ ],
+ "cues": [
+  {
+   "beat": 0,
+   "time": 0.0,
+   "label": "INTRO: hook enters, vintage filtered (voice-over space)",
+   "kind": "section"
+  },
+  {
+   "beat": 4,
+   "time": 1.806,
+   "label": "pickup: brass stab + fill",
+   "kind": "section"
+  },
+  {
+   "beat": 4.0,
+   "time": 1.806,
+   "label": "brass stab (Bb7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 5.5,
+   "time": 2.528,
+   "label": "brass stab (Bb7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 6,
+   "time": 2.708,
+   "label": "DROP 1: full groove + clarinet hook",
+   "kind": "section"
+  },
+  {
+   "beat": 6.0,
+   "time": 2.708,
+   "label": "brass stab (Eb)",
+   "kind": "accent"
+  },
+  {
+   "beat": 7.5,
+   "time": 3.431,
+   "label": "brass stab (Eb)",
+   "kind": "accent"
+  },
+  {
+   "beat": 10.0,
+   "time": 4.514,
+   "label": "brass stab (C7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 11.5,
+   "time": 5.236,
+   "label": "brass stab (C7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 14.0,
+   "time": 6.319,
+   "label": "brass stab (Fm7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 15.5,
+   "time": 7.042,
+   "label": "brass stab (Fm7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 18.0,
+   "time": 8.125,
+   "label": "brass stab (Bb7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 19.5,
+   "time": 8.847,
+   "label": "brass stab (Bb7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 22.0,
+   "time": 9.931,
+   "label": "brass stab (Eb)",
+   "kind": "accent"
+  },
+  {
+   "beat": 23.5,
+   "time": 10.653,
+   "label": "brass stab (Eb)",
+   "kind": "accent"
+  },
+  {
+   "beat": 26.0,
+   "time": 11.736,
+   "label": "brass stab (C7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 27.5,
+   "time": 12.458,
+   "label": "brass stab (C7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 28.5,
+   "time": 12.91,
+   "label": "brass stab (C7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 30.0,
+   "time": 13.542,
+   "label": "brass stab (Fm7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 31.5,
+   "time": 14.264,
+   "label": "brass stab (Fm7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 34.0,
+   "time": 15.347,
+   "label": "brass stab (Eb)",
+   "kind": "accent"
+  },
+  {
+   "beat": 35.5,
+   "time": 16.069,
+   "label": "brass stab (Eb)",
+   "kind": "accent"
+  },
+  {
+   "beat": 38.0,
+   "time": 17.153,
+   "label": "brass stab (Ab)",
+   "kind": "accent"
+  },
+  {
+   "beat": 38.75,
+   "time": 17.514,
+   "label": "brass stab (Ab)",
+   "kind": "accent"
+  },
+  {
+   "beat": 40.5,
+   "time": 18.326,
+   "label": "brass stab (Bb7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 41.0,
+   "time": 18.507,
+   "label": "brass stab (Bb7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 41.25,
+   "time": 18.642,
+   "label": "brass stab (Bb7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 41.5,
+   "time": 18.778,
+   "label": "brass stab (Bb7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 41.75,
+   "time": 18.868,
+   "label": "brass stab (Bb7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 42,
+   "time": 18.958,
+   "label": "RHYTHMIC BREAK (stop-time)",
+   "kind": "section"
+  },
+  {
+   "beat": 42.0,
+   "time": 18.958,
+   "label": "brass stab (Eb)",
+   "kind": "accent"
+  },
+  {
+   "beat": 44,
+   "time": 19.861,
+   "label": "SECTION 2: royal brass + heavier bass",
+   "kind": "section"
+  },
+  {
+   "beat": 48.0,
+   "time": 21.667,
+   "label": "brass stab (Eb)",
+   "kind": "accent"
+  },
+  {
+   "beat": 49.5,
+   "time": 22.389,
+   "label": "brass stab (Eb)",
+   "kind": "accent"
+  },
+  {
+   "beat": 64.0,
+   "time": 28.889,
+   "label": "brass stab (Eb)",
+   "kind": "accent"
+  },
+  {
+   "beat": 65.5,
+   "time": 29.611,
+   "label": "brass stab (Eb)",
+   "kind": "accent"
+  },
+  {
+   "beat": 66.5,
+   "time": 30.062,
+   "label": "brass stab (Eb)",
+   "kind": "accent"
+  },
+  {
+   "beat": 76.0,
+   "time": 34.306,
+   "label": "brass stab (Ab)",
+   "kind": "accent"
+  },
+  {
+   "beat": 76.75,
+   "time": 34.667,
+   "label": "brass stab (Ab)",
+   "kind": "accent"
+  },
+  {
+   "beat": 77.5,
+   "time": 35.028,
+   "label": "brass stab (Ab)",
+   "kind": "accent"
+  },
+  {
+   "beat": 78.5,
+   "time": 35.479,
+   "label": "brass stab (G7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 79.0,
+   "time": 35.66,
+   "label": "brass stab (G7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 79.25,
+   "time": 35.795,
+   "label": "brass stab (G7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 79.5,
+   "time": 35.931,
+   "label": "brass stab (G7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 79.75,
+   "time": 36.021,
+   "label": "brass stab (G7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 80,
+   "time": 36.111,
+   "label": "FAKE-OUT (tape stop / gotcha)",
+   "kind": "section"
+  },
+  {
+   "beat": 82,
+   "time": 37.014,
+   "label": "SECTION 3: minor-key mystery groove",
+   "kind": "section"
+  },
+  {
+   "beat": 114,
+   "time": 51.458,
+   "label": "riser into final drop",
+   "kind": "section"
+  },
+  {
+   "beat": 118,
+   "time": 53.264,
+   "label": "FINAL DROP: biggest section, hook returns",
+   "kind": "section"
+  },
+  {
+   "beat": 118.0,
+   "time": 53.264,
+   "label": "brass stab (Eb)",
+   "kind": "accent"
+  },
+  {
+   "beat": 119.5,
+   "time": 53.986,
+   "label": "brass stab (Eb)",
+   "kind": "accent"
+  },
+  {
+   "beat": 122.0,
+   "time": 55.069,
+   "label": "brass stab (C7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 123.5,
+   "time": 55.792,
+   "label": "brass stab (C7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 124.5,
+   "time": 56.243,
+   "label": "brass stab (C7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 125.0,
+   "time": 56.424,
+   "label": "brass stab (C7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 126.0,
+   "time": 56.875,
+   "label": "brass stab (Fm7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 127.5,
+   "time": 57.597,
+   "label": "brass stab (Fm7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 130.0,
+   "time": 58.681,
+   "label": "brass stab (Bb7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 131.5,
+   "time": 59.403,
+   "label": "brass stab (Bb7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 134.0,
+   "time": 60.486,
+   "label": "brass stab (Eb)",
+   "kind": "accent"
+  },
+  {
+   "beat": 135.5,
+   "time": 61.208,
+   "label": "brass stab (Eb)",
+   "kind": "accent"
+  },
+  {
+   "beat": 138.0,
+   "time": 62.292,
+   "label": "brass stab (Eb)",
+   "kind": "accent"
+  },
+  {
+   "beat": 139.5,
+   "time": 63.014,
+   "label": "brass stab (Eb)",
+   "kind": "accent"
+  },
+  {
+   "beat": 140.0,
+   "time": 63.194,
+   "label": "brass stab (Bb7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 140.75,
+   "time": 63.556,
+   "label": "brass stab (Bb7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 141.5,
+   "time": 63.917,
+   "label": "brass stab (Bb7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 141.75,
+   "time": 64.007,
+   "label": "brass stab (Bb7)",
+   "kind": "accent"
+  },
+  {
+   "beat": 142,
+   "time": 64.097,
+   "label": "loop pickup -> back to 0:00",
+   "kind": "section"
+  },
+  {
+   "beat": 142.0,
+   "time": 64.097,
+   "label": "brass stab (Bb7)",
+   "kind": "accent"
+  }
+ ]
+}
