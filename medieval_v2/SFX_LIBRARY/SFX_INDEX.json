@@ -1,0 +1,272 @@
+{
+ "sample_rate": 48000,
+ "bit_depth": 24,
+ "peak": "-3 dBFS",
+ "count": 44,
+ "files": [
+  {
+   "file": "01_Knocker_Up/KU_stick_tap_glass_01.wav",
+   "seconds": 0.35,
+   "description": "Single wooden-stick tap on a window pane",
+   "sync_point": "transient at 0.000 s"
+  },
+  {
+   "file": "01_Knocker_Up/KU_stick_tap_glass_02.wav",
+   "seconds": 0.35,
+   "description": "Single wooden-stick tap on a window pane",
+   "sync_point": "transient at 0.000 s"
+  },
+  {
+   "file": "01_Knocker_Up/KU_stick_tap_glass_03.wav",
+   "seconds": 0.35,
+   "description": "Single wooden-stick tap on a window pane",
+   "sync_point": "transient at 0.000 s"
+  },
+  {
+   "file": "01_Knocker_Up/KU_window_knock_rhythm_150bpm.wav",
+   "seconds": 1.7,
+   "description": "Rhythmic tap-tap pattern locked to 150 BPM (one bar)",
+   "sync_point": "taps on the 1/8 grid from 0.000 s"
+  },
+  {
+   "file": "01_Knocker_Up/KU_door_knock_x3.wav",
+   "seconds": 0.965,
+   "description": "Three knuckle knocks on a wooden door",
+   "sync_point": "knocks at 0.0 / 0.2 / 0.4 s"
+  },
+  {
+   "file": "01_Knocker_Up/KU_snore_cartoon_01.wav",
+   "seconds": 1.8,
+   "description": "Cartoon snore: rattly inhale + whistling exhale",
+   "sync_point": "inhale 0-1.0 s, whistle 1.0-1.8 s"
+  },
+  {
+   "file": "01_Knocker_Up/KU_snore_cartoon_02_loopable.wav",
+   "seconds": 3.2,
+   "description": "Two snore cycles (3.2 s = 2 bars at 150 BPM)",
+   "sync_point": "cycle every 1.6 s"
+  },
+  {
+   "file": "01_Knocker_Up/KU_wake_up_gasp.wav",
+   "seconds": 0.47,
+   "description": "Sudden awakening: sharp \"HUH!\" gasp + slide whistle up",
+   "sync_point": "gasp onset 0.05 s"
+  },
+  {
+   "file": "01_Knocker_Up/KU_wake_up_startle_bonk.wav",
+   "seconds": 0.52,
+   "description": "Startled jump: bonk + \"WAH!\"",
+   "sync_point": "impact 0.000 s"
+  },
+  {
+   "file": "01_Knocker_Up/KU_window_open.wav",
+   "seconds": 1.743,
+   "description": "Wooden shutter creaks open, latch click, air whoosh",
+   "sync_point": "latch click 0.70 s"
+  },
+  {
+   "file": "01_Knocker_Up/KU_reaction_surprised.wav",
+   "seconds": 0.423,
+   "description": "Surprised \"WHAAA?\"",
+   "sync_point": "onset 0.000 s"
+  },
+  {
+   "file": "01_Knocker_Up/KU_reaction_annoyed_hmph.wav",
+   "seconds": 0.785,
+   "description": "Annoyed \"Mm-HMPH!\"",
+   "sync_point": "accent at ~0.30 s"
+  },
+  {
+   "file": "01_Knocker_Up/KU_reaction_annoyed_grumble.wav",
+   "seconds": 1.606,
+   "description": "Grumpy wordless grumbling",
+   "sync_point": ""
+  },
+  {
+   "file": "01_Knocker_Up/KU_footsteps_fast_run.wav",
+   "seconds": 1.956,
+   "description": "Fast cartoon running steps (10 steps/s; 4 per beat at 150 BPM)",
+   "sync_point": "step every 0.100 s"
+  },
+  {
+   "file": "01_Knocker_Up/KU_impact_comedic_bonk.wav",
+   "seconds": 0.5,
+   "description": "Comedic wooden bonk with pitch drop",
+   "sync_point": "impact 0.000 s"
+  },
+  {
+   "file": "01_Knocker_Up/KU_impact_comedic_boing.wav",
+   "seconds": 0.47,
+   "description": "Cartoon boing impact",
+   "sync_point": "impact 0.000 s"
+  },
+  {
+   "file": "02_Groom_of_the_Stool/GS_fanfare_short.wav",
+   "seconds": 2.099,
+   "description": "Short royal trumpet fanfare (ta-ta-ta-TAAA), 150 BPM",
+   "sync_point": "last note at 0.300 s"
+  },
+  {
+   "file": "02_Groom_of_the_Stool/GS_fanfare_tada.wav",
+   "seconds": 2.425,
+   "description": "Royal \"TA-DA!\"",
+   "sync_point": "hit at 0.400 s"
+  },
+  {
+   "file": "02_Groom_of_the_Stool/GS_fanfare_announcement.wav",
+   "seconds": 2.935,
+   "description": "Longer herald fanfare (1 bar)",
+   "sync_point": "downbeat 0.000 s"
+  },
+  {
+   "file": "02_Groom_of_the_Stool/GS_palace_door_heavy.wav",
+   "seconds": 3.225,
+   "description": "Heavy palace door: long creak then boom",
+   "sync_point": "slam at 1.150 s"
+  },
+  {
+   "file": "02_Groom_of_the_Stool/GS_palace_door_slam_only.wav",
+   "seconds": 2.081,
+   "description": "Heavy palace door slam",
+   "sync_point": "impact 0.000 s"
+  },
+  {
+   "file": "02_Groom_of_the_Stool/GS_footsteps_royal_chamber.wav",
+   "seconds": 3.414,
+   "description": "Slow footsteps on stone in a reverberant chamber (on the beat at 150 BPM)",
+   "sync_point": "step every 0.400 s"
+  },
+  {
+   "file": "02_Groom_of_the_Stool/GS_coin_jingle.wav",
+   "seconds": 0.45,
+   "description": "Coin purse jingle",
+   "sync_point": "onset 0.000 s"
+  },
+  {
+   "file": "02_Groom_of_the_Stool/GS_coin_shower.wav",
+   "seconds": 1.426,
+   "description": "Cascade of coins",
+   "sync_point": "onset 0.000 s"
+  },
+  {
+   "file": "02_Groom_of_the_Stool/GS_crowd_ooh.wav",
+   "seconds": 1.92,
+   "description": "Crowd \"OOOOH\" (impressed, falling)",
+   "sync_point": "onset ~0.05 s"
+  },
+  {
+   "file": "02_Groom_of_the_Stool/GS_crowd_cheer_hey.wav",
+   "seconds": 1.742,
+   "description": "Crowd cheer \"HEY!\"",
+   "sync_point": "onset ~0.05 s"
+  },
+  {
+   "file": "02_Groom_of_the_Stool/GS_crowd_gasp.wav",
+   "seconds": 1.75,
+   "description": "Crowd shocked gasp \"HAH?\"",
+   "sync_point": "onset ~0.05 s"
+  },
+  {
+   "file": "02_Groom_of_the_Stool/GS_royal_exclamation_ohoho.wav",
+   "seconds": 2.488,
+   "description": "Pompous royal \"OH-HO-HO-HO... HA!\"",
+   "sync_point": "final HA at ~0.65 s"
+  },
+  {
+   "file": "02_Groom_of_the_Stool/GS_royal_exclamation_ahem.wav",
+   "seconds": 1.951,
+   "description": "Royal throat-clear \"a-HEM\"",
+   "sync_point": ""
+  },
+  {
+   "file": "02_Groom_of_the_Stool/GS_comedic_sad_trombone.wav",
+   "seconds": 2.237,
+   "description": "Comedic \"wah-wah-waaah\" trombone",
+   "sync_point": "notes 0.0 / 0.45 / 0.9 s"
+  },
+  {
+   "file": "02_Groom_of_the_Stool/GS_comedic_slide_whistle_down.wav",
+   "seconds": 0.5,
+   "description": "Slide whistle falling (embarrassment)",
+   "sync_point": ""
+  },
+  {
+   "file": "02_Groom_of_the_Stool/GS_rhythmic_impact_timpani.wav",
+   "seconds": 2.293,
+   "description": "Timpani + thud royal impact",
+   "sync_point": "impact 0.000 s"
+  },
+  {
+   "file": "03_Sin_Eater/SE_church_bell_toll_big.wav",
+   "seconds": 7.952,
+   "description": "Large church bell toll (A)",
+   "sync_point": "strike 0.000 s"
+  },
+  {
+   "file": "03_Sin_Eater/SE_church_bell_toll_x3.wav",
+   "seconds": 7.184,
+   "description": "Three tolls, one per bar at 150 BPM",
+   "sync_point": "tolls at 0.0 / 1.6 / 3.2 s"
+  },
+  {
+   "file": "03_Sin_Eater/SE_handbell_small.wav",
+   "seconds": 2.44,
+   "description": "Small hand bell (E)",
+   "sync_point": "strike 0.000 s"
+  },
+  {
+   "file": "03_Sin_Eater/SE_crow_caw_01.wav",
+   "seconds": 2.169,
+   "description": "Crow calls (2-3 caws)",
+   "sync_point": "first caw 0.05 s"
+  },
+  {
+   "file": "03_Sin_Eater/SE_crow_caw_02.wav",
+   "seconds": 2.322,
+   "description": "Crow calls (2-3 caws)",
+   "sync_point": "first caw 0.05 s"
+  },
+  {
+   "file": "03_Sin_Eater/SE_whispers_ghostly.wav",
+   "seconds": 5.993,
+   "description": "Mysterious unintelligible whispers (s / sh / h)",
+   "sync_point": ""
+  },
+  {
+   "file": "03_Sin_Eater/SE_door_creak_wooden.wav",
+   "seconds": 2.311,
+   "description": "Slow wooden door creak",
+   "sync_point": ""
+  },
+  {
+   "file": "03_Sin_Eater/SE_bread_crunch_bite.wav",
+   "seconds": 0.675,
+   "description": "Crusty bread bite + two chews",
+   "sync_point": "bite at 0.000 s"
+  },
+  {
+   "file": "03_Sin_Eater/SE_ghost_atmosphere.wav",
+   "seconds": 7.331,
+   "description": "Ghost choir \"oooh\" + wind bed (4.5 s)",
+   "sync_point": ""
+  },
+  {
+   "file": "03_Sin_Eater/SE_supernatural_accent.wav",
+   "seconds": 4.248,
+   "description": "Reverse swell into bell + boom (supernatural sting)",
+   "sync_point": "hit at 0.800 s"
+  },
+  {
+   "file": "03_Sin_Eater/SE_transition_impact.wav",
+   "seconds": 3.35,
+   "description": "Whoosh into a deep transition impact",
+   "sync_point": "hit at 0.800 s"
+  },
+  {
+   "file": "03_Sin_Eater/SE_ghost_gasp.wav",
+   "seconds": 3.289,
+   "description": "Breathy ghostly \"hooo\"",
+   "sync_point": ""
+  }
+ ]
+}
