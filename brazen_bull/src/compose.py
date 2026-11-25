@@ -716,7 +716,7 @@ def gate_env(spans, ramp=0.003, floor=0.0):
     return g
 
 
-def mix(levels=None, report=False):
+def mix(levels=None, report=False, extra=None):
     L = dict(kick=1.0, rumble=0.42, sub=0.85, bmid=0.66, perc=0.8, hats=0.6, metal=0.75, bz=1.0, aul=0.4,
              pl=0.8, ss=0.8, chop=0.36, vox=1.2, horror=0.65, impact=0.55, fx=0.5, fire=0.13, drone=0.22,
              pad=0.4, heart=0.5, bzi=1.0)
@@ -792,13 +792,15 @@ def mix(levels=None, report=False):
     for k in MUSIC_BUSES + ["rumble", "heart"]:
         if k in out:
             out[k] = out[k] * brk_g
+    if extra is not None:      # V2: sample-based buses (processed + their own returns)
+        out.update(extra(B, dict(kick=kick_pump, music=music_pump, deep=deep_pump, lead=lead_pump, brk=brk_g)))
 
     # --- section trim automation: groove sits back, escalation crescendos into the pre-drop ---
     tt = np.arange(N) / SR
     trim = np.interp(tt, [0, T(2, 0) - 0.01, T(2, 0), T(8, 0) - 0.01, T(8, 0), T(14, 0), 60],
                      [1.0, 1.0, 0.82, 0.88, 0.8, 1.0, 1.0])
     for k in out:
-        if k not in ("impact", "fx", "horror"):
+        if k not in ("impact", "fx", "horror") and not k.startswith("x_"):
             out[k] = out[k] * trim
     # --- sends ---
     plate_send = 0.22 * out["bz"] + 0.12 * out["pl"] + 0.28 * out["aul"] + 0.2 * out["vox"] + 0.35 * out["chop"] + 0.15 * out["perc"] + 0.3 * out["metal"]
