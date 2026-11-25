@@ -1,0 +1,4 @@
+src/__pycache__/
+*.npy
+events_raw.json
+stems_db.json
