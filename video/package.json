@@ -1,0 +1,20 @@
+{
+  "name": "video",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@expo-google-fonts/archivo-black": "^0.4.1",
+    "@expo-google-fonts/cinzel": "^0.4.2",
+    "@expo-google-fonts/im-fell-english-sc": "^0.4.0",
+    "@expo-google-fonts/luckiest-guy": "^0.4.1",
+    "@expo-google-fonts/unifrakturmaguntia": "^0.4.1",
+    "@napi-rs/canvas": "^1.2.1"
+  }
+}
