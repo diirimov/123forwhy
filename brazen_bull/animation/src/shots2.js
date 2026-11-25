@@ -64,7 +64,7 @@ function silRim(ctx, S, col, a = 1, dx = 6, dy = 2) {
   ctx.save(); ctx.globalCompositeOperation = 'screen'; ctx.globalAlpha = a; ctx.filter = 'blur(1.5px)'; ctx.drawImage(e, 0, 0); ctx.filter = 'blur(12px)'; ctx.globalAlpha = a * 0.7; ctx.drawImage(e, 0, 0); ctx.restore();
 }
 // joints -> screen
-const XP = (X, p) => [X[0] + p[0] * X[2], X[1] + p[1] * X[2]];
+let XP = (X, p) => [X[0] + p[0] * X[2], X[1] + p[1] * X[2]];
 // X-ray skeleton mapped onto the posed rig
 function xrayBones(g, J, X, a = 1, col = '#cfe8ff') {
   g.save(); g.globalAlpha = a; g.strokeStyle = col; g.lineCap = 'round';
@@ -75,8 +75,8 @@ function xrayBones(g, J, X, a = 1, col = '#cfe8ff') {
   L(J.nHip, J.nKn, 26); L(J.nKn, J.nAn, 20); L(J.fHip, J.fKn, 24); L(J.fKn, J.fAn, 18);
   // ribcage arcs around the chest
   for (let i = 0; i < 7; i++) { const u = i / 7; const c = XP(X, [lerp(J.chest[0], J.root[0], 0.15 + u * 0.45), lerp(J.chest[1], J.root[1], 0.15 + u * 0.45)]);
-    g.lineWidth = 8 * X[2]; g.beginPath(); g.ellipse(c[0], c[1], 170 * X[2], 50 * X[2], -0.1, Math.PI * 0.95, Math.PI * 2.05); g.stroke(); }
-  const pel = XP(X, J.root); g.lineWidth = 14 * X[2]; g.beginPath(); g.ellipse(pel[0], pel[1], 150 * X[2], 70 * X[2], 0, 0, 6.283); g.stroke();
+    g.lineWidth = 8 * X[2]; g.beginPath(); g.ellipse(c[0], c[1], 170 * X[2], 50 * X[2], -0.1 + (X.rot || 0), Math.PI * 0.95, Math.PI * 2.05); g.stroke(); }
+  const pel = XP(X, J.root); g.lineWidth = 14 * X[2]; g.beginPath(); g.ellipse(pel[0], pel[1], 150 * X[2], 70 * X[2], X.rot || 0, 0, 6.283); g.stroke();
   const sk = XP(X, [J.neck[0] - 30, J.neck[1] - 220]); g.lineWidth = 12 * X[2]; g.beginPath(); g.ellipse(sk[0], sk[1], 150 * X[2], 170 * X[2], 0, 0, 6.283); g.stroke();
   g.restore();
 }
@@ -195,10 +195,12 @@ function v04(ctx, t) {
   const lens = ease.io3(inv(0.0, 0.75, lt));
   if (lens < 1) {
     // close-up of his forearm braced on the hot wall
-    insideBull(ctx, t, { x: 100 }, { heat: 0.85 });
+    if (window.V3) { const L = LIE(1060, 2150, 1.35); shellTight(ctx, t, L, { heat: 0.85, seamX: 250 });
+      const pose = secondary(blendPose('liePress', 'liePress', 0), t, { breath: 2, tremble: 0.6, rate: 4.4 }); pose.face = { brow: 0.9, mouth: 0.6, sweat: 1 }; drawLying(ctx, pose, t, L, { heat: 0.85 }); }
+    else { insideBull(ctx, t, { x: 100 }, { heat: 0.85 });
     const pose = secondary(blendPose('brace', 'brace', 0), t, { breath: 2, tremble: 0.5, rate: 4.4 });
     pose.face = { brow: 0.9, mouth: 0.6, sweat: 1, look: [-0.3, 0.1] };
-    drawNikias(ctx, pose, t, [1100, 900, 1.55], { heat: 0.85 });
+    drawNikias(ctx, pose, t, [1100, 900, 1.55], { heat: 0.85 }); }
   }
   if (lens > 0) {
     const R = lerp(0, 1500, lens), cx = 420, cy = 760;
@@ -328,7 +330,7 @@ function v11(ctx, t) {
   const sway = Math.sin(tt * 1.6) * 0.09 + Math.sin(tt * 2.9) * 0.04;
   const L = cvs('v11'), g = L.getContext('2d');
   g.save(); camApply(g, W / 2, H / 2, 1.25 + Math.sin(tt * 1.1) * 0.08, sway, W / 2 + Math.sin(tt * 0.8) * 60, H / 2);
-  insideBull(g, tt, { x: Math.sin(tt * 0.7) * 160 }, { heat: 0.8, slits: 2 });
+  if (window.V3) shellTight(g, tt, LIE(540 + Math.sin(tt * 0.7) * 120, 2350, 1.55), { heat: 0.8, seamX: 560 + Math.sin(tt * 0.9) * 140 }); else insideBull(g, tt, { x: Math.sin(tt * 0.7) * 160 }, { heat: 0.8, slits: 2 });
   g.restore();
   // swirl smear of the light seams
   ctx.drawImage(L, 0, 0);
