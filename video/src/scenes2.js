@@ -142,15 +142,17 @@ function alleyLayer() {
 function alley(ctx, cam, t, o = {}) {
   const g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, '#3a2c4a'); g.addColorStop(0.6, '#a5607a'); g.addColorStop(1, '#e8a070');
   ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-  dof(ctx, o.blur || 0, x => F.withCam(x, cam, 0.9, y => F.drawLayer(y, alleyLayer()), [cam.x, -400]));
+  dof(ctx, o.blur || 0, x => F.withCam(x, cam, 0.9, y => F.drawLayer(y, alleyLayer()), [0, -400]));
+  const G = F.layer('alley_ground', AL.x0, -20, AL.x1 - AL.x0, 1500, 1.0, y => E.ground(y, AL.x0, AL.x1, -20, 1500, 55));
   F.withCam(ctx, cam, 1, x => {
-    E.ground(x, cam.x - 2000, cam.x + 2000, 0, 1400, 55 + Math.floor(cam.x / 4000));
+    F.drawLayer(x, G);
     if (o.fg) o.fg(x);
   });
-  // near posts and barrels whizzing past (speed + depth)
+  // near posts and barrels sliding past faster than the subject plane (true parallax)
   if (o.posts !== false) dof(ctx, 9, x => F.withCam(x, cam, 1.6, y => {
-    for (let k = -3; k < 4; k++) { const px = Math.floor(cam.x / 700) * 700 + k * 700; shape(y, c => c.rect(px, -1600, 80, 2600), '#3a2418', { lw: 6, shade: { x0: px, y0: 0, x1: px + 80, y1: 0, a: 0.4 } }); E.barrel(y, px + 260, 700, 1.4); }
-  }, [cam.x, cam.y]), 1);
+    const base = Math.floor(cam.x * 1.6 / 1500) * 1500;
+    for (let k = -2; k < 4; k++) { const px = base + k * 1500; shape(y, c => c.rect(px, -1600, 56, 2600), '#4a3020', { lw: 5, shade: { x0: px, y0: 0, x1: px + 56, y1: 0, a: 0.4 } }); E.barrel(y, px + 420, 760, 1.3); }
+  }, [0, cam.y]), 1);
   // dusk grade: blue shadows + warm lantern pools
   ctx.save(); ctx.globalCompositeOperation = 'multiply'; ctx.fillStyle = 'rgba(120,110,170,0.45)'; ctx.fillRect(0, 0, W, H); ctx.restore();
   warmWash(ctx, 'rgba(255,150,90,0.25)');
@@ -166,14 +168,23 @@ function golden(ctx, cam, t, o = {}) {
 // interiors with DOF + optional blurred foreground
 function room(kind, ctx, cam, t, o = {}) {
   const fn = { study: S.study, shop: S.shop, surgery: S.surgery }[kind];
-  if (!o.blur) { fn(ctx, cam, t, o); }
+  if (!o.blur) { const oo = Object.assign({}, o); if (kind === 'study' && o.chair) { oo.chair = null; const fg0 = o.fg; oo.fg = x => { chair2(x, o.chair, 140); if (fg0) fg0(x); }; } fn(ctx, cam, t, oo); }
   else {
     // background (blurred) then sharp subject plane
     const bg = Object.assign({}, o, { fg: null, front: null, desk: o.desk === false ? false : o.blurDesk ? o.desk : false, counter: false, table: false, chair: null, back: null });
     dof(ctx, o.blur, x => fn(x, cam, t, bg));
-    F.withCam(ctx, cam, 1, x => { if (o.back) o.back(x); if (kind === 'shop' && o.counter !== false) S.counter(x, o.counterX || 300, 150); if (kind === 'surgery' && o.table !== false) S.opTable(x, o.tableX || 200, 150); if (kind === 'study' && o.chair) S.chair(x, o.chair, 140); if (kind === 'study' && o.desk !== false && !o.blurDesk) S.desk(x, 760, 120, t); if (o.fg) o.fg(x); });
+    F.withCam(ctx, cam, 1, x => { if (o.back) o.back(x); if (kind === 'shop' && o.counter !== false) S.counter(x, o.counterX || 300, 150); if (kind === 'surgery' && o.table !== false) S.opTable(x, o.tableX || 200, 150); if (kind === 'study' && o.chair) chair2(x, o.chair, 140); if (kind === 'study' && o.desk !== false && !o.blurDesk) S.desk(x, 760, 120, t); if (o.fg) o.fg(x); });
   }
   if (o.front) dof(ctx, o.frontBlur === undefined ? 10 : o.frontBlur, x => F.withCam(x, cam, 1.35, o.front, [cam.x, cam.y]), 1);
 }
+// chair built around the rig's seated pose: feet on the floor at feetY, seat top = hip height
+const SHIN = 165 * 0.48;
+function chair2(x, cx, feetY, cushion = '#8a2f2a') {
+  const seat = feetY - SHIN + 4;
+  shape(x, c => c.rect(cx - 112, seat - 360, 28, 360 + (feetY - seat)), PAL.woodDark, { lw: 5, shade: { x0: cx - 112, y0: 0, x1: cx - 84, y1: 0, a: 0.3 } });
+  shape(x, c => c.roundRect(cx - 120, seat - 330, 44, 250, 14), cushion, { lw: 5 });
+  shape(x, c => c.rect(cx - 125, seat, 230, 34), PAL.wood, { lw: 5, hi: { x: cx, y: seat, r: 90, a: 0.2 } });
+  for (const lx of [-118, 80]) shape(x, c => c.rect(cx + lx, seat + 32, 24, feetY - seat - 30), PAL.woodDark, { lw: 4 });
+}
 
-module.exports = { dof, castShadow, lightPool, warmWash, lantern, pillow, examTable, flask, staff, hourglass, wineMug, dish, ladder, bottleRow, exam, alley, golden, room };
+module.exports = { chair2, dof, castShadow, lightPool, warmWash, lantern, pillow, examTable, flask, staff, hourglass, wineMug, dish, ladder, bottleRow, exam, alley, golden, room };

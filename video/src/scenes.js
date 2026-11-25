@@ -76,6 +76,7 @@ function studyLayer() {
     const zx = -90, zy = -1050;
     shape(x, c => c.rect(zx, zy, 360, 500), '#ead2a0', { lw: 5, shade: { x0: zx, y0: zy, x1: zx + 360, y1: zy + 500, a: 0.25 } });
     line(x, [[zx - 10, zy], [zx + 370, zy]], 12, PAL.woodDark); line(x, [[zx - 10, zy + 500], [zx + 370, zy + 500]], 12, PAL.woodDark);
+    line(x, [[zx + 10, zy - 4], [zx + 180, zy - 96], [zx + 350, zy - 4]], 4, '#3a2418'); shape(x, ell(zx + 180, zy - 96, 9, 9), '#8a8a8a', { lw: 3, tex: false });
     x.save(); x.translate(zx + 180, zy + 270); x.scale(0.55, 0.55);
     shape(x, ell(0, -280, 50, 60), '#f0d8b0', { lw: 4, tex: false }); tube(x, [[0, -220], [0, -20]], 70, '#f0d8b0', 4); tube(x, [[0, -180], [-120, -60]], 26, '#f0d8b0', 4); tube(x, [[0, -180], [120, -60]], 26, '#f0d8b0', 4); tube(x, [[-20, -20], [-50, 200]], 30, '#f0d8b0', 4); tube(x, [[20, -20], [50, 200]], 30, '#f0d8b0', 4);
     const sym = ['♈', '♉', '♊', '♋', '♌', '♍', '♎', '♏'];

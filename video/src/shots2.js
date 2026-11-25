@@ -37,7 +37,7 @@ const P_ = (who, o) => K.P0(o);
 const PAT = { x: 40, y: -5, s: 1 };
 const patHead = () => ({ x: PAT.x - (150 + 170 * 0.38) * 1, y: PAT.y - 165 });     // world head centre when lying
 function lyingPatient(x, t, o = {}) {
-  shape(x, c => { const hx = patHead().x; c.moveTo(hx - 170, -100); c.quadraticCurveTo(hx - 180, -150, hx - 120, -150); c.lineTo(hx + 90, -150); c.quadraticCurveTo(hx + 140, -150, hx + 130, -100); c.closePath(); }, '#efe6d2', { lw: 5, shade: { x0: 0, y0: -150, x1: 0, y1: -100, a: 0.25 } });
+  shape(x, c => { const hx = patHead().x; c.moveTo(hx - 170, -100); c.quadraticCurveTo(hx - 180, -150, hx - 120, -150); c.lineTo(hx + 90, -150); c.quadraticCurveTo(hx + 140, -150, hx + 130, -100); c.closePath(); }, '#cdbd9c', { lw: 5, shade: { x0: 0, y0: -150, x1: 0, y1: -100, a: 0.25 } });
   person(x, 'villager', V(t, Object.assign({ x: PAT.x, y: PAT.y, s: 1, rot: -90, piv: 'hip', armL: [8, 6], armR: [-4, 10], legL: [2, 2], legR: [-2, 2], breath: 1.6 }, o)), false);
 }
 function examDoctors(x, t, o = {}) {
@@ -125,7 +125,7 @@ shot(B(2), T(2, 8), 'o_escape', (ctx, t, lt) => {
     person(x, 'villager', V(t, Object.assign({ x: vx, y: 260, face: -1, eyes: 'wide', lid: 0, brows: 'shock', mouth: 'scream', open: 0.8 + 0.2 * Math.sin(t * 30), tail: -10, sweat: 1, vx: -3000 }, K.run(t * 34, 1.15), K.flail(t, 1), { lean: 34 })));
     // doc3 calmly holding the end of his hood tail
     person(x, 'doc3', V(t, { x: -120, y: 260, s: 1.12, face: -1, lid: 0.55, brows: 'calm', mouth: 'smirk', armR: [95, -10], handR: 'grip', armL: [20, 40], look: [0.6, 0.2], lean: -6 }));
-    tube(x, [[vx + 70, -150], [-200, -150 + Math.sin(t * 30) * 8], [-277, -135]], 13, K.SPECS.villager.hoodDark, 4.5);
+    D.tubeCurve(x, [[vx + 70, -150], [(vx - 277) / 2 + 20, -60 + Math.sin(t * 30) * 10], [-277, -135]], 12, K.SPECS.villager.hoodDark, 4);
     person(x, 'doc1', V(t, { x: 360, y: 240, s: 1.1, face: -1, eyes: 'happy', mouth: 'chuckle', open: Math.abs(Math.sin(t * 14)), brows: 'raised', armR: [-30, -100], armL: [-30, -100], bob: Math.abs(Math.sin(t * 14)) * 6 }));
   } });
   speedLines(ctx, 540, 900, 18, 500, 1400, 0.18 * u, 7);
@@ -231,7 +231,7 @@ shot(B(6), B(8), 'b_humours', (ctx, t, lt) => {
   const over = T(7, 4), stamp = T(7, 8);
   const cam = shake(F.camAt([{ t: B(6), x: 540, y: 980, z: 1.18 }, { t: B(7), x: 540, y: 960, z: 1.05 }, { t: B(8), x: 540, y: 940, z: 1.12 }], t), t, [over, stamp], 16);
   cam1(ctx, cam, x => {
-    x.font = '84px "Unifraktur"'; x.fillStyle = '#4a1a10'; x.textAlign = 'center'; x.fillText('The Four Humours', 540, 300);
+    x.save(); x.globalAlpha = 1 - seg(t, 12.05, 12.2) + seg(t, 12.95, 13.15); x.font = '84px "Unifraktur"'; x.fillStyle = '#4a1a10'; x.textAlign = 'center'; x.fillText('The Four Humours', 540, 300); x.restore();
     line(x, [[220, 340], [860, 340]], 3, '#8a5a30');
     // glass silhouette of the patient
     const body = c => { c.moveTo(540, 470); c.bezierCurveTo(660, 470, 680, 620, 600, 680); c.lineTo(700, 740); c.lineTo(720, 1200); c.lineTo(640, 1200); c.lineTo(630, 1500); c.lineTo(450, 1500); c.lineTo(440, 1200); c.lineTo(360, 1200); c.lineTo(380, 740); c.lineTo(480, 680); c.bezierCurveTo(400, 620, 420, 470, 540, 470); c.closePath(); };
@@ -260,15 +260,15 @@ shot(B(6), B(8), 'b_humours', (ctx, t, lt) => {
     if (t > over) { // overflow drips from the head
       for (let i = 0; i < 4; i++) { const k = ((t - over) * 1.5 + i * 0.25) % 1; shape(x, c => { const dx = 500 + i * 30, dy = 470 + k * 300; c.moveTo(dx, dy - 22); c.quadraticCurveTo(dx + 16, dy, dx, dy + 10); c.quadraticCurveTo(dx - 16, dy, dx, dy - 22); }, '#b3302a', { lw: 3, tex: false }); }
     }
-    if (t > stamp) { const k = outBack(seg(t, stamp, stamp + 0.12), 2.5); x.save(); x.translate(540, 1640); x.rotate(-0.08); x.scale(k, k); x.lineWidth = 10; x.strokeStyle = '#b3302a'; x.strokeRect(-300, -64, 600, 128); x.font = '70px "Cinzel Black"'; x.fillStyle = '#b3302a'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText('IMBALANCE!', 0, 6); x.restore(); }
+    if (t > stamp) { const k = outBack(seg(t, stamp, stamp + 0.12), 2.5); x.save(); x.translate(540, 940); x.rotate(-0.12); x.scale(k, k); x.fillStyle = 'rgba(243,228,192,0.85)'; x.fillRect(-300, -64, 600, 128); x.lineWidth = 10; x.strokeStyle = '#b3302a'; x.strokeRect(-300, -64, 600, 128); x.font = '70px "Cinzel Black"'; x.fillStyle = '#b3302a'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText('IMBALANCE!', 0, 6); x.restore(); }
   });
   // doctor cameo chuckling (soundtrack chuckles at 12.273 / 12.500)
   const cin = seg(t, 12.12, 12.27), cout = seg(t, 12.95, 13.1);
   if (cin > 0 && cout < 1) {
-    const px = lerp(-200, 210, outBack(cin)) - 420 * inQ(cout), py = 1500;
+    const px = W / 2, py = lerp(-200, 300, outBack(cin)) - 520 * inQ(cout);
     ctx.save(); ctx.beginPath(); ctx.arc(px, py, 170, 0, 7); ctx.fillStyle = '#4a3020'; ctx.fill(); ctx.clip();
     const ch = pulse(t, 12.273, 0.2) + pulse(t, 12.5, 0.2);
-    F.withCam(ctx, { x: 300 - (px - 540) / 1.6, y: -320 - (py - 960) / 1.6, z: 1.6 }, 1, x => person(x, 'doc1', V(t, { x: 300, y: 250, s: 1.08, face: -1, eyes: 'happy', mouth: 'chuckle', open: ch, tilt: -8 + ch * 8, bob: ch * 10, armR: [150, 60], handR: 'open' }), false));
+    F.withCam(ctx, { x: 300 - (px - 540) / 1.6, y: -175 - (py - 960) / 1.6, z: 1.6 }, 1, x => person(x, 'doc1', V(t, { x: 300, y: 250, s: 1.08, face: -1, eyes: 'happy', mouth: 'chuckle', open: ch, tilt: -8 + ch * 8, bob: ch * 10, armR: [150, 60], handR: 'open' }), false));
     ctx.restore(); ctx.lineWidth = 10; ctx.strokeStyle = '#c9973a'; ctx.beginPath(); ctx.arc(px, py, 170, 0, 7); ctx.stroke();
   }
 });
@@ -319,7 +319,7 @@ shot(T(9, 8), B(10), 'b_shadowplay', (ctx, t, lt) => {
 sfx(T(9, 14), 'swish', 0.4);
 // B7: consequence - pale, swaying; the doctor is delighted
 shot(B(10), B(11), 'b_pale', (ctx, t, lt) => {
-  const cam = { x: 40, y: -260, z: 1.08 + lt * 0.08 };
+  const cam = { x: 40, y: -330, z: 0.98 + lt * 0.06 };
   S2.room('study', ctx, cam, t, { blur: 1.2, chair: -200, fg: x => {
     const sway = Math.sin(t * 2.6) * 9;
     person(x, 'villager', V(t, { x: -200, y: 140, sit: 1, pale: smooth(seg(t, B(10), B(10) + 0.7)), lid: 0.62, mouth: 'wavy', brows: 'sad', rot: sway, armL: [5, 5], armR: [-5, 5], handL: 'relaxed', handR: 'relaxed', tail: -10, look: [0.1, 0.5] }));
@@ -342,8 +342,9 @@ shot(B(11), B(12), 'b_stoptime', (ctx, t, lt) => {
     } else {
       const k = seg(t, T(11, 8), B(12)), oh = t > 21.36;
       // the far door opens onto the green glow of the leech shop
-      shape(x, c => c.rect(-1060, -560, 280, 560), '#123024', { lw: 6 }); D.glow(x, -920, -300, 420, '120,230,170', 0.6 * smooth(seg(t, T(11, 9), T(11, 11))));
-      x.save(); x.translate(-1060, -560); x.scale(1 - 0.85 * smooth(seg(t, T(11, 8), T(11, 10))), 1); shape(x, c => c.rect(0, 0, 280, 560), PAL.wood, { lw: 6 }); x.restore();
+      shape(x, c => { c.moveTo(-1110, 20); c.lineTo(-1110, -470); c.arc(-920, -470, 190, Math.PI, 0); c.lineTo(-730, 20); c.closePath(); }, '#8f8068', { lw: 6, texA: 0.3 });
+      x.save(); x.beginPath(); x.moveTo(-1060, 20); x.lineTo(-1060, -470); x.arc(-920, -470, 140, Math.PI, 0); x.lineTo(-780, 20); x.closePath(); x.clip(); x.fillStyle = '#123024'; x.fillRect(-1100, -700, 400, 760); D.glow(x, -920, -300, 420, '120,230,170', 0.7 * smooth(seg(t, T(11, 9), T(11, 11))));
+      x.save(); x.translate(-1060, 20); x.scale(1 - 0.85 * smooth(seg(t, T(11, 8), T(11, 10))), 1); shape(x, c => c.rect(0, -640, 280, 640), PAL.wood, { lw: 6 }); x.restore(); x.restore();
       person(x, 'villager', V(t, Object.assign({ x: lerp(-320, -760, outQ(k)), y: 230, pale: 1, mouth: oh ? 'o' : 'wavy', eyes: oh ? 'wide' : 'open', lid: oh ? 0 : 0.6, brows: oh ? 'shock' : 'worried', face: -1, tail: 30, vx: -700, headSq: oh ? 0.1 * pulse(t, 21.36, 0.2) : 0 }, K.walk(t * 9, 0.9))));
       person(x, 'doc1', V(t, { x: lerp(-60, -420, outQ(k)), y: 250, s: 1.1, face: -1, brows: 'raised', mouth: 'smile', eyes: 'happy', armR: [95, 0], handR: 'open', armL: [80, 10], handL: 'open', lean: 14, vx: -500 }));
     }
@@ -355,7 +356,7 @@ for (const p of P3) sfx(p, 'freeze_hit', 0.7); sfx(T(11, 8), 'door', 0.5);
 // L1: the leech doctor slides down a ladder to greet him
 const LAND = T(12, 6);
 shot(B(12), B(13), 'l_greet', (ctx, t, lt) => {
-  const cam = shake(F.camAt([{ t: B(12), x: 20, y: -330, z: 1.08 }, { t: B(13), x: 60, y: -290, z: 1.2 }], t), t, [LAND], 18);
+  const cam = shake(F.camAt([{ t: B(12), x: 80, y: -260, z: 1.3 }, { t: B(13), x: 100, y: -240, z: 1.4 }], t), t, [LAND], 18);
   S2.room('shop', ctx, cam, t, { blur: 1.5, counter: false, front: x => { E.jar(x, cam.x + 430, cam.y + 960, 60, 180, '#7fb5a0', true, 3, t); }, fg: x => {
     S2.ladder(x, 420, -1300, 260);
     const k = seg(t, B(12), LAND), land = t > LAND;
@@ -371,7 +372,7 @@ sfx(LAND, 'thud', 0.6);
 // L2: fishing a leech out of the jar with tweezers -> right under his nose (24.55)
 const FISH = T(13, 8);
 shot(B(13), B(14), 'l_fish', (ctx, t, lt) => {
-  const cam = shake({ x: -20, y: -330, z: 1.45 + lt * 0.1 }, t, [FISH], 12);
+  const cam = shake({ x: -60, y: -330, z: 1.4 + lt * 0.1 }, t, [FISH], 12);
   S2.room('shop', ctx, cam, t, { blur: 4, counterX: 250, back: x => {
     const pull = seg(t, FISH - 0.25, FISH + 0.1);
     person(x, 'doc2', V(t, { x: 250, y: 60, s: 1.05, face: -1, eyes: 'open', mouth: 'grin', brows: 'raised', look: [-0.4, 0.4], armL: [40, 80], handL: 'grip', propL: { fn: c => PR.leechJar(c, 0, 0, 0.6, t, { n: 5 }), rot: 180 }, armR: [lerp(40, 110, outBack(pull)), lerp(80, 20, pull)], handR: 'grip', propR: { fn: c => { PR.tweezers(c); PR.leech(c, 0, -110, 110, t, 4, { eyes: true, smile: true, amp: 1.4, ang: 80 }); }, rot: 180, s: 1.1 } }));
@@ -384,16 +385,16 @@ sfx(T(13, 8), 'squelch', 0.5);
 // L3: ECU - the leech wriggles, cross-eyed patient (explanation line)
 shot(B(14), B(15), 'l_ecu', (ctx, t, lt) => {
   const h = { x: -250, y: K.headY('villager', { y: 260 }) };
-  const cam = frameHead(h.x, h.y, 3.0 + lt * 0.25, 900, -160);
+  const cam = frameHead(h.x, h.y, 2.8 + lt * 0.2, 880, -120);
   S2.room('shop', ctx, cam, t, { blur: 9, counter: false, fg: x => {
-    person(x, 'villager', V(t, { x: -250, y: 260, pale: 0.6, eyes: 'open', lid: 0, pupil: 0.8, look: [0.6, 0.5], brows: 'worried', mouth: 'wavy', sweat: 1, tilt: -6 }));
+    person(x, 'villager', V(t, { x: -250, y: 260, pale: 0.6, eyes: 'open', lid: 0, pupil: 0.8, look: [0.95, -0.2], brows: 'worried', mouth: 'wavy', sweat: 1, tilt: 8, lean: -6 }));
   } });
-  ctx.save(); ctx.translate(820, 980); ctx.rotate(Math.sin(t * 5) * 0.18); ctx.scale(1.6, 1.6); PR.tweezers(ctx); PR.leech(ctx, 0, -120, 150, t, 2, { eyes: true, smile: true, amp: 1.5, ang: 85 }); ctx.restore();
+  ctx.save(); ctx.translate(985, 860); ctx.rotate(-0.35 + Math.sin(t * 5) * 0.12); ctx.scale(1.25, 1.25); PR.tweezers(ctx); PR.leech(ctx, 0, -120, 150, t, 2, { eyes: true, smile: true, amp: 1.5, ang: 85 }); ctx.restore();
 });
 // L4: he tries to back away; she pins his wrist to the cushion with a grin
 shot(B(15), 28.6, 'l_wrist', (ctx, t, lt) => {
   const grab = T(15, 4);
-  const cam = shake({ x: -40, y: -300, z: 1.3 + lt * 0.08 }, t, [grab], 14);
+  const cam = shake({ x: -90, y: -300, z: 1.28 + lt * 0.08 }, t, [grab], 14);
   S2.room('shop', ctx, cam, t, { blur: 2.5, counterX: 260, back: x => {
     shape(x, c => c.roundRect(0, -260, 260, 70, 30), '#7a2a2a', { lw: 5 });
     const g = outBack(seg(t, grab - 0.1, grab + 0.1));
@@ -476,7 +477,7 @@ for (const g of [T(17, 8), T(17, 12)]) sfx(g, 'gulp', 0.45); sfx(T(17, 14), 'plo
 // L9: woozy - and she reaches for MORE leeches -> he bolts out of the door (groove back 32.73)
 const BOLT = T(18, 6);
 shot(B(18), B(19), 'l_bolt', (ctx, t, lt) => {
-  const cam = shake({ x: 40 - 200 * outC(seg(t, BOLT, B(19))), y: -310, z: 1.12 }, t, [BOLT], 16);
+  const cam = shake({ x: 60 - 200 * outC(seg(t, BOLT, B(19))), y: -290, z: 1.3 }, t, [BOLT], 16);
   S2.room('shop', ctx, cam, t, { blur: 1.8, counterX: 330, back: x => {
     const reach = smooth(seg(t, B(18), BOLT));
     person(x, 'doc2', V(t, { x: 340, y: 60, s: 1.05, face: -1, eyes: 'happy', mouth: 'grin', brows: 'raised', armR: [lerp(40, 120, reach), 20], handR: 'grip', propR: { fn: c => PR.leechJar(c, 0, 0, 0.6, t, { n: 6, eyes: true }), rot: 180 }, armL: [-20, 90], handL: 'point', lean: -4 }));
@@ -523,9 +524,9 @@ shot(B(21), B(22), 't_bonk', (ctx, t, lt) => {
   const cam = shake({ x: vx + 60, y: -120 + 200 * fall, z: 1.45 + lt * 0.08, r: 3 * Math.sin(lt * 2) }, t, [BONK, land], 40);
   S2.alley(ctx, cam, t, { posts: false, fg: x => {
     const sq = Math.exp(-lt * 10) * Math.cos(lt * 50);
+    if (t > land) PR.dust(x, vx - 260, 290, t - land, 6, 50, 3);
     person(x, 'villager', V(t, { x: vx, y: 260, pale: 0.3, eyes: lt < 0.3 ? 'squeeze' : 'spiral', mouth: lt < 0.3 ? 'eek' : 'wavy', brows: 'worried', squash: sq * 0.25, headSq: sq * 0.2, rot: -88 * inQ(fall), bump: outBack(seg(t, BONK + 0.1, BONK + 0.4)), tail: 30 + sq * 40, armL: [20 + 60 * fall, 20], armR: [-20 + 60 * fall, 20], handL: 'spread', handR: 'spread', legL: [10 * fall, 0], legR: [-10 * fall, 0] }));
     if (lt > 0.25) PR.dizzy(x, vx + 20 - 300 * inQ(fall), -480 + 420 * inQ(fall), t, 120);
-    if (t > land) PR.dust(x, vx - 260, 250, t - land, 6, 60, 3);
     beamEnd(x, BEAMX(), Math.exp(-lt * 6) * Math.sin(lt * 40) * 10);
   } });
   if (lt < 0.05) { ctx.fillStyle = 'rgba(255,250,235,0.85)'; ctx.fillRect(0, 0, W, H); }
@@ -600,12 +601,22 @@ shot(B(25), T(25, 8), 't_eyes', (ctx, t, lt) => {
   S2.room('surgery', ctx, cam, t, { blur: 9, table: false, fg: x => strapped(x, t, { eyes: 'wide', lid: 0, pupil: 0.6, look: [0.5, -0.95], brows: 'shock', mouth: 'eek', sweat: 1, shiver: 0.5, chalk: 1 }) });
   ctx.save(); ctx.translate(700, 180 + 60 * outC(seg(t, B(25), T(25, 8)))); ctx.rotate(0.2); ctx.scale(2.2, 2.2); PR.braceDrill(ctx, t * 2, 0.4 * pulse(t, B(25) + 0.1, 0.3)); ctx.restore();
 });
+function drillRig(x, t, o = {}) {
+  const sc = 0.85, hy = K.headY('villager', { y: 260, sit: 1 });
+  const tipX = -26, tipY = hy - 92, ox = tipX, oy = tipY - 140 * sc;
+  const a = o.crank === undefined ? t * Math.PI * 2 * (C.BPM / 60) / 2 : o.crank;
+  const crank = [ox + Math.cos(a) * 60 * sc, oy - 60 * sc];
+  const D3 = { x: 245, y: 260, s: 1.12, face: -1, lean: 20 };
+  const arm = K.ik('doc3', D3, 1, [crank[0] + 14, crank[1] + 6]);
+  person(x, 'doc3', V(t, Object.assign({}, D3, { lid: 0.55, brows: 'calm', mouth: o.mouth || 'flat', look: [-0.6, -0.2], armR: arm, handR: 'grip', armL: [40, 70], handL: 'relaxed' }, o.d3 || {})), !o.shadow);
+  x.save(); x.translate(ox, oy); x.scale(sc, sc); PR.braceDrill(x, a, o.glint || 0); x.restore();
+}
 shot(T(25, 8), B(26), 't_place', (ctx, t, lt) => {
   const h = { x: -40, y: K.headY('villager', { y: 260, sit: 1 }) };
-  const cam = shake(frameHead(h.x + 160, h.y, 2.2 + lt * 0.3, 1000), t, [T(25, 8)], 14);
+  const cam = shake(frameHead(h.x + 130, h.y - 90, 1.9 + lt * 0.25, 820), t, [T(25, 8)], 14);
   S2.room('surgery', ctx, cam, t, { blur: 7, table: false, fg: x => {
-    strapped(x, t, { eyes: 'squeeze', brows: 'worried', mouth: 'eek', sweat: 1, shiver: 0.6, chalk: 1, tilt: -6 });
-    person(x, 'doc3', V(t, { x: 330, y: 260, s: 1.12, face: -1, lid: 0.55, brows: 'calm', mouth: 'flat', look: [-0.6, -0.3], lean: 16, armR: [150, 30], handR: 'grip', armL: [120, 40], handL: 'grip', propR: { fn: c => PR.braceDrill(c, t * 1.5, pulse(t, T(25, 12), 0.3)), rot: 200, s: 0.95 } }));
+    strapped(x, t, { eyes: 'squeeze', brows: 'worried', mouth: 'eek', sweat: 1, shiver: 0.6, chalk: 1, tilt: -4, look: [0, -1] });
+    drillRig(x, t, { crank: 0.6, glint: pulse(t, T(25, 12), 0.3) });
   } });
 });
 sfx(B(25), 'hit_low', 0.6); sfx(T(25, 8), 'hit_low', 0.7); sfx(T(25, 12), 'glint', 0.5);
@@ -616,10 +627,11 @@ shot(B(26), 48.55, 't_shadow', (ctx, t, lt) => {
     const g = x.createRadialGradient(60, -560, 40, 60, -560, 900); g.addColorStop(0, '#f6e2b8'); g.addColorStop(1, '#8a6a52');
     shape(x, c => c.rect(-620, -1400, 1240, 1500), g, { lw: 8 });
     for (let i = -5; i <= 5; i++) { x.save(); x.globalAlpha = 0.25; line(x, [[i * 115, -1400], [i * 115 + Math.sin(t + i) * 6, 100]], 3, '#6a4a32'); x.restore(); }
-    const crank = t * 2 * Math.PI * (C.BPM / 60) / 2;
     S2.castShadow(x, y => {
-      K.drawPerson(y, 'villager', V(t, { x: -180, y: 250, s: 1.45, sit: 1, legL: [0, -30 + 30 * Math.sin(t * 22)], legR: [0, -30 + 30 * Math.sin(t * 22 + 2)], armL: [20, 40], armR: [30, 40], tilt: -6 }));
-      K.drawPerson(y, 'doc3', V(t, { x: 260, y: 300, s: 1.55, face: -1, lean: 20, armR: [150, 30], armL: [120, 40], propR: { fn: c => PR.braceDrill(c, crank, 0), rot: 200, s: 0.95 } }));
+      y.save(); y.translate(200, 300); y.scale(1.45, 1.45); y.translate(0, -260);
+      strapped(y, t, { legL: [0, -30 + 30 * Math.sin(t * 22)], legR: [0, -30 + 30 * Math.sin(t * 22 + 2)], tilt: -4 });
+      drillRig(y, t, { shadow: true });
+      y.restore();
     }, { ax: 0, ay: 300, dx: 0, dy: -40, alpha: 0.85, blur: 4, color: 'rgb(30,15,12)' });
   });
   vignette(ctx, 0.55);
@@ -694,26 +706,37 @@ shot(B(29), B(30), 't_skull', (ctx, t, lt) => {
 });
 sfx(B(29), 'shimmer', 0.6);
 
-// ================================================================ ENDING (54.55 - 60) golden hour
+// ================================================================ ENDING (54.55 - 60) back in the dusk alley
+const DX = 3000;
+function clinicFacade(x, t, open) {
+  // the door belongs to a real house front: stone wall, timber lintel, lit window, sign, step
+  E.stoneWall(x, DX - 600, -1500, DX + 600, 70, '#8a7a6a', 91, 130, 64);
+  shape(x, c => c.rect(DX - 620, -1520, 1240, 60), PAL.beam, { lw: 6 });
+  shape(x, c => c.rect(DX - 600, -1180, 1200, 40), PAL.beam, { lw: 5 });
+  for (const wx of [DX - 420, DX + 300]) { shape(x, c => c.rect(wx, -1100, 130, 170), '#f2c46a', { lw: 6, tex: false }); line(x, [[wx + 65, -1100], [wx + 65, -930]], 5); line(x, [[wx, -1015], [wx + 130, -1015]], 5); D.glow(x, wx + 65, -1015, 260, '255,190,110', 0.35); }
+  shape(x, c => { c.moveTo(DX - 250, 70); c.lineTo(DX - 250, -470); c.arc(DX, -470, 250, Math.PI, 0); c.lineTo(DX + 250, 70); c.closePath(); }, '#a39279', { lw: 7, texA: 0.3, shade: { x0: DX - 250, y0: 0, x1: DX + 250, y1: 0, a: 0.25 } });
+  x.save(); x.beginPath(); x.moveTo(DX - 190, 70); x.lineTo(DX - 190, -470); x.arc(DX, -470, 190, Math.PI, 0); x.lineTo(DX + 190, 70); x.closePath(); x.clip();
+  x.fillStyle = '#20140e'; x.fillRect(DX - 210, -700, 420, 800); D.glow(x, DX, -250, 420, '255,180,100', 0.6);
+  x.restore();
+  // door leaf hinged on the right jamb, swinging inward
+  x.save(); x.translate(DX + 190, 70); x.scale(-(1 - 0.82 * open), 1);
+  shape(x, c => { c.moveTo(0, 0); c.lineTo(0, -470); c.arc(190, -470, 190, Math.PI, Math.PI * 1.5); c.lineTo(380, -660); c.lineTo(380, 0); c.closePath(); }, PAL.wood, { lw: 6, shade: { x0: 0, y0: 0, x1: 380, y1: 0, a: 0.3 } });
+  for (let k = 1; k < 4; k++) line(x, [[k * 95, -640], [k * 95, 0]], 3, PAL.woodDark);
+  shape(x, ell(330, -280, 10, 10), '#c9a050', { lw: 3, tex: false });
+  x.restore();
+  shape(x, c => c.rect(DX - 300, 60, 600, 40), '#7a6a58', { lw: 5 });
+  E.sign(x, DX + 240, -760, t, 'bowl');
+}
 shot(B(30), B(31), 'e_home', (ctx, t, lt) => {
-  const vx = 3300 + lt * 170;
-  S2.golden(ctx, { x: vx + 40, y: -60, z: 1.2 + lt * 0.05 }, t, { fg: x => {
-    person(x, 'extraB', V(t, { x: vx + 380, y: 40, s: 0.8, face: -1, brows: 'raised', mouth: 'o', look: [-0.6, 0.2], lid: K.blink(t, 8), armR: [120, 60], handR: 'open' }));
-    person(x, 'extraA', V(t, { x: vx + 230, y: 20, s: 0.75, face: -1, brows: 'worried', mouth: 'frown', look: [-0.6, 0.3], tilt: 6, armR: [80, 90], handR: 'point' }));
+  const vx = DX - 1500 + lt * 200;
+  S2.alley(ctx, { x: vx + 80, y: -60, z: 1.2 + lt * 0.05 }, t, { posts: false, fg: x => {
+    person(x, 'extraB', V(t, { x: vx + 420, y: 60, s: 0.85, face: -1, brows: 'raised', mouth: 'o', look: [-0.6, 0.2], lid: K.blink(t, 8), armR: [120, 60], handR: 'open' }));
+    person(x, 'extraA', V(t, { x: vx + 270, y: 40, s: 0.8, face: -1, brows: 'worried', mouth: 'frown', look: [-0.6, 0.3], tilt: 6, armR: [80, 90], handR: 'point' }));
     const tw = Math.floor(t * 6) % 3 === 0 ? 0.7 : 0.05;
-    person(x, 'villager', V(t, Object.assign({ x: vx, y: 250, bandage: 1, lid: tw, mouth: 'flat', brows: 'worried', look: [0.4, 0], shiver: 0.2, vx: 170 }, K.walk(t * 6, 0.5), { armL: [3, 5], armR: [-3, 5] })));
+    person(x, 'villager', V(t, Object.assign({ x: vx, y: 250, bandage: 1, lid: tw, mouth: 'flat', brows: 'worried', look: [0.4, 0], shiver: 0.2, vx: 200 }, K.walk(t * 6, 0.5), { armL: [3, 5], armR: [-3, 5] })));
   } });
 });
-const P4 = [B(31), T(31, 3), T(31, 6)], CH3 = [57.273, 57.5], DX = 4050;
-function clinicDoor(x, t, open) {
-  shape(x, c => { c.moveTo(DX - 230, 70); c.lineTo(DX - 230, -480); c.arc(DX, -480, 230, Math.PI, 0); c.lineTo(DX + 230, 70); c.closePath(); }, '#b3a385', { lw: 7, texA: 0.3 });
-  x.save(); x.beginPath(); x.moveTo(DX - 180, 70); x.lineTo(DX - 180, -480); x.arc(DX, -480, 180, Math.PI, 0); x.lineTo(DX + 180, 70); x.closePath(); x.clip();
-  x.fillStyle = '#24160f'; x.fillRect(DX - 200, -700, 400, 800); D.glow(x, DX, -250, 420, '255,180,100', 0.55); x.restore();
-  x.save(); x.translate(DX + 180, 70); x.scale(-(1 - 0.85 * open), 1);
-  shape(x, c => { c.moveTo(0, 0); c.lineTo(0, -550); c.arc(180, -480, 180, Math.PI * 1.1, Math.PI * 1.5); c.lineTo(360, -660); c.lineTo(360, 0); c.closePath(); }, PAL.wood, { lw: 6, shade: { x0: 0, y0: 0, x1: 360, y1: 0, a: 0.3 } });
-  for (let k = 1; k < 4; k++) line(x, [[k * 90, -640], [k * 90, 0]], 3, PAL.woodDark);
-  x.restore(); E.sign(x, DX + 200, -640, t, 'bowl');
-}
+const P4 = [B(31), T(31, 3), T(31, 6)], CH3 = [57.273, 57.5];
 function doctorsAt(x, t, mode, k = 1) {
   const ch = pulse(t, CH3[0], 0.2) + pulse(t, CH3[1], 0.2);
   if (mode === 'one') { person(x, 'doc1', V(t, { x: DX - 40, y: 60, s: 0.95, face: -1, eyes: 'happy', mouth: 'smile', brows: 'raised', lean: 14, armR: [120 + 25 * Math.sin(t * 14), 70], handR: 'open' })); return; }
@@ -724,37 +747,35 @@ function doctorsAt(x, t, mode, k = 1) {
 }
 shot(B(31), B(32), 'e_next', (ctx, t, lt) => {
   const i = t < P4[1] ? 0 : t < P4[2] ? 1 : 2, late = t > T(31, 8);
-  const cam = shake({ x: DX - 240, y: -170, z: late ? 1.05 + (t - T(31, 8)) * 0.05 : 1.2 + i * 0.16 }, t, [...P4, CH3[0]], 22);
-  S2.golden(ctx, cam, t, { fg: x => {
-    clinicDoor(x, t, late ? smooth(seg(t, T(31, 8), T(31, 10))) : 0.3);
+  const cam = shake({ x: DX - 220, y: -200, z: late ? 1.02 + (t - T(31, 8)) * 0.05 : 1.15 + i * 0.15 }, t, [...P4, CH3[0]], 22);
+  S2.alley(ctx, cam, t, { posts: false, fg: x => {
+    clinicFacade(x, t, late ? smooth(seg(t, T(31, 8), T(31, 10))) : 0.3);
     doctorsAt(x, t, late ? 'all' : 'one', late ? outBack(seg(t, T(31, 8), T(31, 8) + 0.2)) : 1);
     const poses = [
       { eyes: 'wide', mouth: 'o', brows: 'raised', tail: 20, armL: [10, 20], armR: [-10, 20] },
       { eyes: 'wide', mouth: 'eek', brows: 'shock', sweat: 1, tail: 60, armL: [-90, 40], armR: [90, 40], handL: 'spread', handR: 'spread', lean: -8 },
       { eyes: 'wide', mouth: 'scream', open: 1, brows: 'shock', sweat: 1, tail: 90, armL: [-160, 30], armR: [160, 30], handL: 'spread', handR: 'spread', bob: 60, squash: -0.15, lean: -12 },
     ];
-    person(x, 'villager', V(t, Object.assign({ x: DX - 560, y: 260, bandage: 1, face: 1, look: [1, -0.2] }, poses[i], late ? { shiver: 0.6 } : {})));
+    person(x, 'villager', V(t, Object.assign({ x: DX - 470, y: 260, bandage: 1, face: 1, look: [1, -0.2] }, poses[i], late ? { shiver: 0.6 } : {})));
   } });
 });
 for (const p of P4) sfx(p, 'freeze_hit', 0.8); sfx(T(31, 8), 'door', 0.5);
-// final gag & loop: he bolts... and the surgeon's hand hooks his hood tail and drags him back inside (door slams)
 const YANK = T(32, 8);
 shot(B(32), 60.0001, 'e_bolt', (ctx, t, lt) => {
-  const cam = shake(F.camAt([{ t: B(32), x: DX - 240, y: -170, z: 1.05 }, { t: 60, x: DX - 300, y: -190, z: 0.98 }], t), t, [59.65], 12);
-  S2.golden(ctx, cam, t, { fg: x => {
+  const cam = shake(F.camAt([{ t: B(32), x: DX - 250, y: -200, z: 1.02 }, { t: 60, x: DX - 300, y: -210, z: 0.97 }], t), t, [59.65], 12);
+  S2.alley(ctx, cam, t, { posts: false, fg: x => {
     const shut = smooth(seg(t, 59.45, 59.65));
-    clinicDoor(x, t, 1 - shut);
+    clinicFacade(x, t, 1 - shut);
     if (t < 59.5) doctorsAt(x, t, t < B(32) + 0.25 || t > YANK ? 'all' : 'sad');
     const go = seg(t, B(32) + 0.08, YANK);
     if (t < YANK) {
-      const vx = DX - 560 - 900 * inQ(go);
-      person(x, 'villager', V(t, Object.assign({ x: vx, y: 260, bandage: 1, face: -1, eyes: 'wide', mouth: 'scream', open: 1, brows: 'shock', tail: 90, vx: -2400 }, K.run(t * 30, 1.2), K.flail(t), { lean: 30 })));
+      person(x, 'villager', V(t, Object.assign({ x: DX - 470 - 990 * inQ(go), y: 260, bandage: 1, face: -1, eyes: 'wide', mouth: 'scream', open: 1, brows: 'shock', tail: 90, vx: -2400 }, K.run(t * 30, 1.2), K.flail(t), { lean: 30 })));
     } else if (t < 59.5) {
       const k = seg(t, YANK, 59.45), vx = lerp(DX - 1460, DX, inQ(k));
       person(x, 'villager', V(t, { x: vx, y: 260 - Math.sin(Math.PI * k) * 120, bandage: 1, face: -1, eyes: 'wide', mouth: 'scream', open: 1, brows: 'shock', tail: -60, rot: 30, armL: [-160, 30], armR: [160, 30], handL: 'spread', handR: 'spread', vx: 3000 }));
-      D.tubeCurve(x, [[vx + 70, -150], [(vx + DX) / 2, -150 + 60 * (1 - k)], [DX - 60, -330]], 12, K.SPECS.villager.hoodDark, 4);
+      D.tubeCurve(x, [[vx + 70, -150], [(vx + DX) / 2, 40 - 120 * k], [DX - 60, -330]], 11, K.SPECS.villager.hoodDark, 4);
     }
-    if (t > B(32) + 0.08 && t < YANK + 0.3) { const k = t - B(32) - 0.08; for (let i = 0; i < 6; i++) PR.puff(x, DX - 560 - i * 150 - k * 60, 240 - (i % 2) * 40, 50 + k * 50, clamp(1 - k * 0.9), '#dcc9a3'); }
+    if (t > B(32) + 0.08 && t < YANK + 0.3) { const k = t - B(32) - 0.08; for (let i = 0; i < 6; i++) PR.puff(x, DX - 560 - i * 150 - k * 60, 240 - (i % 2) * 40, 50 + k * 50, clamp(1 - k * 0.9), '#bfae8a'); }
   } });
 });
 sfx(B(32) + 0.08, 'zip', 0.8); sfx(T(32, 8), 'whoosh', 0.7); sfx(59.65, 'door_slam', 0.9);

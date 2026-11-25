@@ -361,4 +361,26 @@ function drawPerson(ctx, who, Pin) {
 // head position (world) of a character pose, for camera framing
 function headY(who, P) { const sp = SPECS[who]; const L = sp.legL; return (P.y || 0) - (P.s || 1) * ((P.sit ? L * 0.48 : L) + 150 + (sp.torso === 'robe' ? 10 : 0) + sp.headH * 0.38); }
 
-module.exports = { SPECS, BROWS, P0, blend, act, walk, run, flail, idle, blink, drawPerson, drawHead, hand, headY };
+
+// ---- shoulder position + 2-bone IK so hands can genuinely reach objects
+function shoulderWorld(who, P, side) {
+  const sp = SPECS[who], L = sp.legL, bw = sp.bodyW || 1, robe = sp.torso === 'robe', s = P.s || 1, face = P.face || 1;
+  const hipY = P.sit ? -L * 0.48 : -L, neckY = hipY - (150 + (robe ? 10 : 0)), shY = neckY + 16 + 4;
+  const hx = P.hip || 0, lean = ((P.lean || 0) - hx * 0.25) * D2R;
+  let lx = side * 50 * bw, ly = shY - hipY; const rx = lx * Math.cos(lean) - ly * Math.sin(lean), ry = lx * Math.sin(lean) + ly * Math.cos(lean);
+  lx = hx + rx; ly = hipY + ry - (P.bob || 0);
+  return [P.x + s * face * lx, (P.y || 0) + s * ly];
+}
+function ik(who, P, side, target, bendOut = 1) {
+  const s = P.s || 1, face = P.face || 1, sh = shoulderWorld(who, P, side);
+  const lean = ((P.lean || 0) - (P.hip || 0) * 0.25) * D2R;
+  let dx = (target[0] - sh[0]) / (s * face), dy = (target[1] - sh[1]) / s;
+  const ux = dx * Math.cos(-lean) - dy * Math.sin(-lean), uy = dx * Math.sin(-lean) + dy * Math.cos(-lean); dx = ux; dy = uy;
+  const L1 = 74, L2 = 66; let d = Math.hypot(dx, dy); d = Math.min(d, L1 + L2 - 0.5);
+  const phi = Math.atan2(dx, dy), inner = Math.acos(clamp((L1 * L1 + d * d - L2 * L2) / (2 * L1 * d), -1, 1));
+  const a1 = phi + bendOut * inner;
+  const ex = Math.sin(a1) * L1, ey = Math.cos(a1) * L1;
+  const a2 = Math.atan2(dx - ex, dy - ey);
+  return [a1 / D2R, (a2 - a1) / D2R];
+}
+module.exports = { shoulderWorld, ik, SPECS, BROWS, P0, blend, act, walk, run, flail, idle, blink, drawPerson, drawHead, hand, headY };
