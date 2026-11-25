@@ -1,6 +1,12 @@
 # THE BRAZEN BULL — soundtrack
 
-## V2 (current) — ElevenLabs sound-design upgrade
+## V3 (current) — ethnic vocal hook
+* `BRAZEN_BULL_FINAL_V3.wav` + `BRAZEN_BULL_BEATMAP_V3.json` (+ `vocal_hook` section). Identical to V2 except every
+  synthesised HA/HEY/HO chant is replaced by the ElevenLabs expressive male vocal (`samples_original/An_expressive_haunt_2.wav`),
+  sliced into natural phrases and used as a call-and-response hook. Non-vocal stems are bit-identical to V2.
+* `sfx_isolated_v3/` — all isolated one-shots incl. the vocal slices. Regenerate: `python3 src/compose_v3.py .`
+
+## V2 — ElevenLabs sound-design upgrade
 * `BRAZEN_BULL_FINAL_V2.wav` — 60.000 s, 48 kHz, 24-bit PCM stereo, -14.0 LUFS, -1.35 dBTP.
 * `BRAZEN_BULL_BEATMAP_V2.json` — beats, sections, drops, silences, every event (time + 60 fps frame),
   `signature_motif` (all bull-roar moments) and `isolated_sfx`; sample events carry `sfx_file`.

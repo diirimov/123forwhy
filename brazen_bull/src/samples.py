@@ -333,3 +333,40 @@ def export_isolated(out_dir):
         sf.write(os.path.join(out_dir, f"{name}.wav"), y.T, SR, subtype="PCM_24")
         names.append(name)
     return sorted(names)
+
+
+# =============================================================================
+# V3: ETHNIC MALE VOCAL (expressive haunting phrase) - natural slices, whole-slice transposition only
+# =============================================================================
+FILES["ethnic"] = "An_expressive_haunt_2"
+# slice name: (start s, end s, reference MIDI pitch at the slice's start, description)
+VOX_SLICES = {
+    "att":  (0.30, 0.95, 54.5, "vowel attack - short rhythmic syllable"),
+    "syl":  (1.96, 2.75, 55.9, "second syllable with its own natural articulation"),
+    "rise": (1.00, 2.05, 54.9, "natural G -> G# rise (Hijaz colour)"),
+    "fall": (2.30, 3.75, 55.6, "falling sigh - expressive tail"),
+}
+
+
+def vox_slice(kind, midi, len_s=None, cents=0.0):
+    """Cut a natural slice, transpose it as a whole (formant-preserving) so its start lands on `midi`
+    (+ a few cents of human variance). No per-note pitch correction, no distortion."""
+    k = ("vx", kind, midi, None if len_s is None else round(len_s, 4), round(cents, 1))
+    if k in _cache:
+        return _cache[k]
+    t0, t1, ref, _ = VOX_SLICES[kind]
+    if len_s is not None:
+        t1 = min(t1, t0 + len_s + 0.06)
+    x = seg(load("ethnic"), t0, t1, 0.004, 0.0)
+    semis = (midi - ref) + cents / 100.0
+    y = rb(x, semis, formant=True) if abs(semis) > 0.02 else x
+    n = y.shape[1] if len_s is None else min(y.shape[1], int((len_s + 0.02) * SR))
+    y = y[:, :n]
+    fo = min(int(0.045 * SR), n // 3)
+    y[:, -fo:] *= np.linspace(1, 0, fo) ** 1.5
+    y = hp(y, 85, 2)
+    _cache[k] = norm(y)
+    name = f"ethnic_vocal_{kind}_{midi}"
+    if name not in ISOLATED:
+        iso(name, _cache[k])
+    return _cache[k]
