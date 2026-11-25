@@ -79,6 +79,7 @@ def make(kind):
         boing = np.sin(2 * np.pi * np.cumsum(260 + 120 * np.sin(2 * np.pi * 9 * t) * np.exp(-t * 3)) / SR) * np.exp(-t / 0.25) * 0.35
         thud = tone(70, 0.4, 0.1, drop=0.8) * 0.8
         out = np.zeros(n); out[:len(wood)] += wood; out += boing; out[:len(thud)] += thud; return out * 0.8
+    if kind == 'door_slam': n = int(0.5 * SR); return (tone(70, 0.5, 0.09, drop=0.7) + bp(noise(n), 200, 3000) * env(n, 0.001, 0.04) * 0.8 + tone(180, 0.5, 0.06, ((1, 1), (2.6, .4))) * 0.4) * 0.8
     if kind == 'thud': n = int(0.5 * SR); return (tone(55, 0.5, 0.12, drop=0.8) + lp(noise(n), 600) * env(n, 0.003, 0.06) * 0.6) * 0.7
     if kind in ('hit_low', 'drone_low'):
         if kind == 'hit_low': return tone(48, 1.0, 0.35, ((1, 1), (2, .3)), drop=0.5) * 0.55
@@ -132,7 +133,32 @@ def main():
     assert sr == SR and len(music) == N
     # SFX peaks sit ~12 dB under the music's peaks: the music stays the hero
     sfx = sfx * (10 ** (-13 / 20) / np.abs(sfx).max())
-    mix = music + sfx
+    narr_path = os.environ.get('NARR')
+    narr = np.zeros((N, 2))
+    if narr_path:
+        import soundfile as sf
+        v, vsr = sf.read(narr_path); v = v if v.ndim == 1 else v.mean(1)
+        v = signal.resample_poly(v, SR, vsr)
+        v = hp(v, 85); v = v - 0.0
+        # presence + gentle compression so the line cuts through the lute/fiddle hook
+        b_, a_ = signal.iirpeak(3000 / (SR / 2), 1.0); v = v + 0.25 * signal.lfilter(b_, a_, v)
+        e = np.sqrt(lp(v ** 2, 30).clip(1e-12)); db = 20 * np.log10(e); thr = db.max() - 14
+        v = v * 10 ** (-np.maximum(0, db - thr) * (1 - 1 / 3) / 20)
+        v = v / np.abs(v).max() * 10 ** (-1.2 / 20)
+        i0 = int(float(os.environ.get('NARR_T0', '0.15')) * SR)
+        m = min(len(v), N - i0)
+        # small room so the voice sits with the music
+        ir_n = int(0.35 * SR); tt = np.arange(ir_n) / SR; ir = lp(rng.normal(0, 1, ir_n), 4000) * np.exp(-tt / 0.06); ir /= np.sqrt((ir ** 2).sum())
+        vw = v + 0.12 * signal.fftconvolve(v, ir)[:len(v)]
+        narr[i0:i0 + m, 0] = vw[:m]; narr[i0:i0 + m, 1] = vw[:m]
+        # duck ONLY the music, ~3 dB, only while the narrator speaks
+        act = lp(np.abs(narr[:, 0]) > 0.01, 6).clip(0, 1)
+        act = np.minimum(1, act * 3)
+        music = music * (1 - 0.4 * act)[:, None]
+        mids = np.stack([bp(music[:, c], 300, 4000) for c in range(2)], 1)
+        music = music - mids * (0.55 * act)[:, None]       # make room for the words in the speech band only
+        wavfile.write(os.path.join(ROOT, 'out', 'narration.wav'), SR, (np.clip(narr, -1, 1) * 32767).astype(np.int16))
+    mix = music + sfx + narr
     # transparent look-ahead limiter only where a hit lands on a music peak (true-peak <= -1 dBTP)
     from scipy.ndimage import maximum_filter1d
     up = np.abs(signal.resample_poly(mix, 4, 1, axis=0)).max(1)[:len(mix) * 4].reshape(-1, 4).max(1)

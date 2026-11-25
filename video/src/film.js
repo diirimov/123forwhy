@@ -93,7 +93,7 @@ function drawSub(ctx, sub, t) {
     const tw = ln.reduce((a, b) => a + b.w, 0) + sp * (ln.length - 1);
     let x = W / 2 - tw / 2;
     for (const wd of ln) {
-      const d = lt - k * 0.045; k++;
+      const d = sub.words ? t - sub.words[k] : lt - k * 0.045; k++;
       if (d < 0) { x += wd.w + sp; continue; }
       const sc = outBack(clamp(d / 0.16), 2.4) * (wd.em ? 1 + 0.12 * Math.max(0, 1 - Math.abs(d - 0.2) / 0.2) : 1);
       const cx = x + wd.w / 2, cy = y0 + li * lh;

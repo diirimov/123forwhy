@@ -8,7 +8,7 @@ const { spawn } = require('child_process');
 const C = require('./core');
 const { W, H, FPS, NFRAMES, clamp, outQ, inQ } = C;
 const F = require('./film');
-const SHOTS = require('./shots');
+const SHOTS = require(process.env.SHOTS === 'v1' ? './shots' : './shots2');
 
 const main = C.canvas(), comp = C.canvas(), tmp = C.canvas();
 const WHIP = 0.1;

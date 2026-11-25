@@ -73,7 +73,7 @@ function studyLayer() {
     // shelves with books & jars
     for (let i = 0; i < 3; i++) E.shelf(x, 640, -1250 + i * 230, 760, 40 + i, i === 1 ? 'jars' : 'books');
     // astrological "zodiac man" chart
-    const zx = -90, zy = -1180;
+    const zx = -90, zy = -1050;
     shape(x, c => c.rect(zx, zy, 360, 500), '#ead2a0', { lw: 5, shade: { x0: zx, y0: zy, x1: zx + 360, y1: zy + 500, a: 0.25 } });
     line(x, [[zx - 10, zy], [zx + 370, zy]], 12, PAL.woodDark); line(x, [[zx - 10, zy + 500], [zx + 370, zy + 500]], 12, PAL.woodDark);
     x.save(); x.translate(zx + 180, zy + 270); x.scale(0.55, 0.55);
