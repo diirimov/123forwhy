@@ -398,7 +398,8 @@ def deep_bass(m, d, vel=1.0, pop=False, glide_from=None):
     growl = sum(np.sin(h * ph) / h ** (0.9 if pop else 1.2) for h in range(2, 12) if h * f < 7000)
     genv = np.exp(-t / (0.09 if pop else 0.06))
     growl = filt(growl, "low", 2400 if pop else 1300) * genv
-    y = sub * 1.0 + np.tanh(growl * 2.2) * (0.55 if pop else 0.4)
+    body = 0.32 * np.sin(2 * ph + 0.3) + 0.12 * np.sin(3 * ph)          # sustained warmth (120-250 Hz)
+    y = sub * 1.0 + body + np.tanh(growl * 2.2) * (0.55 if pop else 0.4)
     if pop:
         y[:250] += filt(rng.normal(0, 1, 250), "bp", (1500, 5000)) * np.exp(-np.arange(250) / 45) * 0.4
     e = np.minimum(1, t / 0.0025)
@@ -948,11 +949,11 @@ def place(name, x, bar, step, rel_db, pan=0.0, note=""):
     VOX_LOG.append((t_grid, t0, t0 + len(x) / SR, name, bar, step, note))
 
 place("gasp", VOX["gasp"], 2, 12, -1.5, 0.0, "inhale into the first drop")
-place("chuckle", BEST[0], 6, 12, -1.0, -0.15, "'heh' 1/2 -- answers the hook cadence")
-place("chuckle", BEST[1], 6, 14, -3.0, 0.15, "'heh' 2/2")
+place("chuckle", BEST[0], 6, 12, 2.0, -0.15, "'heh' 1/2 -- answers the hook cadence")
+place("chuckle", BEST[1], 6, 14, 0.0, 0.15, "'heh' 2/2")
 place("surprised", VOX["surprised"], 11, 12, -1.0, 0.0, "'oh!' after the stop-time punches -> variation")
-place("chuckle", BEST[2], 15, 12, -1.5, 0.15, "'heh' 1/2 -- answers the flute")
-place("chuckle", BEST[3], 15, 14, -3.0, -0.15, "'heh' 2/2")
+place("chuckle", BEST[2], 15, 12, 2.0, 0.15, "'heh' 1/2 -- answers the flute")
+place("chuckle", BEST[3], 15, 14, 0.0, -0.15, "'heh' 2/2")
 place("surprised", VOX["surprised"], 20, 12, -1.0, 0.05, "'oh!' over the bass solo -> bass-lock section")
 place("gasp", VOX["gasp"], 26, 12, -1.0, 0.0, "inhale at the top of the build -> climax")
 place("chuckle", BEST[0], 31, 8, -2.0, -0.12, "'heh' 1/2 -- between the final punches and the run")
@@ -966,8 +967,8 @@ def render_vox(ref):
         VOXT.add(x * g, t0, pan=pan)
 
 # ============================================================================ MIX
-LEVELS = {"kick": 1.15, "clap": 3.6, "snap": 5.0, "shaker": 4.2, "tamb": 2.8, "frame": 2.6, "wood": 3.5, "tom": 1.9,
-          "cym": 2.2, "fx": 1.3, "bass": 1.7, "chop": 0.3, "lute": 1.0, "fiddle": 5.5, "fiddle2": 3.4,
+LEVELS = {"kick": 1.55, "clap": 3.6, "snap": 5.0, "shaker": 4.2, "tamb": 2.8, "frame": 2.6, "wood": 3.5, "tom": 1.9,
+          "cym": 2.2, "fx": 1.3, "bass": 2.9, "chop": 0.3, "lute": 1.0, "fiddle": 5.5, "fiddle2": 3.4,
           "flute": 2.7, "drone": 2.6}
 DUCK = {"bass": 0.85, "chop": 0.6, "drone": 0.6, "tamb": 0.25, "lute": 0.2, "fiddle2": 0.15}
 
@@ -1012,10 +1013,14 @@ def mixdown(with_vox):
 
 def master_eq(x):
     x = filt(x, "high", 30)
-    x = peq(x, 100, 1.5, 0.9)         # bass body
-    x = peq(x, 300, -1.8, 0.9)        # de-mud
+    x = shelf(x, 110, 3.0, high=False)   # weight, matched to the Dancing Plague reference
+    x = peq(x, 38, -2.0, 1.0)         # keep the very bottom from swallowing headroom
+    x = peq(x, 85, 3.0, 1.0)          # bass punch
+    x = peq(x, 190, 3.0, 0.9)         # warm body
+    x = peq(x, 260, 1.5, 1.2)
+    x = peq(x, 420, -1.2, 1.0)        # de-mud
     x = peq(x, 3000, -0.8, 1.2)
-    x = shelf(x, 6000, 2.5)           # air
+    x = shelf(x, 7000, -1.5)          # darker, warmer top like the reference
     return x
 
 def glue(x, thr_db=-14, ratio=2.0, att=0.01, rel=0.14):
