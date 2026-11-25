@@ -17,7 +17,7 @@ async function worker(k) {
   const br = await chromium.launch({ args: ['--allow-file-access-from-files', '--disable-gpu'] });
   const p = await br.newPage({ viewport: { width: 1080, height: 1920 } });
   p.on('pageerror', e => console.log(`[w${k}] PAGEERR`, e.message));
-  await p.goto('file://' + root + '/index.html'); await p.waitForFunction(() => window.isReady && window.isReady());
+  await p.goto('file://' + root + '/' + (process.env.PAGE || 'index.html')); await p.waitForFunction(() => window.isReady && window.isReady());
   for (let f = a; f < b; f++) {
     const t = f / fps;
     const data = await p.evaluate(t => { window.renderFrame(t); return document.getElementById('c').toDataURL('image/png'); }, t);

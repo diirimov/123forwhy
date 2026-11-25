@@ -7,7 +7,7 @@ const b = await chromium.launch({ args: ['--allow-file-access-from-files', '--di
 const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
 p.on('console', m => { if (m.type() === 'error') console.log('ERR', m.text()); });
 p.on('pageerror', e => console.log('PAGEERR', e.message));
-await p.goto('file://' + root + '/index.html');
+await p.goto('file://' + root + '/' + (process.env.PAGE || 'index.html'));
 await p.waitForFunction(() => window.isReady && window.isReady());
 let i = 0;
 for (const s of specs) {
