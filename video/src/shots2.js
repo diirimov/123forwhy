@@ -740,7 +740,7 @@ for (const p of P4) sfx(p, 'freeze_hit', 0.8); sfx(T(31, 8), 'door', 0.5);
 // final gag & loop: he bolts... and the surgeon's hand hooks his hood tail and drags him back inside (door slams)
 const YANK = T(32, 8);
 shot(B(32), 60.0001, 'e_bolt', (ctx, t, lt) => {
-  const cam = shake(F.camAt([{ t: B(32), x: DX - 240, y: -170, z: 1.05 }, { t: 60, x: DX - 300, y: -190, z: 0.98 }], t), t, [YANK, 59.65], 18);
+  const cam = shake(F.camAt([{ t: B(32), x: DX - 240, y: -170, z: 1.05 }, { t: 60, x: DX - 300, y: -190, z: 0.98 }], t), t, [59.65], 12);
   S2.golden(ctx, cam, t, { fg: x => {
     const shut = smooth(seg(t, 59.45, 59.65));
     clinicDoor(x, t, 1 - shut);
@@ -752,7 +752,7 @@ shot(B(32), 60.0001, 'e_bolt', (ctx, t, lt) => {
     } else if (t < 59.5) {
       const k = seg(t, YANK, 59.45), vx = lerp(DX - 1460, DX, inQ(k));
       person(x, 'villager', V(t, { x: vx, y: 260 - Math.sin(Math.PI * k) * 120, bandage: 1, face: -1, eyes: 'wide', mouth: 'scream', open: 1, brows: 'shock', tail: -60, rot: 30, armL: [-160, 30], armR: [160, 30], handL: 'spread', handR: 'spread', vx: 3000 }));
-      tube(x, [[vx + 140, -240], [DX - 60, -330]], 20, K.SPECS.villager.hoodDark, 4.5);
+      D.tubeCurve(x, [[vx + 70, -150], [(vx + DX) / 2, -150 + 60 * (1 - k)], [DX - 60, -330]], 12, K.SPECS.villager.hoodDark, 4);
     }
     if (t > B(32) + 0.08 && t < YANK + 0.3) { const k = t - B(32) - 0.08; for (let i = 0; i < 6; i++) PR.puff(x, DX - 560 - i * 150 - k * 60, 240 - (i % 2) * 40, 50 + k * 50, clamp(1 - k * 0.9), '#dcc9a3'); }
   } });
