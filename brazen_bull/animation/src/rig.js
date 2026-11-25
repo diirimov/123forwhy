@@ -53,7 +53,7 @@ function blendPose(a, b, k) {
   for (const key of ['nF', 'fF']) o[key] = [lerp(A[key][0], B[key][0], k), lerp(A[key][1], B[key][1], k)];
   o.handMix = { n: [A.nHand, B.nHand, k], f: [A.fHand, B.fHand, k] };
   o.frontArm = k < 0.5 ? A.frontArm : B.frontArm;
-  o.face = A.face || B.face;
+  o.face = A.face || B.face; for (const kk of ['costume', 'spec', 'prop', 'prop2', 'propBehind']) o[kk] = A[kk] ?? B[kk];
   return o;
 }
 function poseAt(t, keysArr) {
@@ -124,6 +124,8 @@ const HAND_POSES = {
   press: { spread: 0.2, curl: [-0.06, -0.04, -0.04, -0.02], thumb: 0.65 },
   splay: { spread: 0.28, curl: [0.12, 0.1, 0.12, 0.18], thumb: 0.8 },
   fist: { spread: 0.0, curl: [1.25, 1.3, 1.32, 1.35], thumb: 1.0 },
+  point: { spread: 0.05, curl: [0.0, 1.2, 1.28, 1.32], thumb: 0.9 },
+  grip: { spread: 0.0, curl: [1.0, 1.05, 1.1, 1.15], thumb: 0.9 },
   claw: { spread: 0.2, curl: [0.7, 0.75, 0.75, 0.8], thumb: 0.6 },
 };
 function handPose(mix) {
@@ -230,14 +232,18 @@ function figure(g, C, p, t, opt = {}) {
   const lag = opt.lag ?? 0;
   const hpN = handPose(p.handMix ? p.handMix.n : [p.nHand, p.nHand, 0]), hpF = handPose(p.handMix ? p.handMix.f : [p.fHand, p.fHand, 0]);
   g.save(); g.lineJoin = 'round'; g.lineCap = 'round';
+  if (p.costume === 'guard' && typeof guardCloak === 'function') guardCloak(g, C, J, p, t);
   armDraw(g, C, J, false, hpF, t, p.tremble || 0, p.fWa);
+  if (p.prop2 && typeof drawProp === 'function') drawProp(g, C, p.prop2, J.fWr, J.a.fF2 + (p.fWa || 0), t);
   legDraw(g, C, J, false, p.fFa ?? -1.5);
   limb(g, C, J.chest, J.neck, 190, 170, { bulge: 0, line: false });
   legDraw(g, C, J, true, p.nFa ?? -1.5);
   chiton(g, C, J, p, t, lag);
+  if (p.costume && typeof costumeOverlay === 'function') costumeOverlay(g, C, J, p, t, lag);
   const drawHead = () => { g.save(); g.translate(J.neck[0] + (p.headX || 0), J.neck[1]); g.rotate(-(p.spine + p.head)); g.translate(-40, -250);
-    head34(g, C, Object.assign({ t }, p.face || {})); g.restore(); };
-  if (!p.frontArm) { drawHead(); armDraw(g, C, J, true, hpN, t, p.tremble || 0, p.nWa); }
+    head34(g, C, Object.assign({ t }, p.face || {}, { spec: p.spec })); g.restore(); };
+  const propN = () => { if (p.prop && typeof drawProp === 'function') drawProp(g, C, p.prop, J.nWr, J.a.nF2 + (p.propA || 0), t); };
+  if (!p.frontArm) { drawHead(); if (p.propBehind) propN(); armDraw(g, C, J, true, hpN, t, p.tremble || 0, p.nWa); if (!p.propBehind) propN(); }
   else { armDraw(g, C, J, true, hpN, t, p.tremble || 0, p.nWa, 'upper'); drawHead(); armDraw(g, C, J, true, hpN, t, p.tremble || 0, p.nWa, 'fore'); }
   g.restore();
   return J;

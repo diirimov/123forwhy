@@ -39,3 +39,11 @@ time on an HTML canvas (`index.html` + `src/`), rendered headless in parallel an
 | 18 outline · EXTREME HEAT CAN BE FATAL | 54.71 | scan / Hijaz turn |
 | 19 bull exterior, roar flare · THE BRAZEN BULL | 56.47 | roar climax 57.79; silence 58.10 |
 | 20 bull's eye → light streak (loops to frame 1) | 58.24 | final impact |
+
+## V4 — storytelling rebuild (`index_v4.html` → `BRAZEN_BULL_ANIMATION_V4_1080P60.mp4`)
+Three acts on the same locked soundtrack + "The Brazen Bull Simulation." narration:
+* **Act I — the legend (0–17.2 s):** bull face from darkness + title → engraved map Athens→Akragas → Akragas at sunset → Perillus at the anvil (strikes on the kicks) → statue reveal → Phalaris enthroned with guards → presentation shot/reverse shot → the bull's "roar" as symbolic sound rings → court reactions.
+* **Act II — the simulation (17.2–47.4 s):** V3 medical shots re-timed (bar-aligned) under the new captions; HEATSTROKE title on the clank.
+* **Act III — the inventor's fate (47.6–60 s):** golden courtyard → Phalaris turns and points → guards step in → Perillus's fear → bull silhouette → symbolic silhouette (no depiction of execution) → final title "THE BRAZEN BULL / HISTORY AND LEGEND" on the climax roar → back to the bull face for the loop.
+* New code: `src/chars4.js` (Perillus, Phalaris, guards, citizens, props), `src/world4.js` (map, Akragas, workshop, throne room, golden courtyard), `src/shots4.js`, `src/timeline4.js`. Model sheets: `design/V4_cast_sheet.png`, `design/V4_world_sheet.png`.
+* The inventor's fate is presented as legend (Diodorus Siculus, Book IX); medical captions are general statements with no temperatures, times or mechanisms.

@@ -15,7 +15,8 @@ function softIn(g, clipPts, blur, fn) {
 const FACE34 = [[-62, -200], [-104, -150], [-122, -88], [-128, -46], [-118, -18], [-126, 14], [-114, 56], [-98, 108],
 [-62, 158], [-22, 182], [40, 170], [96, 130], [126, 72], [134, 0], [150, -80], [132, -170], [70, -222], [0, -230]];
 function head34(g, C, s) {
-  const blink = s.blink || 0, lx = (s.look || [0, 0])[0], ly = (s.look || [0, 0])[1];
+  const sp = s.spec || {};
+  const blink = Math.max(s.blink || 0, sp.lids || 0), lx = (s.look || [0, 0])[0], ly = (s.look || [0, 0])[1];
   const brow = s.brow || 0, mouth = s.mouth || 0;
   g.save();
   g.lineJoin = 'round'; g.lineCap = 'round';
@@ -32,7 +33,7 @@ function head34(g, C, s) {
   softIn(g, ear, 5, () => { g.fillStyle = rgba(C.skinDk, 0.9); g.beginPath(); crPath(g, [[126, 4], [144, -12], [152, 22], [142, 60], [128, 52]], true); g.fill(); });
   g.strokeStyle = rgba(C.line, 0.5); g.lineWidth = 2.5; g.beginPath(); crPath(g, [[146, -20], [158, 10], [150, 56], [138, 80]], false); g.stroke();
   // --- face mass ---
-  const face = FACE34;
+  const face = (sp.faceW || sp.jaw) ? FACE34.map(([x, y]) => [x * (sp.faceW || 1), y > 40 ? 40 + (y - 40) * (sp.jaw || 1) : y]) : FACE34;
   g.fillStyle = C.skin; g.beginPath(); crPath(g, face, true); g.fill();
   softIn(g, face, 26, () => {
     // turning planes: near cheek -> ear darkens, far temple darkens
@@ -67,7 +68,8 @@ function head34(g, C, s) {
   brush(g, [[-114, -56], [-92, -64 - bt * 0.3], [-62, -64 + bt * 0.6], [-40, -56 + bt]], 9, 12, C.hair, true);
   if (brow > 0.15) { g.save(); g.globalAlpha = (brow - 0.15) * 0.7; g.filter = 'blur(1px)'; brush(g, [[-28, -62], [-31, -42], [-27, -26]], 5, 3, C.skinDk); g.restore(); }
   // --- nose ---
-  const nose = [[-42, -42], [-60, -2], [-84, 34], [-108, 62], [-112, 76], [-100, 88], [-80, 90], [-64, 80], [-54, 56], [-44, 14], [-36, -30]];
+  const nose = sp.hook ? [[-42, -42], [-72, -8], [-92, 24], [-112, 58], [-108, 84], [-96, 94], [-78, 92], [-64, 80], [-54, 56], [-44, 14], [-36, -30]]
+    : [[-42, -42], [-60, -2], [-84, 34], [-108, 62], [-112, 76], [-100, 88], [-80, 90], [-64, 80], [-54, 56], [-44, 14], [-36, -30]];
   softIn(g, nose, 7, () => {
     g.fillStyle = rgba(C.skinDk, 0.55); g.beginPath(); crPath(g, [[-48, 0], [-56, 50], [-66, 86], [-40, 86], [-36, 0]], true); g.fill();
     g.fillStyle = rgba(C.skinLt, 0.9); g.beginPath(); crPath(g, [[-48, -30], [-70, 8], [-96, 52], [-102, 66], [-90, 64], [-66, 20], [-46, -20]], true); g.fill();
@@ -84,11 +86,27 @@ function head34(g, C, s) {
   // --- beard ---
   const beard = [[126, 8], [128, 70], [104, 128], [56, 170], [0, 190], [-40, 186], [-78, 168], [-104, 122], [-118, 70], [-112, 52], [-96, 92],
   [-84, 140], [-56, 152], [-20, 152], [6, 138], [22, 104], [52, 84], [86, 72], [108, 40], [112, 8]];
-  hairMass(g, C, beard, 7, 260, [-120, 20, 130, 195], 9);
-  // moustache
-  hairMass(g, C, [[-100, 106], [-76, 96], [-46, 100], [-12, 104], [20, 118], [-4, 124], [-46, 118], [-86, 122], [-106, 118]], 11, 50, [-104, 96, 20, 124], 7);
+  if (sp.beard === 'none') {
+    // clean-shaven: jaw shadow, chin form, cleft
+    softIn(g, face, 14, () => { g.fillStyle = rgba(C.skinDk, 0.55); g.beginPath(); g.ellipse(40, 150, 120, 40, -0.4, 0, 6.283); g.fill();
+      g.fillStyle = rgba(C.skinLt, 0.4); g.beginPath(); g.ellipse(-40, 168 * (sp.jaw || 1), 34, 16, 0, 0, 6.283); g.fill(); });
+    g.strokeStyle = rgba(C.line, 0.35); g.lineWidth = 2.5; g.beginPath(); crPath(g, [[-20, 110], [-6, 118]], false); g.stroke();
+    g.save(); g.beginPath(); crPath(g, face, true); g.clip(); g.filter = 'blur(10px)'; g.fillStyle = rgba('#2a2a30', 0.35);
+    g.beginPath(); crPath(g, [[124, 10], [120, 90], [70, 160], [0, 200], [-70, 180], [-110, 120], [-80, 100], [-40, 150], [20, 140], [80, 90], [110, 20]], true); g.fill(); g.restore();
+  } else {
+    const bscale = sp.beard === 'full' ? 1.55 : 1;
+    const bd = beard.map(([x, y]) => [x, y > 60 ? 60 + (y - 60) * bscale : y]);
+    hairMass(g, C, bd, 7, sp.beard === 'full' ? 380 : 260, [-120, 20, 130, 60 + 135 * bscale], 9);
+    hairMass(g, C, [[-100, 106], [-76, 96], [-46, 100], [-12, 104], [20, 118], [-4, 124], [-46, 118], [-86, 122], [-106, 118]], 11, 50, [-104, 96, 20, 124], 7);
+  }
+  if (sp.age) {   // age lines: forehead, crow's feet, deeper nasolabial fold
+    g.save(); g.globalAlpha = 0.45 * sp.age; g.strokeStyle = C.skinDk; g.lineWidth = 3;
+    for (const y of [-118, -100, -84]) { g.beginPath(); g.moveTo(-70, y); g.quadraticCurveTo(0, y - 8, 70, y + 2); g.stroke(); }
+    for (const a of [-0.3, 0, 0.3]) { g.beginPath(); g.moveTo(60, -16); g.lineTo(60 + Math.cos(a) * 26, -16 + Math.sin(a) * 26); g.stroke(); }
+    g.lineWidth = 4; g.beginPath(); g.moveTo(-40, 70); g.quadraticCurveTo(-10, 100, -4, 130); g.stroke(); g.restore();
+  }
   // --- hair ---
-  hair34(g, C);
+  if (sp.hair === 'bald') hairBald(g, C); else if (sp.hair === 'long') hairLong(g, C, s.t || 0); else if (sp.hair === 'helmet') helmet34(g, C); else hair34(g, C);
   if (s.sweat > 0) sweat34(g, C, s.sweat, s.t || 0);
   g.restore();
 }
@@ -153,6 +171,41 @@ function hair34(g, C) {
   // soft sheen band
   g.filter = 'blur(10px)'; g.fillStyle = rgba(C.hairLt, 0.35); g.beginPath(); g.ellipse(10, -220, 110, 22, -0.15, 0, 6.283); g.fill(); g.filter = 'none';
   g.restore();
+}
+
+// Perillus: bald crown with a grey fringe around the back and sides
+function hairBald(g, C) {
+  softIn(g, FACE34.concat([[150, -80]]), 18, () => { g.fillStyle = rgba(C.skinLt, 0.45); g.beginPath(); g.ellipse(-10, -200, 110, 40, -0.1, 0, 6.283); g.fill(); });
+  const fringe = [[100, -150], [150, -120], [176, -60], [168, 10], [146, 40], [130, 0], [120, -60], [96, -110]];
+  hairMass(g, Object.assign({}, C, { beard: C.hair, beardLt: C.hairLt }), fringe, 41, 90, [90, -160, 180, 40], 9);
+  const cap = [[-80, -170], [-30, -232], [60, -240], [130, -200], [96, -150], [20, -196], [-50, -180]];
+  g.fillStyle = C.skin; g.beginPath(); crPath(g, cap, true); g.fill();
+  softIn(g, cap, 16, () => { g.fillStyle = rgba(C.skinLt, 0.55); g.beginPath(); g.ellipse(0, -215, 70, 18, -0.1, 0, 6.283); g.fill(); });
+}
+// Phalaris: short dark hair combed forward (Roman-style fringe) with a gold laurel wreath
+function hairLong(g, C, t) {
+  const mass = [[-80, -150], [-112, -178], [-96, -230], [-20, -258], [70, -256], [150, -214], [184, -140], [180, -40], [160, 30], [136, 10], [130, -60], [100, -130], [40, -158], [-20, -150], [-60, -136]];
+  g.fillStyle = C.hair; g.beginPath(); crPath(g, mass, true); g.fill();
+  g.save(); g.beginPath(); crPath(g, mass, true); g.clip();
+  for (let i = 0; i < 30; i++) { const x0 = 170 - i * 9; g.strokeStyle = rgba(i % 3 ? C.hairLt : '#000000', 0.4); g.lineWidth = 3;
+    g.beginPath(); g.moveTo(x0, -40 - i * 2); g.quadraticCurveTo(x0 - 40, -220, x0 - 120, -150 - (i % 4) * 4); g.stroke(); }
+  g.restore();
+  // fringe tips over the forehead
+  for (let i = 0; i < 7; i++) brush(g, [[-90 + i * 26, -168], [-100 + i * 26, -146], [-110 + i * 26, -132]], 12, 2, C.hair);
+  for (let i = 0; i < 16; i++) { const a = Math.PI * (1.05 + i * 0.055), x = 40 + Math.cos(a) * 150, y = -110 + Math.sin(a) * 120 * 0.9;
+    g.save(); g.translate(x, y); g.rotate(a + Math.PI / 2 + (i % 2 ? 0.5 : -0.5)); g.fillStyle = i % 2 ? '#e8b85a' : '#b88430';
+    g.beginPath(); g.ellipse(0, 0, 9, 20, 0, 0, 6.283); g.fill(); g.restore(); }
+}
+// guard: Corinthian bronze helmet (eye slits, nose guard, horsehair crest)
+function helmet34(g, C) {
+  const shell = [[-130, -100], [-120, -190], [-40, -260], [80, -258], [170, -200], [190, -80], [184, 60], [150, 130], [110, 160], [100, 40], [60, 0], [-20, -6], [-60, 40], [-70, 140], [-120, 120], [-134, 0]];
+  g.fillStyle = linGrad(g, -130, -260, 190, 160, [[0, '#d8a858'], [0.5, '#8a5a2a'], [1, '#3a2210']]); g.beginPath(); crPath(g, shell, true); g.fill();
+  softIn(g, shell, 16, () => { g.fillStyle = 'rgba(255,230,170,0.5)'; g.beginPath(); g.ellipse(-20, -200, 90, 30, -0.2, 0, 6.283); g.fill(); });
+  g.fillStyle = '#0a0503'; g.beginPath(); crPath(g, [[-120, -40], [-40, -50], [20, -40], [40, -10], [-30, -14], [-110, -10]], true); g.fill();
+  g.strokeStyle = 'rgba(255,220,160,0.6)'; g.lineWidth = 3; g.beginPath(); crPath(g, shell.slice(0, 6), false); g.stroke();
+  const crest = [[-80, -250], [-10, -330], [110, -330], [210, -270], [230, -180], [180, -230], [80, -280], [0, -270]];
+  g.fillStyle = '#8a1a12'; g.beginPath(); crPath(g, crest, true); g.fill();
+  g.save(); g.globalAlpha = 0.5; for (let i = 0; i < 20; i++) { g.strokeStyle = i % 2 ? '#c03020' : '#4a0a06'; g.lineWidth = 3; g.beginPath(); g.moveTo(-60 + i * 12, -260 - Math.sin(i / 20 * Math.PI) * 60); g.lineTo(-40 + i * 13, -310 - Math.sin(i / 20 * Math.PI) * 10); g.stroke(); } g.restore();
 }
 
 function sweat34(g, C, amt, t) {
