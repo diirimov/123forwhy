@@ -1025,10 +1025,10 @@ if __name__ == "__main__":
     with open(os.path.join(OUT, "MEDIEVAL_MEDICINE_VOX_TIMESTAMPS.md"), "w") as f:
         f.write("# Human reaction placements -- MEDIEVAL_MEDICINE_FINAL.wav\n\n")
         f.write("134 BPM, 12 swung units per bar. 'On beat' = where the sound's attack (or voiced peak) is locked to the grid.\n\n")
-        f.write("| # | On beat (s) | Audible from-to (s) | Bar.beat | Source file | Role |\n|---|---|---|---|---|---|\n")
+        f.write("| # | On beat (s) | Audible from-to (s) | Bar / beat | Source file | Role |\n|---|---|---|---|---|---|\n")
         for i, (tb, a, b, name, note) in enumerate(sorted(VOX_LOG)):
             bar = int(tb // BAR); beat = (tb - bar * BAR) / BEAT + 1
-            f.write(f"| {i + 1} | {tb:6.3f} | {max(0, a):6.3f} - {min(60, b):6.3f} | {bar + 1}.{beat:.2f} | {SRC[name]} | {note} |\n")
+            f.write(f"| {i + 1} | {tb:6.3f} | {max(0, a):6.3f} - {min(60, b):6.3f} | {bar + 1} / {beat:.2f} | {SRC[name]} | {note} |\n")
         f.write("\n## Arrangement map\n\n")
         for t, txt in SECTION_LOG:
             f.write(f"- **{t:5.2f} s** (bar {int(round(t / BAR)) + 1}) -- {txt}\n")
