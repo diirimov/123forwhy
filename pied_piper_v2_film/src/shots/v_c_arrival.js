@@ -51,7 +51,7 @@ function shot12(g, t, lt) {
   for (const [x, y, s, sd, at] of backs) {
     const tw = ease.back(clamp((t - at) / .15));
     const P = R.merge(R.idle(t, { seed: sd }), { yaw: Math.PI + (x < W / 2 ? .45 : -.45) * (1 - tw * .7), head: { yaw: (x < W / 2 ? -.3 : .3) * tw } });
-    PS.drawPerson(g, CAST.townsfolk(sd), P, { x, y, s, lw: 5.5, t });
+    PS.drawPerson(g, CAST.townsfolk(sd), P, { x, y, s, lw: 5.5, t, sil: '#3b2a1f', shadow: false });
   }
   E.fog(g, gy - 380, 420, t, { col: '#f3ead6', a: .45 * (.4 + .6 * open), speed: 30 });
   g.restore();

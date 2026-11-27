@@ -55,8 +55,8 @@ function shot25(g, t, lt) {
   const u = ease.io(lt / 1.77);
   const { V, items } = DP.town(g, t, { mood: 'day', cam: { cx: lerp(-60, 60, u), cz: lerp(-40, 60, u) }, sunX: 840, clouds: [[220, 300, 1.1]], seed: 91 });
   crowd(items, t, { burst: t0 + HIT });
-  DP.flush(g, V, items);
   bunting(g, t);
+  DP.flush(g, V, items);
   // confetti of grain / petals thrown on the beats
   for (let i = 0; i < 40; i++) { const tb = t0 + (i % 4) * BEAT; const dt = t - tb; if (dt < 0) continue; const x = hash(i) * W + Math.sin(dt * 3 + i) * 40, y = 300 + dt * 420 + hash(i * 3) * 400; if (y < 1700) K.ellipse(g, x, y, 9, 5, { fill: ['#c94a3a', '#e8c25a', '#f0e6d0', '#5a7aa8'][i % 4], lw: 2 }, dt * 5 + i); }
 }
@@ -65,8 +65,8 @@ function shot25(g, t, lt) {
 function shot26(g, t, lt) {
   const { V, items } = DP.town(g, t, { mood: 'day', cam: { cz: 180 + lt * 60, cy: 210 }, sunX: 200, seed: 93 });
   crowd(items, t, { clap: true, rows: [[640, 3, 420], [980, 4, 360], [1400, 6, 300]] });
-  DP.flush(g, V, items);
   bunting(g, t);
+  DP.flush(g, V, items);
 }
 
 // ---------------------------------------------------------------- 27: he walks through the dancers to the officials, hand held out
@@ -84,8 +84,8 @@ function shot27(g, t, lt) {
     const Wk = R.walk(ST.stridePh(tt, t0), { B: PB, stride: 90, bob: 2.4, arm: .12 });
     return R.merge(Wk, { yaw: Math.PI - .25, arms: { r: { swing: lerp(.1, 1.3, reach), out: .1, elbow: .2 } }, hands: { r: reach > .4 ? 'open' : 'mitten' }, head: { yaw: .1 } });
   }, t, { wind: .2 });
-  DP.flush(g, V, items);
   bunting(g, t);
+  DP.flush(g, V, items);
 }
 
 // ---------------------------------------------------------------- 28: SLAM -- the chest shuts on the downbeat; the mayor wags "no" on each half-time beat
@@ -131,8 +131,8 @@ function shot29(g, t, lt) {
   // the Piper: dead centre, perfectly still, staring at us
   DP.actorAt(items, CAST.piper, 0, 700, tt => R.merge(R.idle(0, { B: PB, shift: 0 }), { yaw: 0, bob: -2, arms: { l: { swing: .05, out: .06, elbow: .2 }, r: { swing: .05, out: .06, elbow: .2 } },
     head: { pitch: .08, yaw: 0, roll: 0 }, face: { eyes: 'narrow', mouth: 'flat', brow: 'angry', look: [0, 0], glint: 1.6, glow: .25 * u } }), t, { wind: 0 });
-  DP.flush(g, V, items);
   bunting(g, t);
+  DP.flush(g, V, items);
 }
 
 // ---------------------------------------------------------------- 30: his smile dies; the day drains into night across his face (C# hang)

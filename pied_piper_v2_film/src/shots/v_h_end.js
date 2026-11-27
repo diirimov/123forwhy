@@ -81,13 +81,14 @@ function shot44(g, t, lt) {
   E.sky(g, 'night', W, 1000, t); E.moon(g, 260, 300, 100);
   const push = 1 + .08 * ease.io(lt / 1.77);
   g.save(); g.translate(W / 2, 1300); g.scale(push, push); g.translate(-W / 2, -1300);
-  K.shape(g, [[-100, 1300], [-100, 560], [260, 380], [560, 300], [860, 380], [1180, 520], [1180, 1300]], { fill: '#2b3352', lw: 6, tension: .35 });
+  K.shape(g, [[-100, 1300], [-100, 560], [260, 380], [560, 300], [860, 380], [1180, 520], [1180, 1300]], { fill: '#3c466c', lw: 6, tension: .35 });
   K.shape(g, [[400, 1300], [430, 1040], [520, 900], [640, 1030], [680, 1300]], { fill: '#262d4a', lw: 5, tension: .4 });       // the scar of the cleft
-  K.shape(g, [[-100, 1300], [1180, 1300], [1180, H + 100], [-100, H + 100]], { fill: '#1b2036', lw: 6, smooth: false });
+  K.shape(g, [[-100, 1300], [1180, 1300], [1180, H + 100], [-100, H + 100]], { fill: '#3a4266', lw: 6, smooth: false });
+  K.glow(g, 540, 1500, 700, '#aab8e0', .25, 'source-over');
   // footprints converging on the rock
   for (let i = 0; i < 40; i++) { const u = i / 40, lane = (i % 5) - 2; const x = 540 + lane * (40 + 200 * u) + (i % 2 ? 12 : -12), y = 1310 + u * u * 560; K.ellipse(g, x, y, 10 + 14 * u, 5 + 7 * u, { fill: '#121628', lw: 0, alpha: .8 }); }
   // the shoe
-  K.shape(g, [[470, 1700], [600, 1690], [640, 1660], [610, 1640], [520, 1650], [480, 1670]], { fill: '#8a3a2a', lw: 5, tension: .4 });
+  g.save(); g.translate(560, 1690); g.scale(1.8, 1.8); g.translate(-560, -1690); K.shape(g, [[470, 1700], [600, 1690], [640, 1660], [610, 1640], [520, 1650], [480, 1670]], { fill: '#a8442e', lw: 4, tension: .4 }); g.restore(); E.addLight(g, 560, 1600, 400, '#c8d4f0', .3);
   // a feather from his hat drifting down
   const u = clamp((t - t0) / 1.76);
   const fx = 700 - 180 * u + Math.sin(u * 9) * 60, fy = 300 + 1300 * ease.o(u);

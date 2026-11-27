@@ -1,54 +1,54 @@
-# THE PIED PIPER OF HAMELIN: premium 2D animated edit
+# THE PIED PIPER OF HAMELIN (V2): the animation rebuilt around the new soundtrack
 
 | File | What |
 |---|---|
-| `PIED_PIPER_FINAL_1080P60.mp4` | The film: 1080×1920, 60 fps, 3,918 frames (65.30 s), H.264 High yuv420p (BT.709), 8.4 Mbps two-pass (SSIM 0.979 vs. the CRF 15 master), AAC 320 kbps. Audio checked against the approved soundtrack: 0-sample offset, r = 0.9998, −0.01 dB. English captions are burned in; no watermark or logos. |
-| `audio/FOLLOW_THE_PIPER_V2.wav` | The approved V2 soundtrack, used unchanged (same sha1 as `follow_the_piper/FOLLOW_THE_PIPER_V2.wav`). No voices, effects or edits were added. |
-| `data/PIED_PIPER_SYNC.json` | Beat synchronisation data: every beat and bar, sections, the 4 full-band silences, accents, instrument events (kick, toms, claps, stomps, snare, claves, bells, big drum, band answers), all 235 flute notes, shots and captions. Everything is given in seconds and in 60 fps frames. |
-| `data/beatmap.json` | The director's beat map built from the waveform (`tools/beatmap.py`), including 60 fps band envelopes (low / mid / high / flute / onset). |
-| `data/PIED_PIPER_SHOT_TIMELINE.json`, `SHOT_TIMELINE.md` | Final shot timeline: 37 shots with frame ranges, bar, picture and music cue. |
-| `STORYBOARD.md` | The music-led storyboard. |
-| `src/`, `render.js`, `tools/`, `assets/` | The complete, editable animation project. |
+| `PIED_PIPER_V2_FINAL_1080P60.mp4` | The film. 1080×1920 at 60 fps, 3,918 frames, 65.30 s. H.264 High (yuv420p, BT.709), two-pass 8.5 Mbps. The audio is the approved soundtrack unchanged (AAC 320 kbps, 48 kHz). English captions are burned in; there is no voice-over, no added sound effects and no watermark. |
+| `audio/PIED_PIPER_NEW_SOUNDTRACK.wav` | The approved new soundtrack, byte-identical to `pied_piper_soundtrack/PIED_PIPER_NEW_SOUNDTRACK.wav`. |
+| `AUDIO_ANALYSIS.md`, `tools/analyze_audio.py` | The soundtrack measured from the waveform: tempo and beat phase, transients per band (checked against the score's event list), per-bar loudness, breaks, energy jumps (the drops), spectral novelty and flute phrases. |
+| `data/beatmap.json` | The director's beat map the film runs on, including 60 fps band envelopes. |
+| `data/PIED_PIPER_V2_SYNC.json` | Updated beat-sync data. It covers every beat, section, drop, break, chord, accent and instrument event, all flute notes and phrases, the measured transients, the shots and the captions. Every time is given in seconds and in 60 fps frames. |
+| `data/PIED_PIPER_V2_SHOT_TIMELINE.json`, `SHOT_TIMELINE.md` | The updated shot timeline: 48 shots, each with frame range, bar, picture and music cue. |
+| `STORYBOARD.md` | The music-led storyboard, including what changed from V1 and why. |
+| `src/`, `render.js`, `tools/` | The complete editable project. |
+
+The earlier film (`pied_piper_film/`) and all soundtracks are untouched.
 
 ## How it was made
 
-**The Dancing Plague study.** No source code for the Dancing Plague animation survives in any branch. The only copy is the uploaded 90 s render, so it was studied frame by frame (contact sheets, full-resolution stills, motion strips, a k-means palette). This film keeps its identity:
+**Dancing Plague study.** No animation source code for Dancing Plague exists in any branch (only its music source), so its uploaded render was studied frame by frame next to the V1 Pied Piper film. The main difference was staging:
 
-- **Characters:** flat cut-out characters with dark-brown ink outlines (#28170c); big egg-shaped heads with round white eyes, small pupils and pink blush; linen coifs with a coloured stripe; laced bodices; pleated skirts with belt pouches; puppet-segmented sleeves.
-- **Grade:** the warm sepia/parchment grade with paper texture, heavy vignette and grain; purple dusk silhouettes; navy nights with warm windows.
-- **Settings:** stacked timber-framed gables and oval cobblestones; the ink sun; the council chamber (leaded window, red banner, candles, green table).
-- **Dance:** the knees-out squat dance.
-- **Endings:** the lone object on night cobblestones at the end.
+- DP shoots from waist height. Its front characters fill about 45 % of the frame height, crowds are staggered in two or three rows, and a solid wall of stacked gables sits behind them.
+- V1 shot tiny figures in deep, empty one-point streets.
 
-It improves on that rig with real articulation:
+V2 encodes the DP staging in `src/dp.js` and uses it for every street shot. It keeps the studio's character designs, palette, paper grade, vignette and grain, and adds the DP silhouette scenes and the red shoe.
 
-- **Rig (`src/rig.js`, `src/person.js`):** a 2.5D skeleton (3D local space → yaw → projection), so the same character turns correctly through front, three-quarter, profile and back views. Two-bone IK drives legs and arms. Walks plant their feet: the body advances exactly one stride per stride, and heel strikes land on the beats. Walks also have weight shift, hip roll, counter-swinging arms, anticipation and recoil.
-- **Follow-through:** skirts, the cloak, hair, feathers and pouches swing by sampling the pose function at earlier times (t − 0.07 s, t − 0.16 s). It's deterministic, so frames can render in parallel, and it needs no simulation state.
-- **Faces:** eyelids (open / half / sleepy / closed / narrow / wide), gaze, brows, mouths, blush, tears and sweat. The faces are yaw-aware, and the skull hair uses a "face window" so the back of the head is always correct.
-- **The Piper:** pied doublet and hose (burgundy / dark green), a muted purple cloak with green lining, a feathered hat shadowing his eyes, pointed shoes, and a recorder whose fingers follow the real flute notes (MIDI → recorder fingering).
-- **Rats (`src/rats.js`):** side and top views. Each rat has a trotting gait (diagonal leg pairs), a spine wave, a travelling-wave tail, ear twitches driven by flute onsets, a hind-leg standing pose and a frontal head turn. The swarms are choreographed paths (streams, rings, rows) that tighten into lockstep as the music takes hold.
-- **World (`src/world.js`, `src/env.js`):** a one-point-perspective street space, with houses, props, characters and cobbles all in true perspective and parallax. Emissive lights (windows, torches, candles, the moon) are composited after the colour grade with depth-correct occlusion.
+**Choreography (`src/chor.js`).**
 
-**Music as director.** `tools/beatmap.py` checked every event in the V2 sync file against the waveform (onsets within 9–25 ms, which is the attack-to-peak delay). Visual impacts lead by 12 ms so they land on the perceived transient. Every cut sits on a bar line, and the story follows the real structure:
+- The DP dance vocabulary is built from full-body poses: the knees-out squat, jig, knee-lift stomp, spin, clap on every beat, sway, and the betrayal's half-time squat. Each pose uses IK legs with planted feet, pelvis bob and roll, spine lean, side bend and twist, arms and head.
+- Dancers take a `delay`, which makes canons and waves through a crowd possible.
+- The procession walk is perfect lockstep with still arms, a shared slow sway, and heads that tilt in a canon on every bar. It is meant to look uncanny because it is too precise, never zombie-like.
+- Walk speed is locked to stride (speed = stride / stance time), so feet never slide and heels land on the beats.
+- Follow-through comes from lagged poses (t − 0.07 s and t − 0.16 s), as in V1.
 
-- The soundtrack's B♭ / E♭ "betrayal" harmony is where the rats drown.
-- The darker return of the hook carries the refusal to pay. The chest slams on the flute's falling B♭ bend.
-- The final drop is the Piper's return at night.
-- Each of the four full-band silences is used for a held breath: the stranger steps through the gate; he walks into the night; the procession freezes and turns to camera; the mountain closes.
+**Music as director.** Cuts land on bars, half bars, beats and 16ths: four beat-cuts in the hook, four 16th-cuts on the flute's solo run, and four quarter-bar trades in the climax. Actions are locked to measured events:
 
-**Loop.** The last frames settle on the exact framing of the first shot (the same street, moon, torch and fog), so the cut back to the procession is seamless.
+- heads snap on the plucked answer;
+- villagers leap on the claps;
+- the rats hop through their rows on the 16th scurry, the rings pulse on the kick, and lines of rats rise on the plucked notes;
+- the chest slams on the betrayal downbeat;
+- the faces freeze in the break;
+- four groups vanish on the four stutter stabs, and the rock seals in the silence.
 
 ## Rebuild
 
 ```
-npm install            # @napi-rs/canvas (Skia)
-python3 tools/beatmap.py
-node render.js sheet out.jpg 0 65 60 6        # contact sheet
-node render.js stills outdir 12.4 40.6       # stills
-node render.js final 4                        # full film: 4 workers -> build/ -> PIED_PIPER_FINAL_1080P60.mp4
-node tools/timeline.js                        # timeline + sync data
+npm install                                      # @napi-rs/canvas (Skia); V2 links ../pied_piper_film/node_modules
+python3 tools/analyze_audio.py                   # audio analysis -> data/beatmap.json + AUDIO_ANALYSIS.md
+node render.js sheet out.jpg 0 65 60 6           # contact sheet
+node render.js stills outdir 19.5 40.7           # single frames
+node render.js final 4                           # 4 workers -> build/ -> PIED_PIPER_V2_FINAL_1080P60.mp4 (CRF 15 master)
+node tools/timeline.js                           # shot timeline + sync data
+tools/review.sh <film.mp4>                       # ffprobe, 5 fps review sheets, cut detection vs. the shot list
 ```
 
-Rendering is deterministic: every frame is a pure function of time. It runs at about 0.5 s per frame per worker, roughly 9 minutes for the whole film on 4 cores, at about 300 MB per worker. A note for later projects: `@napi-rs/canvas` leaks about 8.6 MB per `drawImage()` under `destination-out`/`destination-in`, so the light occlusion uses multiply masks instead.
-
-Fonts: Luckiest Guy and Cinzel Decorative (from the studio's earlier films), and IM FELL English (OFL).
+Frames are deterministic (each is a pure function of time). A full render takes about 9 minutes on 4 cores.

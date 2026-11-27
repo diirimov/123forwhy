@@ -209,9 +209,9 @@ function shot42(g, t, lt) {
   E.mountain(g, 540, 980, { mood: 'night', open: 1, glow: 1 + 2 * flare, lw: 6 });
   K.glow(g, 540, 880, 260 + 200 * flare, '#c8d8ff', .35 + .4 * flare, 'source-over');
   // the valley floor and the winding road
-  K.shape(g, [[-60, 980], [W + 60, 980], [W + 60, H + 60], [-60, H + 60]], { fill: '#232a44', lw: 5, smooth: false });
+  K.shape(g, [[-60, 980], [W + 60, 980], [W + 60, H + 60], [-60, H + 60]], { fill: '#3a4468', lw: 5, smooth: false });
   const P = u => [540 + Math.sin(u * 9) * 320 * u, lerp(985, 1880, u * u)];
-  g.save(); g.lineCap = 'round'; g.strokeStyle = '#3a4466'; g.lineWidth = 60; g.beginPath(); for (let u = 0; u <= 1.001; u += .02) { const [x, y] = P(u); u === 0 ? g.moveTo(x, y) : g.lineTo(x, y); } g.stroke(); g.restore();
+  g.save(); g.lineCap = 'round'; g.strokeStyle = '#8a96c0'; g.lineWidth = 70; g.beginPath(); for (let u = 0; u <= 1.001; u += .02) { const [x, y] = P(u); u === 0 ? g.moveTo(x, y) : g.lineTo(x, y); } g.stroke(); g.restore();
   const head = .02 + (t - t0) * .012;
   for (let i = 0; i < 150; i++) {
     const u = head + i * .0062; if (u > 1) break;
