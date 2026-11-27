@@ -1,0 +1,3943 @@
+{
+ "title": "THE PIED PIPER OF HAMELIN -- new soundtrack",
+ "file": "PIED_PIPER_NEW_SOUNDTRACK.wav",
+ "instrumental": true,
+ "bpm": 136.0,
+ "time_signature": "4/4",
+ "swing": "52 % on 16ths (odd 16ths late by 0.0044 s)",
+ "key": "B minor (Phrygian bII = C, harmonic-minor V = F#); celebration in D major; betrayal in D minor",
+ "sample_rate": 48000,
+ "bit_depth": 24,
+ "channels": 2,
+ "duration_seconds": 65.2941,
+ "beat_seconds": 0.441176,
+ "bar_seconds": 1.764706,
+ "sixteenth_seconds": 0.110294,
+ "bars": 37,
+ "first_beat": 0.0,
+ "animation_fps": 60,
+ "film_grid_note": "Same 136 BPM / 37-bar grid as PIED_PIPER_FINAL_1080P60.mp4: every shot cut still sits on a bar line. The two drops are at bar 12 (19.412 s, rat procession) and bar 24 (40.588 s, the children).",
+ "drops": [
+  {
+   "name": "drop_1",
+   "time": 19.4118,
+   "bar": 12
+  },
+  {
+   "name": "drop_2",
+   "time": 40.5882,
+   "bar": 24
+  }
+ ],
+ "loop": {
+  "seamless": true,
+  "loop_start": 0.0,
+  "loop_end": 65.2941,
+  "note": "The reverb tail is folded onto the start; the last bar's F#5-G5 pickup lands on the first bar's A5."
+ },
+ "loudness": {
+  "integrated_lufs": -14.01,
+  "true_peak_dbtp": -1.92
+ },
+ "sections": [
+  {
+   "name": "hook",
+   "start": 0.0,
+   "end": 3.5294,
+   "start_bar": 1,
+   "end_bar": 2,
+   "description": "The taunt: flute hook on the very first downbeat, plucked strings answer, kick + bass + riq from beat one (no intro)"
+  },
+  {
+   "name": "rats",
+   "start": 3.5294,
+   "end": 10.5882,
+   "start_bar": 3,
+   "end_bar": 6,
+   "description": "Full groove: clap + tabor backbeat, shaker 16ths, frame-drum bounce, lute chops; the hook climbs (T2) and turns on G-F#"
+  },
+  {
+   "name": "gate",
+   "start": 10.5882,
+   "end": 12.3529,
+   "start_bar": 7,
+   "end_bar": 7,
+   "description": "Build: the taunt in C, then the tritone F#5 trill; ratchet + roll + riser; full-band silence on the last two 16ths"
+  },
+  {
+   "name": "stranger",
+   "start": 12.3529,
+   "end": 17.6471,
+   "start_bar": 8,
+   "end_bar": 10,
+   "description": "Role reversal: the hurdy-gurdy calls, the flute answers with the displaced taunt; darbuka maqsum, bouncier syncopated bass; the bargain"
+  },
+  {
+   "name": "spell",
+   "start": 17.6471,
+   "end": 19.4118,
+   "start_bar": 11,
+   "end_bar": 11,
+   "description": "He raises the flute: rising harmonic-minor run with a C#6 trill, roll + riser, silence, pickup into the drop"
+  },
+  {
+   "name": "drop_1",
+   "start": 19.4118,
+   "end": 26.4706,
+   "start_bar": 12,
+   "end_bar": 15,
+   "description": "DROP 1 -- the rat procession: flute taunt answered by a chromatic hurdy-gurdy + fiddle 16th scurry; gliding growl bass pumping against the kick; woodblocks on 3/11"
+  },
+  {
+   "name": "river",
+   "start": 26.4706,
+   "end": 28.2353,
+   "start_bar": 16,
+   "end_bar": 16,
+   "description": "The procession reaches the river (tenor octave below)"
+  },
+  {
+   "name": "still_water",
+   "start": 28.2353,
+   "end": 30.0,
+   "start_bar": 17,
+   "end_bar": 17,
+   "description": "Hit on C (bII) + gong, then near-silence: low drone, the flute's falling F5, a tabor roll lifts into the celebration"
+  },
+  {
+   "name": "celebration",
+   "start": 30.0,
+   "end": 33.5294,
+   "start_bar": 18,
+   "end_bar": 19,
+   "description": "The town celebrates: the same taunt now over D and G -- genuinely happy; claps on every beat, tambourine 16ths, fiddle + pluck answers"
+  },
+  {
+   "name": "betrayal",
+   "start": 33.5294,
+   "end": 38.8235,
+   "start_bar": 20,
+   "end_bar": 22,
+   "description": "The council refuses to pay: the taunt turns minor (F, Bb) over Dm and Bb; half-time drums, low fiddle sneers, tremolo strings; G minor with a C# tritone hang"
+  },
+  {
+   "name": "into_the_night",
+   "start": 38.8235,
+   "end": 40.5882,
+   "start_bar": 23,
+   "end_bar": 23,
+   "description": "The Piper walks away: the flute alone in A harmonic 16ths over a heartbeat kick and a sub, riser, silence, pickup"
+  },
+  {
+   "name": "drop_2",
+   "start": 40.5882,
+   "end": 47.6471,
+   "start_bar": 24,
+   "end_bar": 27,
+   "description": "DROP 2 -- the children follow: taunt doubled by the soprano recorder an octave up, rat scurry now with pluck + fiddle; tambourine 16ths, the biggest low end"
+  },
+  {
+   "name": "climax",
+   "start": 47.6471,
+   "end": 54.7059,
+   "start_bar": 28,
+   "end_bar": 31,
+   "description": "Call and response tightens: gurdy imitates the taunt, then half-bar trades; a long fiddle descant; Em lift; the chromatic TAG A#-B-C-C#-D"
+  },
+  {
+   "name": "mountain",
+   "start": 54.7059,
+   "end": 56.4706,
+   "start_bar": 32,
+   "end_bar": 32,
+   "description": "Stutter: the taunt chopped into unison stabs (0, 3, 6, 10) as the children vanish; the mountain seals in silence"
+  },
+  {
+   "name": "disappearance",
+   "start": 56.4706,
+   "end": 65.2941,
+   "start_bar": 33,
+   "end_bar": 37,
+   "description": "Layers vanish: the hook with no band, the plucked answer with no flute, the taunt with holes in it, the Piper low in the fog, the last giggle and a pickup that loops back to the first bar"
+  }
+ ],
+ "harmony": [
+  {
+   "bar": 1,
+   "time": 0.0,
+   "chord": "Bm"
+  },
+  {
+   "bar": 2,
+   "time": 1.7647,
+   "chord": "C"
+  },
+  {
+   "bar": 3,
+   "time": 3.5294,
+   "chord": "Bm"
+  },
+  {
+   "bar": 4,
+   "time": 5.2941,
+   "chord": "C"
+  },
+  {
+   "bar": 5,
+   "time": 7.0588,
+   "chord": "Bm"
+  },
+  {
+   "bar": 6,
+   "time": 8.8235,
+   "chord": "G"
+  },
+  {
+   "bar": 6,
+   "time": 9.7059,
+   "chord": "F#"
+  },
+  {
+   "bar": 7,
+   "time": 10.5882,
+   "chord": "C"
+  },
+  {
+   "bar": 8,
+   "time": 12.3529,
+   "chord": "Em"
+  },
+  {
+   "bar": 9,
+   "time": 14.1176,
+   "chord": "Bm"
+  },
+  {
+   "bar": 10,
+   "time": 15.8824,
+   "chord": "C"
+  },
+  {
+   "bar": 11,
+   "time": 17.6471,
+   "chord": "F#"
+  },
+  {
+   "bar": 12,
+   "time": 19.4118,
+   "chord": "Bm"
+  },
+  {
+   "bar": 13,
+   "time": 21.1765,
+   "chord": "C"
+  },
+  {
+   "bar": 14,
+   "time": 22.9412,
+   "chord": "Bm"
+  },
+  {
+   "bar": 15,
+   "time": 24.7059,
+   "chord": "G"
+  },
+  {
+   "bar": 15,
+   "time": 25.5882,
+   "chord": "F#"
+  },
+  {
+   "bar": 16,
+   "time": 26.4706,
+   "chord": "Bm"
+  },
+  {
+   "bar": 17,
+   "time": 28.2353,
+   "chord": "C"
+  },
+  {
+   "bar": 18,
+   "time": 30.0,
+   "chord": "D"
+  },
+  {
+   "bar": 19,
+   "time": 31.7647,
+   "chord": "G"
+  },
+  {
+   "bar": 20,
+   "time": 33.5294,
+   "chord": "Dm"
+  },
+  {
+   "bar": 21,
+   "time": 35.2941,
+   "chord": "Bb"
+  },
+  {
+   "bar": 22,
+   "time": 37.0588,
+   "chord": "Gm"
+  },
+  {
+   "bar": 23,
+   "time": 38.8235,
+   "chord": "A"
+  },
+  {
+   "bar": 24,
+   "time": 40.5882,
+   "chord": "Bm"
+  },
+  {
+   "bar": 25,
+   "time": 42.3529,
+   "chord": "C"
+  },
+  {
+   "bar": 26,
+   "time": 44.1176,
+   "chord": "Bm"
+  },
+  {
+   "bar": 27,
+   "time": 45.8824,
+   "chord": "G"
+  },
+  {
+   "bar": 27,
+   "time": 46.7647,
+   "chord": "F#"
+  },
+  {
+   "bar": 28,
+   "time": 47.6471,
+   "chord": "Bm"
+  },
+  {
+   "bar": 29,
+   "time": 49.4118,
+   "chord": "C"
+  },
+  {
+   "bar": 30,
+   "time": 51.1765,
+   "chord": "Em"
+  },
+  {
+   "bar": 31,
+   "time": 52.9412,
+   "chord": "F#"
+  },
+  {
+   "bar": 32,
+   "time": 54.7059,
+   "chord": "C"
+  },
+  {
+   "bar": 33,
+   "time": 56.4706,
+   "chord": "Bm"
+  },
+  {
+   "bar": 34,
+   "time": 58.2353,
+   "chord": "C"
+  },
+  {
+   "bar": 35,
+   "time": 60.0,
+   "chord": "Bm"
+  },
+  {
+   "bar": 36,
+   "time": 61.7647,
+   "chord": "G"
+  },
+  {
+   "bar": 37,
+   "time": 63.5294,
+   "chord": "F#"
+  }
+ ],
+ "gaps": [
+  {
+   "start": 12.1324,
+   "end": 12.3529
+  },
+  {
+   "start": 19.1912,
+   "end": 19.4118
+  },
+  {
+   "start": 40.3676,
+   "end": 40.5882
+  },
+  {
+   "start": 47.4265,
+   "end": 47.6471
+  },
+  {
+   "start": 56.0294,
+   "end": 56.4706
+  }
+ ],
+ "accents": [
+  {
+   "time": 0.0,
+   "type": "hook",
+   "description": "Flute hook (the taunt) + kick + bass on the first downbeat",
+   "strength": 1.0
+  },
+  {
+   "time": 0.3353,
+   "type": "syncopation",
+   "description": "B5 on the off-16th: the hook's skip",
+   "strength": 0.7
+  },
+  {
+   "time": 7.0588,
+   "type": "lift",
+   "description": "Hook climbs a fourth (T2); fiddle doubles below",
+   "strength": 0.6
+  },
+  {
+   "time": 12.1324,
+   "type": "gap",
+   "description": "Full-band silence: only the Piper's flute (or nothing)",
+   "strength": 0.9
+  },
+  {
+   "time": 12.3529,
+   "type": "arrival",
+   "description": "The stranger arrives: boom + crash, gurdy riff",
+   "strength": 0.85
+  },
+  {
+   "time": 19.1912,
+   "type": "gap",
+   "description": "Full-band silence: only the Piper's flute (or nothing)",
+   "strength": 0.9
+  },
+  {
+   "time": 19.4118,
+   "type": "drop",
+   "description": "DROP 1: rat procession",
+   "strength": 1.0
+  },
+  {
+   "time": 20.2941,
+   "type": "answer",
+   "description": "Hurdy-gurdy + fiddle rat scurry answers the flute",
+   "strength": 0.8
+  },
+  {
+   "time": 26.4706,
+   "type": "river",
+   "description": "The procession reaches the river: tenor recorder joins an octave below",
+   "strength": 0.7
+  },
+  {
+   "time": 28.2353,
+   "type": "hit",
+   "description": "The rats go under: hit + gong",
+   "strength": 1.0
+  },
+  {
+   "time": 30.0,
+   "type": "celebration",
+   "description": "Celebration burst (D major)",
+   "strength": 0.95
+  },
+  {
+   "time": 33.5294,
+   "type": "betrayal",
+   "description": "Betrayal: the hook turns minor; half-time",
+   "strength": 0.9
+  },
+  {
+   "time": 37.9412,
+   "type": "tritone",
+   "description": "C#5 hang over G minor: the smile fades",
+   "strength": 0.8
+  },
+  {
+   "time": 40.3676,
+   "type": "gap",
+   "description": "Full-band silence: only the Piper's flute (or nothing)",
+   "strength": 0.9
+  },
+  {
+   "time": 40.5882,
+   "type": "drop",
+   "description": "DROP 2 (final drop): the children",
+   "strength": 1.0
+  },
+  {
+   "time": 47.4265,
+   "type": "gap",
+   "description": "Full-band silence: only the Piper's flute (or nothing)",
+   "strength": 0.9
+  },
+  {
+   "time": 47.6471,
+   "type": "climax",
+   "description": "Climax: trades + fiddle descant",
+   "strength": 0.95
+  },
+  {
+   "time": 52.9412,
+   "type": "tag",
+   "description": "Chromatic TAG A#5-B5-C6-C#6-D6",
+   "strength": 0.9
+  },
+  {
+   "time": 54.7059,
+   "type": "stutter",
+   "description": "Stutter stabs: the passage closes",
+   "strength": 0.95
+  },
+  {
+   "time": 56.0294,
+   "type": "gap",
+   "description": "Full-band silence: only the Piper's flute (or nothing)",
+   "strength": 0.9
+  },
+  {
+   "time": 65.0735,
+   "type": "loop",
+   "description": "G5 pickup resolves into the first bar's A5 (seamless loop)",
+   "strength": 0.6
+  }
+ ],
+ "events": {
+  "pluck": [
+   0.8824,
+   0.9971,
+   1.1029,
+   1.3235,
+   1.4382,
+   1.5441,
+   2.6471,
+   2.7618,
+   2.8676,
+   3.0882,
+   3.2029,
+   3.3088,
+   4.4118,
+   4.5265,
+   4.6324,
+   4.8529,
+   4.9676,
+   5.0735,
+   6.1765,
+   6.2912,
+   6.3971,
+   6.6176,
+   6.7324,
+   6.8382,
+   7.9412,
+   8.0559,
+   8.1618,
+   8.2765,
+   8.3824,
+   8.4971,
+   8.6029,
+   9.7059,
+   9.8206,
+   9.9265,
+   10.0412,
+   10.1471,
+   10.2618,
+   15.6618,
+   15.7765,
+   23.8235,
+   23.9382,
+   24.0441,
+   24.1588,
+   24.2647,
+   24.3794,
+   24.4853,
+   25.5882,
+   25.7029,
+   25.8088,
+   25.9235,
+   26.0294,
+   26.1441,
+   30.8824,
+   30.9971,
+   31.1029,
+   31.3235,
+   31.4382,
+   31.5441,
+   32.6471,
+   32.7618,
+   32.8676,
+   32.9824,
+   33.0882,
+   33.3088,
+   33.4235,
+   41.4706,
+   41.6912,
+   41.9118,
+   42.1324,
+   43.2353,
+   43.4559,
+   43.6765,
+   43.8971,
+   45.0,
+   45.1147,
+   45.2206,
+   45.3353,
+   45.4412,
+   45.5559,
+   45.6618,
+   46.7647,
+   46.8794,
+   46.9853,
+   47.1,
+   47.2059,
+   47.3206,
+   48.5294,
+   48.75,
+   48.8647,
+   49.0853,
+   49.1912,
+   52.0588,
+   52.1735,
+   52.2794,
+   52.3941,
+   52.5,
+   52.6147,
+   52.7206,
+   57.3529,
+   57.4676,
+   57.5735,
+   57.7941,
+   57.9088,
+   58.0147,
+   59.1176,
+   59.2324,
+   59.3382,
+   59.5588,
+   59.6735,
+   59.7794,
+   62.6471,
+   62.8676,
+   63.0882,
+   64.4118,
+   64.5265,
+   64.6324,
+   64.7471
+  ],
+  "kick": [
+   0.0,
+   0.4412,
+   0.8824,
+   1.3235,
+   1.7647,
+   2.2059,
+   2.6471,
+   3.0882,
+   3.5294,
+   3.9706,
+   4.4118,
+   4.8529,
+   5.2941,
+   5.7353,
+   6.1765,
+   6.6176,
+   7.0588,
+   7.5,
+   7.9412,
+   8.3824,
+   8.8235,
+   9.2647,
+   9.7059,
+   10.1471,
+   10.5882,
+   11.0294,
+   11.4706,
+   12.3529,
+   12.7941,
+   13.2353,
+   13.6765,
+   14.1176,
+   14.5588,
+   15.0,
+   15.4412,
+   15.8824,
+   16.3235,
+   16.7647,
+   17.2059,
+   17.6471,
+   18.0882,
+   18.5294,
+   19.4118,
+   19.8529,
+   20.2941,
+   20.7353,
+   21.1765,
+   21.6176,
+   22.0588,
+   22.5,
+   22.7206,
+   22.9412,
+   23.3824,
+   23.8235,
+   24.2647,
+   24.7059,
+   25.1471,
+   25.5882,
+   26.0294,
+   26.25,
+   26.4706,
+   26.9118,
+   27.3529,
+   27.7941,
+   30.0,
+   30.4412,
+   30.8824,
+   31.3235,
+   31.7647,
+   32.2059,
+   32.6471,
+   33.0882,
+   33.5294,
+   34.6324,
+   35.2941,
+   36.3971,
+   37.0588,
+   38.1618,
+   38.8235,
+   39.7059,
+   40.5882,
+   41.0294,
+   41.4706,
+   41.9118,
+   42.3529,
+   42.7941,
+   43.2353,
+   43.6765,
+   43.8971,
+   44.1176,
+   44.5588,
+   45.0,
+   45.4412,
+   45.8824,
+   46.3235,
+   46.7647,
+   47.2059,
+   47.6471,
+   48.0882,
+   48.5294,
+   48.9706,
+   49.4118,
+   49.8529,
+   50.2941,
+   50.7353,
+   51.1765,
+   51.6176,
+   52.0588,
+   52.5,
+   52.7206,
+   52.8353,
+   52.9412,
+   53.3824,
+   53.8235,
+   54.2647,
+   60.0,
+   60.8824
+  ],
+  "bass": [
+   0.0,
+   0.3353,
+   0.6618,
+   1.1029,
+   1.5441,
+   1.6588,
+   1.7647,
+   2.1,
+   2.4265,
+   2.8676,
+   3.3088,
+   3.4235,
+   3.75,
+   4.1912,
+   4.3059,
+   4.6324,
+   5.0735,
+   5.1882,
+   5.5147,
+   5.6294,
+   5.9559,
+   6.2912,
+   6.3971,
+   6.7324,
+   6.8382,
+   6.9529,
+   7.2794,
+   7.7206,
+   7.8353,
+   8.1618,
+   8.6029,
+   8.7176,
+   9.0441,
+   9.1588,
+   9.4853,
+   9.8206,
+   9.9265,
+   10.2618,
+   10.3676,
+   10.4824,
+   10.5882,
+   10.8088,
+   11.0294,
+   11.25,
+   11.4706,
+   11.6912,
+   11.9118,
+   12.5735,
+   12.6882,
+   13.0147,
+   13.35,
+   13.4559,
+   13.7912,
+   13.8971,
+   14.0118,
+   14.3382,
+   14.4529,
+   14.7794,
+   15.1147,
+   15.2206,
+   15.5559,
+   15.6618,
+   15.7765,
+   16.1029,
+   16.2176,
+   16.5441,
+   16.8794,
+   16.9853,
+   17.3206,
+   17.4265,
+   17.5412,
+   19.4118,
+   19.7471,
+   19.8529,
+   20.1882,
+   20.2941,
+   20.5147,
+   20.7353,
+   20.9559,
+   21.1765,
+   21.5118,
+   21.6176,
+   21.9529,
+   22.0588,
+   22.2794,
+   22.5,
+   22.7206,
+   22.9412,
+   23.2765,
+   23.3824,
+   23.7176,
+   23.8235,
+   24.0441,
+   24.2647,
+   24.4853,
+   24.7059,
+   25.0412,
+   25.1471,
+   25.4824,
+   25.5882,
+   25.8088,
+   26.0294,
+   26.25,
+   26.4706,
+   26.8059,
+   26.9118,
+   27.2471,
+   27.3529,
+   27.5735,
+   27.7941,
+   28.0147,
+   30.2206,
+   30.6618,
+   30.7765,
+   31.1029,
+   31.5441,
+   31.6588,
+   31.9853,
+   32.4265,
+   32.5412,
+   32.8676,
+   33.3088,
+   33.4235,
+   33.5294,
+   34.6324,
+   35.1882,
+   35.2941,
+   36.3971,
+   36.9529,
+   37.0588,
+   38.1618,
+   38.7176,
+   40.5882,
+   40.9235,
+   41.0294,
+   41.3647,
+   41.4706,
+   41.6912,
+   41.9118,
+   42.1324,
+   42.3529,
+   42.6882,
+   42.7941,
+   43.1294,
+   43.2353,
+   43.4559,
+   43.6765,
+   43.8971,
+   44.1176,
+   44.4529,
+   44.5588,
+   44.8941,
+   45.0,
+   45.2206,
+   45.4412,
+   45.6618,
+   45.8824,
+   46.2176,
+   46.3235,
+   46.6588,
+   46.7647,
+   46.9853,
+   47.2059,
+   47.4265,
+   47.6471,
+   47.9824,
+   48.0882,
+   48.4235,
+   48.5294,
+   48.75,
+   48.9706,
+   49.1912,
+   49.4118,
+   49.7471,
+   49.8529,
+   50.1882,
+   50.2941,
+   50.5147,
+   50.7353,
+   50.9559,
+   51.1765,
+   51.5118,
+   51.6176,
+   51.9529,
+   52.0588,
+   52.2794,
+   52.5,
+   52.7206,
+   52.9412,
+   53.2765,
+   53.3824,
+   53.7176,
+   53.8235,
+   54.0441
+  ],
+  "riq": [
+   0.2206,
+   0.6618,
+   1.1029,
+   1.5441,
+   1.9853,
+   2.4265,
+   2.8676,
+   3.3088,
+   3.75,
+   4.1912,
+   4.6324,
+   5.0735,
+   5.5147,
+   5.9559,
+   6.3971,
+   6.8382,
+   7.2794,
+   7.7206,
+   8.1618,
+   8.6029,
+   9.0441,
+   9.4853,
+   9.9265,
+   10.3676,
+   10.8088,
+   11.25,
+   12.5735,
+   13.0147,
+   13.4559,
+   13.8971,
+   14.3382,
+   14.7794,
+   15.2206,
+   15.6618,
+   16.1029,
+   16.5441,
+   16.9853,
+   17.4265,
+   17.8676,
+   18.3088,
+   19.6324,
+   20.0735,
+   20.5147,
+   20.9559,
+   21.3971,
+   21.8382,
+   22.2794,
+   22.7206,
+   23.1618,
+   23.6029,
+   24.0441,
+   24.4853,
+   24.9265,
+   25.3676,
+   25.8088,
+   26.25,
+   26.6912,
+   27.1324,
+   27.5735,
+   28.0147,
+   30.2206,
+   30.6618,
+   31.1029,
+   31.5441,
+   31.9853,
+   32.4265,
+   32.8676,
+   33.3088,
+   34.1912,
+   35.0735,
+   35.9559,
+   36.8382,
+   37.7206,
+   38.6029,
+   40.8088,
+   41.25,
+   41.6912,
+   42.1324,
+   42.5735,
+   43.0147,
+   43.4559,
+   43.8971,
+   44.3382,
+   44.7794,
+   45.2206,
+   45.6618,
+   46.1029,
+   46.5441,
+   46.9853,
+   47.4265,
+   47.8676,
+   48.3088,
+   48.75,
+   49.1912,
+   49.6324,
+   50.0735,
+   50.5147,
+   50.9559,
+   51.3971,
+   51.8382,
+   52.2794,
+   52.7206,
+   53.1618,
+   53.6029,
+   54.0441,
+   54.4853,
+   56.6912,
+   57.1324,
+   57.5735,
+   58.0147,
+   58.4559,
+   58.8971,
+   59.3382,
+   59.7794
+  ],
+  "wood": [
+   0.3353,
+   1.2176,
+   2.1,
+   2.9824,
+   7.3941,
+   7.8353,
+   8.2765,
+   9.1588,
+   9.6,
+   10.0412,
+   19.7471,
+   20.6294,
+   21.5118,
+   22.3941,
+   23.2765,
+   24.1588,
+   25.0412,
+   25.9235,
+   26.8059,
+   27.6882,
+   32.1,
+   32.5412,
+   32.9824,
+   33.4235,
+   40.9235,
+   41.3647,
+   41.8059,
+   42.6882,
+   43.1294,
+   43.5706,
+   44.4529,
+   44.8941,
+   45.3353,
+   46.2176,
+   46.6588,
+   47.1,
+   47.9824,
+   48.4235,
+   48.8647,
+   49.7471,
+   50.1882,
+   50.6294,
+   51.5118,
+   51.9529,
+   52.3941,
+   53.2765,
+   53.7176,
+   54.1588
+  ],
+  "crash": [
+   3.5294,
+   12.3529,
+   19.4118,
+   28.2353,
+   30.0,
+   40.5882,
+   47.6471,
+   54.7059
+  ],
+  "clap": [
+   3.9706,
+   4.8529,
+   5.7353,
+   6.6176,
+   7.5,
+   8.3824,
+   9.2647,
+   10.1471,
+   11.0294,
+   12.7941,
+   13.6765,
+   14.5588,
+   15.4412,
+   16.3235,
+   17.2059,
+   19.8529,
+   20.7353,
+   21.6176,
+   22.5,
+   23.3824,
+   24.2647,
+   25.1471,
+   26.0294,
+   26.9118,
+   27.7941,
+   30.4412,
+   31.3235,
+   31.7647,
+   32.2059,
+   32.6471,
+   33.0882,
+   34.4118,
+   36.1765,
+   37.9412,
+   41.0294,
+   41.9118,
+   42.7941,
+   43.6765,
+   44.5588,
+   45.4412,
+   46.3235,
+   47.2059,
+   48.0882,
+   48.9706,
+   49.8529,
+   50.7353,
+   51.6176,
+   52.5,
+   53.3824,
+   54.2647
+  ],
+  "tom": [
+   11.4706,
+   11.5853,
+   11.6912,
+   11.8059,
+   11.9118,
+   12.0265,
+   46.7647,
+   46.8794,
+   46.9853,
+   47.1,
+   47.2059,
+   47.3206
+  ],
+  "boom": [
+   12.3529,
+   19.4118,
+   28.2353,
+   30.0,
+   40.5882,
+   47.6471
+  ],
+  "gurdy": [
+   12.3529,
+   12.4676,
+   12.5735,
+   12.6882,
+   12.9088,
+   13.0147,
+   14.1176,
+   14.2324,
+   14.3382,
+   14.4529,
+   14.6735,
+   14.7794,
+   15.8824,
+   15.9971,
+   16.1029,
+   16.2176,
+   16.4382,
+   16.5441,
+   20.2941,
+   20.4088,
+   20.5147,
+   20.6294,
+   20.7353,
+   20.85,
+   20.9559,
+   21.0706,
+   22.0588,
+   22.1735,
+   22.2794,
+   22.3941,
+   22.5,
+   22.6147,
+   22.7206,
+   22.8353,
+   23.8235,
+   23.9382,
+   24.0441,
+   24.1588,
+   24.2647,
+   24.3794,
+   24.4853,
+   25.5882,
+   25.7029,
+   25.8088,
+   25.9235,
+   26.0294,
+   26.1441,
+   27.3529,
+   27.4676,
+   27.5735,
+   27.6882,
+   27.7941,
+   27.9088,
+   28.0147,
+   28.1294,
+   41.4706,
+   41.5853,
+   41.6912,
+   41.8059,
+   41.9118,
+   42.0265,
+   42.1324,
+   42.2471,
+   43.2353,
+   43.35,
+   43.4559,
+   43.5706,
+   43.6765,
+   43.7912,
+   43.8971,
+   44.0118,
+   45.0,
+   45.1147,
+   45.2206,
+   45.3353,
+   45.4412,
+   45.5559,
+   45.6618,
+   46.7647,
+   46.8794,
+   46.9853,
+   47.1,
+   47.2059,
+   47.3206,
+   48.5294,
+   48.75,
+   48.8647,
+   49.0853,
+   49.1912,
+   49.8529,
+   50.0735,
+   50.1882,
+   50.7353,
+   50.9559,
+   51.0706,
+   52.0588,
+   52.1735,
+   52.2794,
+   52.3941,
+   52.5,
+   52.6147,
+   52.7206
+  ],
+  "stab": [
+   28.2353,
+   54.2647,
+   54.7059,
+   55.0412,
+   55.3676,
+   55.8088
+  ]
+ },
+ "flute_notes": [
+  {
+   "time": 0.0,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 0.2206,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 0.3353,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 0.5559,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 0.6618,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 1.7647,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 1.9853,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 2.1,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 2.3206,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 2.4265,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 3.5294,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 3.75,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 3.8647,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 4.0853,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 4.1912,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 5.2941,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 5.5147,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 5.6294,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 5.85,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 5.9559,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 7.0588,
+   "dur": 0.2206,
+   "midi": 86,
+   "instrument": "alto"
+  },
+  {
+   "time": 7.2794,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 7.3941,
+   "dur": 0.2206,
+   "midi": 88,
+   "instrument": "alto"
+  },
+  {
+   "time": 7.6147,
+   "dur": 0.1103,
+   "midi": 86,
+   "instrument": "alto"
+  },
+  {
+   "time": 7.7206,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 7.8353,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 8.8235,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 8.9382,
+   "dur": 0.1103,
+   "midi": 84,
+   "instrument": "alto"
+  },
+  {
+   "time": 9.0441,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 9.1588,
+   "dur": 0.2206,
+   "midi": 79,
+   "instrument": "alto"
+  },
+  {
+   "time": 9.3794,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 9.4853,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 10.3676,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 10.4824,
+   "dur": 0.1103,
+   "midi": 79,
+   "instrument": "alto"
+  },
+  {
+   "time": 10.5882,
+   "dur": 0.2206,
+   "midi": 79,
+   "instrument": "alto"
+  },
+  {
+   "time": 10.8088,
+   "dur": 0.1103,
+   "midi": 76,
+   "instrument": "alto"
+  },
+  {
+   "time": 10.9235,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 11.1441,
+   "dur": 0.1103,
+   "midi": 79,
+   "instrument": "alto"
+  },
+  {
+   "time": 11.25,
+   "dur": 0.2206,
+   "midi": 76,
+   "instrument": "alto"
+  },
+  {
+   "time": 11.4706,
+   "dur": 0.6618,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 13.2353,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 13.4559,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 13.5706,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 13.7912,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 13.8971,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 15.0,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 15.2206,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 15.3353,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 15.5559,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 15.6618,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 16.7647,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 16.9853,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 17.1,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 17.3206,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 17.4265,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 17.6471,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 17.8676,
+   "dur": 0.1103,
+   "midi": 79,
+   "instrument": "alto"
+  },
+  {
+   "time": 17.9824,
+   "dur": 0.1103,
+   "midi": 82,
+   "instrument": "alto"
+  },
+  {
+   "time": 18.0882,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 18.3088,
+   "dur": 0.1103,
+   "midi": 85,
+   "instrument": "alto"
+  },
+  {
+   "time": 18.4235,
+   "dur": 0.1103,
+   "midi": 86,
+   "instrument": "alto"
+  },
+  {
+   "time": 18.5294,
+   "dur": 0.4412,
+   "midi": 85,
+   "instrument": "alto"
+  },
+  {
+   "time": 18.9706,
+   "dur": 0.2206,
+   "midi": 82,
+   "instrument": "alto"
+  },
+  {
+   "time": 19.1912,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 19.3059,
+   "dur": 0.1103,
+   "midi": 79,
+   "instrument": "alto"
+  },
+  {
+   "time": 19.4118,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 19.6324,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 19.7471,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 19.9676,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 20.0735,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 21.1765,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 21.3971,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 21.5118,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 21.7324,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 21.8382,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 22.9412,
+   "dur": 0.2206,
+   "midi": 86,
+   "instrument": "alto"
+  },
+  {
+   "time": 23.1618,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 23.2765,
+   "dur": 0.2206,
+   "midi": 88,
+   "instrument": "alto"
+  },
+  {
+   "time": 23.4971,
+   "dur": 0.1103,
+   "midi": 86,
+   "instrument": "alto"
+  },
+  {
+   "time": 23.6029,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 23.7176,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 24.7059,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 24.8206,
+   "dur": 0.1103,
+   "midi": 84,
+   "instrument": "alto"
+  },
+  {
+   "time": 24.9265,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 25.0412,
+   "dur": 0.2206,
+   "midi": 79,
+   "instrument": "alto"
+  },
+  {
+   "time": 25.2618,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 25.3676,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 26.25,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 26.3647,
+   "dur": 0.1103,
+   "midi": 79,
+   "instrument": "alto"
+  },
+  {
+   "time": 26.4706,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 26.6912,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 26.8059,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 27.0265,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 27.1324,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 28.6765,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 29.1176,
+   "dur": 0.4412,
+   "midi": 77,
+   "instrument": "alto"
+  },
+  {
+   "time": 30.0,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 30.2206,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 30.3353,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 30.5559,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 30.6618,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 31.7647,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 31.9853,
+   "dur": 0.1103,
+   "midi": 79,
+   "instrument": "alto"
+  },
+  {
+   "time": 32.1,
+   "dur": 0.2206,
+   "midi": 84,
+   "instrument": "alto"
+  },
+  {
+   "time": 32.3206,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 32.4265,
+   "dur": 0.2206,
+   "midi": 79,
+   "instrument": "alto"
+  },
+  {
+   "time": 33.5294,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 33.75,
+   "dur": 0.1103,
+   "midi": 77,
+   "instrument": "alto"
+  },
+  {
+   "time": 33.8647,
+   "dur": 0.2206,
+   "midi": 82,
+   "instrument": "alto"
+  },
+  {
+   "time": 34.0853,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 34.1912,
+   "dur": 0.2206,
+   "midi": 77,
+   "instrument": "alto"
+  },
+  {
+   "time": 35.2941,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 35.5147,
+   "dur": 0.1103,
+   "midi": 77,
+   "instrument": "alto"
+  },
+  {
+   "time": 35.6294,
+   "dur": 0.2206,
+   "midi": 82,
+   "instrument": "alto"
+  },
+  {
+   "time": 35.85,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 35.9559,
+   "dur": 0.2206,
+   "midi": 77,
+   "instrument": "alto"
+  },
+  {
+   "time": 37.0588,
+   "dur": 0.2206,
+   "midi": 82,
+   "instrument": "alto"
+  },
+  {
+   "time": 37.2794,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 37.3941,
+   "dur": 0.2206,
+   "midi": 79,
+   "instrument": "alto"
+  },
+  {
+   "time": 37.6147,
+   "dur": 0.1103,
+   "midi": 77,
+   "instrument": "alto"
+  },
+  {
+   "time": 37.7206,
+   "dur": 0.2206,
+   "midi": 74,
+   "instrument": "alto"
+  },
+  {
+   "time": 37.9412,
+   "dur": 0.6618,
+   "midi": 73,
+   "instrument": "alto"
+  },
+  {
+   "time": 38.8235,
+   "dur": 0.1103,
+   "midi": 69,
+   "instrument": "alto"
+  },
+  {
+   "time": 38.9382,
+   "dur": 0.1103,
+   "midi": 73,
+   "instrument": "alto"
+  },
+  {
+   "time": 39.0441,
+   "dur": 0.1103,
+   "midi": 76,
+   "instrument": "alto"
+  },
+  {
+   "time": 39.1588,
+   "dur": 0.1103,
+   "midi": 77,
+   "instrument": "alto"
+  },
+  {
+   "time": 39.2647,
+   "dur": 0.1103,
+   "midi": 76,
+   "instrument": "alto"
+  },
+  {
+   "time": 39.3794,
+   "dur": 0.1103,
+   "midi": 73,
+   "instrument": "alto"
+  },
+  {
+   "time": 39.4853,
+   "dur": 0.1103,
+   "midi": 74,
+   "instrument": "alto"
+  },
+  {
+   "time": 39.6,
+   "dur": 0.1103,
+   "midi": 76,
+   "instrument": "alto"
+  },
+  {
+   "time": 39.7059,
+   "dur": 0.1103,
+   "midi": 77,
+   "instrument": "alto"
+  },
+  {
+   "time": 39.8206,
+   "dur": 0.1103,
+   "midi": 79,
+   "instrument": "alto"
+  },
+  {
+   "time": 39.9265,
+   "dur": 0.1103,
+   "midi": 77,
+   "instrument": "alto"
+  },
+  {
+   "time": 40.0412,
+   "dur": 0.1103,
+   "midi": 76,
+   "instrument": "alto"
+  },
+  {
+   "time": 40.1471,
+   "dur": 0.1103,
+   "midi": 73,
+   "instrument": "alto"
+  },
+  {
+   "time": 40.2618,
+   "dur": 0.1103,
+   "midi": 69,
+   "instrument": "alto"
+  },
+  {
+   "time": 40.3676,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 40.4824,
+   "dur": 0.1103,
+   "midi": 79,
+   "instrument": "alto"
+  },
+  {
+   "time": 40.5882,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 40.8088,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 40.9235,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 41.1441,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 41.25,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 42.3529,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 42.5735,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 42.6882,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 42.9088,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 43.0147,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 44.1176,
+   "dur": 0.2206,
+   "midi": 86,
+   "instrument": "alto"
+  },
+  {
+   "time": 44.3382,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 44.4529,
+   "dur": 0.2206,
+   "midi": 88,
+   "instrument": "alto"
+  },
+  {
+   "time": 44.6735,
+   "dur": 0.1103,
+   "midi": 86,
+   "instrument": "alto"
+  },
+  {
+   "time": 44.7794,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 44.8941,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 45.8824,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 45.9971,
+   "dur": 0.1103,
+   "midi": 84,
+   "instrument": "alto"
+  },
+  {
+   "time": 46.1029,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 46.2176,
+   "dur": 0.2206,
+   "midi": 79,
+   "instrument": "alto"
+  },
+  {
+   "time": 46.4382,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 46.5441,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 47.4265,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 47.5412,
+   "dur": 0.1103,
+   "midi": 79,
+   "instrument": "alto"
+  },
+  {
+   "time": 47.6471,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 47.8676,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 47.9824,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 48.2029,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 48.3088,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 49.4118,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 49.6324,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 49.7471,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 50.2941,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 50.5147,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 50.6294,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 51.1765,
+   "dur": 0.2206,
+   "midi": 86,
+   "instrument": "alto"
+  },
+  {
+   "time": 51.3971,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 51.5118,
+   "dur": 0.2206,
+   "midi": 88,
+   "instrument": "alto"
+  },
+  {
+   "time": 51.7324,
+   "dur": 0.1103,
+   "midi": 86,
+   "instrument": "alto"
+  },
+  {
+   "time": 51.8382,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 51.9529,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 52.9412,
+   "dur": 0.1103,
+   "midi": 82,
+   "instrument": "alto"
+  },
+  {
+   "time": 53.0559,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 53.1618,
+   "dur": 0.1103,
+   "midi": 84,
+   "instrument": "alto"
+  },
+  {
+   "time": 53.2765,
+   "dur": 0.1103,
+   "midi": 85,
+   "instrument": "alto"
+  },
+  {
+   "time": 53.3824,
+   "dur": 0.3309,
+   "midi": 86,
+   "instrument": "alto"
+  },
+  {
+   "time": 53.7176,
+   "dur": 0.1103,
+   "midi": 85,
+   "instrument": "alto"
+  },
+  {
+   "time": 53.8235,
+   "dur": 0.2206,
+   "midi": 82,
+   "instrument": "alto"
+  },
+  {
+   "time": 54.0441,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 54.7059,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 55.0412,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 55.3676,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 55.8088,
+   "dur": 0.2206,
+   "midi": 77,
+   "instrument": "alto"
+  },
+  {
+   "time": 56.4706,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 56.6912,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 56.8059,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 57.0265,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 57.1324,
+   "dur": 0.2206,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 60.0,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 60.3353,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 60.6618,
+   "dur": 0.3309,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 61.7647,
+   "dur": 0.1103,
+   "midi": 71,
+   "instrument": "tenor"
+  },
+  {
+   "time": 61.8794,
+   "dur": 0.1103,
+   "midi": 72,
+   "instrument": "tenor"
+  },
+  {
+   "time": 61.9853,
+   "dur": 0.2206,
+   "midi": 71,
+   "instrument": "tenor"
+  },
+  {
+   "time": 62.2059,
+   "dur": 0.2206,
+   "midi": 67,
+   "instrument": "tenor"
+  },
+  {
+   "time": 62.4265,
+   "dur": 0.6618,
+   "midi": 66,
+   "instrument": "tenor"
+  },
+  {
+   "time": 63.5294,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto"
+  },
+  {
+   "time": 63.75,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 63.8647,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto"
+  },
+  {
+   "time": 65.0735,
+   "dur": 0.1103,
+   "midi": 78,
+   "instrument": "alto"
+  },
+  {
+   "time": 65.1882,
+   "dur": 0.1103,
+   "midi": 79,
+   "instrument": "alto"
+  }
+ ],
+ "beats": [
+  {
+   "index": 0,
+   "time": 0.0,
+   "frame60": 0,
+   "bar": 1,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.827
+  },
+  {
+   "index": 1,
+   "time": 0.4412,
+   "frame60": 26,
+   "bar": 1,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.807
+  },
+  {
+   "index": 2,
+   "time": 0.8824,
+   "frame60": 53,
+   "bar": 1,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.801
+  },
+  {
+   "index": 3,
+   "time": 1.3235,
+   "frame60": 79,
+   "bar": 1,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.781
+  },
+  {
+   "index": 4,
+   "time": 1.7647,
+   "frame60": 106,
+   "bar": 2,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.806
+  },
+  {
+   "index": 5,
+   "time": 2.2059,
+   "frame60": 132,
+   "bar": 2,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.812
+  },
+  {
+   "index": 6,
+   "time": 2.6471,
+   "frame60": 159,
+   "bar": 2,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.798
+  },
+  {
+   "index": 7,
+   "time": 3.0882,
+   "frame60": 185,
+   "bar": 2,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.794
+  },
+  {
+   "index": 8,
+   "time": 3.5294,
+   "frame60": 212,
+   "bar": 3,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.847
+  },
+  {
+   "index": 9,
+   "time": 3.9706,
+   "frame60": 238,
+   "bar": 3,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.83
+  },
+  {
+   "index": 10,
+   "time": 4.4118,
+   "frame60": 265,
+   "bar": 3,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.851
+  },
+  {
+   "index": 11,
+   "time": 4.8529,
+   "frame60": 291,
+   "bar": 3,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.824
+  },
+  {
+   "index": 12,
+   "time": 5.2941,
+   "frame60": 318,
+   "bar": 4,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.851
+  },
+  {
+   "index": 13,
+   "time": 5.7353,
+   "frame60": 344,
+   "bar": 4,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.848
+  },
+  {
+   "index": 14,
+   "time": 6.1765,
+   "frame60": 371,
+   "bar": 4,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.852
+  },
+  {
+   "index": 15,
+   "time": 6.6176,
+   "frame60": 397,
+   "bar": 4,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.853
+  },
+  {
+   "index": 16,
+   "time": 7.0588,
+   "frame60": 424,
+   "bar": 5,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.858
+  },
+  {
+   "index": 17,
+   "time": 7.5,
+   "frame60": 450,
+   "bar": 5,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.836
+  },
+  {
+   "index": 18,
+   "time": 7.9412,
+   "frame60": 476,
+   "bar": 5,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.837
+  },
+  {
+   "index": 19,
+   "time": 8.3824,
+   "frame60": 503,
+   "bar": 5,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.823
+  },
+  {
+   "index": 20,
+   "time": 8.8235,
+   "frame60": 529,
+   "bar": 6,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.824
+  },
+  {
+   "index": 21,
+   "time": 9.2647,
+   "frame60": 556,
+   "bar": 6,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.793
+  },
+  {
+   "index": 22,
+   "time": 9.7059,
+   "frame60": 582,
+   "bar": 6,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.886
+  },
+  {
+   "index": 23,
+   "time": 10.1471,
+   "frame60": 609,
+   "bar": 6,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.865
+  },
+  {
+   "index": 24,
+   "time": 10.5882,
+   "frame60": 635,
+   "bar": 7,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.761
+  },
+  {
+   "index": 25,
+   "time": 11.0294,
+   "frame60": 662,
+   "bar": 7,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.781
+  },
+  {
+   "index": 26,
+   "time": 11.4706,
+   "frame60": 688,
+   "bar": 7,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.783
+  },
+  {
+   "index": 27,
+   "time": 11.9118,
+   "frame60": 715,
+   "bar": 7,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.423
+  },
+  {
+   "index": 28,
+   "time": 12.3529,
+   "frame60": 741,
+   "bar": 8,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.823
+  },
+  {
+   "index": 29,
+   "time": 12.7941,
+   "frame60": 768,
+   "bar": 8,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.805
+  },
+  {
+   "index": 30,
+   "time": 13.2353,
+   "frame60": 794,
+   "bar": 8,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.818
+  },
+  {
+   "index": 31,
+   "time": 13.6765,
+   "frame60": 821,
+   "bar": 8,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.794
+  },
+  {
+   "index": 32,
+   "time": 14.1176,
+   "frame60": 847,
+   "bar": 9,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.799
+  },
+  {
+   "index": 33,
+   "time": 14.5588,
+   "frame60": 874,
+   "bar": 9,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.792
+  },
+  {
+   "index": 34,
+   "time": 15.0,
+   "frame60": 900,
+   "bar": 9,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.817
+  },
+  {
+   "index": 35,
+   "time": 15.4412,
+   "frame60": 926,
+   "bar": 9,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.796
+  },
+  {
+   "index": 36,
+   "time": 15.8824,
+   "frame60": 953,
+   "bar": 10,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.798
+  },
+  {
+   "index": 37,
+   "time": 16.3235,
+   "frame60": 979,
+   "bar": 10,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.799
+  },
+  {
+   "index": 38,
+   "time": 16.7647,
+   "frame60": 1006,
+   "bar": 10,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.813
+  },
+  {
+   "index": 39,
+   "time": 17.2059,
+   "frame60": 1032,
+   "bar": 10,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.801
+  },
+  {
+   "index": 40,
+   "time": 17.6471,
+   "frame60": 1059,
+   "bar": 11,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.707
+  },
+  {
+   "index": 41,
+   "time": 18.0882,
+   "frame60": 1085,
+   "bar": 11,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.752
+  },
+  {
+   "index": 42,
+   "time": 18.5294,
+   "frame60": 1112,
+   "bar": 11,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.797
+  },
+  {
+   "index": 43,
+   "time": 18.9706,
+   "frame60": 1138,
+   "bar": 11,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.439
+  },
+  {
+   "index": 44,
+   "time": 19.4118,
+   "frame60": 1165,
+   "bar": 12,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.91
+  },
+  {
+   "index": 45,
+   "time": 19.8529,
+   "frame60": 1191,
+   "bar": 12,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.902
+  },
+  {
+   "index": 46,
+   "time": 20.2941,
+   "frame60": 1218,
+   "bar": 12,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.91
+  },
+  {
+   "index": 47,
+   "time": 20.7353,
+   "frame60": 1244,
+   "bar": 12,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.88
+  },
+  {
+   "index": 48,
+   "time": 21.1765,
+   "frame60": 1271,
+   "bar": 13,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.89
+  },
+  {
+   "index": 49,
+   "time": 21.6176,
+   "frame60": 1297,
+   "bar": 13,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.909
+  },
+  {
+   "index": 50,
+   "time": 22.0588,
+   "frame60": 1324,
+   "bar": 13,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.902
+  },
+  {
+   "index": 51,
+   "time": 22.5,
+   "frame60": 1350,
+   "bar": 13,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.925
+  },
+  {
+   "index": 52,
+   "time": 22.9412,
+   "frame60": 1376,
+   "bar": 14,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.872
+  },
+  {
+   "index": 53,
+   "time": 23.3824,
+   "frame60": 1403,
+   "bar": 14,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.902
+  },
+  {
+   "index": 54,
+   "time": 23.8235,
+   "frame60": 1429,
+   "bar": 14,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.908
+  },
+  {
+   "index": 55,
+   "time": 24.2647,
+   "frame60": 1456,
+   "bar": 14,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.88
+  },
+  {
+   "index": 56,
+   "time": 24.7059,
+   "frame60": 1482,
+   "bar": 15,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.936
+  },
+  {
+   "index": 57,
+   "time": 25.1471,
+   "frame60": 1509,
+   "bar": 15,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.905
+  },
+  {
+   "index": 58,
+   "time": 25.5882,
+   "frame60": 1535,
+   "bar": 15,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.899
+  },
+  {
+   "index": 59,
+   "time": 26.0294,
+   "frame60": 1562,
+   "bar": 15,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.942
+  },
+  {
+   "index": 60,
+   "time": 26.4706,
+   "frame60": 1588,
+   "bar": 16,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.855
+  },
+  {
+   "index": 61,
+   "time": 26.9118,
+   "frame60": 1615,
+   "bar": 16,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.883
+  },
+  {
+   "index": 62,
+   "time": 27.3529,
+   "frame60": 1641,
+   "bar": 16,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.892
+  },
+  {
+   "index": 63,
+   "time": 27.7941,
+   "frame60": 1668,
+   "bar": 16,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.861
+  },
+  {
+   "index": 64,
+   "time": 28.2353,
+   "frame60": 1694,
+   "bar": 17,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.769
+  },
+  {
+   "index": 65,
+   "time": 28.6765,
+   "frame60": 1721,
+   "bar": 17,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.333
+  },
+  {
+   "index": 66,
+   "time": 29.1176,
+   "frame60": 1747,
+   "bar": 17,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.587
+  },
+  {
+   "index": 67,
+   "time": 29.5588,
+   "frame60": 1774,
+   "bar": 17,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.101
+  },
+  {
+   "index": 68,
+   "time": 30.0,
+   "frame60": 1800,
+   "bar": 18,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.893
+  },
+  {
+   "index": 69,
+   "time": 30.4412,
+   "frame60": 1826,
+   "bar": 18,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.856
+  },
+  {
+   "index": 70,
+   "time": 30.8824,
+   "frame60": 1853,
+   "bar": 18,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.863
+  },
+  {
+   "index": 71,
+   "time": 31.3235,
+   "frame60": 1879,
+   "bar": 18,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.839
+  },
+  {
+   "index": 72,
+   "time": 31.7647,
+   "frame60": 1906,
+   "bar": 19,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.811
+  },
+  {
+   "index": 73,
+   "time": 32.2059,
+   "frame60": 1932,
+   "bar": 19,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.836
+  },
+  {
+   "index": 74,
+   "time": 32.6471,
+   "frame60": 1959,
+   "bar": 19,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.815
+  },
+  {
+   "index": 75,
+   "time": 33.0882,
+   "frame60": 1985,
+   "bar": 19,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.843
+  },
+  {
+   "index": 76,
+   "time": 33.5294,
+   "frame60": 2012,
+   "bar": 20,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.861
+  },
+  {
+   "index": 77,
+   "time": 33.9706,
+   "frame60": 2038,
+   "bar": 20,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.568
+  },
+  {
+   "index": 78,
+   "time": 34.4118,
+   "frame60": 2065,
+   "bar": 20,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.732
+  },
+  {
+   "index": 79,
+   "time": 34.8529,
+   "frame60": 2091,
+   "bar": 20,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.645
+  },
+  {
+   "index": 80,
+   "time": 35.2941,
+   "frame60": 2118,
+   "bar": 21,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.847
+  },
+  {
+   "index": 81,
+   "time": 35.7353,
+   "frame60": 2144,
+   "bar": 21,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.552
+  },
+  {
+   "index": 82,
+   "time": 36.1765,
+   "frame60": 2171,
+   "bar": 21,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.736
+  },
+  {
+   "index": 83,
+   "time": 36.6176,
+   "frame60": 2197,
+   "bar": 21,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.654
+  },
+  {
+   "index": 84,
+   "time": 37.0588,
+   "frame60": 2224,
+   "bar": 22,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.876
+  },
+  {
+   "index": 85,
+   "time": 37.5,
+   "frame60": 2250,
+   "bar": 22,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.461
+  },
+  {
+   "index": 86,
+   "time": 37.9412,
+   "frame60": 2276,
+   "bar": 22,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.798
+  },
+  {
+   "index": 87,
+   "time": 38.3824,
+   "frame60": 2303,
+   "bar": 22,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.635
+  },
+  {
+   "index": 88,
+   "time": 38.8235,
+   "frame60": 2329,
+   "bar": 23,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.67
+  },
+  {
+   "index": 89,
+   "time": 39.2647,
+   "frame60": 2356,
+   "bar": 23,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.469
+  },
+  {
+   "index": 90,
+   "time": 39.7059,
+   "frame60": 2382,
+   "bar": 23,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.706
+  },
+  {
+   "index": 91,
+   "time": 40.1471,
+   "frame60": 2409,
+   "bar": 23,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.398
+  },
+  {
+   "index": 92,
+   "time": 40.5882,
+   "frame60": 2435,
+   "bar": 24,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.934
+  },
+  {
+   "index": 93,
+   "time": 41.0294,
+   "frame60": 2462,
+   "bar": 24,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.907
+  },
+  {
+   "index": 94,
+   "time": 41.4706,
+   "frame60": 2488,
+   "bar": 24,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.921
+  },
+  {
+   "index": 95,
+   "time": 41.9118,
+   "frame60": 2515,
+   "bar": 24,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.894
+  },
+  {
+   "index": 96,
+   "time": 42.3529,
+   "frame60": 2541,
+   "bar": 25,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.899
+  },
+  {
+   "index": 97,
+   "time": 42.7941,
+   "frame60": 2568,
+   "bar": 25,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.916
+  },
+  {
+   "index": 98,
+   "time": 43.2353,
+   "frame60": 2594,
+   "bar": 25,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.909
+  },
+  {
+   "index": 99,
+   "time": 43.6765,
+   "frame60": 2621,
+   "bar": 25,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.934
+  },
+  {
+   "index": 100,
+   "time": 44.1176,
+   "frame60": 2647,
+   "bar": 26,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.887
+  },
+  {
+   "index": 101,
+   "time": 44.5588,
+   "frame60": 2674,
+   "bar": 26,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.915
+  },
+  {
+   "index": 102,
+   "time": 45.0,
+   "frame60": 2700,
+   "bar": 26,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.915
+  },
+  {
+   "index": 103,
+   "time": 45.4412,
+   "frame60": 2726,
+   "bar": 26,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.887
+  },
+  {
+   "index": 104,
+   "time": 45.8824,
+   "frame60": 2753,
+   "bar": 27,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.951
+  },
+  {
+   "index": 105,
+   "time": 46.3235,
+   "frame60": 2779,
+   "bar": 27,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.912
+  },
+  {
+   "index": 106,
+   "time": 46.7647,
+   "frame60": 2806,
+   "bar": 27,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.907
+  },
+  {
+   "index": 107,
+   "time": 47.2059,
+   "frame60": 2832,
+   "bar": 27,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.782
+  },
+  {
+   "index": 108,
+   "time": 47.6471,
+   "frame60": 2859,
+   "bar": 28,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.93
+  },
+  {
+   "index": 109,
+   "time": 48.0882,
+   "frame60": 2885,
+   "bar": 28,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.909
+  },
+  {
+   "index": 110,
+   "time": 48.5294,
+   "frame60": 2912,
+   "bar": 28,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.916
+  },
+  {
+   "index": 111,
+   "time": 48.9706,
+   "frame60": 2938,
+   "bar": 28,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.898
+  },
+  {
+   "index": 112,
+   "time": 49.4118,
+   "frame60": 2965,
+   "bar": 29,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.91
+  },
+  {
+   "index": 113,
+   "time": 49.8529,
+   "frame60": 2991,
+   "bar": 29,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.917
+  },
+  {
+   "index": 114,
+   "time": 50.2941,
+   "frame60": 3018,
+   "bar": 29,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.919
+  },
+  {
+   "index": 115,
+   "time": 50.7353,
+   "frame60": 3044,
+   "bar": 29,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.906
+  },
+  {
+   "index": 116,
+   "time": 51.1765,
+   "frame60": 3071,
+   "bar": 30,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.913
+  },
+  {
+   "index": 117,
+   "time": 51.6176,
+   "frame60": 3097,
+   "bar": 30,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.929
+  },
+  {
+   "index": 118,
+   "time": 52.0588,
+   "frame60": 3124,
+   "bar": 30,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.91
+  },
+  {
+   "index": 119,
+   "time": 52.5,
+   "frame60": 3150,
+   "bar": 30,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.951
+  },
+  {
+   "index": 120,
+   "time": 52.9412,
+   "frame60": 3176,
+   "bar": 31,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.883
+  },
+  {
+   "index": 121,
+   "time": 53.3824,
+   "frame60": 3203,
+   "bar": 31,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.885
+  },
+  {
+   "index": 122,
+   "time": 53.8235,
+   "frame60": 3229,
+   "bar": 31,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.918
+  },
+  {
+   "index": 123,
+   "time": 54.2647,
+   "frame60": 3256,
+   "bar": 31,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 1.0
+  },
+  {
+   "index": 124,
+   "time": 54.7059,
+   "frame60": 3282,
+   "bar": 32,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.919
+  },
+  {
+   "index": 125,
+   "time": 55.1471,
+   "frame60": 3309,
+   "bar": 32,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.86
+  },
+  {
+   "index": 126,
+   "time": 55.5882,
+   "frame60": 3335,
+   "bar": 32,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.84
+  },
+  {
+   "index": 127,
+   "time": 56.0294,
+   "frame60": 3362,
+   "bar": 32,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.0
+  },
+  {
+   "index": 128,
+   "time": 56.4706,
+   "frame60": 3388,
+   "bar": 33,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.512
+  },
+  {
+   "index": 129,
+   "time": 56.9118,
+   "frame60": 3415,
+   "bar": 33,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.475
+  },
+  {
+   "index": 130,
+   "time": 57.3529,
+   "frame60": 3441,
+   "bar": 33,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.424
+  },
+  {
+   "index": 131,
+   "time": 57.7941,
+   "frame60": 3468,
+   "bar": 33,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.421
+  },
+  {
+   "index": 132,
+   "time": 58.2353,
+   "frame60": 3494,
+   "bar": 34,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.291
+  },
+  {
+   "index": 133,
+   "time": 58.6765,
+   "frame60": 3521,
+   "bar": 34,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.229
+  },
+  {
+   "index": 134,
+   "time": 59.1176,
+   "frame60": 3547,
+   "bar": 34,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.338
+  },
+  {
+   "index": 135,
+   "time": 59.5588,
+   "frame60": 3574,
+   "bar": 34,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.335
+  },
+  {
+   "index": 136,
+   "time": 60.0,
+   "frame60": 3600,
+   "bar": 35,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.661
+  },
+  {
+   "index": 137,
+   "time": 60.4412,
+   "frame60": 3626,
+   "bar": 35,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.391
+  },
+  {
+   "index": 138,
+   "time": 60.8824,
+   "frame60": 3653,
+   "bar": 35,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.597
+  },
+  {
+   "index": 139,
+   "time": 61.3235,
+   "frame60": 3679,
+   "bar": 35,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.27
+  },
+  {
+   "index": 140,
+   "time": 61.7647,
+   "frame60": 3706,
+   "bar": 36,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.297
+  },
+  {
+   "index": 141,
+   "time": 62.2059,
+   "frame60": 3732,
+   "bar": 36,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.302
+  },
+  {
+   "index": 142,
+   "time": 62.6471,
+   "frame60": 3759,
+   "bar": 36,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.397
+  },
+  {
+   "index": 143,
+   "time": 63.0882,
+   "frame60": 3785,
+   "bar": 36,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.233
+  },
+  {
+   "index": 144,
+   "time": 63.5294,
+   "frame60": 3812,
+   "bar": 37,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.175
+  },
+  {
+   "index": 145,
+   "time": 63.9706,
+   "frame60": 3838,
+   "bar": 37,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.0
+  },
+  {
+   "index": 146,
+   "time": 64.4118,
+   "frame60": 3865,
+   "bar": 37,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.25
+  },
+  {
+   "index": 147,
+   "time": 64.8529,
+   "frame60": 3891,
+   "bar": 37,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.296
+  }
+ ],
+ "downbeats": [
+  0.0,
+  1.7647,
+  3.5294,
+  5.2941,
+  7.0588,
+  8.8235,
+  10.5882,
+  12.3529,
+  14.1176,
+  15.8824,
+  17.6471,
+  19.4118,
+  21.1765,
+  22.9412,
+  24.7059,
+  26.4706,
+  28.2353,
+  30.0,
+  31.7647,
+  33.5294,
+  35.2941,
+  37.0588,
+  38.8235,
+  40.5882,
+  42.3529,
+  44.1176,
+  45.8824,
+  47.6471,
+  49.4118,
+  51.1765,
+  52.9412,
+  54.7059,
+  56.4706,
+  58.2353,
+  60.0,
+  61.7647,
+  63.5294
+ ]
+}

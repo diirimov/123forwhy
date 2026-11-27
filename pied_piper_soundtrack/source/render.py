@@ -35,27 +35,27 @@ MIX = {
                     room=0.0, plate=0.25, hall=0.12, dly=0.10, duck=0, w=1.0, haas=12),
     "flute_lo": dict(g=-1.0, hp=180, lp=9000, eq=[(1800, 1.5, 1.0)], comp=(-24, 2.0, 0.005, 0.1),
                     room=0.05, plate=0.2, hall=0.2, dly=0.05, duck=0, w=1.1),
-    "pluck":   dict(g=0.0, hp=250, lp=13000, eq=[(700, -1.0, 1.0), (3200, 2.0, 0.9)], comp=(-22, 2.5, 0.002, 0.08),
+    "pluck":   dict(g=1.0, hp=250, lp=13000, eq=[(700, -1.0, 1.0), (3200, 2.0, 0.9)], comp=(-22, 2.5, 0.002, 0.08),
                     room=0.10, plate=0.14, hall=0.05, dly=0.08, duck=-1, w=1.2),
     "lute":    dict(g=-3.5, hp=110, lp=8000, eq=[(250, -2.0, 1.0)], comp=(-22, 2.5, 0.003, 0.1),
                     room=0.10, plate=0.10, hall=0.0, dly=0.0, duck=-2, w=1.2),
-    "gurdy":   dict(g=-1.5, hp=180, lp=7500, eq=[(1300, 2.0, 1.2), (3200, -2.0, 1.5)], comp=(-24, 2.5, 0.008, 0.12),
+    "gurdy":   dict(g=4.5, hp=180, lp=7500, eq=[(1300, 2.0, 1.2), (3200, -2.0, 1.5)], comp=(-24, 2.5, 0.008, 0.12),
                     room=0.10, plate=0.12, hall=0.06, dly=0.0, duck=-1, w=1.0),
-    "drone":   dict(g=-9.0, hp=90, lp=5000, eq=[(300, -2.0, 1.0), (750, 2.0, 1.4)], comp=(-26, 2.0, 0.02, 0.3),
+    "drone":   dict(g=-7.0, hp=90, lp=5000, eq=[(300, -2.0, 1.0), (750, 2.0, 1.4)], comp=(-26, 2.0, 0.02, 0.3),
                     room=0.10, plate=0.0, hall=0.12, dly=0.0, duck=-5, w=1.3),
-    "chien":   dict(g=1.0, hp=300, lp=9000, eq=[(2400, 1.0, 1.0)], comp=(-22, 3.0, 0.002, 0.08),
+    "chien":   dict(g=2.5, hp=300, lp=9000, eq=[(2400, 1.0, 1.0)], comp=(-22, 3.0, 0.002, 0.08),
                     room=0.12, plate=0.05, hall=0.0, dly=0.0, duck=-2, w=1.0),
-    "fiddle":  dict(g=-1.5, hp=200, lp=9000, eq=[(1000, -1.5, 1.2), (2700, 1.0, 1.0)], comp=(-24, 2.5, 0.006, 0.12),
+    "fiddle":  dict(g=4.0, hp=200, lp=9000, eq=[(1000, -1.5, 1.2), (2700, 1.0, 1.0)], comp=(-24, 2.5, 0.006, 0.12),
                     room=0.10, plate=0.16, hall=0.06, dly=0.0, duck=0, w=1.0),
-    "fdesc":   dict(g=-6.0, hp=400, lp=9000, eq=[(2800, 1.0, 1.0)], comp=(-24, 2.0, 0.01, 0.2),
+    "fdesc":   dict(g=-2.0, hp=400, lp=9000, eq=[(2800, 1.0, 1.0)], comp=(-24, 2.0, 0.01, 0.2),
                     room=0.05, plate=0.2, hall=0.3, dly=0.0, duck=-2, w=1.4),
-    "fsec":    dict(g=-4.0, hp=140, lp=8000, eq=[(350, -2.0, 1.0), (2600, 1.0, 1.0)], comp=(-26, 2.0, 0.01, 0.2),
+    "fsec":    dict(g=-1.5, hp=140, lp=8000, eq=[(350, -2.0, 1.0), (2600, 1.0, 1.0)], comp=(-26, 2.0, 0.01, 0.2),
                     room=0.08, plate=0.15, hall=0.25, dly=0.0, duck=-3, w=1.3),
     "chop":    dict(g=-2.5, hp=160, lp=9000, eq=[(300, -2.0, 1.0), (2800, 2.0, 1.0)], comp=(-22, 2.5, 0.002, 0.08),
                     room=0.12, plate=0.08, hall=0.0, dly=0.0, duck=-5, w=1.4),
-    "bass":    dict(g=0.0, hp=28, lp=5000, eq=[(60, 1.0, 0.9), (250, -2.0, 1.0)], comp=(-18, 3.0, 0.003, 0.08),
+    "bass":    dict(g=2.0, hp=28, lp=5000, eq=[(60, 1.0, 0.9), (250, -2.0, 1.0)], comp=(-18, 3.0, 0.003, 0.08),
                     room=0, plate=0, hall=0, dly=0, duck=-8, w=0.0),
-    "growl":   dict(g=-1.0, hp=28, lp=3500, eq=[(250, -2.5, 1.0), (900, 1.5, 1.0)], comp=(-18, 3.0, 0.003, 0.08),
+    "growl":   dict(g=1.0, hp=28, lp=3500, eq=[(250, -2.5, 1.0), (900, 1.5, 1.0)], comp=(-18, 3.0, 0.003, 0.08),
                     room=0, plate=0, hall=0, dly=0, duck=-12, w=0.0),
     "sub":     dict(g=-3.0, hp=25, lp=400, eq=[], comp=None, room=0, plate=0, hall=0, dly=0, duck=-8, w=0.0),
     "kick":    dict(g=-1.5, hp=28, lp=12000, eq=[(300, -3.0, 1.0), (3500, 1.5, 1.0)], comp=None,
@@ -68,9 +68,9 @@ MIX = {
                     room=0.2, plate=0.08, hall=0.0, dly=0, duck=0, w=1.0),
     "snare":   dict(g=-7.0, hp=150, lp=13000, eq=[(220, 2.0, 1.2), (5000, 1.5, 1.0)], comp=(-20, 3.0, 0.002, 0.1),
                     room=0.22, plate=0.1, hall=0.0, dly=0, duck=0, w=0.8),
-    "riq":     dict(g=-1.0, hp=300, lp=15000, eq=[(620, 1.0, 1.5), (7000, 1.0, 0.8)], comp=(-22, 2.0, 0.002, 0.06),
+    "riq":     dict(g=1.0, hp=300, lp=15000, eq=[(620, 1.0, 1.5), (7000, 1.0, 0.8)], comp=(-22, 2.0, 0.002, 0.06),
                     room=0.12, plate=0.05, hall=0, dly=0, duck=-1, w=1.0),
-    "tamb":    dict(g=-8.0, hp=900, lp=15000, eq=[], comp=(-24, 2.0, 0.002, 0.06),
+    "tamb":    dict(g=-6.5, hp=900, lp=15000, eq=[], comp=(-24, 2.0, 0.002, 0.06),
                     room=0.12, plate=0, hall=0, dly=0, duck=-2, w=1.0),
     "shaker":  dict(g=-7.0, hp=1500, lp=15000, eq=[], comp=None, room=0.12, plate=0, hall=0, dly=0, duck=-2, w=1.2),
     "frame":   dict(g=-6.0, hp=55, lp=8000, eq=[(100, 1.5, 1.0), (400, -2.0, 1.0)], comp=(-22, 2.5, 0.003, 0.1),
@@ -155,9 +155,9 @@ def mix(T):
     return out, dict(room=rooms, plate=plates, hall=halls, dly=dly * 0.5)
 
 
-SECTION_GAIN = {"hook": -0.6, "rats": 0.0, "gate": 0.0, "stranger": -0.8, "spell": -0.5, "drop_1": 0.4,
-                "river": 0.0, "still_water": -1.0, "celebration": 0.2, "betrayal": -0.6, "into_the_night": -0.8,
-                "drop_2": 0.8, "climax": 1.0, "mountain": 0.6, "disappearance": -0.5}
+SECTION_GAIN = {"hook": -0.8, "rats": 0.0, "gate": -1.5, "stranger": -1.6, "spell": -2.5, "drop_1": 1.0,
+                "river": 0.6, "still_water": -1.0, "celebration": 0.3, "betrayal": -0.8, "into_the_night": -1.8,
+                "drop_2": 1.3, "climax": 1.5, "mountain": 1.0, "disappearance": -0.5}
 
 
 def automate(x):
@@ -181,8 +181,8 @@ def master_eq(x):
     x = D.peq(x, 36, -2.0, 1.0)
     x = D.peq(x, 85, 2.0, 1.0)
     x = D.peq(x, 190, 1.0, 0.9)
-    x = D.peq(x, 330, -2.5, 0.8)
-    x = D.peq(x, 650, -1.0, 1.0)
+    x = D.peq(x, 330, -0.5, 0.8)
+    x = D.peq(x, 650, -3.5, 1.0)
     x = D.peq(x, 1700, 1.5, 0.7)
     x = D.peq(x, 2500, 1.5, 0.6)
     x = D.hs(x, 4000, 1.2)
