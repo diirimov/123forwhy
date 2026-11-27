@@ -15,9 +15,12 @@ from scipy import signal
 
 d = sys.argv[1]
 ref = sys.argv[2] if len(sys.argv) > 2 else None
-x, sr = sf.read(os.path.join(d, "FOLLOW_THE_PIPER_FINAL.wav"))
-info = sf.info(os.path.join(d, "FOLLOW_THE_PIPER_FINAL.wav"))
-J = json.load(open(os.path.join(d, "FOLLOW_THE_PIPER_SYNC.json")))
+V = os.environ.get("PIPER_VERSION", "FINAL")          # FINAL (V1) or V2
+WAV = "FOLLOW_THE_PIPER_FINAL.wav" if V == "FINAL" else f"FOLLOW_THE_PIPER_{V}.wav"
+JS = "FOLLOW_THE_PIPER_SYNC.json" if V == "FINAL" else f"FOLLOW_THE_PIPER_{V}_SYNC.json"
+x, sr = sf.read(os.path.join(d, WAV))
+info = sf.info(os.path.join(d, WAV))
+J = json.load(open(os.path.join(d, JS)))
 meter = pyln.Meter(sr)
 
 

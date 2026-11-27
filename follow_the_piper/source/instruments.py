@@ -553,3 +553,90 @@ def bell(note_label="D4", vel=1.0, shift=0.0, which="chimes", length=6.0):
     x = x[:n] / (np.abs(x).max() + 1e-9) * vel
     x[-int(0.5 * SR):] *= np.linspace(1, 0, int(0.5 * SR))[:, None] if n > SR else 1
     return x
+
+
+# =========================================================================== V2 additions (V1 code above unchanged)
+def _fiddle_body(y):
+    """medieval fiddle / vielle body: air + wood resonances, bridge hill, no harsh fizz"""
+    y = hp(y, 150)
+    y = peq(y, 290, 4.0, 2.0)
+    y = peq(y, 470, 2.0, 2.5)
+    y = peq(y, 900, -2.5, 1.5)          # de-nasal
+    y = peq(y, 2700, 4.0, 1.2)          # bridge hill (singing presence)
+    y = peq(y, 4200, -2.0, 1.5)
+    y = lp(y, 7000)
+    return y
+
+
+def fiddle(notes, total, vel=1.0, vib=18, vib_rate=5.6, seed=0, detune=0.0, legato=True, accent=0.28,
+           force=0.32, beta=0.115):
+    """continuous bowed string playing a phrase. notes: [(t_rel, dur, midi, v)].
+    Pitch changes are fingered (8 ms), each note gets a bow-speed accent; vibrato grows on long notes."""
+    n = int((total + 0.3) * SR)
+    r = np.random.default_rng(seed)
+    mc = np.zeros(n); amp = np.zeros(n); acc = np.zeros(n); vibw = np.zeros(n)
+    first = notes[0][2]
+    mc[:] = first
+    for (t, d, m, v) in notes:
+        a = max(0, int(t * SR)); b = min(n, int((t + d) * SR))
+        mc[a:] = m
+        amp[a:b] = v
+        L = min(b - a, int(0.09 * SR))
+        if L > 0:
+            acc[a:a + L] = np.maximum(acc[a:a + L], np.exp(-np.arange(L) / (0.03 * SR)) * v)
+        if b > a:
+            tt = np.arange(b - a) / SR
+            vibw[a:b] = np.clip((tt - 0.12) / 0.25, 0, 1)
+    from scipy.ndimage import uniform_filter1d
+    mc = uniform_filter1d(mc, int(0.013 * SR))
+    amp = uniform_filter1d(amp, int(0.025 * SR))
+    vibw = uniform_filter1d(vibw, int(0.05 * SR))
+    t = np.arange(n) / SR
+    rate = vib_rate * r.uniform(0.93, 1.07)
+    vibc = vib * vibw * np.sin(2 * np.pi * rate * t + r.uniform(0, 6))
+    drift = onepole_lp(r.standard_normal(n), 2.0); drift = drift / (np.abs(drift).max() + 1e-9) * 4
+    curve = mc + (vibc + drift + detune) / 100
+    vb = (0.06 + 0.2 * amp + accent * 0.12 * acc)
+    y = _bowed(mtof(curve).astype(np.float64), vb.astype(np.float64), np.full(n, force), beta, int(seed) % 99991, 0.06)
+    y = _fiddle_body(y)
+    gate = np.clip(amp * 2.2, 0, 1)
+    gate = uniform_filter1d(gate, int(0.03 * SR))
+    y = y * gate
+    y = y / (np.sqrt(np.mean(y[gate > 0.3] ** 2)) + 1e-9) * 0.08 * vel if np.any(gate > 0.3) else y
+    return y
+
+
+def fiddle_section(notes, total, players=3, vel=1.0, spread_c=7, seed=0, **kw):
+    """small ensemble of fiddles (detuned, slightly late/early, panned): stereo"""
+    n = int((total + 0.3) * SR)
+    out = np.zeros((n, 2))
+    pans = np.linspace(-0.55, 0.55, players) if players > 1 else [0.0]
+    for p in range(players):
+        dt = (p - (players - 1) / 2) * spread_c / max(1, players - 1) * 2
+        off = abs(rng().normal(0, 0.008))
+        nn = [(t + off, d, m, v) for (t, d, m, v) in notes]
+        y = fiddle(nn, total, vel=vel, detune=dt, seed=seed * 7 + p, **kw)[:n]
+        th = (pans[p] + 1) * np.pi / 4
+        out[:len(y), 0] += y * np.cos(th); out[:len(y), 1] += y * np.sin(th)
+    return out / np.sqrt(players)
+
+
+def sub(midi, dur, vel=1.0, release=0.04):
+    """pure sine sub with a punchy pitch drop; short so it never smears"""
+    f = mtof(midi)
+    n = int((dur + release) * SR)
+    t = np.arange(n) / SR
+    fc = f * 2 ** ((90 * np.exp(-t / 0.01)) / 1200)
+    y = np.sin(2 * np.pi * np.cumsum(fc) / SR)
+    env = adsr(n, 0.004, 0.12, 0.8, release)
+    return y * env * vel * 0.5
+
+
+def bass2(midi, dur, vel=1.0, bright=1.0, release=0.03):
+    """V2 bass: V1 body + a plucked pick attack (gut-string bite) for punch on every note"""
+    y = bass(midi, dur, vel, bright=bright, release=release)
+    n = len(y)
+    t = np.arange(n) / SR
+    pick = (bp(noise(n), 1600, 1.0) * np.exp(-t / 0.006) * 0.18 +
+            np.sin(2 * np.pi * mtof(midi) * 4 * t) * np.exp(-t / 0.02) * 0.08) * vel * bright
+    return y + pick

@@ -86,3 +86,35 @@ python3 qa.py ..                # loudness, balance, spectrum, mono, loop seam, 
 ```
 
 The render is deterministic (seeded), so the same code and samples give the same file.
+
+---
+
+# V2: `FOLLOW_THE_PIPER_V2.wav` (100 % instrumental)
+
+The same song (hook, key, 136 BPM, 37-bar form, section timing), re-arranged for more drive, groove and dread. **No human voices or vocal-like sounds of any kind.** Every chant, choir, hum, breath and laugh from V1 has been removed, and none of the voice synthesis code is called. The original V1 master is untouched.
+
+| | |
+|---|---|
+| `FOLLOW_THE_PIPER_V2.wav` | 48 kHz / 24-bit stereo, 65.294 s, **−14.0 LUFS**, **−1.3 dBTP** (ffmpeg EBU R128), no clipping |
+| `FOLLOW_THE_PIPER_V2_SYNC.json` | same structure as V1, plus events for the new parts (`big_drum`, `tom`, `claves`, `band_answer`) and the four full-band gaps as accents |
+| `source/song_v2.py`, `source/render_v2.py` | V2 score and mix (V1's `song.py` / `render.py` unchanged) |
+
+## What changed and why
+
+| Goal | What V2 does |
+|---|---|
+| **Captivating opening** | a deep bass drum, a low tom and a bell strike *with* the first flute note at 0.000 s; the hurdy-gurdy drone buzzes on beat 1; a wooden slit drum plays the hook's own 3+3+2 heartbeat; claves and a plucked echo of the giggle fill the pause |
+| **Infectious groove** | low/high toms answer the kick on the hook's tresillo (steps 3, 6, 11, 14), so the drums now dance the melody's rhythm. Measured onset weight on step 3 doubled (0.29 → 0.59). Added cajon ghost notes, son-clave claves and woodblock "clockwork" in the second half; claps and snare lifted for a clear 2 and 4 |
+| **Call and response without voices** | the band answers every flute pause on the 3+3+2: bowed fiddle stab + psaltery + low tom + woodblock + big drum + bass. A plucked psaltery echoes each giggle a dotted 8th later, a semitone *wrong* in the betrayal and the return |
+| **Flute articulation and layering** | more detached, bouncier articulation in the drops; a bowed fiddle doubles the flute in unison (the pipe + fiddle colour that made Dancing Plague work); a low fiddle an octave below in the return and in the final drop's second pass; the hanging tritone D♯5 **trills** in the final pass |
+| **Strings and hurdy-gurdy** | new physically modelled bowed fiddle (string waveguide with a fiddle body, fingered note changes, bow accents, growing vibrato) for unison lines, section pads that replace the choir, stabs and the chromatic creep; buzzing hurdy-gurdy drone and offbeat chien kept and lifted |
+| **Punchier bass** | every bass note gets a gut-string pick attack, and a separate short sine sub layer, heavily sidechained, follows the roots; a rolling 16th variation on the turnaround bars |
+| **Deep rhythmic drums** | a concert bass drum on the downbeats of the drop bars, half-time muted drum hits in the betrayal, tom fills into each phrase |
+| **Unexpected pauses** | four full-band silences where only the Piper keeps playing: before the first drop (12.13 s), before the final drop (40.37 s), mid final drop (47.54 s), and the half-bar before the disappearance (56.03 s) |
+| **Progressively hypnotic second half** | a clockwork psaltery spiccato ostinato (A–E–C–E–A–E–**B♭**–E, the B♭ rubbing against the A drone) starts quietly in the return and grows through the final drop; woodblock clockwork; a high bowed E6 and B♭5 over the obsessive second pass |
+| **Final drop is the peak** | −12.6 LUFS (first drop −13.5): flute + fiddle unison + soprano octave + low fiddle, every percussion layer, sub bass, trills, a stutter bar of band stabs on every beat, then silence for the Piper |
+| **Haunting ending that loops** | the layers vanish bar by bar; the flute is left with a high bowed A and the wooden heartbeat; its last giggle and G♯4 pickup fall straight into the drum + bell + hook at 0.000 s |
+
+V2 section levels (LUFS): intro −16.4 · awaken −14.5 · first drop −13.5 · betrayal −15.3 · return −14.5 · **final drop −12.6** · disappearance −15.9. A beat tracker reads 136.0 BPM, locked to the kick; pulse clarity is 0.77 (Dancing Plague 0.73); mono fold-down −0.3 LU; phone-speaker proxy −4.0 LU; flute within 16 cents of the score.
+
+Rebuild V2: `python3 source/render_v2.py .` (add `--stems` for stems). The extra VCSL folders needed are Woodblock, Claves, Slit Drum, Cajon, Ratchet, Tom 1, Tom 2 and Bass Drum 3 - Legacy.
