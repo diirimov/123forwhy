@@ -2,7 +2,7 @@
 
 | File | What |
 |---|---|
-| `PIED_PIPER_V2_FINAL_1080P60.mp4` | The film. 1080×1920 at 60 fps, 3,918 frames, 65.30 s. H.264 High (yuv420p, BT.709), two-pass 8.7 Mbps (71 MB). Audio checked against the approved WAV: 0-sample offset, r = 0.9998. The audio is the approved soundtrack unchanged (AAC 320 kbps, 48 kHz). English captions are burned in; there is no voice-over, no added sound effects and no watermark. |
+| `PIED_PIPER_V2_FINAL_1080P60.mp4` | The film. 1080×1920 at 60 fps, 3,918 frames, 65.30 s. H.264 High (yuv420p, BT.709), two-pass 8.7 Mbps (71 MB). Audio checked against the approved WAV: 0-sample offset, r = 0.9998. Audio (AAC 320 kbps, 48 kHz) = `audio/PIED_PIPER_V2_MIX.wav`: the approved soundtrack, unchanged, with a short opening narration ("In twelve eighty-four... one hundred and thirty children vanished.", 0.10-4.11 s, Kokoro TTS voice am_onyx; music ducked 4 dB under it only; `tools/make_voiceover.py`). English captions are burned in; no added sound effects, no watermark. |
 | `audio/PIED_PIPER_NEW_SOUNDTRACK.wav` | The approved new soundtrack, byte-identical to `pied_piper_soundtrack/PIED_PIPER_NEW_SOUNDTRACK.wav`. |
 | `AUDIO_ANALYSIS.md`, `tools/analyze_audio.py` | The soundtrack measured from the waveform: tempo and beat phase, transients per band (checked against the score's event list), per-bar loudness, breaks, energy jumps (the drops), spectral novelty and flute phrases. |
 | `data/beatmap.json` | The director's beat map the film runs on, including 60 fps band envelopes. |

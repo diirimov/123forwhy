@@ -57,7 +57,7 @@ Rebuilt around PIED_PIPER_NEW_SOUNDTRACK.wav · 60 fps · 3918 frames · 65.300 
 
 | Start | End | Style | Text |
 |---|---|---|---|
-| 0.06 | 3.42 | title | 130 CHILDREN VANISHED. |
+| 0.12 | 3.42 | title | IN 1284, 130 CHILDREN VANISHED. |
 | 3.58 | 5.24 | engraved | HAMELIN, 1284 |
 | 5.51 | 8.70 | story | THE TOWN WAS OVERRUN BY RATS. |
 | 12.40 | 16.77 | story | A STRANGER OFFERED TO SAVE THEM. |
