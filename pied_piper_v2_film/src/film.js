@@ -13,7 +13,7 @@ SHOTS.sort((a, c) => a.t0 - c.t0);
 
 // captions: short, the legend told in the studio's DP style (uppercase story captions, one word per 8th note)
 const CAPS = [
-  { kind: 'title', text: '130 CHILDREN VANISHED.', t0: 0.06, t1: b(1, 15), y: 380, size: 100, times: [0.06, 0.39, 0.72], hl: ['130'] },
+  { kind: 'title', text: 'IN 1284, 130 CHILDREN VANISHED.', t0: 0.12, t1: b(1, 15), y: 380, size: 96, times: [0.12, 0.62, 1.40, 2.22, 2.78], hl: ['1284,', '130'] },   // word times = the narration (data/voiceover.json)
   { kind: 'engraved', text: 'HAMELIN, 1284', t0: b(2) + .05, t1: b(3) - .05, y: 330, size: 96 },
   { kind: 'story', text: 'THE TOWN WAS OVERRUN BY RATS.', t0: b(3, 2), t1: b(5) - .12, y: 380, beats: true, hl: ['RATS.'] },
   { kind: 'story', text: 'A STRANGER OFFERED TO SAVE THEM.', t0: b(7) + .05, t1: b(9, 8), y: 380, beats: true, hl: ['STRANGER'] },

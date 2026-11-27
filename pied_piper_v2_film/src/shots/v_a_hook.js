@@ -47,7 +47,7 @@ function procession(items, t, o = {}) {
   for (const k of KIDS) {
     const d = travel - k.s + (o.offset || 0);
     const X = base[0] + dx * d + (-dz) * k.lat, Z = base[1] + dz * d + dx * k.lat;
-    if (Z < 900) continue;
+    if (Z < 260 || X < -0.47 * Z - 400) continue;            // only once they have walked out of frame (left edge)
     items.push({ z: Z, draw: (g2, V2) => ST.actor(g2, V2, k.ch, X, Z, kidPose(k, o.snap !== false), t) });
   }
 }

@@ -56,7 +56,7 @@ async function range(f0, f1, out) {
     const silent = path.join(dir, 'silent.mp4');
     spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', path.join(dir, 'list.txt'), '-c', 'copy', silent], { stdio: 'inherit' });
     const final = path.join(__dirname, 'PIED_PIPER_V2_FINAL_1080P60.mp4');
-    spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', silent, '-i', path.join(__dirname, 'audio/PIED_PIPER_NEW_SOUNDTRACK.wav'),
+    spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', silent, '-i', path.join(__dirname, 'audio/PIED_PIPER_V2_MIX.wav'),
       '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '320k', '-ar', '48000', '-af', 'apad', '-shortest',
       '-movflags', '+faststart', final], { stdio: 'inherit' });
     console.log('final', final, ((Date.now() - t0) / 1000).toFixed(0) + 's');
