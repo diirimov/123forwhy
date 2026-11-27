@@ -2,7 +2,7 @@
 
 | File | What |
 |---|---|
-| `PIED_PIPER_FINAL_1080P60.mp4` | The film: 1080×1920, 60 fps, 3,918 frames (65.30 s), H.264 High yuv420p (BT.709), AAC 320 kbps with the approved soundtrack. English captions are burned in; no watermark or logos. |
+| `PIED_PIPER_FINAL_1080P60.mp4` | The film: 1080×1920, 60 fps, 3,918 frames (65.30 s), H.264 High yuv420p (BT.709), 8.4 Mbps two-pass (SSIM 0.979 vs. the CRF 15 master), AAC 320 kbps. Audio checked against the approved soundtrack: 0-sample offset, r = 0.9998, −0.01 dB. English captions are burned in; no watermark or logos. |
 | `audio/FOLLOW_THE_PIPER_V2.wav` | The approved V2 soundtrack, used unchanged (same sha1 as `follow_the_piper/FOLLOW_THE_PIPER_V2.wav`). No voices, effects or edits were added. |
 | `data/PIED_PIPER_SYNC.json` | Beat synchronisation data: every beat and bar, sections, the 4 full-band silences, accents, instrument events (kick, toms, claps, stomps, snare, claves, bells, big drum, band answers), all 235 flute notes, shots and captions. Everything is given in seconds and in 60 fps frames. |
 | `data/beatmap.json` | The director's beat map built from the waveform (`tools/beatmap.py`), including 60 fps band envelopes (low / mid / high / flute / onset). |
