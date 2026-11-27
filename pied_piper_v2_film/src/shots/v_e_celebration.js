@@ -154,8 +154,6 @@ function shot30(g, t, lt) {
     face: { eyes: u > .45 ? 'narrow' : 'open', mouth: u < .3 ? 'sly' : u < .6 ? 'closed' : 'flat', brow: u > .45 ? 'angry' : 'sly', look: [0, .05], glint: lerp(1, .5, u), glow: .9 * turn, pupil: .55 } });
   PS.drawPerson(g, CAST.piper, P, { x: 560, y: 2950, s: 4.4, lw: 8, t, wind: .2 + .6 * night, shadow: false });
   g.restore();
-  // the shadows of the houses sweep across him as the sun sets
-  g.save(); g.globalAlpha = .35 * u; g.fillStyle = '#120c18'; g.beginPath(); g.moveTo(-50, H); g.lineTo(-50, lerp(H, 0, u)); g.lineTo(lerp(-50, 700, u), lerp(H, -100, u)); g.lineTo(lerp(-50, 1200, u), H); g.closePath(); g.fill(); g.restore();
 }
 
 module.exports = [

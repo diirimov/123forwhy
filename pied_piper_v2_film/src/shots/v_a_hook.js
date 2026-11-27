@@ -113,6 +113,7 @@ function shot04(g, t, lt) {
   }
   DP.flush(g, V, items);
   g.restore();
+  E.LIGHTS.length = 0;
 }
 
 // ---------------------------------------------------------------- 05: from above -- the procession winds through the town, still growing

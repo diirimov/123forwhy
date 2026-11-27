@@ -67,6 +67,7 @@ function shot36(g, t, lt) {
   }
   Wd.drawItems(g, V, items);
   g.restore();
+  E.LIGHTS.length = 0;     // window glows would composite over the children's legs in this zoomed shot
 }
 
 // ---------------------------------------------------------------- 37: the procession grows -- he walks toward us; every alley feeds in children on the 8ths

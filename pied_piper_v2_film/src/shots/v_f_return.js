@@ -66,12 +66,17 @@ function shot33(g, t, lt) {
   const tipX = fx + 70 * bend + Math.sin(t * 30) * 4 * bend, tipY = fy - 250 + 40 * bend;
   K.shape(g, [[fx - 18, fy - 175], [tipX, tipY], [fx + 18, fy - 175], [fx, fy - 160]], { fill: '#f6c24a', lw: 4, tension: .5 });
   E.addLight(g, fx + 20 * bend, fy - 200, 700 * (1 - .4 * bend), '#f3a64a', .9 - .3 * bend);
-  // the girl in bed in the foreground: eyes open, half-lidded, glinting
-  K.shape(g, [[-40, 1500], [900, 1480], [960, 1600], [960, H + 40], [-40, H + 40]], { fill: '#53719a', lw: 8, tension: .3 });
-  K.ellipse(g, 260, 1460, 230, 90, { fill: '#efe6d2', lw: 7 });
-  const open = ease.o(clamp((t - t0 - .12) / .18));
-  const P = R.merge(R.idle(t, { B: R.BODY.child, seed: 3 }), { yaw: .5, head: { yaw: .3, pitch: -.15, roll: -1.2 }, face: { eyes: open > .5 ? 'half' : 'closed', mouth: 'peace', glint: 2, look: [.6, -.3], pupil: .6 } });
-  PS.drawPerson(g, CAST.girl1, P, { x: 270, y: 2150, s: 3.6, lw: 8, t, shadow: false, noArms: true });
+  // the girl sits up in bed in the foreground: eyes open half-lidded, head turning toward the window
+  const open = ease.o(clamp((t - t0 - .1) / .18));
+  const turn = ease.io(clamp((t - t0 - .15) / .25));
+  const P = R.merge(R.idle(t, { B: R.BODY.child, seed: 3 }), { yaw: .35, lean: .05,
+    arms: { l: { swing: .3, out: .15, elbow: .4 }, r: { swing: .3, out: .15, elbow: .4 } },
+    head: { yaw: lerp(-.1, .45, turn), pitch: .02, roll: .06 }, face: { eyes: open > .5 ? 'half' : 'closed', mouth: 'peace', glint: 2, look: [.5, -.2], pupil: .6 } });
+  K.ellipse(g, 340, 1450, 300, 105, { fill: '#efe6d2', lw: 7 });                        // pillow behind her
+  PS.drawPerson(g, CAST.girl1, P, { x: 340, y: 2230, s: 4.0, lw: 8, t, shadow: false });
+  // the blanket pulled up to her waist, the bed frame
+  K.shape(g, [[-40, 1640], [300, 1600], [700, 1620], [1000, 1660], [1000, H + 40], [-40, H + 40]], { fill: '#53719a', lw: 8, tension: .3,
+    inner: g2 => { g2.strokeStyle = 'rgba(20,30,60,.35)'; g2.lineWidth = 5; for (let i = 0; i < 6; i++) { g2.beginPath(); g2.moveTo(80 + i * 160, 1660); g2.lineTo(120 + i * 160, H); g2.stroke(); } } });
 }
 
 // ---------------------------------------------------------------- 34: shutters burst open in a cascade -- then silence: a child in every window
