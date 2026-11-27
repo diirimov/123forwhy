@@ -1,0 +1,531 @@
+{
+ "fps": 60,
+ "frames": 3918,
+ "duration": 65.3,
+ "shots": [
+  {
+   "n": 1,
+   "id": "01_procession",
+   "start": 0,
+   "end": 1.7647,
+   "frame_start": 0,
+   "frame_end": 106,
+   "bar": 1,
+   "lighting": "night",
+   "picture": "Moonlit street: the procession of children walks in lockstep behind the Piper (heel strikes on the beats); every head snaps to camera on the D#5 hang",
+   "music": "drum + bell + flute call at 0.000; D#5 hang 1.32"
+  },
+  {
+   "n": 2,
+   "id": "02_piper_closeup",
+   "start": 1.7647,
+   "end": 3.5294,
+   "frame_start": 106,
+   "frame_end": 212,
+   "bar": 2,
+   "lighting": "night",
+   "picture": "Extreme close-up of the Piper playing; eyes open on the claves, fingers lift on the giggle notes (real fingering)",
+   "music": "pause; claves 1.99/2.10; giggle E6 E6 B5"
+  },
+  {
+   "n": 3,
+   "id": "03_drain",
+   "start": 3.5294,
+   "end": 5.2941,
+   "frame_start": 212,
+   "frame_end": 318,
+   "bar": 3,
+   "lighting": "day",
+   "picture": "Day, sepia (back in time): rats pour out of a drain grate on 32nd-note spacing across the street",
+   "music": "groove enters: stomps, claps, bass"
+  },
+  {
+   "n": 4,
+   "id": "04_rooftops_sacks",
+   "start": 5.2941,
+   "end": 7.0588,
+   "frame_start": 318,
+   "frame_end": 424,
+   "bar": 4,
+   "lighting": "day",
+   "picture": "Rats gallop along the roof ridges; grain sacks burst on the tambourine and rats spill under the stall",
+   "music": "cadence + tambourine"
+  },
+  {
+   "n": 5,
+   "id": "05_barrel",
+   "start": 7.0588,
+   "end": 8.8235,
+   "frame_start": 424,
+   "frame_end": 529,
+   "bar": 5,
+   "lighting": "day",
+   "picture": "The merchant yanks the barrel lid on the downbeat; rats burst out on the toms (3+3+2); he recoils",
+   "music": "kick + toms enter 7.06"
+  },
+  {
+   "n": 6,
+   "id": "06_baker_table_cat",
+   "start": 8.8235,
+   "end": 10.5882,
+   "frame_start": 529,
+   "frame_end": 635,
+   "bar": 6,
+   "lighting": "day",
+   "picture": "The baker recoils (stab 1), a merchant leaps onto a table (stab 2), a cat arches and backs away from the swarm",
+   "music": "band answer 8.82 / 9.15"
+  },
+  {
+   "n": 7,
+   "id": "07_gate",
+   "start": 10.5882,
+   "end": 12.3529,
+   "frame_start": 635,
+   "frame_end": 741,
+   "bar": 7,
+   "lighting": "warm",
+   "picture": "The city gate grinds open on the ratchet; a backlit silhouette in the fog steps through in the silence",
+   "music": "build, ratchet, roll, silence 12.13"
+  },
+  {
+   "n": 8,
+   "id": "08_market_stride",
+   "start": 12.3529,
+   "end": 14.1176,
+   "frame_start": 741,
+   "frame_end": 847,
+   "bar": 8,
+   "lighting": "day",
+   "picture": "FIRST DROP: tracking shot as the Piper strides through the market; the crowd turns toward him in a wave on the beats",
+   "music": "first drop 12.35"
+  },
+  {
+   "n": 9,
+   "id": "09_heads_snap",
+   "start": 14.1176,
+   "end": 15.8824,
+   "frame_start": 847,
+   "frame_end": 953,
+   "bar": 9,
+   "lighting": "day",
+   "picture": "Heads snap to him on the two band stabs; he bows and tips his hat on the giggle",
+   "music": "band answer 14.12 / 14.45"
+  },
+  {
+   "n": 10,
+   "id": "10_council",
+   "start": 15.8824,
+   "end": 17.6471,
+   "frame_start": 953,
+   "frame_end": 1059,
+   "bar": 10,
+   "lighting": "warm",
+   "picture": "The council chamber (callback to the studio's council scene): he offers; the mayor nods on the beats; a rat runs over the table",
+   "music": "call 2"
+  },
+  {
+   "n": 11,
+   "id": "11_raise_flute",
+   "start": 17.6471,
+   "end": 19.4118,
+   "frame_start": 1059,
+   "frame_end": 1165,
+   "bar": 11,
+   "lighting": "warm",
+   "picture": "He raises the recorder; the fingering follows the real cadence notes",
+   "music": "cadence F E C B C B G#"
+  },
+  {
+   "n": 12,
+   "id": "12_rats_freeze",
+   "start": 19.4118,
+   "end": 21.1765,
+   "frame_start": 1165,
+   "frame_end": 1271,
+   "bar": 12,
+   "lighting": "day",
+   "picture": "Rat's-eye view: scurrying rats freeze on the second note; ears twitch on each note; heads turn to camera on the hang",
+   "music": "ornamented call"
+  },
+  {
+   "n": 13,
+   "id": "13_rats_rise",
+   "start": 21.1765,
+   "end": 22.9412,
+   "frame_start": 1271,
+   "frame_end": 1376,
+   "bar": 13,
+   "lighting": "day",
+   "picture": "Rows of rats rise onto their hind legs on the two stabs and sway in time toward the Piper",
+   "music": "band answer 21.18 / 21.51"
+  },
+  {
+   "n": 14,
+   "id": "14_overhead_rings",
+   "start": 22.9412,
+   "end": 24.7059,
+   "frame_start": 1376,
+   "frame_end": 1482,
+   "bar": 14,
+   "lighting": "warm",
+   "picture": "Overhead: three counter-rotating rings of rats pulse on the kick around the walking Piper; the stream behind tightens into lockstep",
+   "music": "call 2"
+  },
+  {
+   "n": 15,
+   "id": "15_river_wide",
+   "start": 24.7059,
+   "end": 26.4706,
+   "frame_start": 1482,
+   "frame_end": 1588,
+   "bar": 15,
+   "lighting": "graded",
+   "picture": "Dusk on the Weser: the Piper on a rock, a river of rats flowing along the shore toward him",
+   "music": "Bb + gong 24.71"
+  },
+  {
+   "n": 16,
+   "id": "16_into_water",
+   "start": 26.4706,
+   "end": 28.2353,
+   "frame_start": 1588,
+   "frame_end": 1694,
+   "bar": 16,
+   "lighting": "graded",
+   "picture": "The rats leap into the water; ripples ring out; big rings on the half-time hits",
+   "music": "half-time Eb"
+  },
+  {
+   "n": 17,
+   "id": "17_still_water",
+   "start": 28.2353,
+   "end": 30,
+   "frame_start": 1694,
+   "frame_end": 1800,
+   "bar": 17,
+   "lighting": "graded",
+   "picture": "Still water and his reflection; the last rings fade; small ripples on each stomp in the silence",
+   "music": "hit + pause 28.24"
+  },
+  {
+   "n": 18,
+   "id": "18_celebration_burst",
+   "start": 30,
+   "end": 31.7647,
+   "frame_start": 1800,
+   "frame_end": 1906,
+   "bar": 18,
+   "lighting": "day",
+   "picture": "The town bursts out: bunting rises on the beats; people jump up one per note of the chromatic creep",
+   "music": "regroove + creep"
+  },
+  {
+   "n": 19,
+   "id": "19_celebration_dance",
+   "start": 31.7647,
+   "end": 33.5294,
+   "frame_start": 1906,
+   "frame_end": 2012,
+   "bar": 19,
+   "lighting": "graded",
+   "picture": "The whole town in the studio's squat-dance, in perfect sync; the Piper watches, utterly still",
+   "music": "hook returns, darker"
+  },
+  {
+   "n": 20,
+   "id": "20_chest_slam",
+   "start": 33.5294,
+   "end": 35.2941,
+   "frame_start": 2012,
+   "frame_end": 2118,
+   "bar": 20,
+   "lighting": "warm",
+   "picture": "He holds out his hand; the mayor slams the chest of gold shut on the flute's falling Bb bend",
+   "music": "wrong-note giggle"
+  },
+  {
+   "n": 21,
+   "id": "21_refusal_laughter",
+   "start": 35.2941,
+   "end": 37.0588,
+   "frame_start": 2118,
+   "frame_end": 2224,
+   "bar": 21,
+   "lighting": "day",
+   "picture": "Silent laughter shaking on the eighths; the councillor flicks him away on every beat",
+   "music": "call 2, dissonant"
+  },
+  {
+   "n": 22,
+   "id": "22_smile_fades",
+   "start": 37.0588,
+   "end": 38.8235,
+   "frame_start": 2224,
+   "frame_end": 2329,
+   "bar": 22,
+   "lighting": "graded",
+   "picture": "Close-up: his hand lowers, the smile disappears, the light drains from warm to cold",
+   "music": "cadence, dark"
+  },
+  {
+   "n": 23,
+   "id": "23_walk_into_night",
+   "start": 38.8235,
+   "end": 40.5882,
+   "frame_start": 2329,
+   "frame_end": 2435,
+   "bar": 23,
+   "lighting": "graded",
+   "picture": "He walks away; his shadow climbs the wall; the sky time-lapses from day to night into the silence",
+   "music": "flute alone, 16ths, silence 40.37"
+  },
+  {
+   "n": 24,
+   "id": "24_windows_burst",
+   "start": 40.5882,
+   "end": 42.3529,
+   "frame_start": 2435,
+   "frame_end": 2541,
+   "bar": 24,
+   "lighting": "night",
+   "picture": "FINAL DROP: the Piper alone in the moonlit street; shutters burst open and windows light up in an eighth-note cascade",
+   "music": "final drop 40.59"
+  },
+  {
+   "n": 25,
+   "id": "25_toy_drops",
+   "start": 42.3529,
+   "end": 44.1177,
+   "frame_start": 2541,
+   "frame_end": 2647,
+   "bar": 25,
+   "lighting": "night",
+   "picture": "Inside: a boy drops his wooden horse (stab 1), a girl turns (stab 2); the rat on the sill never moves",
+   "music": "band answer 42.35 / 42.68"
+  },
+  {
+   "n": 26,
+   "id": "26_doors_open",
+   "start": 44.1177,
+   "end": 45.8824,
+   "frame_start": 2647,
+   "frame_end": 2753,
+   "bar": 26,
+   "lighting": "night",
+   "picture": "Doors open on the beats; children step out of the glowing doorways in matching strides",
+   "music": "call 2"
+  },
+  {
+   "n": 27,
+   "id": "27_procession_grows",
+   "start": 45.8824,
+   "end": 47.6471,
+   "frame_start": 2753,
+   "frame_end": 2859,
+   "bar": 27,
+   "lighting": "night",
+   "picture": "Children join the line one per eighth note; in the silence everyone freezes and turns to camera",
+   "music": "cadence, tom fill, silence 47.54"
+  },
+  {
+   "n": 28,
+   "id": "28_tracking_procession",
+   "start": 47.6471,
+   "end": 49.4118,
+   "frame_start": 2859,
+   "frame_end": 2965,
+   "bar": 28,
+   "lighting": "night",
+   "picture": "Long tracking shot alongside the procession; lantern posts sweep past in the foreground; synchronised footsteps",
+   "music": "second pass, trills"
+  },
+  {
+   "n": 29,
+   "id": "29_overhead_snake",
+   "start": 49.4118,
+   "end": 51.1765,
+   "frame_start": 2965,
+   "frame_end": 3071,
+   "bar": 29,
+   "lighting": "night",
+   "picture": "Overhead: the procession snakes through the streets with long moon shadows",
+   "music": "obsessive call"
+  },
+  {
+   "n": 30,
+   "id": "30_peaceful_faces",
+   "start": 51.1765,
+   "end": 52.9412,
+   "frame_start": 3071,
+   "frame_end": 3176,
+   "bar": 30,
+   "lighting": "night",
+   "picture": "Six peaceful faces; one turns to camera on each tresillo accent",
+   "music": "call 2 accents"
+  },
+  {
+   "n": 31,
+   "id": "31_moon_silhouettes",
+   "start": 52.9412,
+   "end": 54.7059,
+   "frame_start": 3176,
+   "frame_end": 3282,
+   "bar": 31,
+   "lighting": "graded",
+   "picture": "Silhouettes climb toward the mountain under a huge moon (the studio's silhouette style)",
+   "music": "closed cadence"
+  },
+  {
+   "n": 32,
+   "id": "32_passage_closes",
+   "start": 54.7059,
+   "end": 56.4706,
+   "frame_start": 3282,
+   "frame_end": 3388,
+   "bar": 32,
+   "lighting": "night",
+   "picture": "At the mountain passage the children vanish group by group on the stabs; the Piper steps in and it seals in the silence",
+   "music": "stutter stabs, silence 56.03"
+  },
+  {
+   "n": 33,
+   "id": "33_empty_bed",
+   "start": 56.4706,
+   "end": 58.2353,
+   "frame_start": 3388,
+   "frame_end": 3494,
+   "bar": 33,
+   "lighting": "night",
+   "picture": "A mother with a candle finds the empty bed",
+   "music": "layers vanish"
+  },
+  {
+   "n": 34,
+   "id": "34_abandoned_toys",
+   "start": 58.2353,
+   "end": 60,
+   "frame_start": 3494,
+   "frame_end": 3600,
+   "bar": 34,
+   "lighting": "night",
+   "picture": "Abandoned toys on the floor at the open door; the horse still rocking",
+   "music": "giggle, bass gone"
+  },
+  {
+   "n": 35,
+   "id": "35_empty_street",
+   "start": 60,
+   "end": 61.7647,
+   "frame_start": 3600,
+   "frame_end": 3706,
+   "bar": 35,
+   "lighting": "night",
+   "picture": "The empty street from the opening; a wooden toy on the cobbles; the legend card",
+   "music": "kick gone"
+  },
+  {
+   "n": 36,
+   "id": "36_piper_in_fog",
+   "start": 61.7647,
+   "end": 63.5294,
+   "frame_start": 3706,
+   "frame_end": 3812,
+   "bar": 36,
+   "lighting": "night",
+   "picture": "The Piper's silhouette appears far down the street in the fog",
+   "music": "closed cadence"
+  },
+  {
+   "n": 37,
+   "id": "37_legend_title",
+   "start": 63.5294,
+   "end": 65.3,
+   "frame_start": 3812,
+   "frame_end": 3918,
+   "bar": 37,
+   "lighting": "night",
+   "picture": "He dissolves on the last giggle; the title; the frame settles on the opening composition (loop)",
+   "music": "last giggle, G# pickup"
+  }
+ ],
+ "captions": [
+  {
+   "text": "130 CHILDREN VANISHED.",
+   "style": "title",
+   "start": 0.05,
+   "end": 1.7
+  },
+  {
+   "text": "HAMELIN, 1284",
+   "style": "engraved",
+   "start": 1.86,
+   "end": 3.36
+  },
+  {
+   "text": "THE TOWN WAS OVERRUN BY RATS.",
+   "style": "story",
+   "start": 3.64,
+   "end": 6.909
+  },
+  {
+   "text": "A MYSTERIOUS STRANGER OFFERED A SOLUTION.",
+   "style": "story",
+   "start": 14.118,
+   "end": 17.547
+  },
+  {
+   "text": "THEN HE BEGAN TO PLAY.",
+   "style": "story",
+   "start": 17.757,
+   "end": 19.292
+  },
+  {
+   "text": "THE RATS DISAPPEARED.",
+   "style": "story",
+   "start": 28.235,
+   "end": 29.9
+  },
+  {
+   "text": "BUT THE TOWN REFUSED TO PAY.",
+   "style": "story",
+   "start": 35.294,
+   "end": 37.909
+  },
+  {
+   "text": "SO HE RETURNED.",
+   "style": "story",
+   "start": 39.265,
+   "end": 40.348
+  },
+  {
+   "text": "THIS TIME, THE RATS STAYED STILL.",
+   "style": "story",
+   "start": 42.353,
+   "end": 44.018
+  },
+  {
+   "text": "THE CHILDREN FOLLOWED INSTEAD.",
+   "style": "story",
+   "start": 45.882,
+   "end": 47.507
+  },
+  {
+   "text": "THEY NEVER RETURNED.",
+   "style": "story",
+   "start": 58.235,
+   "end": 59.9
+  },
+  {
+   "text": "According to legend, 130 children vanished.",
+   "style": "legend",
+   "start": 60.15,
+   "end": 63.309
+  },
+  {
+   "text": "THE PIED PIPER OF HAMELIN",
+   "style": "engraved",
+   "start": 63.579,
+   "end": 66.294
+  }
+ ]
+}

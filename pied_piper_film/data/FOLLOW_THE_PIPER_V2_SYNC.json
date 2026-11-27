@@ -1,0 +1,3861 @@
+{
+ "title": "FOLLOW THE PIPER (V2)",
+ "version": 2,
+ "instrumental": true,
+ "file": "FOLLOW_THE_PIPER_V2.wav",
+ "bpm": 136.0,
+ "time_signature": "4/4",
+ "key": "A minor (harmonic minor, tritone D# colour)",
+ "sample_rate": 48000,
+ "bit_depth": 24,
+ "channels": 2,
+ "duration_seconds": 65.2941,
+ "beat_seconds": 0.441176,
+ "bar_seconds": 1.764706,
+ "sixteenth_seconds": 0.110294,
+ "bars": 37,
+ "first_beat": 0.0,
+ "loop": {
+  "seamless": true,
+  "loop_start": 0.0,
+  "loop_end": 65.2941,
+  "note": "Exactly 37 bars. The ending's reverb tail is folded onto the start, and the last bar's G#4 pickup resolves into the opening A4, so the file loops sample-accurately."
+ },
+ "narration_window": {
+  "start": 0.0,
+  "end": 3.5294,
+  "note": "Bars 1-2: the flute leads over a low buzzing drone, a deep drum + bell at 0.000 s and a soft wooden slit-drum heartbeat. The flute is silent at 1.78-2.42 s and 3.10-3.53 s (the hook's written pause); only light claves (1.99, 2.10 s), slit drum and the giggle echo sit there."
+ },
+ "loudness": {
+  "integrated_lufs": -14.0,
+  "true_peak_dbtp": -1.25
+ },
+ "sections": [
+  {
+   "name": "intro_hook",
+   "start": 0.0,
+   "end": 3.5294,
+   "start_bar": 1,
+   "end_bar": 2,
+   "description": "A deep drum and a bell strike at 0.000 s with the Piper's call; buzzing hurdy-gurdy drone, a wooden slit-drum heartbeat on the hook's 3+3+2, claves answer the pause."
+  },
+  {
+   "name": "rats_awaken",
+   "start": 3.5294,
+   "end": 12.3529,
+   "start_bar": 3,
+   "end_bar": 7,
+   "description": "Stomps, claps, strumstick, shaker and plucky bass; tambourine; then kick, toms on the hook's tresillo and darbuka; the band answers the pause; ratchet + roll build into a one-eighth silence."
+  },
+  {
+   "name": "first_drop",
+   "start": 12.3529,
+   "end": 24.7059,
+   "start_bar": 8,
+   "end_bar": 14,
+   "description": "The whole town dances: kick + big drum, galloping bass with sub, toms on 3+3+2, claps and rope snare, tambourine 16ths, cajon, darbuka, psaltery chops, buzzing hurdy-gurdy; a fiddle doubles the flute; every pause is answered by the band."
+  },
+  {
+   "name": "betrayal",
+   "start": 24.7059,
+   "end": 31.7647,
+   "start_bar": 15,
+   "end_bar": 18,
+   "description": "The cadence turns: Bb (bII) then Eb (the tritone) under an A drone that will not move; half-time toms; a unison hit and a silence with only stomps; the Piper's giggle echoes; the groove re-ignites on E with a chromatic creep."
+  },
+  {
+   "name": "piper_returns",
+   "start": 31.7647,
+   "end": 40.5882,
+   "start_bar": 19,
+   "end_bar": 23,
+   "description": "The hook returns darker and stranger: airy, shadowed flute with a ghost tenor 28 cents flat, a dark fiddle an octave below, A against Bb in drone and high psaltery, a clockwork psaltery ostinato begins; the giggle lands on Bb and its echo answers wrong."
+  },
+  {
+   "name": "final_drop",
+   "start": 40.5882,
+   "end": 56.4706,
+   "start_bar": 24,
+   "end_bar": 32,
+   "description": "Strongest section: flute + fiddle unison + soprano octave (+ low fiddle in the second pass), kick + big drum, sub bass, toms, son-clave claves, woodblock clockwork, cajon, tambourine, psaltery ostinato and chops, buzzing hurdy-gurdy counter-line; the second pass loses its pause and ends in a stutter, then everything stops for the Piper."
+  },
+  {
+   "name": "disappearance",
+   "start": 56.4706,
+   "end": 65.2941,
+   "start_bar": 33,
+   "end_bar": 37,
+   "description": "Layers vanish bar by bar while the pulse keeps walking; the flute is left alone with a high bowed A and a wooden heartbeat; its last giggle and G#4 pickup lead straight back into the opening (loop)."
+  }
+ ],
+ "accents": [
+  {
+   "time": 0.0,
+   "type": "hook",
+   "description": "Drum + bell + flute hook at 0.000 s (A4)",
+   "strength": 1.0
+  },
+  {
+   "time": 1.3235,
+   "type": "hook",
+   "description": "Tritone D#5 hang -- the Piper's signature note",
+   "strength": 0.9
+  },
+  {
+   "time": 1.9853,
+   "type": "wood",
+   "description": "Claves answer in the pause",
+   "strength": 0.4
+  },
+  {
+   "time": 2.4265,
+   "type": "flute_giggle",
+   "description": "Flute giggle E6 E6 B5, echoed by plucked psaltery",
+   "strength": 0.6
+  },
+  {
+   "time": 3.5294,
+   "type": "groove_in",
+   "description": "Stomps + claps + strumstick + bass enter",
+   "strength": 0.8
+  },
+  {
+   "time": 7.0588,
+   "type": "kick_in",
+   "description": "Kick, toms (3+3+2) and darbuka enter; low fiddle shadows the flute",
+   "strength": 0.8
+  },
+  {
+   "time": 8.8235,
+   "type": "band_answer",
+   "description": "First band answer in the hook's pause (strings + toms + wood + bass)",
+   "strength": 0.8
+  },
+  {
+   "time": 11.4706,
+   "type": "build",
+   "description": "Ratchet + snare roll + tom fill into the drop",
+   "strength": 0.9
+  },
+  {
+   "time": 12.1324,
+   "type": "gap",
+   "description": "Full-band silence (only the Piper)",
+   "strength": 0.9
+  },
+  {
+   "time": 12.3529,
+   "type": "drop",
+   "description": "FIRST DROP downbeat (kick + big drum + timpani + bell)",
+   "strength": 1.0
+  },
+  {
+   "time": 12.3529,
+   "type": "downbeat",
+   "description": "bar 8",
+   "strength": 0.5
+  },
+  {
+   "time": 14.1176,
+   "type": "band_answer",
+   "description": "Band answers the pause on 3+3+2 (strings, toms, wood, bass)",
+   "strength": 0.9
+  },
+  {
+   "time": 14.1176,
+   "type": "downbeat",
+   "description": "bar 9",
+   "strength": 0.5
+  },
+  {
+   "time": 15.8824,
+   "type": "downbeat",
+   "description": "bar 10",
+   "strength": 0.5
+  },
+  {
+   "time": 17.6471,
+   "type": "downbeat",
+   "description": "bar 11",
+   "strength": 0.5
+  },
+  {
+   "time": 19.4118,
+   "type": "variation",
+   "description": "Soprano octave joins, ornamented hook, tresillo stomps, anvil",
+   "strength": 0.7
+  },
+  {
+   "time": 19.4118,
+   "type": "downbeat",
+   "description": "bar 12",
+   "strength": 0.5
+  },
+  {
+   "time": 21.1765,
+   "type": "band_answer",
+   "description": "Band answers the pause on 3+3+2 (strings, toms, wood, bass)",
+   "strength": 0.9
+  },
+  {
+   "time": 21.1765,
+   "type": "downbeat",
+   "description": "bar 13",
+   "strength": 0.5
+  },
+  {
+   "time": 22.9412,
+   "type": "downbeat",
+   "description": "bar 14",
+   "strength": 0.5
+  },
+  {
+   "time": 24.7059,
+   "type": "betrayal",
+   "description": "Harmony betrays: Bb under the hook, gong",
+   "strength": 1.0
+  },
+  {
+   "time": 26.4706,
+   "type": "half_time",
+   "description": "Half-time on the tritone Eb, low tenor recorder, fiddles swell",
+   "strength": 0.8
+  },
+  {
+   "time": 28.2353,
+   "type": "hit",
+   "description": "Unison hit, then the rhythmic pause (only stomps)",
+   "strength": 0.9
+  },
+  {
+   "time": 28.4559,
+   "type": "pause",
+   "description": "Silence except stomps; the giggle echoes a semitone flat",
+   "strength": 0.7
+  },
+  {
+   "time": 30.0,
+   "type": "regroove",
+   "description": "Groove re-ignites on E; chromatic creep E-F-F#-G-G# in flute and fiddles",
+   "strength": 0.7
+  },
+  {
+   "time": 31.7647,
+   "type": "return",
+   "description": "The Piper returns (darker hook); clockwork ostinato starts",
+   "strength": 1.0
+  },
+  {
+   "time": 34.6324,
+   "type": "wrong_note",
+   "description": "Giggle lands on Bb5 and bends down; its echo answers a semitone sharp",
+   "strength": 0.7
+  },
+  {
+   "time": 38.8235,
+   "type": "piper_alone",
+   "description": "The Piper alone: call head",
+   "strength": 0.7
+  },
+  {
+   "time": 39.7059,
+   "type": "build",
+   "description": "Kick/stomp 16ths, tom fill, ratchet, snare roll -> silence",
+   "strength": 0.9
+  },
+  {
+   "time": 40.3676,
+   "type": "gap",
+   "description": "Full-band silence (only the Piper)",
+   "strength": 0.9
+  },
+  {
+   "time": 40.5882,
+   "type": "downbeat",
+   "description": "bar 24",
+   "strength": 0.5
+  },
+  {
+   "time": 40.5882,
+   "type": "drop",
+   "description": "FINAL DROP downbeat",
+   "strength": 1.0
+  },
+  {
+   "time": 42.3529,
+   "type": "band_answer",
+   "description": "Band answers the pause (bigger)",
+   "strength": 0.9
+  },
+  {
+   "time": 42.3529,
+   "type": "downbeat",
+   "description": "bar 25",
+   "strength": 0.5
+  },
+  {
+   "time": 44.1176,
+   "type": "downbeat",
+   "description": "bar 26",
+   "strength": 0.5
+  },
+  {
+   "time": 45.8824,
+   "type": "downbeat",
+   "description": "bar 27",
+   "strength": 0.5
+  },
+  {
+   "time": 47.5368,
+   "type": "gap",
+   "description": "Full-band silence (only the Piper)",
+   "strength": 0.9
+  },
+  {
+   "time": 47.6471,
+   "type": "downbeat",
+   "description": "bar 28",
+   "strength": 0.5
+  },
+  {
+   "time": 47.6471,
+   "type": "variation",
+   "description": "Second pass: flute trills, low fiddle, doubled stomps/claps, woodblock clockwork, high bowed E6",
+   "strength": 0.8
+  },
+  {
+   "time": 49.4118,
+   "type": "obsession",
+   "description": "No pause anymore: the call repeats where the giggle was",
+   "strength": 0.9
+  },
+  {
+   "time": 49.4118,
+   "type": "downbeat",
+   "description": "bar 29",
+   "strength": 0.5
+  },
+  {
+   "time": 51.1765,
+   "type": "downbeat",
+   "description": "bar 30",
+   "strength": 0.5
+  },
+  {
+   "time": 52.9412,
+   "type": "downbeat",
+   "description": "bar 31",
+   "strength": 0.5
+  },
+  {
+   "time": 54.7059,
+   "type": "stutter",
+   "description": "Obsessive stutter bar: 16th bass, band stabs on every beat",
+   "strength": 1.0
+  },
+  {
+   "time": 54.7059,
+   "type": "downbeat",
+   "description": "bar 32",
+   "strength": 0.5
+  },
+  {
+   "time": 56.0294,
+   "type": "gap",
+   "description": "Full-band silence (only the Piper)",
+   "strength": 0.9
+  },
+  {
+   "time": 56.4706,
+   "type": "disappearance",
+   "description": "Gurdy, strings, octave flute gone",
+   "strength": 0.8
+  },
+  {
+   "time": 58.2353,
+   "type": "bass_out",
+   "description": "Bass gone; kick filtered; giggle echoed",
+   "strength": 0.6
+  },
+  {
+   "time": 60.0,
+   "type": "kick_out",
+   "description": "Kick gone; stomps, claps and the wooden heartbeat",
+   "strength": 0.6
+  },
+  {
+   "time": 61.7647,
+   "type": "thin",
+   "description": "Stomps and slit drum only; a high bowed A hangs in the air",
+   "strength": 0.5
+  },
+  {
+   "time": 64.1912,
+   "type": "flute_alone",
+   "description": "The flute alone: last giggle",
+   "strength": 0.6
+  },
+  {
+   "time": 65.0735,
+   "type": "loop_pickup",
+   "description": "G#4 pickup resolves into the A4 + drum at 0.000 s (seamless loop)",
+   "strength": 0.8
+  }
+ ],
+ "events": {
+  "big_drum": [
+   0.0,
+   12.3529,
+   15.8824,
+   17.6471,
+   19.4118,
+   22.9412,
+   24.7059,
+   26.4706,
+   27.3529,
+   28.2353,
+   38.8235,
+   40.5882,
+   44.1176,
+   45.8824,
+   47.6471,
+   49.4118,
+   51.1765,
+   52.9412,
+   54.7059,
+   56.4706
+  ],
+  "bell": [
+   0.0,
+   12.3529,
+   24.7059,
+   30.0,
+   31.7647,
+   32.6471,
+   40.5882,
+   40.5982,
+   47.6471,
+   56.4706
+  ],
+  "claves": [
+   1.9853,
+   2.0956,
+   40.5882,
+   40.9191,
+   41.25,
+   41.6912,
+   41.9118,
+   44.1176,
+   44.4485,
+   44.7794,
+   45.2206,
+   45.4412,
+   45.8824,
+   46.2132,
+   46.5441,
+   46.9853,
+   47.2059,
+   47.6471,
+   47.9779,
+   48.3088,
+   48.75,
+   48.9706,
+   49.4118,
+   49.7426,
+   50.0735,
+   50.5147,
+   50.7353,
+   51.1765,
+   51.5074,
+   51.8382,
+   52.2794,
+   52.5,
+   52.9412,
+   53.2721,
+   53.6029,
+   54.0441,
+   54.2647,
+   54.7059,
+   55.0368,
+   55.3676,
+   55.8088,
+   56.0294,
+   63.75,
+   63.8603
+  ],
+  "stomp": [
+   3.5294,
+   4.4118,
+   5.2941,
+   6.1765,
+   7.0588,
+   7.9412,
+   9.7059,
+   10.5882,
+   11.0294,
+   11.4706,
+   11.6912,
+   11.9118,
+   12.0221,
+   12.3529,
+   13.2353,
+   15.0,
+   15.8824,
+   16.7647,
+   17.6471,
+   18.5294,
+   19.4118,
+   19.7426,
+   20.2941,
+   22.0588,
+   22.9412,
+   23.2721,
+   23.8235,
+   24.7059,
+   25.5882,
+   26.4706,
+   26.9118,
+   27.3529,
+   27.7941,
+   28.6765,
+   29.1176,
+   29.5588,
+   30.0,
+   30.8824,
+   31.7647,
+   32.6471,
+   33.5294,
+   34.4118,
+   35.2941,
+   36.1765,
+   37.0588,
+   37.9412,
+   39.7059,
+   39.8162,
+   39.9265,
+   40.0368,
+   40.1471,
+   40.2574,
+   40.5882,
+   40.9191,
+   41.4706,
+   41.8015,
+   43.2353,
+   44.1176,
+   44.4485,
+   45.0,
+   45.3309,
+   45.8824,
+   46.2132,
+   46.7647,
+   47.0956,
+   47.6471,
+   47.9779,
+   48.3088,
+   48.5294,
+   48.8603,
+   49.1912,
+   49.4118,
+   49.7426,
+   50.0735,
+   50.2941,
+   50.625,
+   50.9559,
+   51.1765,
+   51.5074,
+   51.8382,
+   52.0588,
+   52.3897,
+   52.7206,
+   52.9412,
+   53.2721,
+   53.6029,
+   53.8235,
+   54.1544,
+   54.4853,
+   54.7059,
+   55.0368,
+   55.3676,
+   55.5882,
+   55.9191,
+   56.25,
+   56.4706,
+   57.3529,
+   58.2353,
+   59.1176,
+   60.0,
+   60.8824,
+   61.7647,
+   62.6471
+  ],
+  "clap": [
+   3.9706,
+   4.8529,
+   5.7353,
+   6.6176,
+   7.5,
+   8.3824,
+   9.2647,
+   10.1471,
+   12.7941,
+   13.6765,
+   15.4412,
+   16.3235,
+   17.2059,
+   18.0882,
+   18.9706,
+   19.8529,
+   20.7353,
+   22.5,
+   23.3824,
+   24.2647,
+   27.7941,
+   41.0294,
+   41.9118,
+   43.6765,
+   43.8971,
+   44.5588,
+   45.4412,
+   46.3235,
+   47.2059,
+   48.0882,
+   48.75,
+   48.9706,
+   49.1912,
+   49.8529,
+   50.5147,
+   50.7353,
+   50.9559,
+   51.6176,
+   52.2794,
+   52.5,
+   52.7206,
+   53.3824,
+   54.0441,
+   54.2647,
+   54.4853,
+   55.1471,
+   55.8088,
+   56.0294,
+   56.25,
+   56.9118,
+   57.7941,
+   58.6765,
+   59.5588,
+   60.4412,
+   61.3235
+  ],
+  "kick": [
+   7.0588,
+   7.5,
+   7.9412,
+   8.3824,
+   8.8235,
+   9.2647,
+   9.7059,
+   10.1471,
+   10.5882,
+   11.0294,
+   11.4706,
+   11.6912,
+   11.9118,
+   12.0221,
+   12.3529,
+   12.7941,
+   13.2353,
+   13.6765,
+   15.0,
+   15.4412,
+   15.8824,
+   16.3235,
+   16.7647,
+   17.2059,
+   17.6471,
+   18.0882,
+   18.5294,
+   18.9706,
+   19.4118,
+   19.8529,
+   20.2941,
+   20.7353,
+   22.0588,
+   22.5,
+   22.9412,
+   23.3824,
+   23.8235,
+   24.2647,
+   24.7059,
+   25.1471,
+   25.5882,
+   26.0294,
+   26.4706,
+   27.3529,
+   28.2353,
+   30.0,
+   30.4412,
+   30.8824,
+   31.3235,
+   31.7647,
+   32.2059,
+   32.6471,
+   33.0882,
+   33.5294,
+   33.9706,
+   34.4118,
+   34.8529,
+   35.2941,
+   35.7353,
+   36.1765,
+   36.6176,
+   37.0588,
+   37.5,
+   37.9412,
+   38.3824,
+   38.8235,
+   39.7059,
+   39.9265,
+   40.1471,
+   40.2574,
+   40.5882,
+   41.0294,
+   41.4706,
+   41.9118,
+   43.2353,
+   43.6765,
+   44.1176,
+   44.5588,
+   45.0,
+   45.4412,
+   45.8824,
+   46.3235,
+   46.7647,
+   47.2059,
+   47.6471,
+   48.0882,
+   48.5294,
+   48.9706,
+   49.4118,
+   49.8529,
+   50.2941,
+   50.7353,
+   51.1765,
+   51.6176,
+   52.0588,
+   52.5,
+   52.9412,
+   53.3824,
+   53.8235,
+   54.2647,
+   54.7059,
+   55.1471,
+   55.5882,
+   56.0294,
+   56.4706,
+   56.9118,
+   57.3529,
+   57.7941,
+   58.2353,
+   58.6765,
+   59.1176,
+   59.5588
+  ],
+  "tom": [
+   7.3897,
+   7.7206,
+   8.2721,
+   8.6029,
+   10.9191,
+   11.25,
+   11.6912,
+   11.8015,
+   11.9118,
+   12.0221,
+   12.1324,
+   12.2426,
+   12.6838,
+   13.0147,
+   13.5662,
+   13.8971,
+   16.2132,
+   16.5441,
+   17.0956,
+   17.4265,
+   17.9779,
+   18.3088,
+   18.75,
+   18.8603,
+   18.9706,
+   19.0809,
+   19.1912,
+   19.3015,
+   19.7426,
+   20.0735,
+   20.625,
+   20.9559,
+   23.2721,
+   23.6029,
+   24.1544,
+   24.4853,
+   25.0368,
+   25.3676,
+   25.9191,
+   26.25,
+   30.3309,
+   30.6618,
+   31.1029,
+   31.2132,
+   31.3235,
+   31.4338,
+   31.5441,
+   31.6544,
+   33.8603,
+   34.1912,
+   34.7426,
+   35.0735,
+   35.625,
+   35.9559,
+   36.5074,
+   36.8382,
+   37.3897,
+   37.7206,
+   38.2721,
+   38.6029,
+   39.1544,
+   39.4853,
+   39.9265,
+   40.0368,
+   40.1471,
+   40.2574,
+   40.3676,
+   40.4779,
+   40.9191,
+   41.25,
+   41.8015,
+   42.1324,
+   44.4485,
+   44.7794,
+   45.3309,
+   45.6618,
+   46.2132,
+   46.5441,
+   46.9853,
+   47.0956,
+   47.2059,
+   47.3162,
+   47.4265,
+   47.5368,
+   47.9779,
+   48.3088,
+   48.8603,
+   49.1912,
+   49.7426,
+   50.0735,
+   50.625,
+   50.9559,
+   51.5074,
+   51.8382,
+   52.3897,
+   52.7206,
+   53.2721,
+   53.6029,
+   54.0441,
+   54.1544,
+   54.2647,
+   54.375,
+   54.4853,
+   54.5956,
+   55.0368,
+   55.3676,
+   55.9191,
+   56.25,
+   56.8015,
+   57.1324,
+   57.6838,
+   58.0147,
+   58.5662,
+   58.8971,
+   59.4485,
+   59.7794
+  ],
+  "band_answer": [
+   8.8235,
+   9.1544,
+   14.1176,
+   14.4485,
+   21.1765,
+   21.5074,
+   28.2353,
+   42.3529,
+   42.6838,
+   50.9559,
+   54.7059,
+   55.1471,
+   55.5882,
+   56.0294
+  ],
+  "snare": [
+   12.7941,
+   13.6765,
+   15.4412,
+   16.3235,
+   17.2059,
+   18.0882,
+   18.9706,
+   19.8529,
+   20.7353,
+   22.5,
+   23.3824,
+   24.2647,
+   41.0294,
+   41.9118,
+   43.6765,
+   44.5588,
+   45.4412,
+   46.3235,
+   47.2059,
+   48.0882,
+   48.9706,
+   49.8529,
+   50.7353,
+   51.6176,
+   52.5,
+   53.3824,
+   54.2647,
+   55.1471,
+   56.0294
+  ],
+  "boom": [
+   12.3529,
+   28.2353,
+   40.5882
+  ]
+ },
+ "flute_notes": [
+  {
+   "time": 0.0,
+   "dur": 0.3309,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 0.3309,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 0.6618,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 0.8824,
+   "dur": 0.1103,
+   "midi": 80,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 0.9926,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 1.1029,
+   "dur": 0.2206,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 1.3235,
+   "dur": 0.4412,
+   "midi": 75,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 2.4265,
+   "dur": 0.1103,
+   "midi": 88,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 2.6471,
+   "dur": 0.1103,
+   "midi": 88,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 2.8676,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 3.5294,
+   "dur": 0.3309,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 3.8603,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 4.1912,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 4.4118,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 4.5221,
+   "dur": 0.1103,
+   "midi": 84,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 4.6324,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 4.8529,
+   "dur": 0.2206,
+   "midi": 80,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 5.0735,
+   "dur": 0.2206,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 5.2941,
+   "dur": 0.3309,
+   "midi": 77,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 5.625,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 5.9559,
+   "dur": 0.2206,
+   "midi": 72,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 6.1765,
+   "dur": 0.2206,
+   "midi": 71,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 6.3971,
+   "dur": 0.1103,
+   "midi": 72,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 6.5074,
+   "dur": 0.1103,
+   "midi": 71,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 6.6176,
+   "dur": 0.4412,
+   "midi": 68,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 7.0588,
+   "dur": 0.3309,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 7.3897,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 7.7206,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 7.9412,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 8.0515,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 8.1618,
+   "dur": 0.1103,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 8.2721,
+   "dur": 0.1103,
+   "midi": 77,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 8.3824,
+   "dur": 0.4412,
+   "midi": 75,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 9.4853,
+   "dur": 0.1103,
+   "midi": 88,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 9.7059,
+   "dur": 0.1103,
+   "midi": 88,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 9.9265,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 10.5882,
+   "dur": 0.3309,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 10.9191,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 11.25,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 11.4706,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 11.4706,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 11.5809,
+   "dur": 0.1103,
+   "midi": 84,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 11.6912,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 11.8015,
+   "dur": 0.1103,
+   "midi": 84,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 11.9118,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 12.0221,
+   "dur": 0.1103,
+   "midi": 84,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 12.3529,
+   "dur": 0.3309,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 12.6838,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 13.0147,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 13.2353,
+   "dur": 0.1103,
+   "midi": 80,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 13.3456,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 13.4559,
+   "dur": 0.2206,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 13.6765,
+   "dur": 0.4412,
+   "midi": 75,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 14.7794,
+   "dur": 0.1103,
+   "midi": 88,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 15.0,
+   "dur": 0.1103,
+   "midi": 88,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 15.2206,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 15.8824,
+   "dur": 0.3309,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 16.2132,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 16.5441,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 16.7647,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 16.875,
+   "dur": 0.1103,
+   "midi": 84,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 16.9853,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 17.2059,
+   "dur": 0.2206,
+   "midi": 80,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 17.4265,
+   "dur": 0.2206,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 17.6471,
+   "dur": 0.3309,
+   "midi": 77,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 17.9779,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 18.3088,
+   "dur": 0.2206,
+   "midi": 72,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 18.5294,
+   "dur": 0.2206,
+   "midi": 71,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 18.75,
+   "dur": 0.1103,
+   "midi": 72,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 18.8603,
+   "dur": 0.1103,
+   "midi": 71,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 18.9706,
+   "dur": 0.4412,
+   "midi": 68,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 19.4118,
+   "dur": 0.3309,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 19.7426,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 20.0735,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 20.2941,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 20.4044,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 20.5147,
+   "dur": 0.1103,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 20.625,
+   "dur": 0.1103,
+   "midi": 77,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 20.7353,
+   "dur": 0.4412,
+   "midi": 75,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 21.8382,
+   "dur": 0.1103,
+   "midi": 88,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 21.9485,
+   "dur": 0.1103,
+   "midi": 86,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 22.0588,
+   "dur": 0.1103,
+   "midi": 88,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 22.2794,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 22.5,
+   "dur": 0.1103,
+   "midi": 84,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 22.6103,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 22.7206,
+   "dur": 0.2206,
+   "midi": 80,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 22.9412,
+   "dur": 0.3309,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 23.2721,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 23.6029,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 23.8235,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 23.9338,
+   "dur": 0.1103,
+   "midi": 84,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 24.0441,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 24.2647,
+   "dur": 0.2206,
+   "midi": 80,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 24.4853,
+   "dur": 0.2206,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 24.7059,
+   "dur": 0.3309,
+   "midi": 77,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 25.0368,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 25.3676,
+   "dur": 0.2206,
+   "midi": 74,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 25.5882,
+   "dur": 0.2206,
+   "midi": 70,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 25.8088,
+   "dur": 0.2206,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 26.0294,
+   "dur": 0.4412,
+   "midi": 70,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 26.4706,
+   "dur": 0.6618,
+   "midi": 63,
+   "instrument": "tenor",
+   "track": "flute_lo"
+  },
+  {
+   "time": 27.1324,
+   "dur": 0.2206,
+   "midi": 64,
+   "instrument": "tenor",
+   "track": "flute_lo"
+  },
+  {
+   "time": 27.3529,
+   "dur": 0.8824,
+   "midi": 63,
+   "instrument": "tenor",
+   "track": "flute_lo"
+  },
+  {
+   "time": 29.3382,
+   "dur": 0.1103,
+   "midi": 88,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 29.5588,
+   "dur": 0.1103,
+   "midi": 88,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 30.8824,
+   "dur": 0.2206,
+   "midi": 64,
+   "instrument": "tenor",
+   "track": "flute_lo"
+  },
+  {
+   "time": 31.1029,
+   "dur": 0.2206,
+   "midi": 65,
+   "instrument": "tenor",
+   "track": "flute_lo"
+  },
+  {
+   "time": 31.3235,
+   "dur": 0.2206,
+   "midi": 66,
+   "instrument": "tenor",
+   "track": "flute_lo"
+  },
+  {
+   "time": 31.5441,
+   "dur": 0.1103,
+   "midi": 67,
+   "instrument": "tenor",
+   "track": "flute_lo"
+  },
+  {
+   "time": 31.6544,
+   "dur": 0.1103,
+   "midi": 68,
+   "instrument": "tenor",
+   "track": "flute_lo"
+  },
+  {
+   "time": 31.7647,
+   "dur": 0.3309,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 32.0956,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 32.4265,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 32.6471,
+   "dur": 0.1103,
+   "midi": 80,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 32.7574,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 32.8676,
+   "dur": 0.2206,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 33.0882,
+   "dur": 0.4412,
+   "midi": 75,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 34.1912,
+   "dur": 0.1103,
+   "midi": 88,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 34.4118,
+   "dur": 0.1103,
+   "midi": 88,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 34.6324,
+   "dur": 0.3309,
+   "midi": 82,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 35.2941,
+   "dur": 0.3309,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 35.625,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 35.9559,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 36.1765,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 36.2868,
+   "dur": 0.1103,
+   "midi": 84,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 36.3971,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 36.6176,
+   "dur": 0.2206,
+   "midi": 80,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 36.8382,
+   "dur": 0.2206,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 37.0588,
+   "dur": 0.3309,
+   "midi": 77,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 37.3897,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 37.7206,
+   "dur": 0.2206,
+   "midi": 72,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 37.9412,
+   "dur": 0.2206,
+   "midi": 71,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 38.1618,
+   "dur": 0.1103,
+   "midi": 72,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 38.2721,
+   "dur": 0.1103,
+   "midi": 71,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 38.3824,
+   "dur": 0.4412,
+   "midi": 68,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 38.8235,
+   "dur": 0.3309,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 39.1544,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 39.4853,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 39.7059,
+   "dur": 0.1103,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 39.8162,
+   "dur": 0.1103,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 39.9265,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 40.0368,
+   "dur": 0.1103,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 40.1471,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 40.2574,
+   "dur": 0.1103,
+   "midi": 80,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 40.5882,
+   "dur": 0.3309,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 40.9191,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 41.25,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 41.4706,
+   "dur": 0.1103,
+   "midi": 80,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 41.5809,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 41.6912,
+   "dur": 0.2206,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 41.9118,
+   "dur": 0.4412,
+   "midi": 75,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 43.0147,
+   "dur": 0.1103,
+   "midi": 88,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 43.2353,
+   "dur": 0.1103,
+   "midi": 88,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 43.4559,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 44.1176,
+   "dur": 0.3309,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 44.4485,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 44.7794,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 45.0,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 45.1103,
+   "dur": 0.1103,
+   "midi": 84,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 45.2206,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 45.4412,
+   "dur": 0.2206,
+   "midi": 80,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 45.6618,
+   "dur": 0.2206,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 45.8824,
+   "dur": 0.3309,
+   "midi": 77,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 46.2132,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 46.5441,
+   "dur": 0.2206,
+   "midi": 72,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 46.7647,
+   "dur": 0.2206,
+   "midi": 71,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 46.9853,
+   "dur": 0.1103,
+   "midi": 72,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 47.0956,
+   "dur": 0.1103,
+   "midi": 71,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 47.2059,
+   "dur": 0.4412,
+   "midi": 68,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 47.6471,
+   "dur": 0.3309,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 47.9779,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 48.3088,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 48.5294,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 48.6397,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 48.75,
+   "dur": 0.1103,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 48.8603,
+   "dur": 0.1103,
+   "midi": 77,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 48.9706,
+   "dur": 0.4412,
+   "midi": 75,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 49.4118,
+   "dur": 0.3309,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 49.7426,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 50.0735,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 50.2941,
+   "dur": 0.1103,
+   "midi": 80,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 50.4044,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 50.5147,
+   "dur": 0.2206,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 50.7353,
+   "dur": 0.4412,
+   "midi": 75,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 51.1765,
+   "dur": 0.3309,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 51.5074,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 51.8382,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 52.0588,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 52.1691,
+   "dur": 0.1103,
+   "midi": 84,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 52.2794,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 52.5,
+   "dur": 0.2206,
+   "midi": 80,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 52.7206,
+   "dur": 0.2206,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 52.9412,
+   "dur": 0.3309,
+   "midi": 77,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 53.2721,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 53.6029,
+   "dur": 0.2206,
+   "midi": 72,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 53.8235,
+   "dur": 0.2206,
+   "midi": 71,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 54.0441,
+   "dur": 0.2206,
+   "midi": 68,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 54.2647,
+   "dur": 0.4412,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 54.7059,
+   "dur": 0.2206,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 54.9265,
+   "dur": 0.1103,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 55.0368,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 55.1471,
+   "dur": 0.2206,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 55.3676,
+   "dur": 0.1103,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 55.4779,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 55.5882,
+   "dur": 0.1103,
+   "midi": 80,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 55.6985,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 55.8088,
+   "dur": 0.1103,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 55.9191,
+   "dur": 0.1103,
+   "midi": 75,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 56.0294,
+   "dur": 0.1103,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 56.1397,
+   "dur": 0.1103,
+   "midi": 75,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 56.1397,
+   "dur": 0.1103,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 56.25,
+   "dur": 0.1103,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 56.25,
+   "dur": 0.1103,
+   "midi": 75,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 56.3603,
+   "dur": 0.1103,
+   "midi": 80,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 56.3603,
+   "dur": 0.1103,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 56.4706,
+   "dur": 0.3309,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 56.8015,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 57.1324,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 57.3529,
+   "dur": 0.1103,
+   "midi": 80,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 57.4632,
+   "dur": 0.1103,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 57.5735,
+   "dur": 0.2206,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 57.7941,
+   "dur": 0.4412,
+   "midi": 75,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 58.8971,
+   "dur": 0.1103,
+   "midi": 88,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 59.1176,
+   "dur": 0.1103,
+   "midi": 88,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 59.3382,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 60.0,
+   "dur": 0.3309,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 60.3309,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 60.6618,
+   "dur": 0.2206,
+   "midi": 81,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 60.8824,
+   "dur": 0.1103,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 60.9926,
+   "dur": 0.1103,
+   "midi": 84,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 61.1029,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 61.3235,
+   "dur": 0.2206,
+   "midi": 80,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 61.5441,
+   "dur": 0.2206,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 61.7647,
+   "dur": 0.3309,
+   "midi": 77,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 62.0956,
+   "dur": 0.3309,
+   "midi": 76,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 62.4265,
+   "dur": 0.2206,
+   "midi": 72,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 62.6471,
+   "dur": 0.2206,
+   "midi": 71,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 62.8676,
+   "dur": 0.2206,
+   "midi": 68,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 63.0882,
+   "dur": 0.4412,
+   "midi": 69,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 64.1912,
+   "dur": 0.1103,
+   "midi": 88,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 64.4118,
+   "dur": 0.1103,
+   "midi": 88,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 64.6324,
+   "dur": 0.2206,
+   "midi": 83,
+   "instrument": "alto",
+   "track": "flute"
+  },
+  {
+   "time": 65.0735,
+   "dur": 0.2206,
+   "midi": 68,
+   "instrument": "alto",
+   "track": "flute"
+  }
+ ],
+ "beats": [
+  {
+   "index": 0,
+   "time": 0.0,
+   "bar": 1,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.716
+  },
+  {
+   "index": 1,
+   "time": 0.4412,
+   "bar": 1,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.735
+  },
+  {
+   "index": 2,
+   "time": 0.8824,
+   "bar": 1,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.713
+  },
+  {
+   "index": 3,
+   "time": 1.3235,
+   "bar": 1,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.568
+  },
+  {
+   "index": 4,
+   "time": 1.7647,
+   "bar": 2,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.0
+  },
+  {
+   "index": 5,
+   "time": 2.2059,
+   "bar": 2,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.258
+  },
+  {
+   "index": 6,
+   "time": 2.6471,
+   "bar": 2,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.595
+  },
+  {
+   "index": 7,
+   "time": 3.0882,
+   "bar": 2,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.0
+  },
+  {
+   "index": 8,
+   "time": 3.5294,
+   "bar": 3,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.724
+  },
+  {
+   "index": 9,
+   "time": 3.9706,
+   "bar": 3,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.734
+  },
+  {
+   "index": 10,
+   "time": 4.4118,
+   "bar": 3,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.726
+  },
+  {
+   "index": 11,
+   "time": 4.8529,
+   "bar": 3,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.665
+  },
+  {
+   "index": 12,
+   "time": 5.2941,
+   "bar": 4,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.721
+  },
+  {
+   "index": 13,
+   "time": 5.7353,
+   "bar": 4,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.68
+  },
+  {
+   "index": 14,
+   "time": 6.1765,
+   "bar": 4,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.669
+  },
+  {
+   "index": 15,
+   "time": 6.6176,
+   "bar": 4,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.661
+  },
+  {
+   "index": 16,
+   "time": 7.0588,
+   "bar": 5,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.856
+  },
+  {
+   "index": 17,
+   "time": 7.5,
+   "bar": 5,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.868
+  },
+  {
+   "index": 18,
+   "time": 7.9412,
+   "bar": 5,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.871
+  },
+  {
+   "index": 19,
+   "time": 8.3824,
+   "bar": 5,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.834
+  },
+  {
+   "index": 20,
+   "time": 8.8235,
+   "bar": 6,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.867
+  },
+  {
+   "index": 21,
+   "time": 9.2647,
+   "bar": 6,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.801
+  },
+  {
+   "index": 22,
+   "time": 9.7059,
+   "bar": 6,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.883
+  },
+  {
+   "index": 23,
+   "time": 10.1471,
+   "bar": 6,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.813
+  },
+  {
+   "index": 24,
+   "time": 10.5882,
+   "bar": 7,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.865
+  },
+  {
+   "index": 25,
+   "time": 11.0294,
+   "bar": 7,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.882
+  },
+  {
+   "index": 26,
+   "time": 11.4706,
+   "bar": 7,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.96
+  },
+  {
+   "index": 27,
+   "time": 11.9118,
+   "bar": 7,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.837
+  },
+  {
+   "index": 28,
+   "time": 12.3529,
+   "bar": 8,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.936
+  },
+  {
+   "index": 29,
+   "time": 12.7941,
+   "bar": 8,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.899
+  },
+  {
+   "index": 30,
+   "time": 13.2353,
+   "bar": 8,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.921
+  },
+  {
+   "index": 31,
+   "time": 13.6765,
+   "bar": 8,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.875
+  },
+  {
+   "index": 32,
+   "time": 14.1176,
+   "bar": 9,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.809
+  },
+  {
+   "index": 33,
+   "time": 14.5588,
+   "bar": 9,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.729
+  },
+  {
+   "index": 34,
+   "time": 15.0,
+   "bar": 9,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.921
+  },
+  {
+   "index": 35,
+   "time": 15.4412,
+   "bar": 9,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.819
+  },
+  {
+   "index": 36,
+   "time": 15.8824,
+   "bar": 10,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.939
+  },
+  {
+   "index": 37,
+   "time": 16.3235,
+   "bar": 10,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.889
+  },
+  {
+   "index": 38,
+   "time": 16.7647,
+   "bar": 10,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.93
+  },
+  {
+   "index": 39,
+   "time": 17.2059,
+   "bar": 10,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.891
+  },
+  {
+   "index": 40,
+   "time": 17.6471,
+   "bar": 11,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.919
+  },
+  {
+   "index": 41,
+   "time": 18.0882,
+   "bar": 11,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.91
+  },
+  {
+   "index": 42,
+   "time": 18.5294,
+   "bar": 11,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.907
+  },
+  {
+   "index": 43,
+   "time": 18.9706,
+   "bar": 11,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.869
+  },
+  {
+   "index": 44,
+   "time": 19.4118,
+   "bar": 12,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.913
+  },
+  {
+   "index": 45,
+   "time": 19.8529,
+   "bar": 12,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.892
+  },
+  {
+   "index": 46,
+   "time": 20.2941,
+   "bar": 12,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.93
+  },
+  {
+   "index": 47,
+   "time": 20.7353,
+   "bar": 12,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.852
+  },
+  {
+   "index": 48,
+   "time": 21.1765,
+   "bar": 13,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.786
+  },
+  {
+   "index": 49,
+   "time": 21.6176,
+   "bar": 13,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.765
+  },
+  {
+   "index": 50,
+   "time": 22.0588,
+   "bar": 13,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.928
+  },
+  {
+   "index": 51,
+   "time": 22.5,
+   "bar": 13,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.893
+  },
+  {
+   "index": 52,
+   "time": 22.9412,
+   "bar": 14,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.946
+  },
+  {
+   "index": 53,
+   "time": 23.3824,
+   "bar": 14,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.918
+  },
+  {
+   "index": 54,
+   "time": 23.8235,
+   "bar": 14,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.929
+  },
+  {
+   "index": 55,
+   "time": 24.2647,
+   "bar": 14,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.913
+  },
+  {
+   "index": 56,
+   "time": 24.7059,
+   "bar": 15,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.934
+  },
+  {
+   "index": 57,
+   "time": 25.1471,
+   "bar": 15,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.875
+  },
+  {
+   "index": 58,
+   "time": 25.5882,
+   "bar": 15,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.911
+  },
+  {
+   "index": 59,
+   "time": 26.0294,
+   "bar": 15,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.886
+  },
+  {
+   "index": 60,
+   "time": 26.4706,
+   "bar": 16,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.848
+  },
+  {
+   "index": 61,
+   "time": 26.9118,
+   "bar": 16,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.55
+  },
+  {
+   "index": 62,
+   "time": 27.3529,
+   "bar": 16,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.875
+  },
+  {
+   "index": 63,
+   "time": 27.7941,
+   "bar": 16,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.674
+  },
+  {
+   "index": 64,
+   "time": 28.2353,
+   "bar": 17,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.861
+  },
+  {
+   "index": 65,
+   "time": 28.6765,
+   "bar": 17,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.096
+  },
+  {
+   "index": 66,
+   "time": 29.1176,
+   "bar": 17,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.103
+  },
+  {
+   "index": 67,
+   "time": 29.5588,
+   "bar": 17,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.187
+  },
+  {
+   "index": 68,
+   "time": 30.0,
+   "bar": 18,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.851
+  },
+  {
+   "index": 69,
+   "time": 30.4412,
+   "bar": 18,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.848
+  },
+  {
+   "index": 70,
+   "time": 30.8824,
+   "bar": 18,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.889
+  },
+  {
+   "index": 71,
+   "time": 31.3235,
+   "bar": 18,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.856
+  },
+  {
+   "index": 72,
+   "time": 31.7647,
+   "bar": 19,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.828
+  },
+  {
+   "index": 73,
+   "time": 32.2059,
+   "bar": 19,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.826
+  },
+  {
+   "index": 74,
+   "time": 32.6471,
+   "bar": 19,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.803
+  },
+  {
+   "index": 75,
+   "time": 33.0882,
+   "bar": 19,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.821
+  },
+  {
+   "index": 76,
+   "time": 33.5294,
+   "bar": 20,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.805
+  },
+  {
+   "index": 77,
+   "time": 33.9706,
+   "bar": 20,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.827
+  },
+  {
+   "index": 78,
+   "time": 34.4118,
+   "bar": 20,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.85
+  },
+  {
+   "index": 79,
+   "time": 34.8529,
+   "bar": 20,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.803
+  },
+  {
+   "index": 80,
+   "time": 35.2941,
+   "bar": 21,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.889
+  },
+  {
+   "index": 81,
+   "time": 35.7353,
+   "bar": 21,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.893
+  },
+  {
+   "index": 82,
+   "time": 36.1765,
+   "bar": 21,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.865
+  },
+  {
+   "index": 83,
+   "time": 36.6176,
+   "bar": 21,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.836
+  },
+  {
+   "index": 84,
+   "time": 37.0588,
+   "bar": 22,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.882
+  },
+  {
+   "index": 85,
+   "time": 37.5,
+   "bar": 22,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.875
+  },
+  {
+   "index": 86,
+   "time": 37.9412,
+   "bar": 22,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.86
+  },
+  {
+   "index": 87,
+   "time": 38.3824,
+   "bar": 22,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.828
+  },
+  {
+   "index": 88,
+   "time": 38.8235,
+   "bar": 23,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.828
+  },
+  {
+   "index": 89,
+   "time": 39.2647,
+   "bar": 23,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.664
+  },
+  {
+   "index": 90,
+   "time": 39.7059,
+   "bar": 23,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.911
+  },
+  {
+   "index": 91,
+   "time": 40.1471,
+   "bar": 23,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.793
+  },
+  {
+   "index": 92,
+   "time": 40.5882,
+   "bar": 24,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.966
+  },
+  {
+   "index": 93,
+   "time": 41.0294,
+   "bar": 24,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.945
+  },
+  {
+   "index": 94,
+   "time": 41.4706,
+   "bar": 24,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.952
+  },
+  {
+   "index": 95,
+   "time": 41.9118,
+   "bar": 24,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.911
+  },
+  {
+   "index": 96,
+   "time": 42.3529,
+   "bar": 25,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.849
+  },
+  {
+   "index": 97,
+   "time": 42.7941,
+   "bar": 25,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.79
+  },
+  {
+   "index": 98,
+   "time": 43.2353,
+   "bar": 25,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.962
+  },
+  {
+   "index": 99,
+   "time": 43.6765,
+   "bar": 25,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.902
+  },
+  {
+   "index": 100,
+   "time": 44.1176,
+   "bar": 26,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.967
+  },
+  {
+   "index": 101,
+   "time": 44.5588,
+   "bar": 26,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.957
+  },
+  {
+   "index": 102,
+   "time": 45.0,
+   "bar": 26,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.952
+  },
+  {
+   "index": 103,
+   "time": 45.4412,
+   "bar": 26,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.939
+  },
+  {
+   "index": 104,
+   "time": 45.8824,
+   "bar": 27,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.985
+  },
+  {
+   "index": 105,
+   "time": 46.3235,
+   "bar": 27,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.892
+  },
+  {
+   "index": 106,
+   "time": 46.7647,
+   "bar": 27,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.984
+  },
+  {
+   "index": 107,
+   "time": 47.2059,
+   "bar": 27,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.924
+  },
+  {
+   "index": 108,
+   "time": 47.6471,
+   "bar": 28,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 1.0
+  },
+  {
+   "index": 109,
+   "time": 48.0882,
+   "bar": 28,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.948
+  },
+  {
+   "index": 110,
+   "time": 48.5294,
+   "bar": 28,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.966
+  },
+  {
+   "index": 111,
+   "time": 48.9706,
+   "bar": 28,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.928
+  },
+  {
+   "index": 112,
+   "time": 49.4118,
+   "bar": 29,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.995
+  },
+  {
+   "index": 113,
+   "time": 49.8529,
+   "bar": 29,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.974
+  },
+  {
+   "index": 114,
+   "time": 50.2941,
+   "bar": 29,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.932
+  },
+  {
+   "index": 115,
+   "time": 50.7353,
+   "bar": 29,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.955
+  },
+  {
+   "index": 116,
+   "time": 51.1765,
+   "bar": 30,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.909
+  },
+  {
+   "index": 117,
+   "time": 51.6176,
+   "bar": 30,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.908
+  },
+  {
+   "index": 118,
+   "time": 52.0588,
+   "bar": 30,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.939
+  },
+  {
+   "index": 119,
+   "time": 52.5,
+   "bar": 30,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.898
+  },
+  {
+   "index": 120,
+   "time": 52.9412,
+   "bar": 31,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.968
+  },
+  {
+   "index": 121,
+   "time": 53.3824,
+   "bar": 31,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.924
+  },
+  {
+   "index": 122,
+   "time": 53.8235,
+   "bar": 31,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.961
+  },
+  {
+   "index": 123,
+   "time": 54.2647,
+   "bar": 31,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.938
+  },
+  {
+   "index": 124,
+   "time": 54.7059,
+   "bar": 32,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.98
+  },
+  {
+   "index": 125,
+   "time": 55.1471,
+   "bar": 32,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.905
+  },
+  {
+   "index": 126,
+   "time": 55.5882,
+   "bar": 32,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.935
+  },
+  {
+   "index": 127,
+   "time": 56.0294,
+   "bar": 32,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.604
+  },
+  {
+   "index": 128,
+   "time": 56.4706,
+   "bar": 33,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.913
+  },
+  {
+   "index": 129,
+   "time": 56.9118,
+   "bar": 33,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.921
+  },
+  {
+   "index": 130,
+   "time": 57.3529,
+   "bar": 33,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.925
+  },
+  {
+   "index": 131,
+   "time": 57.7941,
+   "bar": 33,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.844
+  },
+  {
+   "index": 132,
+   "time": 58.2353,
+   "bar": 34,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.746
+  },
+  {
+   "index": 133,
+   "time": 58.6765,
+   "bar": 34,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.78
+  },
+  {
+   "index": 134,
+   "time": 59.1176,
+   "bar": 34,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.815
+  },
+  {
+   "index": 135,
+   "time": 59.5588,
+   "bar": 34,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.743
+  },
+  {
+   "index": 136,
+   "time": 60.0,
+   "bar": 35,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.586
+  },
+  {
+   "index": 137,
+   "time": 60.4412,
+   "bar": 35,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.676
+  },
+  {
+   "index": 138,
+   "time": 60.8824,
+   "bar": 35,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.64
+  },
+  {
+   "index": 139,
+   "time": 61.3235,
+   "bar": 35,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.613
+  },
+  {
+   "index": 140,
+   "time": 61.7647,
+   "bar": 36,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.625
+  },
+  {
+   "index": 141,
+   "time": 62.2059,
+   "bar": 36,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.589
+  },
+  {
+   "index": 142,
+   "time": 62.6471,
+   "bar": 36,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.549
+  },
+  {
+   "index": 143,
+   "time": 63.0882,
+   "bar": 36,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.56
+  },
+  {
+   "index": 144,
+   "time": 63.5294,
+   "bar": 37,
+   "beat": 1,
+   "downbeat": true,
+   "energy": 0.0
+  },
+  {
+   "index": 145,
+   "time": 63.9706,
+   "bar": 37,
+   "beat": 2,
+   "downbeat": false,
+   "energy": 0.148
+  },
+  {
+   "index": 146,
+   "time": 64.4118,
+   "bar": 37,
+   "beat": 3,
+   "downbeat": false,
+   "energy": 0.504
+  },
+  {
+   "index": 147,
+   "time": 64.8529,
+   "bar": 37,
+   "beat": 4,
+   "downbeat": false,
+   "energy": 0.325
+  }
+ ],
+ "downbeats": [
+  0.0,
+  1.7647,
+  3.5294,
+  5.2941,
+  7.0588,
+  8.8235,
+  10.5882,
+  12.3529,
+  14.1176,
+  15.8824,
+  17.6471,
+  19.4118,
+  21.1765,
+  22.9412,
+  24.7059,
+  26.4706,
+  28.2353,
+  30.0,
+  31.7647,
+  33.5294,
+  35.2941,
+  37.0588,
+  38.8235,
+  40.5882,
+  42.3529,
+  44.1176,
+  45.8824,
+  47.6471,
+  49.4118,
+  51.1765,
+  52.9412,
+  54.7059,
+  56.4706,
+  58.2353,
+  60.0,
+  61.7647,
+  63.5294
+ ]
+}
