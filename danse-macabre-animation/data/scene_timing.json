@@ -1,0 +1,404 @@
+{
+ "fps": 60,
+ "frames": 3600,
+ "shots": [
+  {
+   "index": 0,
+   "name": "s01_hook",
+   "start_s": 0.0,
+   "end_s": 3.5314,
+   "start_frame": 0,
+   "end_frame": 212
+  },
+  {
+   "index": 1,
+   "name": "s02a_wide",
+   "start_s": 3.5314,
+   "end_s": 5.2961,
+   "start_frame": 212,
+   "end_frame": 318
+  },
+  {
+   "index": 2,
+   "name": "s02b_assemble",
+   "start_s": 5.2961,
+   "end_s": 7.0608,
+   "start_frame": 318,
+   "end_frame": 424
+  },
+  {
+   "index": 3,
+   "name": "s02c_feet",
+   "start_s": 7.0608,
+   "end_s": 8.8255,
+   "start_frame": 424,
+   "end_frame": 530
+  },
+  {
+   "index": 4,
+   "name": "s02d_procession",
+   "start_s": 8.8255,
+   "end_s": 10.5902,
+   "start_frame": 530,
+   "end_frame": 635
+  },
+  {
+   "index": 5,
+   "name": "s03a_throne",
+   "start_s": 10.5902,
+   "end_s": 12.3549,
+   "start_frame": 635,
+   "end_frame": 741
+  },
+  {
+   "index": 6,
+   "name": "s03b_offer",
+   "start_s": 12.3549,
+   "end_s": 14.1196,
+   "start_frame": 741,
+   "end_frame": 847
+  },
+  {
+   "index": 7,
+   "name": "s03c_crown",
+   "start_s": 14.1196,
+   "end_s": 15.8844,
+   "start_frame": 847,
+   "end_frame": 953
+  },
+  {
+   "index": 8,
+   "name": "s03d_king_dance",
+   "start_s": 15.8844,
+   "end_s": 17.6491,
+   "start_frame": 953,
+   "end_frame": 1059
+  },
+  {
+   "index": 9,
+   "name": "s04a_challenge",
+   "start_s": 17.6491,
+   "end_s": 21.1785,
+   "start_frame": 1059,
+   "end_frame": 1271
+  },
+  {
+   "index": 10,
+   "name": "s04c_armor",
+   "start_s": 21.1785,
+   "end_s": 22.9432,
+   "start_frame": 1271,
+   "end_frame": 1377
+  },
+  {
+   "index": 11,
+   "name": "s04d_hand",
+   "start_s": 22.9432,
+   "end_s": 24.7079,
+   "start_frame": 1377,
+   "end_frame": 1482
+  },
+  {
+   "index": 12,
+   "name": "s05a_lock",
+   "start_s": 24.7079,
+   "end_s": 26.4726,
+   "start_frame": 1482,
+   "end_frame": 1588
+  },
+  {
+   "index": 13,
+   "name": "s05b_knock",
+   "start_s": 26.4726,
+   "end_s": 28.2373,
+   "start_frame": 1588,
+   "end_frame": 1694
+  },
+  {
+   "index": 14,
+   "name": "s05c_burst",
+   "start_s": 28.2373,
+   "end_s": 30.002,
+   "start_frame": 1694,
+   "end_frame": 1800
+  },
+  {
+   "index": 15,
+   "name": "s05d_pulled",
+   "start_s": 30.002,
+   "end_s": 31.7667,
+   "start_frame": 1800,
+   "end_frame": 1906
+  },
+  {
+   "index": 16,
+   "name": "s06a_bishop",
+   "start_s": 31.7667,
+   "end_s": 33.5314,
+   "start_frame": 1906,
+   "end_frame": 2012
+  },
+  {
+   "index": 17,
+   "name": "s06b_peasant",
+   "start_s": 33.5314,
+   "end_s": 35.2961,
+   "start_frame": 2012,
+   "end_frame": 2118
+  },
+  {
+   "index": 18,
+   "name": "s06c_jester",
+   "start_s": 35.2961,
+   "end_s": 37.0608,
+   "start_frame": 2118,
+   "end_frame": 2224
+  },
+  {
+   "index": 19,
+   "name": "s06d_noble",
+   "start_s": 37.0608,
+   "end_s": 38.8255,
+   "start_frame": 2224,
+   "end_frame": 2330
+  },
+  {
+   "index": 20,
+   "name": "s07a_arrive",
+   "start_s": 38.8255,
+   "end_s": 40.5902,
+   "start_frame": 2330,
+   "end_frame": 2435
+  },
+  {
+   "index": 21,
+   "name": "s07b_leap",
+   "start_s": 40.5902,
+   "end_s": 41.9138,
+   "start_frame": 2435,
+   "end_frame": 2515
+  },
+  {
+   "index": 22,
+   "name": "s07c_breath",
+   "start_s": 41.9138,
+   "end_s": 42.3549,
+   "start_frame": 2515,
+   "end_frame": 2541
+  },
+  {
+   "index": 23,
+   "name": "s07d_drop",
+   "start_s": 42.3549,
+   "end_s": 45.8844,
+   "start_frame": 2541,
+   "end_frame": 2753
+  },
+  {
+   "index": 24,
+   "name": "s08a_king_peasant",
+   "start_s": 45.8844,
+   "end_s": 47.6491,
+   "start_frame": 2753,
+   "end_frame": 2859
+  },
+  {
+   "index": 25,
+   "name": "s08b_knight_merchant",
+   "start_s": 47.6491,
+   "end_s": 48.5314,
+   "start_frame": 2859,
+   "end_frame": 2912
+  },
+  {
+   "index": 26,
+   "name": "s08b2_feet",
+   "start_s": 48.5314,
+   "end_s": 49.4138,
+   "start_frame": 2912,
+   "end_frame": 2965
+  },
+  {
+   "index": 27,
+   "name": "s08c_orchestra",
+   "start_s": 49.4138,
+   "end_s": 51.1785,
+   "start_frame": 2965,
+   "end_frame": 3071
+  },
+  {
+   "index": 28,
+   "name": "s08d_overhead",
+   "start_s": 51.1785,
+   "end_s": 52.9432,
+   "start_frame": 3071,
+   "end_frame": 3177
+  },
+  {
+   "index": 29,
+   "name": "s08e_moon",
+   "start_s": 52.9432,
+   "end_s": 54.7079,
+   "start_frame": 3177,
+   "end_frame": 3282
+  },
+  {
+   "index": 30,
+   "name": "s08f_closeup",
+   "start_s": 54.7079,
+   "end_s": 55.5902,
+   "start_frame": 3282,
+   "end_frame": 3335
+  },
+  {
+   "index": 31,
+   "name": "s08g_street",
+   "start_s": 55.5902,
+   "end_s": 56.4726,
+   "start_frame": 3335,
+   "end_frame": 3388
+  },
+  {
+   "index": 32,
+   "name": "s09_final",
+   "start_s": 56.4726,
+   "end_s": 60.0,
+   "start_frame": 3388,
+   "end_frame": 3600
+  }
+ ],
+ "narration_words": [
+  {
+   "word": "IN",
+   "t": 0.09
+  },
+  {
+   "word": "MEDIEVAL",
+   "t": 0.2
+  },
+  {
+   "word": "EUROPE,",
+   "t": 0.62
+  },
+  {
+   "word": "EVERYONE",
+   "t": 1.37
+  },
+  {
+   "word": "HAD",
+   "t": 1.95
+  },
+  {
+   "word": "ONE",
+   "t": 2.15
+  },
+  {
+   "word": "FINAL",
+   "t": 2.5
+  },
+  {
+   "word": "DANCE...",
+   "t": 3.0
+  }
+ ],
+ "title_words": [
+  {
+   "word": "The",
+   "t": 3.96
+  },
+  {
+   "word": "Dance",
+   "t": 4.15
+  },
+  {
+   "word": "of",
+   "t": 4.61
+  },
+  {
+   "word": "Death",
+   "t": 4.86
+  }
+ ],
+ "captions": [
+  {
+   "text": "NO CROWN COULD SAVE YOU.",
+   "start_s": 12.405,
+   "end_s": 15.764
+  },
+  {
+   "text": "NO SWORD COULD DEFEAT IT.",
+   "start_s": 19.414,
+   "end_s": 23.843
+  },
+  {
+   "text": "NO FORTUNE COULD BUY ANOTHER DAY.",
+   "start_s": 29.12,
+   "end_s": 31.687
+  },
+  {
+   "text": "RICH OR POOR.",
+   "start_s": 31.817,
+   "end_s": 35.216
+  },
+  {
+   "text": "POWERFUL OR POWERLESS.",
+   "start_s": 35.346,
+   "end_s": 38.746
+  },
+  {
+   "text": "DEATH MADE NO EXCEPTIONS.",
+   "start_s": 43.237,
+   "end_s": 45.784
+  },
+  {
+   "text": "IN THE END, EVERYONE DANCES.",
+   "start_s": 49.414,
+   "end_s": 52.883
+  },
+  {
+   "text": "NOW IT'S YOUR TURN.",
+   "start_s": 57.796,
+   "end_s": 60
+  }
+ ],
+ "key_moments": {
+  "hand_burst": 0.78,
+  "skull_turns_to_camera": 2.544,
+  "drop1_whip_out": 3.5314,
+  "skull_lands_on_neck": 6.0759,
+  "death_behind_throne": 11.0314,
+  "crown_flies": 14.1196,
+  "crown_caught": 15.002,
+  "crown_on_skull": 15.4432,
+  "knight_swings": [
+   17.649058823529412,
+   18.090235294117644,
+   19.41376470588235,
+   19.854941176470586
+  ],
+  "drop2_armor_off": 21.1785,
+  "chest_knocks": [
+   26.91376470588235,
+   27.354941176470586,
+   27.91411176470588,
+   28.1347
+  ],
+  "chest_bursts": 28.2373,
+  "joins": {
+   "bishop": 32.649058823529415,
+   "peasant": 34.41376470588236,
+   "jester": 36.17847058823529,
+   "noble": 37.943176470588234
+  },
+  "death_leaps": 41.0314,
+  "breath_silhouette": 41.9138,
+  "GRAND_DROP_cloak_windows_bells": 42.3549,
+  "final_freeze_turn_to_viewer": 57.7961,
+  "loop_knocks": [
+   59.56082352941176,
+   59.67881764705882,
+   59.78141176470589,
+   59.899405882352944
+  ]
+ }
+}
